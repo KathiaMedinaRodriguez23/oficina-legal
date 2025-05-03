@@ -11,7 +11,7 @@
         <link rel="shortcut icon"
               href="{{asset(config('constants.FAVICON_FOLDER_PATH') .'/'. $image_logo->favicon_img)}}">
     @endif
-    <title>{{ $image_logo->company_name ?? '' }} | @yield('title')</title>
+    <title>Oficina Legal</title>
     <!-- Bootstrap -->
     <link href="{{asset('assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <script>
@@ -48,7 +48,7 @@
                 <div class="navbar nav_title app-border">
                     <a href="{{url('')}}" class="site_title">
 
-                        <span>{{ $image_logo->company_name ?? '' }}</span></a>
+                        <span>Oficina Legal</span></a>
                 </div>
 
                 <div class="clearfix"></div>

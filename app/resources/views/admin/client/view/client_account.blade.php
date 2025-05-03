@@ -47,7 +47,7 @@
                             <th data-orderable="false">Total&nbsp;(<i class="fa fa-inr"></i>)</th>
                             <th>Paid&nbsp;(<i class="fa fa-inr"></i>)</th>
                             <th data-orderable="false">Due</th>
-                            <th data-orderable="false">Status</th>
+                            <th data-orderable="false">estado</th>
                             <th data-orderable="false">Action</th>
                         </tr>
                         </thead>

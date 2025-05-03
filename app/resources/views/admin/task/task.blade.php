@@ -29,7 +29,7 @@
                                 <th>Start Date</th>
                                 <th>Deadline</th>
                                 <th>Members</th>
-                                <th>Status</th>
+                                <th>estado</th>
                                 <th>Priority</th>
                                 <th data-orderable="false" class="text-center">Action</th>
                             </tr>

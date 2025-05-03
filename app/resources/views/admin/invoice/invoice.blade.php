@@ -31,7 +31,7 @@
                             <th width="10%">Total</th>
                             <th width="10%">Paid</th>
                             <th width="15%">Due</th>
-                            <th width="5%">Status</th>
+                            <th width="5%">estado</th>
                             <th width="5%;">Action</th>
                         </tr>
                         </thead>

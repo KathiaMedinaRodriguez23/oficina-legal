@@ -4,7 +4,7 @@
     @component('component.heading' , [
         'page_title' => 'Edit Vendor',
         'action' => route('vendor.index') ,
-        'text' => 'Back'
+        'text' => 'Atras'
          ])
     @endcomponent
 

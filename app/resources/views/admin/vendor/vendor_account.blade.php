@@ -45,7 +45,7 @@
                                         <th width="10%">Amount</th>
                                         <th width="15%">Paid Amount</th>
                                         <th width="15%">Amount</th>
-                                        <th width="8%">Status</th>
+                                        <th width="8%">estado</th>
                                         <th width="5%">Action</th>
                                     </tr>
                                     </thead>

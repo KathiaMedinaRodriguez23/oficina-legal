@@ -5,7 +5,7 @@
 
         'page_title' => 'Add Vendor',
         'action' => route('vendor.index') ,
-        'text' => 'Back'
+        'text' => 'Atras'
          ])
     @endcomponent
 

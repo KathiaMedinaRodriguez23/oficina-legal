@@ -1,11 +1,11 @@
 @extends('admin.layout.app')
-@section('title','Client')
+@section('title','Cliente')
 @section('content')
     <div class="">
         @component('component.heading' , [
-       'page_title' => 'Client',
+       'page_title' => 'Cliente',
        'action' => route('clients.create') ,
-       'text' => 'Add Client',
+       'text' => 'Agregar Cliente',
        'permission' => $adminHasPermition->can(['client_add'])
         ])
         @endcomponent
@@ -21,11 +21,11 @@
                             <thead>
                             <tr>
                                 <th width="5%">No</th>
-                                <th>Client Name</th>
-                                <th width="5%">Mobile</th>
-                                <th width="5%" data-orderable="false">Case</th>
-                                <th width="5%" data-orderable="false">Status</th>
-                                <th width="5%" data-orderable="false" class="text-center">Action</th>
+                                <th>Cliente</th>
+                                <th width="5%">Celular</th>
+                                <th width="5%" data-orderable="false">Caso</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="5%" data-orderable="false" class="text-center">Accion</th>
                             </tr>
                             </thead>
                         </table>
