@@ -5,7 +5,7 @@
 
     'page_title' => 'Edit Task',
     'action' => route('tasks.index') ,
-    'text' => 'Back'
+    'text' => 'Atras'
      ])
     @endcomponent
     <div class="row">

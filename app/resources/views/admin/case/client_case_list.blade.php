@@ -26,7 +26,7 @@
                             <th data-orderable="false">Court Detail</th>
                             <th data-orderable="false">Petitioner vs Respondent</th>
                             <th data-orderable="false">Next Date</th>
-                            <th data-orderable="false">Status</th>
+                            <th data-orderable="false">estado</th>
                             <th data-orderable="false">Action</th>
                         </tr>
                         </thead>

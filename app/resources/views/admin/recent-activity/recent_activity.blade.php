@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title','Client')
+@section('title','Cliente')
 @section('content')
   <div class="">
 

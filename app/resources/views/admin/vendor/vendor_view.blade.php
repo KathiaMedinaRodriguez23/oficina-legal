@@ -42,7 +42,7 @@
                     <li class="divider"></li>
                     <div class="row">
                         <div class="col-md-5">
-                            <p><b>Mobile</b></p>
+                            <p><b>Celular</b></p>
                         </div>
                         <div class="col-md-7 part">
                             <p>:  {{ $client->mobile ?? 'N/A' }} </p>

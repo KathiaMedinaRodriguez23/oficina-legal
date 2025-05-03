@@ -31,7 +31,7 @@
                                 <th width="5%">No</th>
                                 <th>Name</th>
                                 <th>Amount</th>
-                                <th width="5%" data-orderable="false">Status</th>
+                                <th width="5%" data-orderable="false">estado</th>
                                 <th width="2%" data-orderable="false">Action</th>
                             </tr>
                             </thead>

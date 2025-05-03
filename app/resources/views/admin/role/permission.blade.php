@@ -9,7 +9,7 @@
 
     'page_title' => 'Permission',
     'action' => route('role.index') ,
-    'text' => 'Back'
+    'text' => 'Atras'
      ])
     @endcomponent
       <div class="clearfix"></div>

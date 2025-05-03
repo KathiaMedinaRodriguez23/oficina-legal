@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title','Appointment Edit')
+@section('title','Editar Citacion')
 
 @section('content')
 

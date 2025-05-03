@@ -100,7 +100,7 @@
                                                 <th width="20%">Case No</th>
                                                 <th width="35%">Case</th>
                                                 <th width="15%">Next Date</th>
-                                                <th width="10%">Status</th>
+                                                <th width="10%">estado</th>
                                                 <th width="17%" style="text-align: center;">Action</th>
                                             </tr>
                                             </thead>

@@ -3,9 +3,9 @@
 @section('content')
     @component('component.heading' , [
 
-    'page_title' => 'Edit Client',
+    'page_title' => 'Editar Cliente',
     'action' => route('clients.index') ,
-    'text' => 'Back'
+    'text' => 'Atras'
      ])
     @endcomponent
     <div class="row">
@@ -22,67 +22,67 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="f_name">First Name <span class="text-danger">*</span></label>
+                                <label for="f_name">Primer nombre <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="f_name" name="f_name"
                                        value="{{ $client->first_name ?? ''}}">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="m_name">Middle Name <span class="text-danger">*</span></label>
+                                <label for="m_name">Segundo nombre <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="m_name" name="m_name"
                                        value="{{ $client->middle_name ?? ''}}">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Last Name <span class="text-danger">*</span></label>
+                                <label for="fullname">Apellidos <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="l_name" name="l_name"
                                        value="{{ $client->last_name ?? ''}}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Gender <span class="text-danger">*</span></label><br>
+                                <label for="fullname">Genero <span class="text-danger">*</span></label><br>
 
                                 <input type="radio" name="gender" id="genderM"
                                        value="Male" {{ (!empty($client->gender) && $client->gender =='Male') ? "checked" : "" }} />
-                                &nbsp;&nbsp;Male:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;Masculino:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" name="gender" id="genderF"
-                                       value="Female" {{ (!empty($client->gender) && $client->gender =='Female') ? "checked" : "" }}/>&nbsp;&nbsp;Female
+                                       value="Female" {{ (!empty($client->gender) && $client->gender =='Female') ? "checked" : "" }}/>&nbsp;&nbsp;Femenino
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Email ID</label>
+                                <label for="fullname">Email</label>
                                 <input type="text" value="{{ $client->email ?? ''}}" placeholder="" class="form-control"
                                        id="email" name="email">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Mobile No. <span class="text-danger">*</span></label>
+                                <label for="fullname">Celular <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
                                        value="{{ $client->mobile ?? ''}}" maxlength="10">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Alternate No.</label>
+                                <label for="fullname">Celular</label>
                                 <input type="text" value="{{ $client->alternate_no ?? ''}}" placeholder=""
                                        class="form-control" id="alternate_no" name="alternate_no" maxlength="10">
                             </div>
                             <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Address <span class="text-danger">*</span></label>
+                                <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" value="{{ $client->address ?? ''}}"
                                        class="form-control" id="address" name="address">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Country <span class="text-danger">*</span></label>
+                                <label for="fullname">Pais <span class="text-danger">*</span></label>
                                 <select class="form-control select-change country-select2 selct2-width-100 "
                                         name="country" id="country"
                                         data-url="{{ route('get.country') }}"
                                         data-clear="#city_id,#state"
                                 >
-                                    <option value=""> Select Country</option>
+                                    <option value=""> Seleccione</option>
                                     @if ($client->country)
                                         <option value="{{ $client->country->id }}"
                                                 selected>{{ $client->country->name }}</option>
@@ -91,14 +91,14 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">State <span class="text-danger">*</span></label>
+                                <label for="fullname">Departamento <span class="text-danger">*</span></label>
                                 <select id="state" name="state"
 
                                         data-url="{{ route('get.state') }}"
                                         data-target="#country"
                                         data-clear="#city_id"
                                         class="form-control state-select2 select-change">
-                                    <option value=""> Select State</option>
+                                    <option value=""> Seleccione</option>
                                     @if ($client->state)
                                         <option value="{{ $client->state->id }}"
                                                 selected>{{ $client->state->name }}</option>
@@ -108,13 +108,13 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">City <span class="text-danger">*</span></label>
+                                <label for="fullname">Ciudad <span class="text-danger">*</span></label>
                                 <select id="city_id" name="city_id"
                                         data-url="{{ route('get.city') }}"
                                         data-target="#state"
 
                                         class="form-control city-select2">
-                                    <option value=""> Select City</option>
+                                    <option value=""> Seleccione Ciudad</option>
                                     @if($client->city)
                                         <option value="{{ $client->city->id }}"
                                                 selected>{{ $client->city->name }}</option>
@@ -125,13 +125,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Reference Name </label>
+                                <label for="fullname">Nombre de referencia </label>
                                 <input type="text" placeholder="" class="form-control" id="reference_name"
                                        name="reference_name" value="{{ $client->reference_name ?? ''}}">
                             </div>
 
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Reference Mobile </label>
+                                <label for="fullname">Celular de referencia </label>
                                 <input type="text" placeholder="" class="form-control" id="reference_mobile"
                                        name="reference_mobile" value="{{ $client->reference_mobile ?? ''}}">
                             </div>
@@ -141,8 +141,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                             <br>
-                            <input type="checkbox" value="Yes" name="change_court_chk" id="change_court_chk"> Add more
-                            person
+                            <input type="checkbox" value="Yes" name="change_court_chk" id="change_court_chk"> Agrega a mas personas
                             <br/>
 
                         </div>
@@ -150,14 +149,13 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label for="fullname">Client <span class="text-danger">*</span></label><br>
+                                    <label for="fullname">Cliente <span class="text-danger">*</span></label><br>
                                     <br>
                                     <input type="radio" name="type" id="test6"
                                            value="single" {{ (!empty($client->client_type) && $client->client_type =='single') ? "checked" : "" }} />
-                                    &nbsp;&nbsp;Single Advocate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;Unico Defensor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <input type="radio" name="type" id="test7"
-                                           value="multiple" {{ (!empty($client->client_type) && $client->client_type =='multiple') ? "checked" : "" }} />&nbsp;&nbsp;Multiple
-                                    Advocate
+                                           value="multiple" {{ (!empty($client->client_type) && $client->client_type =='multiple') ? "checked" : "" }} />&nbsp;&nbsp;Multiples defensores
                                 </div>
                             </div>
                             <div class="repeater one">
@@ -167,7 +165,7 @@
                                             <div data-repeater-item>
                                                 <div class="row border-addmore">
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">First Name <span
+                                                        <label for="fullname">Primer nombre <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="firstname" name="firstname"
                                                                data-rule-required="true"
@@ -177,7 +175,7 @@
                                                     </div>
 
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Middle Name <span
+                                                        <label for="fullname">Segundo nombre <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="middlename" name="middlename"
                                                                data-rule-required="true"
@@ -187,7 +185,7 @@
                                                     </div>
 
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Last Name <span
+                                                        <label for="fullname">Apellidos <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="lastname" name="lastname"
                                                                data-rule-required="true"
@@ -196,7 +194,7 @@
                                                                value="{{ $value->party_lastname }}">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Mobile No. <span
+                                                        <label for="fullname">Celular <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="mobile_client" name="mobile_client"
                                                                data-rule-required="true"
@@ -231,7 +229,7 @@
                                         <div data-repeater-item>
                                             <div class="row border-addmore">
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">First Name <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Primer nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="firstname" name="firstname"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter first name."
@@ -239,7 +237,7 @@
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Middle Name <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Segundo nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="middlename" name="middlename"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter middle name."
@@ -247,7 +245,7 @@
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Last Name <span
+                                                    <label for="fullname">Apellidos <span
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="lastname" name="lastname"
                                                            data-rule-required="true"
@@ -255,7 +253,7 @@
                                                            class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Mobile No. <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Celular <span class="text-danger">*</span></label>
                                                     <input type="text" id="mobile_client" name="mobile_client"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter mobile number."
@@ -300,7 +298,7 @@
                                             <div data-repeater-item>
                                                 <div class="row border-addmore">
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">First Name <span
+                                                        <label for="fullname">Primer nombre <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="firstname" name="firstname"
                                                                data-rule-required="true"
@@ -310,7 +308,7 @@
                                                     </div>
 
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Middle Name <span
+                                                        <label for="fullname">Segundo nombre <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="middlename" name="middlename"
                                                                data-rule-required="true"
@@ -320,7 +318,7 @@
                                                     </div>
 
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Last Name <span
+                                                        <label for="fullname">Apellidos <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="lastname" name="lastname"
                                                                data-rule-required="true"
@@ -329,7 +327,7 @@
                                                                value="{{ $value->party_lastname }}">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Mobile No. <span
+                                                        <label for="fullname">Celular <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="mobile_client" name="mobile_client"
                                                                data-rule-required="true"
@@ -375,28 +373,28 @@
                                         <div data-repeater-item>
                                             <div class="row border-addmore">
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">First Name <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Primer nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="firstname" name="firstname"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter name." class="form-control">
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Middle Name <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Segundo nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="middlename" name="middlename"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter name." class="form-control">
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Last Name <span
+                                                    <label for="fullname">Apellidos <span
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="lastname" name="lastname"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter name." class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Mobile No. <span class="text-danger">*</span></label>
+                                                    <label for="fullname">Celular <span class="text-danger">*</span></label>
                                                     <input type="text" id="mobile_client" name="mobile_client"
                                                            data-rule-required="true"
                                                            data-msg-required="Please enter mobile number."

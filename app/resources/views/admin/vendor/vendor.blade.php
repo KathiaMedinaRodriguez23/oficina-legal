@@ -26,8 +26,8 @@
                             <tr>
                                 <th>No</th>
                                 <th width="40%">Name</th>
-                                <th width="40%">Mobile</th>
-                                <th data-orderable="false">Status</th>
+                                <th width="40%">Celular</th>
+                                <th data-orderable="false">estado</th>
                                 <th data-orderable="false">Action</th>
                             </tr>
                             </thead>

@@ -32,7 +32,7 @@
                         </tr>
                         <tr>
                         
-                          <td style="border-top: none;">Status</td>
+                          <td style="border-top: none;">estado</td>
                           <td style="border-top: none;">Active</td>
                  
                         </tr>

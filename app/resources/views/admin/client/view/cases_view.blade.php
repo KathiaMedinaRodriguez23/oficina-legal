@@ -49,7 +49,7 @@
                             <th>Court Detail</th>
                             <th>Petitioner vs Respondent</th>
                             <th>Next Date</th>
-                            <th>Status</th>
+                            <th>estado</th>
                             <th>Action</th>
                         </tr>
                         </thead>

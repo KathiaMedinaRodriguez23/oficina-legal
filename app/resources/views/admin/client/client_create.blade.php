@@ -2,9 +2,9 @@
 @section('title','Client Create')
 @section('content')
     @component('component.heading' , [
-    'page_title' => 'Add Client',
+    'page_title' => 'Agregar Cliente',
     'action' => route('clients.index') ,
-    'text' => 'Back'
+    'text' => 'Atras'
      ])
     @endcomponent
     <div class="row">
@@ -29,35 +29,35 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">First Name <span class="text-danger">*</span></label>
+                                <label for="fullname">Primer nombre <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="f_name" name="f_name">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Middle Name <span class="text-danger">*</span></label>
+                                <label for="fullname">Segundo nombre <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="m_name" name="m_name">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Last Name <span class="text-danger">*</span></label>
+                                <label for="fullname">Apellidos <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="l_name" name="l_name">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Gender <span class="text-danger">*</span></label><br>
+                                <label for="fullname">Genero <span class="text-danger">*</span></label><br>
 
-                                <input type="radio" name="gender" id="genderM" value="Male" checked="" required/> &nbsp;&nbsp;Male:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="gender" id="genderF" value="Female"/>&nbsp;&nbsp;Female
+                                <input type="radio" name="gender" id="genderM" value="Male" checked="" required/> &nbsp;&nbsp;Masculino:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gender" id="genderF" value="Female"/>&nbsp;&nbsp;Femenino
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Email ID</label>
+                                <label for="fullname">Email </label>
                                 <input type="text" placeholder="" class="form-control" id="email" name="email">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Mobile No. <span class="text-danger">*</span></label>
+                                <label for="fullname">Celular <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="mobile" maxlength="10"
                                        name="mobile">
                             </div>
@@ -65,63 +65,63 @@
 
                         <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Alternate No.</label>
+                                <label for="fullname">Celular Alternativo</label>
                                 <input type="text" placeholder="" class="form-control" id="alternate_no"
                                        name="alternate_no" maxlength="10">
                             </div>
                             <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Address <span class="text-danger">*</span></label>
+                                <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="address" name="address">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Country <span class="text-danger">*</span></label>
+                                <label for="fullname">Pais <span class="text-danger">*</span></label>
                                 <select class="form-control select-change country-select2"
                                         name="country" id="country"
                                         data-url="{{ route('get.country') }}"
                                         data-clear="#city_id,#state"
                                 >
-                                    <option value=""> Select Country</option>
+                                    <option value=""> Selecciona un Pais</option>
 
                                 </select>
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">State <span class="text-danger">*</span></label>
+                                <label for="fullname">Departamento <span class="text-danger">*</span></label>
                                 <select id="state" name="state"
 
                                         data-url="{{ route('get.state') }}"
                                         data-target="#country"
                                         data-clear="#city_id"
                                         class="form-control state-select2 select-change">
-                                    <option value=""> Select State</option>
+                                    <option value=""> Selecciona</option>
 
                                 </select>
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">City <span class="text-danger">*</span></label>
+                                <label for="fullname">Ciudad <span class="text-danger">*</span></label>
                                 <select id="city_id" name="city_id"
                                         data-url="{{ route('get.city') }}"
                                         data-target="#state"
 
                                         class="form-control city-select2">
-                                    <option value=""> Select City</option>
+                                    <option value=""> Elije Ciudad</option>
 
                                 </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Reference Name </label>
+                                <label for="fullname">Persona de referencia </label>
                                 <input type="text" placeholder="" class="form-control" id="reference_name"
                                        name="reference_name">
                             </div>
 
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Reference Mobile </label>
+                                <label for="fullname">Celular de Referencia </label>
                                 <input type="text" placeholder="" class="form-control" id="reference_mobile"
                                        name="reference_mobile">
                             </div>
@@ -130,8 +130,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                             <br>
-                            <input type="checkbox" value="Yes" name="change_court_chk" id="change_court_chk"> Add more
-                            person
+                            <input type="checkbox" value="Yes" name="change_court_chk" id="change_court_chk"> Agrega a mas personas
                             <br/>
 
                         </div>
@@ -139,12 +138,11 @@
 
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label for="fullname">Client <span class="text-danger">*</span></label><br>
+                                    <label for="fullname">Cliente <span class="text-danger">*</span></label><br>
                                     <br>
                                     <input type="radio" name="type" id="test6" value="single" checked="" required/>
-                                    &nbsp;&nbsp;Single Advocate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="type" id="test7" value="multiple"/>&nbsp;&nbsp;Multiple
-                                    Advocate
+                                    &nbsp;&nbsp;Defensor unico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="type" id="test7" value="multiple"/>&nbsp;&nbsp;Multiples Defensores
                                 </div>
                             </div>
                             <div class="repeater one">
@@ -153,7 +151,7 @@
                                         <div class="row border-addmore"
                                         >
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">First Name <span
+                                                <label for="fullname">Primer nombre <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="firstname" name="firstname"
                                                        data-rule-required="true"
@@ -162,7 +160,7 @@
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Middle Name <span
+                                                <label for="fullname">Segundo <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="middlename" name="middlename"
                                                        data-rule-required="true"
@@ -171,14 +169,14 @@
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Last Name <span
+                                                <label for="fullname">Apellido <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="lastname" name="lastname"
                                                        data-rule-required="true"
                                                        data-msg-required="Please enter last name." class="form-control">
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Mobile No. <span
+                                                <label for="fullname">Celular <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="mobile_client" name="mobile_client"
                                                        data-rule-required="true"
@@ -191,7 +189,7 @@
                                                        class="form-control" maxlength="10">
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Address <span class="text-danger">*</span></label>
+                                                <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                                 <input type="text" id="address_client" name="address_client"
                                                        data-rule-required="true"
                                                        data-msg-required="Please enter address." class="form-control">
@@ -218,7 +216,7 @@
                                         <div class="row border-addmore"
                                         >
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">First Name <span
+                                                <label for="fullname">Primer nombre <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="firstname" name="firstname"
                                                        data-rule-required="true" data-msg-required="Please enter name."
@@ -226,7 +224,7 @@
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Middle Name <span
+                                                <label for="fullname">Segundo nombre <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="middlename" name="middlename"
                                                        data-rule-required="true" data-msg-required="Please enter name."
@@ -234,14 +232,14 @@
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Last Name <span
+                                                <label for="fullname">Apellidos <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="lastname" name="lastname"
                                                        data-rule-required="true" data-msg-required="Please enter name."
                                                        class="form-control">
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Mobile No. <span
+                                                <label for="fullname">Celular <span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="mobile_client" name="mobile_client"
                                                        data-rule-required="true"
@@ -254,13 +252,13 @@
                                                        class="form-control" maxlength="10">
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Address <span class="text-danger">*</span></label>
+                                                <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                                 <input type="text" id="address_client" name="address_client"
                                                        data-rule-required="true"
                                                        data-msg-required="Please enter address." class="form-control">
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="fullname">Advocate Name. <span class="text-danger">*</span></label>
+                                                <label for="fullname">Defensor <span class="text-danger">*</span></label>
                                                 <input type="text" id="advocate_name" name="advocate_name"
                                                        data-rule-required="true"
                                                        data-msg-required="Please enter advocate name."

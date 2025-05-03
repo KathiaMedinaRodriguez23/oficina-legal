@@ -43,7 +43,7 @@
                                 <br>
                                 <button class="btn btn-primary case-margin-top-3" type="button" >Clear</button>
                                 <button type="submit" class="btn btn-success case-margin-top-3" ><i
-                                        class="fa fa-search"></i>&nbsp;Search
+                                        class="fa fa-search"></i>&nbsp;Buscar
                                 </button>
                             </div>
 
@@ -81,7 +81,7 @@
                                 <th>Court Detail</th>
                                 <th>Petitioner vs Respondent</th>
                                 <th>Next Date</th>
-                                <th>Status</th>
+                                <th>estado</th>
                                 <th>Action</th>
                             </tr>
                             </thead>

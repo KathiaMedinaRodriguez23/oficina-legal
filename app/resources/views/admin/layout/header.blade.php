@@ -7,7 +7,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="">
+                {{--<li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                        aria-expanded="false">
                         @if(Auth::guard('admin')->user())
@@ -43,8 +43,7 @@
                     {!! App\Helpers\LogActivity::generateTasks() !!}
                     {!! App\Helpers\LogActivity::getNotifications() !!}
                 @endif
-
-
+                --}}
             </ul>
         </nav>
     </div>

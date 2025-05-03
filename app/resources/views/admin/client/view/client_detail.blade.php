@@ -45,7 +45,7 @@
                                     <td class="fs15 fw700 text-right">{{ $client->full_name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Mobile</td>
+                                    <td>Celular</td>
                                     <td class="fs15 fw700 text-right">{{ $client->mobile ?? '' }}</td>
                                 </tr>
                                 <tr>
@@ -82,7 +82,7 @@
                                     <td class="fs15 fw700 text-right">{{ $client->alternate_no ?? '' }} </td>
                                 </tr>
                                 <tr>
-                                    <td>Reference Mobile</td>
+                                    <td>Reference Celular</td>
                                     <td class="fs15 fw700 text-right">{{ $client->reference_mobile ?? '' }}</td>
                                 </tr>
                                 <tr>

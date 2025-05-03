@@ -96,7 +96,7 @@
                                 <th width="35%">Court Detail</th>
                                 <th width="20%">Petitioner vs Respondent</th>
                                 <th width="10%">Next Date</th>
-                                <th width="9%">Status</th>
+                                <th width="9%">estado</th>
                                 <th width="3%">Action</th>
                             </tr>
                             </thead>

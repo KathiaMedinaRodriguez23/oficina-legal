@@ -32,7 +32,7 @@
                                 <th width="30%">Email</th>
                                 <th>Contact No</th>
                                 <th>Role</th>
-                                <th>Status</th>
+                                <th>estado</th>
                                 <th width="5%">Action</th>
                             </tr>
                             </thead>
