@@ -9,6 +9,8 @@ $Env:DOCKER_BUILDKIT = "0"
 $Env:COMPOSE_DOCKER_CLI_BUILD = "0"
 docker-compose build --no-cache
 docker-compose up -d
+```
+```
 docker compose up --build -d ; if($?) {docker image prune}
 ```
 
