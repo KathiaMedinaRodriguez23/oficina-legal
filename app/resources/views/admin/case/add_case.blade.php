@@ -73,7 +73,7 @@
                                                 <label class="discount_text "> <b class="position_name">Respondent
                                                         Name </b><span class="text-danger">*</span></label>
                                                 <input type="text" id="party_name" name="party_name"
-                                                       data-rule-required="true" data-msg-required="Please enter name."
+                                                       data-rule-required="true" data-msg-required="Por favor, ingrese el nombre."
                                                        class="form-control">
                                             </div>
 
@@ -87,7 +87,7 @@
                                                         Advocate</b><span class="text-danger">*</span></label>
                                                 <input type="text" id="party_advocate" name="party_advocate"
                                                        data-rule-required="true"
-                                                       data-msg-required="Please enter advocate name."
+                                                       data-msg-required="Por favor, ingrese el nombre del abogado."
                                                        class="form-control">
                                             </div>
 

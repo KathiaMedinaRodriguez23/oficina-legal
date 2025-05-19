@@ -222,7 +222,7 @@ class AppointmentController extends Controller
                 if ($term->status == 'OPEN') {
                     $con .= "selected";
                 }
-                $con .= ">OPEN</option>";
+                $con .= ">ABIERTO</option>";
 
                 //for CANCEL BY CLIENT status
 
@@ -230,7 +230,7 @@ class AppointmentController extends Controller
                 if ($term->status == 'CANCEL BY CLIENT') {
                     $con .= "selected";
                 }
-                $con .= ">CANCEL BY CLIENT</option>";
+                $con .= ">Cancelado por el Cliente</option>";
 
 
                 //for CANCEL BY ADVOCATE status
@@ -238,7 +238,7 @@ class AppointmentController extends Controller
                 if ($term->status == 'CANCEL BY ADVOCATE') {
                     $con .= "selected";
                 }
-                $con .= ">CANCEL BY ADVOCATE</option>";
+                $con .= ">Cancelado por el defensor</option>";
 
 
                 $con .= "</select>";

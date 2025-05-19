@@ -38,36 +38,35 @@ var FormControlsClient = {
                 }
             },
             messages: {
-                f_name: "Please enter first name.",
-                m_name: "Please enter middle name.",
-                l_name: "Please enter last name.",
-                address: "Please enter address.",
-                country: "Please select country.",
-                state: "Please select state.",
-                city_id: "Please select city.",
+                f_name: "Por favor, ingrese el nombre.",
+                m_name: "Por favor, ingrese el segundo nombre.",
+                l_name: "Por favor, ingrese el apellido.",
+                address: "Por favor, ingrese la dirección.",
+                country: "Por favor, seleccione el país.",
+                state: "Por favor, seleccione el estado.",
+                city_id: "Por favor, seleccione la ciudad.",
 
                 email: {
-                    email: "Please enter valid email.",
+                    email: "Por favor, ingrese un correo electrónico válido.",
                 },
                 mobile: {
-                    required: "Please enter mobile.",
-                    minlength: "Mobile must be 10 digit.",
-                    maxlength: "Mobile must be 10 digit.",
-                    number: "please enter digit 0-9.",
+                    required: "Por favor, ingrese el número de celular.",
+                    minlength: "El número de celular debe tener 10 dígitos.",
+                    maxlength: "El número de celular debe tener 10 dígitos.",
+                    number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 alternate_no: {
-                    required: "Please enter alternate no.",
-                    minlength: "Mobile must be 10 digit.",
-                    maxlength: "Mobile must be 10 digit.",
-                    number: "please enter digit 0-9.",
+                    required: "Por favor, ingrese el número alternativo.",
+                    minlength: "El número debe tener 10 dígitos.",
+                    maxlength: "El número debe tener 10 dígitos.",
+                    number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 reference_mobile: {
-                    required: "Please enter Reference mobile no.",
-                    minlength: "Mobile must be 10 digit.",
-                    maxlength: "Mobile must be 10 digit.",
-                    number: "Please enter digit 0-9.",
+                    required: "Por favor, ingrese el número de referencia.",
+                    minlength: "El número debe tener 10 dígitos.",
+                    maxlength: "El número debe tener 10 dígitos.",
+                    number: "Por favor, ingrese solo dígitos del 0 al 9."
                 }
-
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');

@@ -72,7 +72,7 @@
                                 <th width="10%;">Fecha</th>
                                 <th>Hora</th></th>
                                 <th data-orderable="false">Estado</th>
-                                <th data-orderable="false">Action</th>
+                                <th data-orderable="false">Acción</th>
                             </tr>
                             </thead>
 

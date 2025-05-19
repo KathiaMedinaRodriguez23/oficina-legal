@@ -745,7 +745,7 @@
 		/**
 		 * Sort the table by a particular column
 		 *  @param {int} iCol the data index to sort on. Note that this will not match the
-		 *    'display index' if you have hidden data entries
+		 *    'display index' if you have hidden data registros
 		 *  @dtopt API
 		 *  @deprecated Since v1.10
 		 *
@@ -10072,7 +10072,7 @@
 	
 	
 		/**
-		 * This parameter allows you to readily specify the entries in the length drop
+		 * This parameter allows you to readily specify the registros in the length drop
 		 * down menu that DataTables shows when pagination is enabled. It can be
 		 * either a 1D array of options which will be used for both the displayed
 		 * option and the value, or a 2D array which will use the array in the first
@@ -10643,7 +10643,7 @@
 	
 		/**
 		 * When rendering large numbers in the information element for the table
-		 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+		 * (i.e. "Showing 1 to 10 of 57 registros") DataTables will render large numbers
 		 * to have a comma separator for the 'thousands' units (e.g. 1 million is
 		 * rendered as "1,000,000") to help readability for the end user. This
 		 * function will override the default method DataTables uses.
@@ -11396,13 +11396,13 @@
 			 *    } );
 			 */
 			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
-	
+
 	
 			/**
 			 * Display information string for when the table is empty. Typically the
 			 * format of this string should match `info`.
 			 *  @type string
-			 *  @default Showing 0 to 0 of 0 entries
+			 *  @default Showing 0 to 0 of 0 registros
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.infoEmpty
@@ -11411,12 +11411,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoEmpty": "No entries to show"
+			 *          "infoEmpty": "No hay registros para mostrar"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 a 0 de 0 registros",
 	
 	
 			/**
@@ -11438,7 +11438,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
 	
 	
 			/**
@@ -11524,7 +11524,7 @@
 			 * with a default select list of 10, 25, 50 and 100, and can be replaced
 			 * with a custom select box if required.
 			 *  @type string
-			 *  @default Show _MENU_ entries
+			 *  @default Mostrar _MENU_ registros
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.lengthMenu

@@ -44,17 +44,18 @@ class StoreClient extends FormRequest
     {
         return [
 
-            'f_name.required' => 'Please enter first name.',
-            'l_name.required' => 'Please enter middle name.',
-            'm_name.required' => 'Please enter last name.',
-            'address.required' => 'Please enter address.',
-            'country.required' => 'Please select country.',
-            'state.required'    => 'Please select state.',
-            'city_id.required'  => 'Please select city.',
-            //'email' => 'required',
-            'mobile.required' => 'Please enter mobile.',
-            //'alternate_no' => 'required',
-            //'gender.required' => 'Gender is required',
+            'f_name.required' => 'Por favor, ingrese el nombre.',
+            'l_name.required' => 'Por favor, ingrese el segundo nombre.',
+            'm_name.required' => 'Por favor, ingrese el apellido.',
+            'address.required' => 'Por favor, ingrese la dirección.',
+            'country.required' => 'Por favor, seleccione el país.',
+            'state.required' => 'Por favor, seleccione el estado.',
+            'city_id.required' => 'Por favor, seleccione la ciudad.',
+            // 'email' => 'required',
+            'mobile.required' => 'Por favor, ingrese el número de celular.',
+            // 'alternate_no' => 'required',
+            // 'gender.required' => 'El género es obligatorio',
+
 
         ];
     }
