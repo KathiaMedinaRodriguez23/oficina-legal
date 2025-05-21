@@ -19,3 +19,8 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
     && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 RUN php composer.phar install --optimize-autoloader --no-dev
+
+RUN php artisan config:cache
+RUN php artisan view:cache
+RUN php artisan config:clear
+RUN php artisan cache:clear
