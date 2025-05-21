@@ -7,6 +7,7 @@ $(document).ready(function () {
     
     countrySelect2.select2({
         allowClear :true,
+        language: 'es',
         ajax: {
             url: countrySelect2.data('url'),
             data: function (params) {
@@ -30,12 +31,13 @@ $(document).ready(function () {
             cache: true,
             delay: 250
         },
-        placeholder: 'Select country',
+        placeholder: 'Selecciona Pais'
         // minimumInputLength: 1,
     });
 
     stateSelect2.select2({
         allowClear :true,
+        language: 'es',
         ajax: {
             url: stateSelect2.data('url'),
             data: function (params) {
@@ -64,12 +66,13 @@ $(document).ready(function () {
             cache: true,
             delay: 250
         },
-        placeholder: 'Select state',
+        placeholder: 'Selecciona Departamento'
         // minimumInputLength: 1,
     });
 
      citySelect2.select2({
         allowClear :true,
+        language: 'es',
         ajax: {
             url: citySelect2.data('url'),
             data: function (params) {
@@ -98,7 +101,7 @@ $(document).ready(function () {
             cache: true,
             delay: 250
         },
-        placeholder: 'Select city',
+        placeholder: 'Selecciona Ciudad'
         // minimumInputLength: 1,
     }); 
     

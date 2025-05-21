@@ -78,7 +78,7 @@
                                                         <label class="discount_text position_name"></label>
                                                         <input type="text" id="party_name" name="party_name"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter name."
+                                                               data-msg-required="Por favor, ingrese el nombre."
                                                                class="form-control" value="{{$party->party_name}}">
                                                     </div>
                                                 </div>
@@ -89,7 +89,7 @@
                                                         <label class="discount_text position_advo"></label>
                                                         <input type="text" id="party_advocate" name="party_advocate"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter advocate name."
+                                                               data-msg-required="Por favor, ingrese el nombre del abogado."
                                                                class="form-control" value="{{$party->party_advocate}}">
                                                     </div>
                                                 </div>

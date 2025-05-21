@@ -50,37 +50,38 @@ var FormControlsProfile = {
                 },
 
             },
-            messages: {
+            messages: { 
                 username: {
-                    required: "Please enter username.",
-                    remote: "Username is already exits.."
+                    required: "Por favor, ingrese el nombre de usuario.",
+                    remote: "El nombre de usuario ya existe."
                 },
-                f_name: "Please enter first name.",
-                l_name: "Please enter last name.",
+                f_name: "Por favor, ingrese el nombre.",
+                l_name: "Por favor, ingrese el apellido.",
                 email: {
-                    required: "Please enter email.",
-                    email: "Please enter valid email.",
-                    remote: "Email is already exits."
+                    required: "Por favor, ingrese el correo electrónico.",
+                    email: "Por favor, ingrese un correo electrónico válido.",
+                    remote: "El correo electrónico ya existe."
                 },
                 mobile: {
-                    required: "Please enter mobile.",
-                    minlength: "mobile must be 10 digit.",
-                    maxlength: "mobile must be 10 digit.",
-                    number: "please enter digit 0-9.",
+                    required: "Por favor, ingrese el número de celular.",
+                    minlength: "El número de celular debe tener 10 dígitos.",
+                    maxlength: "El número de celular debe tener 10 dígitos.",
+                    number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
-                registration_no: "Please enter registration no.",
-                associated_name: "Please enter associated name.",
-                address: "Please enter address.",
+                registration_no: "Por favor, ingrese el número de registro.",
+                associated_name: "Por favor, ingrese el nombre asociado.",
+                address: "Por favor, ingrese la dirección.",
                 zip_code: {
-                    required: "Please enter zip code.",
-                    minlength: "zip code must be 6 digit.",
-                    maxlength: "zip code must be 6 digit.",
-                    number: "please enter digit 0-9.",
+                    required: "Por favor, ingrese el código postal.",
+                    minlength: "El código postal debe tener 6 dígitos.",
+                    maxlength: "El código postal debe tener 6 dígitos.",
+                    number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
-                country: "Please select country.",
-                state: "Please select state.",
-                city_id: "Please select city.",
+                country: "Por favor, seleccione el país.",
+                state: "Por favor, seleccione el estado.",
+                city_id: "Por favor, seleccione la ciudad."
             },
+            
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
             },

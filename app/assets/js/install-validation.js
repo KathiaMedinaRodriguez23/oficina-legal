@@ -34,29 +34,28 @@ var FormControlsClient = {
 
             },
             messages: {
-                app_name: "Please enter app name.",
-                app_url: "Please enter app url.",
-                db_host: "Please enter database host.",
-                db_port: "Please enter database port.",
-                db_database: "Please enter database name.",
-                db_username: "Please enter database user name.",
-                // db_password: "Please enter database user password.",
-                user_name: "Please enter name.",
+                app_name: "Por favor, ingrese el nombre de la aplicación.",
+                app_url: "Por favor, ingrese la URL de la aplicación.",
+                db_host: "Por favor, ingrese el host de la base de datos.",
+                db_port: "Por favor, ingrese el puerto de la base de datos.",
+                db_database: "Por favor, ingrese el nombre de la base de datos.",
+                db_username: "Por favor, ingrese el nombre de usuario de la base de datos.",
+                // db_password: "Por favor, ingrese la contraseña de la base de datos.",
+                user_name: "Por favor, ingrese su nombre.",
                 user_email: {
-                    required: "Please enter login email.",
-                    email: "Please enter valid email.",
+                    required: "Por favor, ingrese el correo electrónico de inicio de sesión.",
+                    email: "Por favor, ingrese un correo electrónico válido.",
                 },
                 user_pwd: {
-                    required: "Please enter login password.",
-                    minlength: "Password must be 6 digit.",
-                    maxlength: "Password must be 8 digit.",
+                    required: "Por favor, ingrese la contraseña de inicio de sesión.",
+                    minlength: "La contraseña debe tener al menos 6 dígitos.",
+                    maxlength: "La contraseña no debe exceder los 8 dígitos.",
                 },
                 user_cpwd: {
-                    required: "Please enter confirm password.",
-                    minlength: "Confirm password must be 6 digit.",
-                    maxlength: "Confirm password must be 8 digit.",
+                    required: "Por favor, ingrese la confirmación de la contraseña.",
+                    minlength: "La confirmación de la contraseña debe tener al menos 6 dígitos.",
+                    maxlength: "La confirmación de la contraseña no debe exceder los 8 dígitos.",
                 }
-
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');

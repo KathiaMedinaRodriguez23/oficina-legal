@@ -169,7 +169,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="firstname" name="firstname"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter first name."
+                                                               data-msg-required="PPor favor, ingrese el primer nombre."
                                                                class="form-control"
                                                                value="{{ $value->party_firstname }}">
                                                     </div>
@@ -179,7 +179,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="middlename" name="middlename"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter middle name."
+                                                               data-msg-required="Por favor, ingrese el segundo nombre."
                                                                class="form-control"
                                                                value="{{ $value->party_middlename }}">
                                                     </div>
@@ -189,7 +189,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="lastname" name="lastname"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter last name."
+                                                               data-msg-required="Por favor, ingrese el apellido."
                                                                class="form-control"
                                                                value="{{ $value->party_lastname }}">
                                                     </div>
@@ -200,19 +200,19 @@
                                                                data-rule-required="true"
                                                                data-msg-required="Please enter mobile number."
                                                                data-rule-number="true"
-                                                               data-msg-number="please enter digit 0-9."
+                                                               data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                                data-rule-minlength="10"
-                                                               data-msg-minlength="mobile must be 10 digit."
+                                                               data-msg-minlength="El número debe tener 10 dígitos."
                                                                data-rule-maxlength="10"
-                                                               data-msg-maxlength="mobile must be 10 digit."
+                                                               data-msg-maxlength="El número debe tener 10 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
                                                                maxlength="10">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Address <span class="text-danger">*</span></label>
+                                                        <label for="fullname">Dirrecion <span class="text-danger">*</span></label>
                                                         <input type="text" id="address_client" name="address_client"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter address."
+                                                               data-msg-required="Por favor, ingrese la dirección."
                                                                class="form-control" value="{{ $value->party_address }}">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -232,7 +232,7 @@
                                                     <label for="fullname">Primer nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="firstname" name="firstname"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter first name."
+                                                           data-msg-required="Por favor, ingrese el primer nombre."
                                                            class="form-control">
                                                 </div>
 
@@ -240,7 +240,7 @@
                                                     <label for="fullname">Segundo nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="middlename" name="middlename"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter middle name."
+                                                           data-msg-required="Por favor, ingrese el segundo nombre."
                                                            class="form-control">
                                                 </div>
 
@@ -249,28 +249,28 @@
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="lastname" name="lastname"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter last name."
+                                                           data-msg-required="Por favor, ingrese los apellidos."
                                                            class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                     <label for="fullname">Celular <span class="text-danger">*</span></label>
                                                     <input type="text" id="mobile_client" name="mobile_client"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter mobile number."
+                                                           data-msg-required="Por favor, ingrese el número de celular."
                                                            data-rule-number="true"
-                                                           data-msg-number="please enter digit 0-9."
+                                                           data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                            data-rule-minlength="10"
-                                                           data-msg-minlength="mobile must be 10 digit."
+                                                           data-msg-minlength="El número debe tener 10 dígitos."
                                                            data-rule-maxlength="10"
-                                                           data-msg-maxlength="mobile must be 10 digit."
+                                                           data-msg-maxlength="El número debe tener 10 dígitos."
                                                            class="form-control" maxlength="10">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Address <span
+                                                    <label for="fullname">Dirrecion <span
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="address_client" name="address_client"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter address."
+                                                           data-msg-required="Por favor, ingrese la dirección."
                                                            class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -302,7 +302,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="firstname" name="firstname"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter name."
+                                                               data-msg-required="Por favor, ingrese el primer nombre."
                                                                class="form-control"
                                                                value="{{ $value->party_firstname }}">
                                                     </div>
@@ -312,7 +312,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="middlename" name="middlename"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter name."
+                                                               data-msg-required="Por favor, ingrese el segundo nombre."
                                                                class="form-control"
                                                                value="{{ $value->party_middlename }}">
                                                     </div>
@@ -322,7 +322,7 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="lastname" name="lastname"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter name."
+                                                               data-msg-required="Por favor, ingrese el apellido."
                                                                class="form-control"
                                                                value="{{ $value->party_lastname }}">
                                                     </div>
@@ -331,29 +331,29 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="mobile_client" name="mobile_client"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter mobile number."
+                                                               data-msg-required="Por favor, ingrese el número de celular."
                                                                data-rule-number="true"
-                                                               data-msg-number="please enter digit 0-9."
+                                                               data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                                data-rule-minlength="10"
-                                                               data-msg-minlength="mobile must be 10 digit."
+                                                               data-msg-minlength="El número debe tener 10 dígitos."
                                                                data-rule-maxlength="10"
-                                                               data-msg-maxlength="mobile must be 10 digit."
+                                                               data-msg-maxlength="El número debe tener 10 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
                                                                maxlength="10">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Address <span class="text-danger">*</span></label>
+                                                        <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                                         <input type="text" id="address_client" name="address_client"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter address."
+                                                               data-msg-required="Por favor, ingrese la dirección."
                                                                class="form-control" value="{{ $value->party_address }}">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                        <label for="fullname">Advocate Name. <span
+                                                        <label for="fullname">Nombre del defensor(a). <span
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="advocate_name" name="advocate_name"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter advocate name."
+                                                               data-msg-required="Por favor ingrese el nombre del defensor."
                                                                class="form-control"
                                                                value="{{ $value->party_advocate }}">
                                                     </div>
@@ -376,14 +376,14 @@
                                                     <label for="fullname">Primer nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="firstname" name="firstname"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter name." class="form-control">
+                                                           data-msg-required="Por favor, ingrese el primer nombre." class="form-control">
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                     <label for="fullname">Segundo nombre <span class="text-danger">*</span></label>
                                                     <input type="text" id="middlename" name="middlename"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter name." class="form-control">
+                                                           data-msg-required="Por favor, ingrese el segundo nombre." class="form-control">
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -391,35 +391,35 @@
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="lastname" name="lastname"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter name." class="form-control">
+                                                           data-msg-required="Por favor, ingrese el apellido." class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                     <label for="fullname">Celular <span class="text-danger">*</span></label>
                                                     <input type="text" id="mobile_client" name="mobile_client"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter mobile number."
+                                                           data-msg-required="Por favor, ingrese el número de celular."
                                                            data-rule-number="true"
-                                                           data-msg-number="please enter digit 0-9."
+                                                           data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                            data-rule-minlength="10"
-                                                           data-msg-minlength="mobile must be 10 digit."
+                                                           data-msg-minlength="El número debe tener 10 dígitos."
                                                            data-rule-maxlength="10"
-                                                           data-msg-maxlength="mobile must be 10 digit."
+                                                           data-msg-maxlength="El número debe tener 10 dígitos.."
                                                            class="form-control" maxlength="10">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Address <span
+                                                    <label for="fullname">Dirreccion <span
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="address_client" name="address_client"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter address."
+                                                           data-msg-required="Por favor, ingrese la dirección."
                                                            class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <label for="fullname">Advocate Name. <span
+                                                    <label for="fullname">Nombre del defensor(a). <span
                                                                 class="text-danger">*</span></label>
                                                     <input type="text" id="advocate_name" name="advocate_name"
                                                            data-rule-required="true"
-                                                           data-msg-required="Please enter advocate name."
+                                                           data-msg-required="Por favor, ingrese el nombre del abogado."
                                                            class="form-control">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -445,7 +445,7 @@
                         </div>
                         <div class="form-group pull-right">
                             <div class="col-md-12 col-sm-6 col-xs-12">
-                                <a href="{{ route('clients.index')  }}" class="btn btn-danger">Cancel</a>
+                                <a href="{{ route('clients.index')  }}" class="btn btn-danger">Cancelar</a>
                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"
                                                                                  id="show_loader"></i>&nbsp;Save
                                 </button>
