@@ -16,7 +16,10 @@ RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www
 
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
-    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache \
+    && mkdir -p /var/www/vendor \
+    && chown -R www-data:www-data /var/www/vendor \
+    && chmod -R 775 /var/www/vendor
 
 RUN php composer.phar install --optimize-autoloader --no-dev
 
