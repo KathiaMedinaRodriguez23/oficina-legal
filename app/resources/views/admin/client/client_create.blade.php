@@ -349,4 +349,28 @@
     <script src="{{asset('assets/admin/vendors/jquery-ui/jquery-ui.js') }}"></script>
     <script src="{{asset('assets/js/client/add-client-validation.js')}}"></script>
     <script src="{{asset('assets/js/client/document-type-validation.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const numeroInput = document.getElementById("mobile");
+
+            function formatPhoneNumber() {
+                // Eliminar cualquier carácter que no sea un dígito o el símbolo '+'
+                const value = numeroInput.value.replace(/[^\d+]/g, '');
+
+                // Asegurar que el número no tenga más de 10 caracteres
+                const formattedValue = value.substring(0, 10);
+
+                if (formattedValue.length < 2 && formattedValue.charAt(0) !== '0') {
+                    numeroInput.value = '';
+                } else {
+                    // Agregar el código de país '+' si comienza con '0'
+                    if (formattedValue.startsWith('0')){
+                        numeroInput.value = '+' + formattedValue;
+                    } else {
+                        numeroInput.value = formattedValue;
+                    }
+                }
+            }
+        });
+    </script>
 @endpush
