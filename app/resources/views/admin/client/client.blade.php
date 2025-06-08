@@ -1,5 +1,17 @@
 @extends('admin.layout.app')
 @section('title','Cliente')
+@push('style')
+    <style>
+        table.dataTable th.sorting:after,
+        table.dataTable th.sorting_asc:after,
+        table.dataTable th.sorting_desc:after {
+            display: none;
+        }
+        table.dataTable th {
+            cursor: default;
+        }
+    </style>
+@endpush
 @section('content')
 <div class="">
     @component('component.heading', [
@@ -21,8 +33,8 @@
                            data-url="{{ route('clients.list') }}">
                         <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th>Cliente</th>
+                            <th width="1%">No</th>
+                            <th width="10%">Cliente</th>
                             <th width="5%">DNI/RUC</th>
                             <th width="5%">Celulares</th>
                             <th width="5%" data-orderable="false">Caso</th>

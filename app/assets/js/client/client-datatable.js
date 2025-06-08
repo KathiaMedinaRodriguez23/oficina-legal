@@ -22,6 +22,7 @@ var DatatableRemoteAjaxDemo = (function() {
             serverSide: true,
             stateSave: false,       // Deshabilitado mientras pruebas
             lengthMenu: [5, 10, 25, 50],
+            ordering: false,
             responsive: true,
             width: 200,
             ajax: {
@@ -29,7 +30,6 @@ var DatatableRemoteAjaxDemo = (function() {
                 type: 'POST',
                 dataType: 'json'
             },
-            order: [[0, 'desc']],
             columns: [
                 { data: 'id' },
                 { data: 'first_name' },
