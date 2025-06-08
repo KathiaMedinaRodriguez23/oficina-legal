@@ -25,9 +25,6 @@ services:
     container_name: laravel_app
     restart: always
     working_dir: /var/www
-    volumes:
-      - ./app:/var/www
-      - ./app/assets:/var/www/assets
     env_file:
       - ./app/.env
     depends_on:

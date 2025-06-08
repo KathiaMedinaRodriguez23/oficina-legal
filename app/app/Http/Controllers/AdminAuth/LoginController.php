@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-       public $redirectTo = '/admin/dashboard';
+       public $redirectTo = '/admin/clients';
 
     /**
      * Create a new controller instance.
@@ -66,7 +66,7 @@ class LoginController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect('admin/login');
-        
+
     }
     public function loginAsAdmin()
     {
