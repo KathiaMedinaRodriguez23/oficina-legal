@@ -47,7 +47,7 @@
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
                     {{ csrf_field() }}
 
-                    <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 20px;">
+                    <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 10px; width: 60%">
 
                     <h2> Inicia Sesión </h2>
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
