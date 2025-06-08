@@ -150,7 +150,7 @@ class ClientController extends Controller
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
-        $AdvocateClient->alternate_no = $request->alternate_no;
+        $AdvocateClient->alternate_no = $request->document_number;
         $AdvocateClient->address = $request->address;
         $AdvocateClient->country_id = $request->country;
         $AdvocateClient->state_id = $request->state;
@@ -256,7 +256,7 @@ class ClientController extends Controller
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
-        $AdvocateClient->alternate_no = $request->alternate_no;
+        $AdvocateClient->alternate_no = $request->document_number;
         $AdvocateClient->address = $request->address;
         $AdvocateClient->country_id = $request->country;
         $AdvocateClient->state_id = $request->state;

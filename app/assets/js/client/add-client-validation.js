@@ -1,10 +1,22 @@
 "use strict";
-var checkExistRoute = $('#route-exist-check').val();
-var token = $('#token-value').val();
-var FormControlsClient = {
 
+var FormControlsClient = {
     init: function () {
         var btn = $("form :submit");
+
+        $.validator.addMethod("dniOrRuc", function (value, element) {
+            var dniSelected = $("#dni").is(":checked");
+            if (dniSelected) {
+                return /^\d{8}$/.test(value);
+            } else {
+                return /^(10|20)\d{9}$/.test(value);
+            }
+        }, function(params, element) {
+            return $("#dni").is(":checked")
+                ? "El DNI debe tener exactamente 8 dígitos numéricos"
+                : "El RUC debe tener 11 dígitos y empezar con 10 o 20";
+        });
+
         $("#add_client").validate({
             debug: false,
             rules: {
@@ -15,8 +27,12 @@ var FormControlsClient = {
                 country: "required",
                 state: "required",
                 city_id: "required",
+                document_number: {
+                    required: true,
+                    dniOrRuc: true
+                },
                 email: {
-                    email: true,
+                    email: true
                 },
                 mobile: {
                     required: true,
@@ -24,14 +40,7 @@ var FormControlsClient = {
                     maxlength: 10,
                     number: true
                 },
-                alternate_no: {
-                    required: false,
-                    minlength: 10,
-                    maxlength: 10,
-                    number: true
-                },
                 reference_mobile: {
-                    required: false,
                     minlength: 10,
                     maxlength: 10,
                     number: true
@@ -45,30 +54,21 @@ var FormControlsClient = {
                 country: "Por favor, seleccione el país.",
                 state: "Por favor, seleccione el estado.",
                 city_id: "Por favor, seleccione la ciudad.",
-
+                document_number: "Por favor, ingrese el documento.",
                 email: {
-                    email: "Por favor, ingrese un correo electrónico válido.",
+                    email: "Por favor, ingrese un correo electrónico válido."
                 },
                 mobile: {
                     required: "Por favor, ingrese el número de celular.",
                     minlength: "El número debe tener 10 dígitos.",
                     maxlength: "El número debe tener 10 dígitos.",
-                    number: "Por favor, ingrese solo dígitos del 0 al 9.",
-                },
-                alternate_no: {
-                    required: "Por favor, ingrese el número alternativo.",
-                    minlength: "El número debe tener 10 dígitos.",
-                    maxlength: "El número debe tener 10 dígitos.",
-                    number: "Por favor, ingrese solo dígitos del 0 al 9.",
+                    number: "Por favor, ingrese solo dígitos."
                 },
                 reference_mobile: {
-                    required: "Por favor, ingrese el número de referencia.",
                     minlength: "El número debe tener 10 dígitos.",
                     maxlength: "El número debe tener 10 dígitos.",
-                    number: "Por favor, ingrese solo dígitos del 0 al 9.",
+                    number: "Por favor, ingrese solo dígitos."
                 }
-
-
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
@@ -79,57 +79,41 @@ var FormControlsClient = {
                 $("button[name='btn_add_user']").attr("disabled", "disabled").button('refresh');
                 return true;
             }
-        })
-    }
+        });
 
+        // Al cambiar de radio (DNI/RUC), resetear el campo
+        $("input[name='document_type']").on('change', function () {
+            $("#document_number").val('');
+            $("#document_number").valid(); // revalida el campo
+        });
+    }
 };
+
 jQuery(document).ready(function () {
     FormControlsClient.init();
 
-    //set initial state.
     $("#change_court_chk").on("click", function () {
-        if ($(this).is(":checked")) {
-
-            var returnVal = this.value;
-            if (returnVal == 'Yes') {
-                $('#change_court_div').removeClass('hidden');
-            }
-        } else {
-            $('#change_court_div').addClass('hidden');
-        }
+        $('#change_court_div').toggleClass('hidden', !this.checked);
     });
 
-    $('.two').css('display', 'none');
+    $('.two').hide();
 
     $('input[type=radio][name=type]').on("change", function () {
-
-        if (this.value == 'single') {
-            $('.one').css('display', 'block');
-            $('.two').css('display', 'none');
-        } else if (this.value == 'multiple') {
-            $('.two').css('display', 'block');
-            $('.one').css('display', 'none');
-        }
-
+        $('.one').toggle(this.value === 'single');
+        $('.two').toggle(this.value === 'multiple');
     });
 
     $('.repeater').repeater({
         initEmpty: false,
-        defaultValues: {
-            'text-input': 'foo'
-        },
+        defaultValues: { 'text-input': 'foo' },
         show: function () {
             $(this).slideDown();
-            var id = $(this).find('[type="text"]').attr('id');
-            var label = $(this).find('label');
-            label.attr('for', id);
-            $(this).addClass('fade-in-info').slideDown();
         },
         hide: function (deleteElement) {
-            if (confirm('Are you sure you want to delete this element?')) {
+            if (confirm('Estas seguro de eliminar este elemento?')) {
                 $(this).slideUp(deleteElement);
             }
         },
         isFirstItemUndeletable: false
-    })
+    });
 });
