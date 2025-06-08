@@ -202,9 +202,9 @@
                                                                data-rule-number="true"
                                                                data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                                data-rule-minlength="10"
-                                                               data-msg-minlength="El número debe tener 10 dígitos."
+                                                               data-msg-minlength="El número debe tener 9 dígitos."
                                                                data-rule-maxlength="10"
-                                                               data-msg-maxlength="El número debe tener 10 dígitos."
+                                                               data-msg-maxlength="El número debe tener 9 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
                                                                maxlength="10">
                                                     </div>
@@ -260,9 +260,9 @@
                                                            data-rule-number="true"
                                                            data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                            data-rule-minlength="10"
-                                                           data-msg-minlength="El número debe tener 10 dígitos."
+                                                           data-msg-minlength="El número debe tener 9 dígitos."
                                                            data-rule-maxlength="10"
-                                                           data-msg-maxlength="El número debe tener 10 dígitos."
+                                                           data-msg-maxlength="El número debe tener 9 dígitos."
                                                            class="form-control" maxlength="10">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -335,9 +335,9 @@
                                                                data-rule-number="true"
                                                                data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                                data-rule-minlength="10"
-                                                               data-msg-minlength="El número debe tener 10 dígitos."
+                                                               data-msg-minlength="El número debe tener 9 dígitos."
                                                                data-rule-maxlength="10"
-                                                               data-msg-maxlength="El número debe tener 10 dígitos."
+                                                               data-msg-maxlength="El número debe tener 9 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
                                                                maxlength="10">
                                                     </div>
@@ -401,9 +401,9 @@
                                                            data-rule-number="true"
                                                            data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                            data-rule-minlength="10"
-                                                           data-msg-minlength="El número debe tener 10 dígitos."
+                                                           data-msg-minlength="El número debe tener 9 dígitos."
                                                            data-rule-maxlength="10"
-                                                           data-msg-maxlength="El número debe tener 10 dígitos.."
+                                                           data-msg-maxlength="El número debe tener 9 dígitos.."
                                                            class="form-control" maxlength="10">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">

@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a2e3fd3-09ee-4f03-a83e-afb2242acc02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/client/client-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/client-datatable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor/vendor-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/vendor-validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,20 +34,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2yCyCXiUTY9eDIoJaVwEEk9tQLP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

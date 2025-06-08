@@ -20,20 +20,20 @@ var FormControlsClient = {
                 },
                 mobile: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number: true
                 },
                 alternate_no: {
                     required: false,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 8,
+                    maxlength: 8,
                     number: true
                 },
                 reference_mobile: {
                     required: false,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number: true
                 }
             },
@@ -57,14 +57,14 @@ var FormControlsClient = {
                 },
                 alternate_no: {
                     required: "Por favor, ingrese el número alternativo.",
-                    minlength: "El número debe tener 10 dígitos.",
-                    maxlength: "El número debe tener 10 dígitos.",
+                    minlength: "El número debe tener 9 dígitos.",
+                    maxlength: "El número debe tener 9 dígitos.",
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 reference_mobile: {
                     required: "Por favor, ingrese el número de referencia.",
-                    minlength: "El número debe tener 10 dígitos.",
-                    maxlength: "El número debe tener 10 dígitos.",
+                    minlength: "El número debe tener 9 dígitos.",
+                    maxlength: "El número debe tener 9 dígitos.",
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 }
             },
