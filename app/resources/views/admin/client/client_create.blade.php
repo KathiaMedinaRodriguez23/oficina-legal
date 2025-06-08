@@ -349,29 +349,5 @@
     <script src="{{asset('assets/admin/vendors/jquery-ui/jquery-ui.js')}}"></script>
     <script src="{{asset('assets/js/client/add-client-validation.js')}}"></script>
     <script src="{{asset('assets/js/client/document-type-validation.js')}}"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const numeroInput = document.getElementById("mobile");
-            if (!numeroInput) return;
-
-            function formatPhoneNumber() {
-                // eliminamos todo menos dígitos y '+'
-                let value = numeroInput.value.replace(/[^\d+]/g, '');
-                // máximo 10 caracteres
-                value = value.substring(0, 10);
-
-                // si empieza con '0' anteponemos '+'
-                if (value.startsWith('0')) {
-                    numeroInput.value = '+' + value;
-                } else {
-                    numeroInput.value = value;
-                }
-            }
-
-            // **Aquí enlazamos el formateo al tipear y al perder foco**
-            numeroInput.addEventListener('input', formatPhoneNumber);
-            numeroInput.addEventListener('blur', formatPhoneNumber);
-        });
-    </script>
+    <script src="{{asset('assets/js/client/validate-phone.js')}}"></script>
 @endpush
