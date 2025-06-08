@@ -27,16 +27,19 @@ var FormControlsClient = {
                 state: "required",
                 city_id: "required",
                 document_number: "required",
-                email: "required email",
+                email: {
+                    required: true,
+                    email: true
+                },
                 mobile: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number: true
                 },
                 reference_mobile: {
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number: true
                 }
             },

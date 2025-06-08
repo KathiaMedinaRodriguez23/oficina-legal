@@ -1,6 +1,14 @@
 var DatatableRemoteAjaxDemo = (function() {
     // Función privada para inicializar la tabla
     function initTable() {
+        var $tbl = $('#clientDataTable');
+
+        // Si ya existe, lo destruyo y limpio el <tbody>
+        if ( $.fn.DataTable.isDataTable($tbl) ) {
+            $tbl.DataTable().destroy();
+            $tbl.find('tbody').empty();
+        }
+
         // CSRF token para Laravel
         $.ajaxSetup({
             headers: {
@@ -8,7 +16,8 @@ var DatatableRemoteAjaxDemo = (function() {
             }
         });
 
-        $('#clientDataTable').DataTable({
+        $tbl.DataTable({
+            destroy: true,
             processing: true,
             serverSide: true,
             stateSave: false,       // Deshabilitado mientras pruebas
@@ -65,5 +74,7 @@ var DatatableRemoteAjaxDemo = (function() {
 
 // Arranca la tabla cuando el DOM esté listo
 jQuery(document).ready(function() {
-    DatatableRemoteAjaxDemo.init();
+    if ( ! $.fn.DataTable.isDataTable('#clientDataTable') ) {
+        DatatableRemoteAjaxDemo.init();
+    }
 });
