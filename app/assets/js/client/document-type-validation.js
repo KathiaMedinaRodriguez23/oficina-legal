@@ -2,14 +2,14 @@ $(function(){
     // Elementos
     var $dniRadio       = $('#dni'),
         $rucRadio       = $('#ruc'),
-        $documentInput  = $('#document_number'),
+        $docInput       = $('#document_number'),
         $label          = $('#dni_ruc_label'),
         $error          = $('#error_message');
 
     // Mostrar error
     function showError(message){
         $error.text(message).show();
-        $documentInput
+        $docInput
             .addClass('is-invalid')
             .removeClass('is-valid');
     }
@@ -17,7 +17,7 @@ $(function(){
     // Ocultar error y marcar válido
     function hideError(){
         $error.hide();
-        $documentInput
+        $docInput
             .removeClass('is-invalid')
             .addClass('is-valid');
     }
@@ -25,24 +25,24 @@ $(function(){
     // Limpiar validaciones
     function clearValidation(){
         $error.hide();
-        $documentInput.removeClass('is-invalid is-valid');
+        $docInput.removeClass('is-invalid is-valid');
     }
 
     // Ajustar label, placeholder y maxlength según tipo
     function handleTypeChange(){
-        $documentInput.val('');
         clearValidation();
+        $docInput.val('');
 
         if ($dniRadio.is(':checked')) {
-            $label.html('<span class="text-danger">*</span>');
-            $documentInput
+            $label.text('DNI');
+            $docInput
                 .attr('maxlength', 8)
                 .attr('placeholder', 'Ej: 01234567');
         } else {
-            $label.html('<span class="text-danger">*</span>');
-            $documentInput
+            $label.text('RUC');
+            $docInput
                 .attr('maxlength', 11)
-                .attr('placeholder', 'Ej: 10123456789');
+                .attr('placeholder', 'Ej: 20123456789');
         }
     }
 
@@ -50,60 +50,70 @@ $(function(){
     $dniRadio.add($rucRadio).on('change', handleTypeChange);
 
     // Validación en tiempo real mientras escribe
-    $documentInput.on('input', function(){
+    $docInput.on('input', function(){
         var val = $(this).val().replace(/\D/g, ''); // solo dígitos
-        $(this).val(val);
-
-        if (!val) {
-            clearValidation();
-            return;
-        }
 
         if ($dniRadio.is(':checked')) {
-            if (val.length < 8) {
-                showError('El DNI debe tener exactamente 8 dígitos');
-            } else if (val.length === 8) {
+            // DNI: exactamente 8 dígitos, permite empezar en 0
+            val = val.substring(0, 8);
+            $(this).val(val);
+
+            if (val.length === 8) {
                 hideError();
+            } else {
+                clearValidation();
             }
+
         } else {
-            // RUC
-            if (val.length < 11) {
-                if (val.length >= 2 && !/^(10|20)/.test(val)) {
+            // RUC: exactamente 11 dígitos, debe empezar 10 o 20
+            val = val.substring(0, 11);
+
+            // si ya hay al menos 2 dígitos, validar prefijo
+            if (val.length >= 2) {
+                var prefix = val.substring(0, 2);
+                if (!/^(10|20)$/.test(prefix)) {
                     showError('El RUC debe empezar con 10 o 20');
-                } else {
-                    showError('El RUC debe tener exactamente 11 dígitos');
+                    $(this).val('');
+                    return;
                 }
-            } else if (val.length === 11) {
-                if (/^(10|20)\d{9}$/.test(val)) {
-                    hideError();
-                } else {
-                    showError('El RUC debe empezar con 10 o 20');
-                }
+            }
+
+            $(this).val(val);
+
+            if (val.length === 11) {
+                hideError();
+            } else {
+                clearValidation();
             }
         }
     });
 
     // Validación al perder el foco
-    $documentInput.on('blur', function(){
+    $docInput.on('blur', function(){
         var val = $(this).val();
         if (!val) return;
 
-        if ($dniRadio.is(':checked') && !/^\d{8}$/.test(val)) {
-            showError('DNI inválido: debe tener 8 dígitos numéricos');
+        if ($dniRadio.is(':checked') && val.length !== 8) {
+            showError('El DNI debe tener exactamente 8 dígitos');
         }
         if ($rucRadio.is(':checked') && !/^(10|20)\d{9}$/.test(val)) {
-            showError('RUC inválido: debe tener 11 dígitos y empezar con 10 o 20');
+            showError('El RUC debe tener 11 dígitos y empezar con 10 o 20');
         }
     });
 
     // Prevenir pegado de texto no numérico
-    $documentInput.on('paste', function(e){
+    $docInput.on('paste', function(e){
         e.preventDefault();
-        var text    = (e.originalEvent.clipboardData || window.clipboardData)
+        var text = (e.originalEvent.clipboardData || window.clipboardData)
             .getData('text')
             .replace(/\D/g, '');
-        var maxLen  = $dniRadio.is(':checked') ? 8 : 11;
-        $(this).val(text.substring(0, maxLen)).trigger('input');
+        // recortar a la longitud adecuada
+        if ($dniRadio.is(':checked')) {
+            text = text.substring(0, 8);
+        } else {
+            text = text.substring(0, 11);
+        }
+        $(this).val(text).trigger('input');
     });
 
     // Estado inicial

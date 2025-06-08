@@ -9,19 +9,18 @@
         function formatPhone() {
             // 1) Extraer solo dígitos
             let digits = input.value.replace(/\D/g, '');
-            // 2) Limitar a 10 dígitos
-            digits = digits.substring(0, 10);
-            // 3) Si arranca con '0', los quitamos y anteponemos '+'
-            if (digits.startsWith('0')) {
-                digits = digits.replace(/^0+/, '');
-                input.value = '+' + digits;
-            } else {
-                input.value = digits;
+            // 2) Si hay al menos un dígito y NO es "9", lo borramos todo
+            if (digits.length > 0 && digits.charAt(0) !== '9') {
+                digits = '';
             }
+            // 3) Limitar a 9 dígitos (9XXXXXXXX)
+            digits = digits.substring(0, 9);
+            // 4) Volver a volcar el valor limpio
+            input.value = digits;
         }
 
-        // 4) Enlazar eventos
+        // 5) Enlazar eventos
         input.addEventListener('input', formatPhone);
-        input.addEventListener('blur', formatPhone);
+        input.addEventListener('blur',  formatPhone);
     });
 })();

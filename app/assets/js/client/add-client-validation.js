@@ -4,6 +4,7 @@ var FormControlsClient = {
     init: function () {
         var btn = $("form :submit");
 
+        // 1) Método custom para validar DNI o RUC en el submit
         $.validator.addMethod("dniOrRuc", function (value, element) {
             var dniSelected = $("#dni").is(":checked");
             if (dniSelected) {
@@ -17,6 +18,35 @@ var FormControlsClient = {
                 : "El RUC debe tener 11 dígitos y empezar con 10 o 20";
         });
 
+        // 2) Ajusta label, placeholder y maxlength según tipo
+        function handleDocTypeChange() {
+            var $input = $("#document_number"),
+                $label = $("#dni_ruc_label");
+
+            $input.val('').removeClass('is-invalid is-valid');
+            $("#error_message").hide();
+
+            if ($("#dni").is(":checked")) {
+                $label.text("").append(' <span class="text-danger">*</span>');
+                $input
+                    .attr("maxlength", 8)
+                    .attr("placeholder", "Ej: 01234567");
+            } else {
+                $label.text("").append(' <span class="text-danger">*</span>');
+                $input
+                    .attr("maxlength", 11)
+                    .attr("placeholder", "Ej: 20123456789");
+            }
+        }
+
+        // 3) Ejecuta al inicio y cuando cambie el tipo
+        handleDocTypeChange();
+        $("input[name='document_type']").on('change', function () {
+            handleDocTypeChange();
+            $("#document_number").valid(); // revalida
+        });
+
+        // 4) Inicializa el validateur de jQuery
         $("#add_client").validate({
             debug: false,
             rules: {
@@ -26,28 +56,15 @@ var FormControlsClient = {
                 country: "required",
                 state: "required",
                 city_id: "required",
-                document_number: "required",
-                email: {
-                    required: true,
-                    email: true
-                },
-                mobile: {
-                    required: true,
-                    minlength: 9,
-                    maxlength: 9,
-                    number: true
-                },
-                reference_mobile: {
-                    minlength: 9,
-                    maxlength: 9,
-                    number: true
-                }
+                document_number: { required: true, dniOrRuc: true },
+                email: { required: true, email: true },
+                mobile: { required: true, minlength: 9, maxlength: 9, number: true },
+                reference_mobile: { minlength: 9, maxlength: 9, number: true }
             },
             messages: {
                 f_name: "Por favor, ingrese el nombre.",
                 m_name: "Por favor, ingrese el segundo nombre.",
                 l_name: "Por favor, ingrese el apellido.",
-                user_email: "Por favor, ingrese el correo electrónico.",
                 address: "Por favor, ingrese la dirección.",
                 country: "Por favor, seleccione el país.",
                 state: "Por favor, seleccione el estado.",
@@ -80,17 +97,45 @@ var FormControlsClient = {
                 }
             },
             submitHandler: function () {
-                $('#show_loader').removeClass('fa-save');
-                $('#show_loader').addClass('fa-spin fa-spinner');
+                $('#show_loader').removeClass('fa-save').addClass('fa-spin fa-spinner');
                 $("button[name='btn_add_user']").attr("disabled", "disabled").button('refresh');
                 return true;
             }
         });
 
-        // Al cambiar de radio (DNI/RUC), resetear el campo
-        $("input[name='document_type']").on('change', function () {
-            $("#document_number").val('');
-            $("#document_number").valid(); // revalida el campo
+        // 5) *** Nuevo: restringir tecleo en RUC ***
+        $("#document_number").on('keypress', function(e) {
+            var isRUC = $("#ruc").is(":checked");
+            if (!isRUC) return;
+
+            var char = String.fromCharCode(e.which);
+            var val  = this.value;
+
+            // solo dígitos
+            if (!/^\d$/.test(char)) {
+                e.preventDefault();
+                return;
+            }
+            // primer carácter: solo 1 o 2
+            if (val.length === 0 && !/^[12]$/.test(char)) {
+                e.preventDefault();
+                return;
+            }
+            // segundo carácter: solo 0 (para formar 10 o 20)
+            if (val.length === 1 && char !== '0') {
+                e.preventDefault();
+                return;
+            }
+            // máximo 11 dígitos
+            if (val.length >= 11) {
+                e.preventDefault();
+                return;
+            }
+        });
+
+        // 6) Re-validar selects al cambiar
+        $('#country, #state, #city_id').on('change', function(){
+            $(this).valid();
         });
     }
 };
@@ -103,7 +148,6 @@ jQuery(document).ready(function () {
     });
 
     $('.two').hide();
-
     $('input[type=radio][name=type]').on("change", function () {
         $('.one').toggle(this.value === 'single');
         $('.two').toggle(this.value === 'multiple');
@@ -112,11 +156,9 @@ jQuery(document).ready(function () {
     $('.repeater').repeater({
         initEmpty: false,
         defaultValues: { 'text-input': 'foo' },
-        show: function () {
-            $(this).slideDown();
-        },
+        show: function () { $(this).slideDown(); },
         hide: function (deleteElement) {
-            if (confirm('Estas seguro de eliminar este elemento?')) {
+            if (confirm('¿Estás seguro de eliminar este elemento?')) {
                 $(this).slideUp(deleteElement);
             }
         },
