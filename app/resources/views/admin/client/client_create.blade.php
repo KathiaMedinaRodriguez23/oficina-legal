@@ -3,12 +3,13 @@
 @push('style')
     <style>
         .error-message {
-            color: #dc3545;
-            font-size: 0.875em;
+            color: #a94442;
+            font-size: 1em;
             margin-top: 5px;
+            font-weight: 700;
         }
         .form-control.is-invalid {
-            border-color: #dc3545;
+            border-color: #a94442;
         }
         .form-control.is-valid {
             border-color: #28a745;
@@ -95,13 +96,12 @@
 
                                 <input
                                     type="text"
-                                    placeholder="Ingrese su número"
                                     class="form-control"
                                     id="document_number"
                                     name="document_number"
-                                >
-
-                                <div class="error-message" id="error_message" style="display:none;"></div>
+                                    placeholder="Ej: 01234567"
+                                />
+                                <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
 
                             <div class="col-md-8 col-sm-12 col-xs-12 form-group">
