@@ -47,11 +47,8 @@
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
                     {{ csrf_field() }}
 
-                    @if($image_logo->logo_img!='')
-                        <img src="{{asset(config('constants.LOGO_FOLDER_PATH') .'/'. $image_logo->logo_img)}}" style="margin-bottom: 20px;">
-                    @else
-                        <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 20px;">
-                    @endif
+                    <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 20px;">
+
                     <h2> Inicia Sesión </h2>
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus placeholder="Email">
