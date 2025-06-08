@@ -74,7 +74,7 @@
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <label for="mobile">Celular <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" class="form-control" id="mobile" maxlength="10"
+                                <input type="text" placeholder="" class="form-control" id="mobile" maxlength="9"
                                        name="mobile">
                             </div>
                         </div>
@@ -210,11 +210,11 @@
                                                        data-msg-required="Por favor, ingrese el número de celular."
                                                        data-rule-number="true"
                                                        data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                       data-rule-minlength="10"
-                                                       data-msg-minlength="El número debe tener 10 dígitos."
+                                                       data-rule-minlength="9"
+                                                       data-msg-minlength="El número debe tener 9 dígitos."
                                                        data-rule-maxlength="10"
-                                                       data-msg-maxlength="El número debe tener 10 dígitos."
-                                                       class="form-control" maxlength="10">
+                                                       data-msg-maxlength="El número debe tener 9 dígitos."
+                                                       class="form-control" maxlength="9">
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -278,11 +278,11 @@
                                                        data-msg-required="Por favor, ingrese el número de celular."
                                                        data-rule-number="true"
                                                        data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                       data-rule-minlength="10"
-                                                       data-msg-minlength="El número debe tener 10 dígitos."
-                                                       data-rule-maxlength="10"
-                                                       data-msg-maxlength="El número debe tener 10 dígitos."
-                                                       class="form-control" maxlength="10">
+                                                       data-rule-minlength="9"
+                                                       data-msg-minlength="El número debe tener 9 dígitos."
+                                                       data-rule-maxlength="9"
+                                                       data-msg-maxlength="El número debe tener 9 dígitos."
+                                                       class="form-control" maxlength="9">
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">

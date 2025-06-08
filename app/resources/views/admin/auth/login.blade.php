@@ -73,7 +73,7 @@
                     </div>
                     <div>
                         <button type="submit" class="btn btn-default">
-                            Login
+                            Ingresar
                         </button>
                         <a class="reset_pass"  href="{{ url('/admin/password/reset') }}">Olvidaste la contraseña?</a>
                     </div>

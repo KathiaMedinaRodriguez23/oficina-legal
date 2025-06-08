@@ -56,13 +56,13 @@ var FormControlsClient = {
                 email: "Por favor, ingrese un correo electrónico válido.",
                 mobile: {
                     required: "Por favor, ingrese el número de celular.",
-                    minlength: "El número debe tener 10 dígitos.",
-                    maxlength: "El número debe tener 10 dígitos.",
+                    minlength: "El número debe tener 9 dígitos.",
+                    maxlength: "El número debe tener 9 dígitos.",
                     number: "Por favor, ingrese solo dígitos."
                 },
                 reference_mobile: {
-                    minlength: "El número debe tener 10 dígitos.",
-                    maxlength: "El número debe tener 10 dígitos.",
+                    minlength: "El número debe tener 9 dígitos.",
+                    maxlength: "El número debe tener 9 dígitos.",
                     number: "Por favor, ingrese solo dígitos."
                 }
             },

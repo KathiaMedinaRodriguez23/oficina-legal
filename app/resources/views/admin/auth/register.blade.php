@@ -1,5 +1,5 @@
-@extends('admin.layout.auth')
-
+@extends('admin.layout.app')
+@section('title','Register')
 @section('content')
 <div class="container">
     <div class="row">
