@@ -1,65 +1,68 @@
-"use strict";
-var DatatableRemoteAjaxDemo = function () {
-
-    var lsitDataInTable = function () {
-        var t;
-
+var DatatableRemoteAjaxDemo = (function() {
+    // Función privada para inicializar la tabla
+    function initTable() {
+        // CSRF token para Laravel
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        t = $('#clientDataTable').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "stateSave": true,
-            "lengthMenu": [10, 25, 50],
-            "responsive": true,
-            "oLanguage": {sProcessing: "<div class='loader-container'><div id='loader'></div></div>"},
-            "width": 200,
-            // "iDisplayLength": 2,
-            "ajax": {
-                "url": $('#clientDataTable').attr('data-url'),
-                "dataType": "json",
-                "type": "POST",
-                "data": function (d) {
-                    return $.extend({}, d, {});
-                }
-            },
-            "order": [
-                [0, "desc"]
-            ],
-            "columns": [{
-                "data": "id"
-            },
 
+        $('#clientDataTable').DataTable({
+            processing: true,
+            serverSide: true,
+            stateSave: false,       // Deshabilitado mientras pruebas
+            lengthMenu: [5, 10, 25, 50],
+            responsive: true,
+            width: 200,
+            ajax: {
+                url: $('#clientDataTable').data('url'),
+                type: 'POST',
+                dataType: 'json'
+            },
+            order: [[0, 'desc']],
+            columns: [
+                { data: 'id' },
+                { data: 'first_name' },
+                { data: 'mobile' },
+                { data: 'case',   orderable: false },
+                { data: 'is_active', orderable: false },
                 {
-                    "data": "first_name"
-                },
-                {
-                    "data": "mobile"
-                },
-                {
-                    "data": "case"
-                },
-                {
-                    "data": "is_active"
-                },
-                {
-                    "data": "action"
+                    data: 'action',
+                    orderable: false,
+                    className: 'text-center'
                 }
-            ]
+            ],
+            language: {
+                processing:   "<div class='loader-container'><div id='loader'></div></div>",
+                emptyTable:   "No hay datos disponibles en la tabla",
+                zeroRecords:  "No se encontraron registros que coincidan",
+                lengthMenu:   "Mostrar _MENU_ registros",
+                info:         "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                infoEmpty:    "Mostrando 0 a 0 de 0 registros",
+                infoFiltered: "(filtrado de _MAX_ registros totales)",
+                search:       "Buscar:",
+                paginate: {
+                    first:    "Primero",
+                    previous: "Anterior",
+                    next:     "Siguiente",
+                    last:     "Último"
+                },
+                aria: {
+                    sortAscending:  ": activar para ordenar columna ascendente",
+                    sortDescending: ": activar para ordenar columna descendente"
+                }
+            }
         });
     }
 
-    //== Public Functions
+    // API pública
     return {
-        // public functions
-        init: function () {
-            lsitDataInTable();
-        }
+        init: initTable
     };
-}();
-jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+})();
+
+// Arranca la tabla cuando el DOM esté listo
+jQuery(document).ready(function() {
+    DatatableRemoteAjaxDemo.init();
 });

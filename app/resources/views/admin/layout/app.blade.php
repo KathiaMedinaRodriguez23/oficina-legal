@@ -146,6 +146,7 @@
 
 
 </script>
+<script src="{{ asset('assets/js/client/client-datatable.js') }}"></script>
 @stack('js')
 </body>
 </html>

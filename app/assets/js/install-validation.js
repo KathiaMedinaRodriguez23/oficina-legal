@@ -61,7 +61,7 @@ var FormControlsClient = {
                 error.appendTo(element.parent()).addClass('text-danger');
             },
             submitHandler: function (e) {
-                $('#show_loader').text('installing...');
+                $('#show_loader').text('instalando...');
                 $("button[name='btn_add_client']").attr("disabled", "disabled").button('refresh');
                 return true;
             }
