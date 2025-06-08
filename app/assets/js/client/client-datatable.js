@@ -24,6 +24,7 @@ var DatatableRemoteAjaxDemo = (function() {
             columns: [
                 { data: 'id' },
                 { data: 'first_name' },
+                { data: 'alternate_no' },
                 { data: 'mobile' },
                 { data: 'case',   orderable: false },
                 { data: 'is_active', orderable: false },

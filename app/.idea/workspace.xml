@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a2e3fd3-09ee-4f03-a83e-afb2242acc02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/client-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/client-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749352722928</updated>
-      <workItem from="1749352724177" duration="12844000" />
+      <workItem from="1749352724177" duration="14959000" />
     </task>
     <servers />
   </component>

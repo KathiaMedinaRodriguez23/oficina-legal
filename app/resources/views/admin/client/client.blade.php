@@ -23,13 +23,14 @@
                         <tr>
                             <th width="5%">No</th>
                             <th>Cliente</th>
+                            <th width="5%">DNI/RUC</th>
                             <th width="5%">Celulares</th>
                             <th width="5%" data-orderable="false">Caso</th>
                             <th width="5%" data-orderable="false">Estado</th>
                             <th width="5%" data-orderable="false" class="text-center">Accion</th>
                         </tr>
                         </thead>
-                        <tbody></tbody> {{-- ¡IMPORTANTE! --}}
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
