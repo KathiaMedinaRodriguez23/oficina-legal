@@ -21,16 +21,13 @@ var FormControlsClient = {
             debug: false,
             rules: {
                 f_name: "required",
-                m_name: "required",
                 l_name: "required",
                 address: "required",
                 country: "required",
                 state: "required",
                 city_id: "required",
                 document_number: "required",
-                email: {
-                    email: true
-                },
+                email: "required email",
                 mobile: {
                     required: true,
                     minlength: 10,

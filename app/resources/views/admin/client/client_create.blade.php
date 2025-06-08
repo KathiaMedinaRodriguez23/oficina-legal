@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="m_name">Segundo nombre <span class="text-danger">*</span></label>
+                                <label for="m_name">Segundo nombre <span class="text-danger"></span></label>
                                 <input type="text" placeholder="" class="form-control" id="m_name" name="m_name">
                             </div>
 
@@ -167,7 +167,7 @@
                         <div id="change_court_div" class="hidden">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Cliente <span class="text-danger">*</span></label><br>
+                                    <label>Defensor <span class="text-danger">*</span></label><br>
                                     <br>
                                     <input type="radio" name="type" id="test6" value="single" checked required/>
                                     &nbsp;&nbsp;Defensor unico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
