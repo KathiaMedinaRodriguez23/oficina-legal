@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="m_name">Segundo nombre <span class="text-danger">*</span></label>
+                                <label for="m_name">Segundo nombre <span class="text-danger"></span></label>
                                 <input type="text" placeholder="" class="form-control" id="m_name" name="m_name"
                                        value="{{ $client->middle_name ?? ''}}">
                             </div>

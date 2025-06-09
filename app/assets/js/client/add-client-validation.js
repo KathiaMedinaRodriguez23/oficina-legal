@@ -62,7 +62,6 @@ var FormControlsClient = {
             },
             messages: {
                 f_name: "Por favor, ingrese el nombre.",
-                m_name: "Por favor, ingrese el segundo nombre.",
                 l_name: "Por favor, ingrese el apellido.",
                 address: "Por favor, ingrese la dirección.",
                 country: "Por favor, seleccione el país.",

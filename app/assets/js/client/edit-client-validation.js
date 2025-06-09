@@ -64,7 +64,6 @@ var FormControlsClient = {
             debug: false,
             rules: {
                 f_name:           "required",
-                m_name:           "required",
                 l_name:           "required",
                 address:          "required",
                 country:          "required",
@@ -89,7 +88,6 @@ var FormControlsClient = {
             },
             messages: {
                 f_name:  "Ingrese el nombre.",
-                m_name:  "Ingrese el segundo nombre.",
                 l_name:  "Ingrese el apellido.",
                 address: "Ingrese la dirección.",
                 country: "Seleccione el país.",
