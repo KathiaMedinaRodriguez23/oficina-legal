@@ -62,7 +62,7 @@ class ClientController extends Controller
         $columns = array(
             0 => 'id',
             1 => 'first_name',
-            2 => 'alternate_no',
+            2 => 'dni_ruc',
             3 => 'mobile',
             4 => 'case',
             5 => 'is_active',
@@ -102,7 +102,7 @@ class ClientController extends Controller
             }
 
             $row['first_name'] = '<a class="title text-primary" href="' . $show . '">' . $item->full_name . '</a>';
-            $row['alternate_no'] = $item->alternate_no;
+            $row['document_number'] = $item->dni_ruc;
             $row['mobile'] = $item->mobile;
             $row['case'] = "<a class='title text-primary' href='{$case_list}'>" . $this->getClientCasesTotal($item->id) . "</a>";
 

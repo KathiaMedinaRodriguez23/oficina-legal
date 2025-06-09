@@ -34,12 +34,10 @@ $(function(){
         $docInput.val('');
 
         if ($dniRadio.is(':checked')) {
-            $label.text('DNI');
             $docInput
                 .attr('maxlength', 8)
                 .attr('placeholder', 'Ej: 01234567');
         } else {
-            $label.text('RUC');
             $docInput
                 .attr('maxlength', 11)
                 .attr('placeholder', 'Ej: 20123456789');

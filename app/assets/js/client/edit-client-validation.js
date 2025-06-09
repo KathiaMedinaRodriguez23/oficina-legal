@@ -25,7 +25,6 @@ var FormControlsClient = {
             var $input = $("#document_number"),
                 $label = $("#dni_ruc_label");
 
-            $input.val('').removeClass('is-invalid is-valid');
             $("#error_message").hide();
 
             if ($("#dni").is(":checked")) {
@@ -42,6 +41,9 @@ var FormControlsClient = {
         }
         handleDocTypeChange();
         $("input[name='document_type']").on('change', function () {
+            $("#document_number")
+                .val('')
+                .removeClass('is-invalid is-valid');
             handleDocTypeChange();
             $("#document_number").valid();
         });
@@ -85,8 +87,8 @@ var FormControlsClient = {
                 },
                 mobile: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number:    true,
                     remote: {
                         url:    checkExistRoute,
@@ -98,11 +100,6 @@ var FormControlsClient = {
                             id:     function () { return $("#client_id").val(); }
                         }
                     }
-                },
-                alternate_no: {
-                    minlength: 10,
-                    maxlength: 10,
-                    number:    true
                 },
                 reference_mobile: {
                     minlength: 10,
@@ -120,7 +117,6 @@ var FormControlsClient = {
                 city_id: "Seleccione la ciudad.",
                 document_number: {
                     required: "Por favor, ingrese el documento."
-                    // el mensaje de dniOrRuc ya se genera dinámicamente
                 },
                 email: {
                     required: "Por favor, ingrese el correo.",
@@ -129,19 +125,14 @@ var FormControlsClient = {
                 },
                 mobile: {
                     required: "Por favor, ingrese el móvil.",
-                    minlength:"El móvil debe tener 10 dígitos.",
-                    maxlength:"El móvil debe tener 10 dígitos.",
+                    minlength:"El móvil debe tener 9 dígitos.",
+                    maxlength:"El móvil debe tener 9 dígitos.",
                     number:   "Por favor, ingrese solo dígitos.",
                     remote:   "Este móvil ya está registrado."
                 },
-                alternate_no: {
-                    minlength:"El número debe tener 10 dígitos.",
-                    maxlength:"El número debe tener 10 dígitos.",
-                    number:   "Por favor, ingrese solo dígitos."
-                },
                 reference_mobile: {
-                    minlength:"El número debe tener 10 dígitos.",
-                    maxlength:"El número debe tener 10 dígitos.",
+                    minlength:"El número debe tener 9 dígitos.",
+                    maxlength:"El número debe tener 9 dígitos.",
                     number:   "Por favor, ingrese solo dígitos."
                 }
             },

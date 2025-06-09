@@ -4,7 +4,6 @@ var FormControlsClient = {
     init: function () {
         var btn = $("form :submit");
 
-        // 1) Método custom para validar DNI o RUC en el submit
         $.validator.addMethod("dniOrRuc", function (value, element) {
             var dniSelected = $("#dni").is(":checked");
             if (dniSelected) {
@@ -27,12 +26,12 @@ var FormControlsClient = {
             $("#error_message").hide();
 
             if ($("#dni").is(":checked")) {
-                $label.text("").append(' <span class="text-danger">*</span>');
+                $label.append('<span class="text-danger">*</span>');
                 $input
                     .attr("maxlength", 8)
                     .attr("placeholder", "Ej: 01234567");
             } else {
-                $label.text("").append(' <span class="text-danger">*</span>');
+                $label.append('<span class="text-danger">*</span>');
                 $input
                     .attr("maxlength", 11)
                     .attr("placeholder", "Ej: 20123456789");

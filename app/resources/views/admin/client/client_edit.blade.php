@@ -8,6 +8,9 @@
     'text' => 'Atras'
      ])
     @endcomponent
+    @php
+        $docType = old('document_type', $client->document_type);
+    @endphp
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             @include('component.error')
@@ -66,15 +69,27 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <div class="row">
                                     <label for="document_number" id="dni_ruc_label">
-                                        <br />
-                                        <span class="text-danger">*</span>
+                                        <br /><span class="text-danger">*</span>
                                     </label>
+
                                     <input
-                                        type="radio" name="document_type" id="dni" value="dni" checked required
+                                        type="radio"
+                                        name="document_type"
+                                        id="dni"
+                                        value="dni"
+                                        {{ $docType === 'dni' ? 'checked' : '' }}
+                                        required
                                     /> DNI
+
                                     &nbsp;&nbsp;
-                                    <input type="radio" name="document_type" id="ruc" value="ruc" />
-                                    RUC
+
+                                    <input
+                                        type="radio"
+                                        name="document_type"
+                                        id="ruc"
+                                        value="ruc"
+                                        {{ $docType === 'ruc' ? 'checked' : '' }}
+                                    /> RUC
                                 </div>
 
                                 <input
@@ -82,8 +97,11 @@
                                     class="form-control"
                                     id="document_number"
                                     name="document_number"
-                                    value="{{ $client->alternate_no }}"
+                                    placeholder="{{ $docType === 'dni' ? 'Ej: 01234567' : 'Ej: 20123456789' }}"
+                                    maxlength="{{ $docType === 'dni' ? 8 : 11 }}"
+                                    value="{{ old('document_number', $client->dni_ruc) }}"
                                 />
+
                                 <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12 form-group">

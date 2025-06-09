@@ -81,7 +81,7 @@
                                 </tr>
                                 <tr>
                                     <td>DNI/RUC</td>
-                                    <td class="fs15 fw700 text-right">{{ $client->alternate_no ?? '' }} </td>
+                                    <td class="fs15 fw700 text-right">{{ $client->dni_ruc ?? '' }} </td>
                                 </tr>
                                 <tr>
                                     <td>Celular de Referencia</td>
