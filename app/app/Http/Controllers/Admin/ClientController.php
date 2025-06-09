@@ -11,8 +11,7 @@ use App\Model\ClientPartiesInvoive;
 use App\Traits\DatatablTrait;
 use App\Model\Country;
 use App\Model\State;
-use App\Model\City;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -268,7 +267,7 @@ class ClientController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(StoreClient $request, $id)
     {
@@ -280,7 +279,8 @@ class ClientController extends Controller
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
-        $AdvocateClient->alternate_no = $request->document_number;
+        $AdvocateClient->dni_ruc = $request->document_number;
+        $AdvocateClient->document_type = $request->document_type;
         $AdvocateClient->address = $request->address;
         $AdvocateClient->country_id = $request->country;
         $AdvocateClient->state_id = $request->state;

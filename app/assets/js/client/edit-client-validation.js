@@ -7,7 +7,7 @@ var token                 = $('#token-value').val();
 var FormControlsClient = {
 
     init: function () {
-        // 1) Método custom para validar DNI o RUC
+
         $.validator.addMethod("dniOrRuc", function (value, element) {
             if ($("#dni").is(":checked")) {
                 return /^\d{8}$/.test(value);
@@ -20,7 +20,6 @@ var FormControlsClient = {
                 : "El RUC debe tener 11 dígitos y comenzar con 10 o 20";
         });
 
-        // 2) Ajusta label, placeholder y maxlength según tipo
         function handleDocTypeChange() {
             var $input = $("#document_number"),
                 $label = $("#dni_ruc_label");
@@ -39,7 +38,9 @@ var FormControlsClient = {
                     .attr("placeholder", "Ej: 20123456789");
             }
         }
+
         handleDocTypeChange();
+
         $("input[name='document_type']").on('change', function () {
             $("#document_number")
                 .val('')
@@ -48,7 +49,6 @@ var FormControlsClient = {
             $("#document_number").valid();
         });
 
-        // 3) Restricción de tecleo en RUC
         $("#document_number").on('keypress', function (e) {
             if (!$("#ruc").is(":checked")) return;
             var char = String.fromCharCode(e.which),
@@ -74,32 +74,12 @@ var FormControlsClient = {
                 email: {
                     required: true,
                     email:    true,
-                    remote: {
-                        url:    checkExistRoute,
-                        type:   "post",
-                        data:   {
-                            _token: token,
-                            field:  "email",
-                            value:  function () { return $("#email").val(); },
-                            id:     function () { return $("#client_id").val(); }
-                        }
-                    }
                 },
                 mobile: {
                     required: true,
                     minlength: 9,
                     maxlength: 9,
                     number:    true,
-                    remote: {
-                        url:    checkExistRoute,
-                        type:   "post",
-                        data:   {
-                            _token: token,
-                            field:  "mobile",
-                            value:  function () { return $("#mobile").val(); },
-                            id:     function () { return $("#client_id").val(); }
-                        }
-                    }
                 },
                 reference_mobile: {
                     minlength: 10,
@@ -155,31 +135,56 @@ var FormControlsClient = {
                 return true;
             }
         });
-
-        // 5) Resto de interacciones (igual al add-client)
-        $("#change_court_chk").on("click", function () {
-            $('#change_court_div').toggleClass('hidden', !this.checked);
-        });
-
-        $('input[type=radio][name=type]').on("change", function () {
-            $('.one').toggle(this.value === 'single');
-            $('.two').toggle(this.value === 'multiple');
-        });
-
-        $('.repeater').repeater({
-            initEmpty: false,
-            defaultValues: { 'text-input': 'foo' },
-            show: function () { $(this).slideDown(); },
-            hide: function (deleteElement) {
-                if (confirm('¿Estás seguro de eliminar este elemento?')) {
-                    $(this).slideUp(deleteElement);
-                }
-            },
-            isFirstItemUndeletable: false
-        });
     }
 };
 
 jQuery(document).ready(function () {
     FormControlsClient.init();
+
+    $("#change_court_chk").on("click", function () {
+        if ($(this).is(":checked")) {
+
+            var returnVal = this.value;
+            if (returnVal == 'Yes') {
+
+                $('#change_court_div').removeClass('hidden');
+            }
+        } else {
+            $('#change_court_div').addClass('hidden');
+        }
+    });
+
+    $('input[type=radio][name=type]').on("change", function () {
+
+        if (this.value == 'single') {
+            $('.one').css('display', 'block');
+            $('.two').css('display', 'none');
+        }
+
+        else if (this.value == 'multiple') {
+            $('.two').css('display', 'block');
+            $('.one').css('display', 'none');
+        }
+
+    });
+
+    $('.repeater').repeater({
+        initEmpty: false,
+        defaultValues: {
+            'text-input': 'foo'
+        },
+        show: function () {
+            $(this).slideDown();
+            var id = $(this).find('[type="text"]').attr('id');
+            var label = $(this).find('label');
+            label.attr('for',id);
+            $(this).addClass('fade-in-info').slideDown();
+        },
+        hide: function (deleteElement) {
+            if (confirm('¿Estás seguro de eliminar este elemento?')) {
+                $(this).slideUp(deleteElement);
+            }
+        },
+        isFirstItemUndeletable: false
+    });
 });

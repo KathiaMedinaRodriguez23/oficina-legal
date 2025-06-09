@@ -69,7 +69,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <div class="row">
                                     <label for="document_number" id="dni_ruc_label">
-                                        <br /><span class="text-danger">*</span>
+                                        <span class="text-danger">*</span>
                                     </label>
 
                                     <input
@@ -99,9 +99,8 @@
                                     name="document_number"
                                     placeholder="{{ $docType === 'dni' ? 'Ej: 01234567' : 'Ej: 20123456789' }}"
                                     maxlength="{{ $docType === 'dni' ? 8 : 11 }}"
-                                    value="{{ old('document_number', $client->dni_ruc) }}"
+                                    value="{{ $client->dni_ruc ?? '' }}"
                                 />
-
                                 <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12 form-group">
@@ -319,12 +318,6 @@
                                         </div>
 
                                     @endif
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <br>
-                                    <button data-repeater-create type="button" value="Add New"
-                                            class="btn btn-success waves-effect waves-light btn btn-success-edit"
-                                            type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                             <div class="repeater two">
