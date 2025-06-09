@@ -13,6 +13,7 @@ use App\Model\Country;
 use App\Model\State;
 use App\Model\City;
 use DB;
+use Illuminate\Support\Facades\Validator;
 use Session;
 
 class ClientController extends Controller
@@ -141,10 +142,24 @@ class ClientController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreClient $request)
     {
+        $validate = Validator::make($request->all(), [
+            'email' => 'required|email|unique:advocate_clients,email',
+            'mobile' => 'required|unique:advocate_clients,mobile',
+        ]);
+
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
+
+        $existingClient = AdvocateClient::where('alternate_no', $request->document_number)->first();
+        if ($existingClient) {
+            return redirect()->back()->withErrors(['document_number' => 'DNI/RUC ya existe. Por favor, ingrese un número diferente.']);
+        }
+
         $AdvocateClient = new AdvocateClient;
         $AdvocateClient->first_name = $request->f_name;
         $AdvocateClient->middle_name = $request->m_name;

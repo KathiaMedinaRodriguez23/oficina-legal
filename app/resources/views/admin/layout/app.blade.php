@@ -11,7 +11,7 @@
         <link rel="shortcut icon"
               href="{{asset(config('constants.FAVICON_FOLDER_PATH') .'/'. $image_logo->favicon_img)}}">
     @endif
-    <title>Oficina Legal</title>
+    <title>Horizonte Legal</title>
     <!-- Bootstrap -->
     <link href="{{asset('assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <script>

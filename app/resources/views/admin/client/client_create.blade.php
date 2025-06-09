@@ -33,7 +33,7 @@
                     <div class="x_content">
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <strong>ERROR! </strong> Resuelva los siguientes puntos: <br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="email">Email </label>
+                                <label for="email">Email <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="email" name="email">
                             </div>
 
@@ -234,13 +234,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <br>
-                                    <button data-repeater-create type="button" value="Add New"
-                                            class="btn btn-success waves-effect waves-light btn btn-success-edit">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </button>
-                                </div>
                             </div>
 
                             <div class="repeater two">
@@ -345,7 +338,7 @@
 
 @push('js')
     <script src="{{asset('assets/admin/js/selectjs.js')}}"></script>
-    <script src="{{asset('assets/admin/vendors/repeater/repeater.js')}}"></script>
+    <script src="{{asset('assets/admin/vendors/repeter/repeater.js')}}"></script>
     <script src="{{asset('assets/admin/vendors/jquery-ui/jquery-ui.js')}}"></script>
     <script src="{{asset('assets/js/client/add-client-validation.js')}}"></script>
     <script src="{{asset('assets/js/client/document-type-validation.js')}}"></script>

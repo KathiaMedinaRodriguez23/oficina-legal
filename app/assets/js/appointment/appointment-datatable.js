@@ -1,134 +1,217 @@
-"use strict";
-
-var token = $('#token-value').val();
+var token                 = $('#token-value').val();
 var date_format_datepiker = $('#date_format_datepiker').val();
-var common_change_state = $('#common_change_state').val();
+var common_change_state   = $('#common_change_state').val();
+var t; // Variable global para compatibilidad con funciones existentes
 
-var token = $('#token-value').val();
-var t;
-var DatatableRemoteAjaxDemo = function () {
+var DatatableRemoteAjaxDemo = (function () {
+    var table = null; // Variable privada para almacenar la instancia de DataTable
 
-    var lsitDataInTable = function () {
+    var initDataTable = function () {
+        var $tbl = $('#Appointmentdatatable');
 
+        // Si ya existe una instancia, destruirla completamente
+        if (table !== null) {
+            try {
+                table.destroy();
+                console.log('Tabla anterior destruida correctamente');
+            } catch (e) {
+                console.warn('Error al destruir tabla anterior:', e);
+            }
+            table = null;
+        }
+
+        // También verificar con el método estático de DataTables
+        if ($.fn.DataTable.isDataTable('#Appointmentdatatable')) {
+            try {
+                $('#Appointmentdatatable').DataTable().destroy();
+                console.log('Instancia estática destruida');
+            } catch (e) {
+                console.warn('Error al destruir instancia estática:', e);
+            }
+        }
+
+        // Limpiar completamente la tabla HTML
+        $tbl.empty();
+
+        // Configurar headers AJAX
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        t = $('#Appointmentdatatable').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "stateSave": true,
-            "lengthMenu": [10, 25, 50],
-            "responsive": true,
-            "oLanguage": {sProcessing: "<div class='loader-container'><div id='loader'></div></div>"},
-            "width": 200,
-            // "iDisplayLength": 2,
-            "ajax": {
-                "url": $('#Appointmentdatatable').attr('data-url'),
-                "dataType": "json",
-                "type": "POST",
-                "data": {
-                    _token: token,
-                    appoint_date_from: $('#date_from').val(),
-                    appoint_date_to: $('#date_to').val(),
+
+        // Crear nueva instancia de DataTable
+        try {
+            table = $tbl.DataTable({
+                destroy: true,
+                processing: true,
+                serverSide: true,
+                stateSave: true,
+                lengthMenu: [10, 25, 50],
+                responsive: true,
+                language: {
+                    processing: "<div class='loader-container'><div id='loader'></div></div>",
+                    search:     "Buscar:",
+                    emptyTable: "No hay datos disponibles en la tabla",
+                    zeroRecords:"No se encontraron registros que coincidan",
+                    lengthMenu: "Mostrar _MENU_ registros",
+                    info:       "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    infoEmpty:  "Mostrando 0 a 0 de 0 registros",
+                },
+                ajax: {
+                    url: $tbl.attr('data-url'),
+                    type: 'POST',
+                    data: function (d) {
+                        // añade parámetros de filtro
+                        d._token = token;
+                        d.appoint_date_from = $('#date_from').val();
+                        d.appoint_date_to   = $('#date_to').val();
+                    }
+                },
+                order: [[0, 'desc']],
+                columns: [
+                    { data: 'id' },
+                    { data: 'name' },
+                    { data: 'mobile' },
+                    { data: 'date' },
+                    { data: 'time' },
+                    { data: 'is_active' },
+                    { data: 'action' }
+                ],
+                drawCallback: function () {
+                    // re-inicializa Select2 tras cada redraw
+                    $('.appointment-select2').select2();
                 }
-            },
-            "order": [
-                [0, "desc"]
-            ],
-            "columns": [{
-                "data": "id"
-            },
+            });
 
-                {"data": "name"},
-                {"data": "mobile"},
-                {"data": "date"},
-                {"data": "time"},
-                {"data": "is_active"},
-                {"data": "action"},
-            ],
-            drawCallback: function () {
-                $('.appointment-select2').select2();
-            }
-        });
+            // Asignar a la variable global para compatibilidad con funciones existentes
+            t = table;
+            console.log('DataTable inicializada correctamente');
 
-    }
+        } catch (e) {
+            console.error('Error al inicializar DataTable:', e);
+        }
+    };
 
-    //== Public Functions
     return {
-        // public functions
+        // función pública de arranque
         init: function () {
-            lsitDataInTable();
+            initDataTable();
 
-
-            $("#btn_clear").click(function(){
-                $('#date_from').val('');
-                $('#date_to').val('');
-                var d = $('#Appointmentdatatable').DataTable();
-                d.destroy();
-                DatatableRemoteAjaxDemo.init()
-
+            // Recargar datos al buscar
+            $("#search").off('click').on('click', function () {
+                if (table) {
+                    table.ajax.reload();
+                }
             });
 
-
-            $("#search").click(function () {
-                t.destroy();
-                DatatableRemoteAjaxDemo.init()
+            // Reset filtros y recarga
+            $("#btn_clear").off('click').on('click', function () {
+                $('#date_from, #date_to').val('');
+                if (table) {
+                    table.ajax.reload();
+                }
             });
 
-            $("#clear").click(function () {
-                $('#date_from').val('');
-                $('#date_to').val('');
-                t.destroy();
-                DatatableRemoteAjaxDemo.init()
+            // Clear + deshabilitar botón Buscar + recarga
+            $("#clear").off('click').on('click', function () {
+                $('#date_from, #date_to').val('');
                 $("#search").attr("disabled", "disabled");
+                if (table) {
+                    table.ajax.reload();
+                }
             });
 
-
-            $('#date_from,#date_to').on('change', function () {
-                if ($('#date_from').val() == "" && $('#date_to').val() == "") {
+            // Habilita/deshabilita botón Buscar según fechas
+            $('#date_from, #date_to').off('change').on('change', function () {
+                if ($('#date_from').val() === "" && $('#date_to').val() === "") {
                     $("#search").attr("disabled", "disabled");
                 } else {
-                    $('#search').removeAttr('disabled');
+                    $("#search").removeAttr("disabled");
                 }
             });
-            $(".dateFrom").datepicker({
+
+            // Datepicker rango desde
+            $(".dateFrom").datepicker('destroy').datepicker({
                 format: date_format_datepiker,
                 autoclose: true,
-                todayHighlight: true,
-            }).on('changeDate', function (selected) {
-                var startDate = new Date(selected.date.valueOf());
-                $('.dateTo').datepicker('setStartDate', startDate);
-            }).on('clearDate', function (selected) {
+                todayHighlight: true
+            }).off('changeDate clearDate').on('changeDate', function (e) {
+                $('.dateTo').datepicker('setStartDate', e.date);
+            }).on('clearDate', function () {
                 $('.dateTo').datepicker('setStartDate', null);
             });
 
-            $(".dateTo").datepicker({
+            // Datepicker rango hasta
+            $(".dateTo").datepicker('destroy').datepicker({
                 format: date_format_datepiker,
                 autoclose: true,
-                todayHighlight: true,
-            }).on('changeDate', function (selected) {
-                var endDate = new Date(selected.date.valueOf());
-                $('.dateFrom').datepicker('setEndDate', endDate);
-            }).on('clearDate', function (selected) {
+                todayHighlight: true
+            }).off('changeDate clearDate').on('changeDate', function (e) {
+                $('.dateFrom').datepicker('setEndDate', e.date);
+            }).on('clearDate', function () {
                 $('.dateFrom').datepicker('setEndDate', null);
             });
+        },
 
+        // Función pública para destruir la tabla
+        destroy: function () {
+            if (table !== null) {
+                try {
+                    table.destroy();
+                    table = null;
+                    t = null;
+                    console.log('Tabla destruida manualmente');
+                } catch (e) {
+                    console.error('Error al destruir tabla:', e);
+                }
+            }
+        },
 
+        // Función pública para recargar datos
+        reload: function () {
+            if (table) {
+                table.ajax.reload();
+            }
+        },
+
+        // Función pública para obtener la instancia de la tabla
+        getTable: function () {
+            return table;
         }
     };
-}();
+})();
+
+// Inicialización segura
 jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+    // Asegurarse de que solo se ejecute una vez
+    if (typeof window.datatableInitialized === 'undefined') {
+        window.datatableInitialized = true;
+        DatatableRemoteAjaxDemo.init();
+        console.log('DataTable inicializada en document.ready');
+    } else {
+        console.log('DataTable ya fue inicializada previamente');
+    }
 });
 
+// También manejar caso de Turbo/PJAX si se usa
+$(document).on('turbo:load pjax:complete', function() {
+    if (typeof window.datatableInitialized === 'undefined' || !window.datatableInitialized) {
+        window.datatableInitialized = true;
+        DatatableRemoteAjaxDemo.init();
+        console.log('DataTable inicializada en turbo/pjax');
+    }
+});
+
+// Limpiar al salir de la página
+$(window).on('beforeunload', function() {
+    DatatableRemoteAjaxDemo.destroy();
+    window.datatableInitialized = false;
+});
+
+// Funciones de utilidad originales (sin cambios)
 function confirmDelete() {
-    var x = confirm("Are you sure you want to delete this appointment.?");
-    if (x)
-        return true;
-    else
-        return false;
+    return confirm("¿Estás seguro de que deseas eliminar esta cita?");
 }
 
 function getval(sel) {
@@ -136,142 +219,105 @@ function getval(sel) {
 }
 
 function ajaxindicatorstart(text) {
-    if (jQuery('body').find('#resultLoading').attr('id') != 'resultLoading') {
-        jQuery('body').append('<div id="resultLoading" style="display:none"><div><img src=""><div>' + text + '</div></div><div class="bg"></div></div>');
+    if (jQuery('body').find('#resultLoading').length === 0) {
+        jQuery('body').append(
+            '<div id="resultLoading" style="display:none">' +
+            '<div><img src=""><div>' + text + '</div></div>' +
+            '<div class="bg"></div>' +
+            '</div>'
+        );
     }
     jQuery('#resultLoading').css({
-        'width': '100%',
-        'height': '100%',
-        'position': 'fixed',
-        'z-index': '10000000',
-        'top': '0',
-        'left': '0',
-        'right': '0',
-        'bottom': '0',
-        'margin': 'auto'
+        width: '100%', height: '100%', position: 'fixed', zIndex: 10000000,
+        top: 0, left: 0, right: 0, bottom: 0, margin: 'auto', cursor: 'wait'
     });
-
     jQuery('#resultLoading .bg').css({
-        'background': '#000000',
-        'opacity': '0.7',
-        'width': '100%',
-        'height': '100%',
-        'position': 'absolute',
-        'top': '0'
+        background: '#000', opacity: 0.7, width: '100%', height: '100%',
+        position: 'absolute', top: 0
     });
-
     jQuery('#resultLoading>div:first').css({
-        'width': '250px',
-        'height': '75px',
-        'text-align': 'center',
-        'position': 'fixed',
-        'top': '0',
-        'left': '0',
-        'right': '0',
-        'bottom': '0',
-        'margin': 'auto',
-        'font-size': '16px',
-        'z-index': '10',
-        'color': '#ffffff'
-
+        width: '250px', height: '75px', textAlign: 'center',
+        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+        margin: 'auto', fontSize: '16px', zIndex: 10, color: '#fff'
     });
-
-    jQuery('#resultLoading .bg').height('100%');
     jQuery('#resultLoading').fadeIn(300);
-    jQuery('body').css('cursor', 'wait');
 }
 
-
 function change_status(id, status, table) {
-
     $.confirm({
-        title: 'Status Confirmation',
-        content: 'Its smooth to do multiple confirms at a time. <br> Click confirm or cancel for another modal',
+        title: 'Confirmar cambio de estado',
+        content: '¿Deseas continuar con el cambio de estado?',
         icon: 'fa fa-question-circle',
         animation: 'scale',
         closeAnimation: 'scale',
         opacity: 0.5,
         buttons: {
-            'confirm': {
-                text: 'Proceed',
+            confirmar: {
+                text: 'Continuar',
                 btnClass: 'btn-blue',
                 action: function () {
                     $.confirm({
-                        title: 'Are you sure you want to change status?',
-                        content: 'Critical actions can have multiple confirmations like this one.',
+                        title: 'Confirmación final',
+                        content: 'Esta acción no se puede deshacer.',
                         icon: 'fa fa-warning',
                         animation: 'scale',
                         closeAnimation: 'zoom',
                         buttons: {
-                            confirm: {
-                                text: 'Yes, sure!',
+                            sí: {
+                                text: 'Sí, cambiar',
                                 btnClass: 'btn-orange',
                                 action: function () {
-                                    // ajax adding data to database
                                     $.ajaxSetup({
                                         headers: {
-                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                         }
                                     });
                                     $.ajax({
                                         url: common_change_state,
                                         type: "POST",
                                         dataType: "JSON",
-                                        data: {id: id, status: status, table: table},
-                                        async: false,
+                                        data: { id: id, status: status, table: table },
                                         success: function (data) {
                                             if (data.errors) {
-                                                message.fire({
-                                                    type: 'error',
-                                                    title: 'Error',
-                                                    text: "Problem in delete!!! Please try again."
-                                                });
-                                                var d = $('#Appointmentdatatable').DataTable();
-                                                d.destroy();
-                                                // tab_appoint_list();
-                                                DatatableRemoteAjaxDemo.init()
+                                                $.alert('Ocurrió un error. Intenta de nuevo.');
+                                            } else {
+                                                $.alert('Estado modificado correctamente.');
                                             }
-                                            //error_massage('Problem in delete!!! Please try again.');                                             }
-                                            else {
-                                                message.fire({
-                                                    type: 'success',
-                                                    title: 'Scueess',
-                                                    text: "Status changed successfully."
-                                                });
-                                                var d = $('#Appointmentdatatable').DataTable();
-                                                d.destroy();
-                                                // tab_appoint_list();
-                                                DatatableRemoteAjaxDemo.init()
-                                                //success_massage('Status changed successfully.');
-                                                //tab_appoint_list();
+                                            // Usar la instancia correcta para recargar
+                                            if (t) {
+                                                t.ajax.reload();
+                                            } else {
+                                                DatatableRemoteAjaxDemo.reload();
                                             }
                                         },
-                                        error: function (jqXHR, textStatus, errorThrown) {
-                                            alert('Error adding / update data');
+                                        error: function () {
+                                            $.alert('Error del servidor. Intenta más tarde.');
                                         }
                                     });
                                 }
                             },
-                            cancel: function () {
-                                var d = $('#Appointmentdatatable').DataTable();
-                                d.destroy();
-                                // tab_appoint_list();
-                                DatatableRemoteAjaxDemo.init()
-                                $.alert('You clicked on <strong>cancel</strong>');
+                            cancelar: function () {
+                                // Usar la instancia correcta para recargar
+                                if (t) {
+                                    t.ajax.reload();
+                                } else {
+                                    DatatableRemoteAjaxDemo.reload();
+                                }
+                                $.alert('Operación cancelada.');
                             }
                         }
                     });
                 }
             },
-            cancel: function () {
-                var d = $('#Appointmentdatatable').DataTable();
-                d.destroy();
-                // tab_appoint_list();
-                DatatableRemoteAjaxDemo.init()
-                $.alert('You clicked on <strong>cancel</strong>');
-            },
+            cancelar: function () {
+                // Usar la instancia correcta para recargar
+                if (t) {
+                    t.ajax.reload();
+                } else {
+                    DatatableRemoteAjaxDemo.reload();
+                }
+                $.alert('Operación cancelada.');
+            }
         }
     });
 }
-
-

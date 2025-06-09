@@ -7,9 +7,12 @@
     <list default="true" id="0a2e3fd3-09ee-4f03-a83e-afb2242acc02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/client/client-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/client-datatable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/appointment/appointment-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/appointment/appointment-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/xampp/htdocs/oficina-legal/app",
+    "last_opened_file_path": "C:/xampp/htdocs/oficina-legal/app/public/js",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -60,6 +63,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\oficina-legal\app\public\js" />
       <recent name="C:\Proyects\AgilDevelopment\oficina-legal\app\public\upload\logo" />
     </key>
   </component>
@@ -80,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1749352722928</updated>
       <workItem from="1749352724177" duration="14959000" />
-      <workItem from="1749410633568" duration="5162000" />
+      <workItem from="1749410633568" duration="5782000" />
+      <workItem from="1749422427008" duration="9277000" />
     </task>
     <servers />
   </component>
