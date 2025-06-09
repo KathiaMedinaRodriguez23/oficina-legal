@@ -46,7 +46,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title app-border">
-                    <a href="{{url('')}}" class="site_title">
+                    <a href="{{url('admin/clients')}}" class="site_title">
 
                         <span>Oficina Legal</span></a>
                 </div>
