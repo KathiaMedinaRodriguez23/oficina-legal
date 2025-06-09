@@ -25,7 +25,6 @@
     @endcomponent
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            @include('component.error')
             <div class="x_panel">
                 <form id="add_client" name="add_client" role="form" method="POST" autocomplete="nope"
                       action="{{route('clients.store')}}">

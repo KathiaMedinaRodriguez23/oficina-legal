@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h4>Client Name : {{$name}} </h4>
+            <h4>Nombre del Cliente : {{$name}} </h4>
         </div>
 
 
@@ -14,22 +14,24 @@
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">
                     <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                         <li role="presentation" class="{{ request()->is('admin/clients/*') ? 'active' : '' }}"><a
-                                href="{{ route('clients.show', [$client->id]) }}">Client Detail</a>
+                                href="{{ route('clients.show', [$client->id]) }}">Detalles</a>
                         </li>
 
                         @if($adminHasPermition->can(['case_list']) =="1")
                             <li class="{{ request()->is('admin/client/case-list/*') ? 'active' : '' }}"
-                                role="presentation"><a href="{{route('clients.case-list',[$client->id])}}">Cases</a>
+                                role="presentation"><a href="{{route('clients.case-list',[$client->id])}}">Casos</a>
                             </li>
                         @endif
 
 
+                        {{--
                         @if($adminHasPermition->can(['invoice_list']) =="1")
                             <li class="{{ request()->is('admin/client/account-list/*') ? 'active' : '' }}"
                                 role="presentation"><a
-                                    href="{{route('clients.account-list',[$client->id])}}">Account</a>
+                                    href="{{route('clients.account-list',[$client->id])}}">Cuenta</a>
                             </li>
                         @endif
+                        --}}
                     </ul>
 
                 </div>
@@ -41,7 +43,7 @@
                             <table class="countries_list">
                                 <tbody>
                                 <tr>
-                                    <td>Name</td>
+                                    <td>Cliente</td>
                                     <td class="fs15 fw700 text-right">{{ $client->full_name}}</td>
                                 </tr>
                                 <tr>
@@ -49,19 +51,19 @@
                                     <td class="fs15 fw700 text-right">{{ $client->mobile ?? '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Reference Name</td>
+                                    <td>Referencias</td>
                                     <td class="fs15 fw700 text-right">{{ $client->reference_name ?? '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Country</td>
+                                    <td>País</td>
                                     <td class="fs15 fw700 text-right">{{ $client->country->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>State</td>
+                                    <td>Departamento</td>
                                     <td class="fs15 fw700 text-right">{{ $client->state->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>City</td>
+                                    <td>Ciudad</td>
                                     <td class="fs15 fw700 text-right">{{ $client->city->name }}</td>
                                 </tr>
                                 </tbody>
@@ -78,15 +80,15 @@
                                     <td class="fs15 fw700 text-right s">{{ $client->email ?? '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Alternate No.</td>
+                                    <td>DNI/RUC</td>
                                     <td class="fs15 fw700 text-right">{{ $client->alternate_no ?? '' }} </td>
                                 </tr>
                                 <tr>
-                                    <td>Reference Celular</td>
+                                    <td>Celular de Referencia</td>
                                     <td class="fs15 fw700 text-right">{{ $client->reference_mobile ?? '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Address :</td>
+                                    <td>Dirección</td>
                                     <td class="fs15 fw700 text-right">{{ $client->address ?? '' }}</td>
 
                                 </tr>
@@ -118,7 +120,7 @@
                             @if(isset($single) && !empty($single))
                                 @foreach($single as $s)
                                     <div class="col-md-6 hidden-small">
-                                        <h4 class="line_30">Advocate</h4>
+                                        <h4 class="line_30">Defensor</h4>
 
 
                                         <table class="countries_list">
@@ -129,16 +131,16 @@
 
                                             </tr>
                                             <tr>
-                                                <td>Mobile :- {{ $s->party_mobile}}</td>
+                                                <td>Celular :- {{ $s->party_mobile}}</td>
 
                                             </tr>
                                             <tr>
-                                                <td>Address :-{{ $s->party_address}}</td>
+                                                <td>Dirección :-{{ $s->party_address}}</td>
 
                                             </tr>
                                             @if($client->client_type=="multiple")
                                                 <tr>
-                                                    <td>Advocate:-{{ $s->party_advocate}}</td>
+                                                    <td>Defensor:-{{ $s->party_advocate}}</td>
 
                                                 </tr>
 

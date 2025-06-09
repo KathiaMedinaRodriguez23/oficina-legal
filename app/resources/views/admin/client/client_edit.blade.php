@@ -63,12 +63,30 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Celular</label>
-                                <input type="text" value="{{ $client->alternate_no ?? ''}}" placeholder=""
-                                       class="form-control" id="alternate_no" name="alternate_no" maxlength="10">
+                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                <div class="row">
+                                    <label for="document_number" id="dni_ruc_label">
+                                        <br />
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        type="radio" name="document_type" id="dni" value="dni" checked required
+                                    /> DNI
+                                    &nbsp;&nbsp;
+                                    <input type="radio" name="document_type" id="ruc" value="ruc" />
+                                    RUC
+                                </div>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="document_number"
+                                    name="document_number"
+                                    value="{{ $client->alternate_no }}"
+                                />
+                                <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
-                            <div class="col-md-9 col-sm-12 col-xs-12 form-group">
+                            <div class="col-md-8 col-sm-12 col-xs-12 form-group">
                                 <label for="fullname">Direccion <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" value="{{ $client->address ?? ''}}"
                                        class="form-control" id="address" name="address">
@@ -465,6 +483,8 @@
     <script src="{{asset('assets/admin/vendors/repeter/repeater.js')}}"></script>
     <script src="{{asset('assets/admin/vendors/jquery-ui/jquery-ui.js') }}"></script>
     <script src="{{asset('assets/js/client/edit-client-validation.js')}}"></script>
+    <script src="{{asset('assets/js/client/document-type-validation.js')}}"></script>
+    <script src="{{asset('assets/js/client/validate-phone.js')}}"></script>
     @if(!empty($client->client_type) && $client->client_type =='single')
         <script type="text/javascript">
             'use strict';

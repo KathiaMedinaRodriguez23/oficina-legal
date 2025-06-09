@@ -146,18 +146,24 @@ class ClientController extends Controller
      */
     public function store(StoreClient $request)
     {
+
         $validate = Validator::make($request->all(), [
             'email' => 'required|email|unique:advocate_clients,email',
             'mobile' => 'required|unique:advocate_clients,mobile',
+            'document_number' => 'required|unique:advocate_clients,dni_ruc',
+            'document_type' => 'required',
+        ], [
+            'email.required' => 'Ingrese el correo electrónico.',
+            'email.email' => 'Ingrese un correo electrónico válido.',
+            'email.unique' => 'El correo electrónico ya ha sido registrado.',
+            'mobile.required' => 'Ingrese el número de teléfono móvil.',
+            'mobile.unique' => 'El número de teléfono móvil ya ha sido registrado.',
+            'document_number.required' => 'Ingrese el número de documento.',
+            'document_number.unique' => 'El número de documento ya ha sido registrado.',
         ]);
 
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput();
-        }
-
-        $existingClient = AdvocateClient::where('alternate_no', $request->document_number)->first();
-        if ($existingClient) {
-            return redirect()->back()->withErrors(['document_number' => 'DNI/RUC ya existe. Por favor, ingrese un número diferente.']);
         }
 
         $AdvocateClient = new AdvocateClient;
@@ -167,7 +173,8 @@ class ClientController extends Controller
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
-        $AdvocateClient->alternate_no = $request->document_number;
+        $AdvocateClient->document_type = $request->document_type;
+        $AdvocateClient->dni_ruc = $request->document_number;
         $AdvocateClient->address = $request->address;
         $AdvocateClient->country_id = $request->country;
         $AdvocateClient->state_id = $request->state;

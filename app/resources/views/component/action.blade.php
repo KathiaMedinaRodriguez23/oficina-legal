@@ -7,7 +7,7 @@
                 <li><a data-target-modal="{{ $view_modal->get('target') }}"
                        data-id={{ $view_modal->get('id') }}
                            data-url="{{ $view_modal->get('action' , 'javaqscrip:void(0)') }}"
-                       href="{{ $view_modal->get('action' , 'javaqscrip:void(0)') }}"><i class="fa fa-eye"></i>&nbsp;&nbsp;View</a>
+                       href="{{ $view_modal->get('action' , 'javaqscrip:void(0)') }}"><i class="fa fa-eye"></i>&nbsp;&nbsp;Mostrar</a>
                 </li>
             @endif
 
@@ -17,30 +17,30 @@
             @endif
 
             @if(isset($view))
-                <li><a href="{{ $view ?? 'javascrip:void(0)' }}"><i class="fa fa-eye"></i>&nbsp;&nbsp;View</a></li>
+                <li><a href="{{ $view ?? 'javascrip:void(0)' }}"><i class="fa fa-eye"></i>&nbsp;&nbsp;Mostrar</a></li>
             @endif
 
 
 
             @if(isset($edit))
                 <li class="{{ isset($edit_permission) &&  $edit_permission=="1" ? '':'hidden' }}"><a
-                        href="{{ $edit ?? 'javascrip:void(0)' }}"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</a></li>
+                        href="{{ $edit ?? 'javascrip:void(0)' }}"><i class="fa fa-edit"></i>&nbsp;&nbsp;Editar</a></li>
             @endif
 
             @if(isset($download))
-                <li class=""><a href="{{ $download ?? 'javascrip:void(0)' }}"><i class="fa fa-download"></i>&nbsp;&nbsp;Download</a>
+                <li class=""><a href="{{ $download ?? 'javascrip:void(0)' }}"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
                 </li>
             @endif
 
             @if(isset($restore))
-                <li class=""><a href="{{ $restore ?? 'javascrip:void(0)' }}"><i class="fa fa-undo"></i>&nbsp;&nbsp;Restore</a>
+                <li class=""><a href="{{ $restore ?? 'javascrip:void(0)' }}"><i class="fa fa-undo"></i>&nbsp;&nbsp;Restablecer</a>
                 </li>
             @endif
 
 
             @if (isset($print))
                 <li class="divider"></li>
-                <li><a target="_blank" href="{{ $print }}"><i class="fa fa-print"></i>&nbsp;&nbsp;Print</a></li>
+                <li><a target="_blank" href="{{ $print }}"><i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir</a></li>
             @endif
             @if (isset($email))
                 <li><a href="#"><i class="fa fa-envelope "></i>&nbsp;&nbsp;Email</a></li>
@@ -111,14 +111,14 @@
                        data-id={{ $edit_modal->get('id') }}
                            data-url="{{ $edit_modal->get('action' , 'javaqscrip:void(0)') }}"
                        href="{{ $edit_modal->get('action' , 'javaqscrip:void(0)') }}">
-                        <i class="fa fa-edit"></i>&nbsp;<span class="">Edit</span>
+                        <i class="fa fa-edit"></i>&nbsp;<span class="">Editar</span>
                     </a>
             @endif
             @if (isset($delete))
                 <li class="{{ isset($delete_permission) &&  $delete_permission=="1" ? '':'hidden' }}"><a
                         class="delete-confrim "
                         data-id={{ $delete->get('id') }}  href="{{ $delete->get('action' , 'javaqscrip:void(0)') }}"><i
-                            class="fa fa-trash "></i>&nbsp;&nbsp;Delete</a>
+                            class="fa fa-trash "></i>&nbsp;&nbsp;Eliminar</a>
                 </li>
                 @endif
 
