@@ -55,7 +55,6 @@ $(function(){
 
     // Detectar cambio de DNI/RUC
     $dniRadio.add($rucRadio).on('change', function() {
-        // Solo limpiar el valor cuando el usuario realmente cambia de radio
         if (!isInitialLoad) {
             $docInput.val('');
         }
@@ -63,7 +62,6 @@ $(function(){
         isInitialLoad = false;
     });
 
-    // Determinar el tipo inicial basado en el valor existente
     function setInitialDocumentType() {
         var v = $docInput.val();
         if (v.length === 8 && /^\d{8}$/.test(v)) {

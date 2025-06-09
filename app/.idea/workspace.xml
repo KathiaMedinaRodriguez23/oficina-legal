@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0a2e3fd3-09ee-4f03-a83e-afb2242acc02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/client/edit-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/edit-client-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <updated>1749352722928</updated>
       <workItem from="1749352724177" duration="14959000" />
       <workItem from="1749410633568" duration="5782000" />
-      <workItem from="1749422427008" duration="22805000" />
+      <workItem from="1749422427008" duration="24595000" />
     </task>
     <servers />
   </component>

@@ -85,9 +85,8 @@
                                         <br />
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <input
-                                        type="radio" name="document_type" id="dni" value="dni" checked required
-                                    /> DNI
+                                    <input type="radio" name="document_type" id="dni" value="dni" checked required/>
+                                    DNI
                                     &nbsp;&nbsp;
                                     <input type="radio" name="document_type" id="ruc" value="ruc" />
                                     RUC
