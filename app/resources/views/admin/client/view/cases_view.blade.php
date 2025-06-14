@@ -1,12 +1,12 @@
 @extends('admin.layout.app')
-@section('title','Client Cases')
+@section('title','Casos de Cliente')
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h4>Client Name : {{$name}} </h4>
+            <h4>Cliente : {{$name}} </h4>
         </div>
         <div class="pull-right">
-            <h4> Total Case : {{$totalCourtCase ?? ''}} </h4>
+            <h4> Total de Casos : {{$totalCourtCase ?? ''}} </h4>
         </div>
 
     </div>
@@ -17,22 +17,15 @@
                 <div class="" role="tabpanel" data-example-id="togglable-tabs">
                     <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                         <li role="presentation" class="{{ request()->is('admin/clients/*') ? 'active' : '' }}"><a
-                                href="{{ route('clients.show', [$client->id]) }}">Client Detail</a>
+                                href="{{ route('clients.show', [$client->id]) }}">Detalle de Cliente</a>
                         </li>
 
                         @if($adminHasPermition->can(['case_list']) =="1")
                             <li class="{{ request()->is('admin/client/case-list/*') ? 'active' : '' }}"
-                                role="presentation"><a href="{{route('clients.case-list',[$client->id])}}">Cases</a>
+                                role="presentation"><a href="{{route('clients.case-list',[$client->id])}}">Casos</a>
                             </li>
                         @endif
 
-
-                        @if($adminHasPermition->can(['invoice_list']) =="1")
-                            <li class="{{ request()->is('admin/client/account-list/*') ? 'active' : '' }}"
-                                role="presentation"><a
-                                    href="{{route('clients.account-list',[$client->id])}}">Account</a>
-                            </li>
-                        @endif
                     </ul>
 
 
@@ -45,12 +38,12 @@
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Case Detail</th>
-                            <th>Court Detail</th>
-                            <th>Petitioner vs Respondent</th>
-                            <th>Next Date</th>
-                            <th>estado</th>
-                            <th>Action</th>
+                            <th>Detalle del Caso</th>
+                            <th>Detalle de la Corte</th>
+                            <th>Peticionario vs Demandado</th>
+                            <th>Fecha próxima</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                         </thead>
                     </table>
