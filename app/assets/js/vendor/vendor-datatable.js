@@ -18,7 +18,15 @@ var DatatableRemoteAjaxDemo = function () {
             "lengthMenu": [10, 25, 50],
             "responsive": true,
             "width": 200,
-            "oLanguage": {sProcessing: "<div class='loader-container'><div id='loader'></div></div>"},
+            "oLanguage": {
+                sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
+                sSearch:     "Buscar:",
+                sEmptyTable: "No hay datos disponibles en la tabla",
+                sZeroRecords:"No se encontraron registros que coincidan",
+                sLengthMenu: "Mostrar _MENU_ registros",
+                sInfo:       "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                sInfoEmpty:  "Mostrando 0 a 0 de 0 registros"
+            },
             // "scrollY":        "500px",
             // "iDisplayLength": 2,
             "ajax": {

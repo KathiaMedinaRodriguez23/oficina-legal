@@ -282,19 +282,19 @@ class CaseRunningController extends Controller
                     $nestedData['name'] = '<div style="font-size:15px;" class="clinthead text-primary">
                        <a  class="text-primary" href="javascript:void(0);" onclick="change_case_important(' . $case->case_id . ')"><i class="text-primary ' . $class . '" aria-hidden="true"></i></a>'
                         . '&nbsp;<a  class="text-primary" href="' . $show . '">' . $case->case_number . '</a></div>
-                                        <p class="clinttittle">Case: <b>' . $case->caseType . '</b></p>';
+                                        <p class="clinttittle">Caso: <b>' . $case->caseType . '</b></p>';
 
                 } else {
                     $nestedData['name'] = '<div style="font-size:15px;"  class="clinthead text-primary"><a class="text-primary" href="javascript:void(0);" ><i class="text-primary ' . $class . '" aria-hidden="true"></i></a>'
                         . '&nbsp;<a  class="text-primary" href="' . $show . '">' . $case->case_number . '</a></div>
-                                        <p class="clinttittle">Case: <b>' . $case->caseType . '</b></p>';
+                                        <p class="clinttittle">Caso : <b>' . $case->caseType . '</b></p>';
 
                 }
 
 
-                $nestedData['court'] = '<p class="currenttittle">Court :<b> ' . $case->court_name . '</b></p>
-                                        <p class="currenttittle">No:<b> ' . $case->court_no . '</b></p>
-                                        <p class="currenttittle">Magistrate :<b> ' . $case->judge_name . '</b></p>';
+                $nestedData['court'] = '<p class="currenttittle">Corte :<b> ' . $case->court_name . '</b></p>
+                                        <p class="currenttittle">Nº:<b> ' . $case->court_no . '</b></p>
+                                        <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
 
                 $nestedData['case'] = '<p class="currenttittle">' . $first . ' <br/><b>VS</b> <br/> ' . $second . '<p>';
 
@@ -518,14 +518,14 @@ class CaseRunningController extends Controller
 
             $row['name'] = '<div style="font-size:15px;"  class="clinthead text-primary">' . $priorityModal . ''
                 . '&nbsp;<a class="title text-primary"  href="' . $case_list . '">' . $case->first_name . '&nbsp;' . $case->middle_name . '&nbsp;' . $case->last_name . '</a></div>
-                                        <p class="clinttittle">No :<b>' . $case->case_number . '</b></p>
-                                        <p class="clinttittle">Case: <b>' . $case->caseType . '</b></p>
-                                        <p class="clinttittle"><b>Assign To</b></p>
+                                        <p class="clinttittle">Nº :<b>' . $case->case_number . '</b></p>
+                                        <p class="clinttittle">Caso: <b>' . $case->caseType . '</b></p>
+                                        <p class="clinttittle"><b>Asignar a</b></p>
                                         ' . $members;
 
-            $row['court'] = '<p class="currenttittle">Court :<b> ' . $case->court_name . '</b></p>
-                                        <p class="currenttittle">No :<b> ' . $case->court_no . '</b></p>
-                                        <p class="currenttittle">Magistrate :<b> ' . $case->judge_name . '</b></p>';
+            $row['court'] = '<p class="currenttittle">Corte :<b> ' . $case->court_name . '</b></p>
+                                        <p class="currenttittle">Nº :<b> ' . $case->court_no . '</b></p>
+                                        <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
 
             $row['case'] = '<p class="currenttittle">' . $first . ' <br/><b>VS</b> <br/>' . $second . '<p>';
             $row['next_date'] = '<p class="currenttittle">' . date(LogActivity::commonDateFromatType(), strtotime($case->next_date)) . '</p><small class="currenttittle">' . $this->getLoginUserNameById($case->updated_by) . '</small>';

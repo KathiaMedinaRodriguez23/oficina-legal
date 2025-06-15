@@ -1,16 +1,16 @@
-define(function () {
-  // English
+define('select2/i18n/es', [], function () {
+  // Español
   return {
     errorLoading: function () {
-      return 'The results could not be loaded.';
+      return 'No se pudieron cargar los resultados.';
     },
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = 'Please delete ' + overChars + ' character';
+      var message = 'Por favor, elimina ' + overChars + ' carácter';
 
       if (overChars != 1) {
-        message += 's';
+        message += 'es';
       }
 
       return message;
@@ -18,15 +18,19 @@ define(function () {
     inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = 'Please enter ' + remainingChars + ' or more characters';
+      var message = 'Por favor, ingresa ' + remainingChars + ' carácter';
+
+      if (remainingChars != 1) {
+        message += 'es';
+      }
 
       return message;
     },
     loadingMore: function () {
-      return 'Loading more results…';
+      return 'Cargando más resultados…';
     },
     maximumSelected: function (args) {
-      var message = 'You can only select ' + args.maximum + ' item';
+      var message = 'Solo puedes seleccionar ' + args.maximum + ' elemento';
 
       if (args.maximum != 1) {
         message += 's';
@@ -35,10 +39,10 @@ define(function () {
       return message;
     },
     noResults: function () {
-      return 'No results found';
+      return 'No se encontraron resultados';
     },
     searching: function () {
-      return 'Searching…';
+      return 'Buscando…';
     }
   };
 });

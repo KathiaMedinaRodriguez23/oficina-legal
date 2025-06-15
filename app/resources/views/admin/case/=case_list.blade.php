@@ -43,13 +43,13 @@
                                 </td>
                                 <td>Corte : District & Sessions Court<br>
                                     Nº : 5<br>
-                                    Magistrate : 5th ADDL District Judge
+                                    Magistrado : 5th ADDL District Judge
                                 </td>
                                 <td>MILIND RASHMIBHAI DAVE<br>
                                     VS<br>
                                     GOVERNMENT OF GUJARAT
-                                </td>
-                                <td>23-06-2016<br>
+                                </td>o
+                                <td>23-06-2025<br>
                                     Darshan Tank
                                 </td>
 

@@ -17,7 +17,15 @@ var DatatableRemoteAjaxDemo = function () {
         t = $('#case_transfer_list').DataTable({
             "processing": true,
             "serverSide": true,
-            "oLanguage": {sProcessing: "<div class='loader-container'><div id='loader'></div></div>"},
+            "oLanguage": {
+                sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
+                sSearch:     "Buscar:",
+                sEmptyTable: "No hay datos disponibles en la tabla",
+                sZeroRecords:"No se encontraron registros que coincidan",
+                sLengthMenu: "Mostrar _MENU_ registros",
+                sInfo:       "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                sInfoEmpty:  "Mostrando 0 a 0 de 0 registros"
+            },
             "order": [[0, "desc"]],
             "ajax": {
                 "url": allCaseTransferLists,

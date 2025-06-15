@@ -5,9 +5,9 @@
 
         @component('component.modal_heading',
              [
-             'page_title' => 'Role',
+             'page_title' => 'Rol',
              'action'=>route("role.create"),
-             'model_title'=>'Create Role',
+             'model_title'=>'Crear Rol',
              'modal_id'=>'#addtag',
               'permission' => '1'
              ] )
@@ -26,9 +26,9 @@
                         <table id="roleDataTable" class="table" data-url="{{ route('role.list') }}" >
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Role</th>
-                                <th width="2%" data-orderable="false">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Rol</th>
+                                <th width="2%" data-orderable="false">Acción</th>
                             </tr>
                             </thead>
                         </table>

@@ -7,7 +7,7 @@
    <div class="">
      @component('component.heading' , [
 
-    'page_title' => 'Permission',
+    'page_title' => 'Permisos',
     'action' => route('role.index') ,
     'text' => 'Atras'
      ])
@@ -25,13 +25,13 @@
                     <table class="table">
                         <thead>
                           <tr>
-                            <th width="30%">Menu</th>
-                            <th width="30%">Sub Menu</th>
+                            <th width="30%">Menú</th>
+                            <th width="30%">Submenú</th>
 
-                            <th width="10%"><input class="all_view" type="checkbox">&nbsp; View </th>
-                            <th width="10%"> <input class="all_add" type="checkbox">&nbsp; Add</th>
-                            <th width="10%"> <input class="all_edit" type="checkbox">&nbsp; Edit</th>
-                            <th width="10%"> <input class="all_delete" type="checkbox">&nbsp; Delete</th>
+                            <th width="10%"><input class="all_view" type="checkbox">&nbsp; Ver </th>
+                            <th width="10%"> <input class="all_add" type="checkbox">&nbsp; Agregar</th>
+                            <th width="10%"> <input class="all_edit" type="checkbox">&nbsp; Editar</th>
+                            <th width="10%"> <input class="all_delete" type="checkbox">&nbsp; Eliminar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,7 +53,7 @@
                             </td>
                           </tr>
                           <tr  class="tr_permition">
-                            <td>Client</td>
+                            <td>Cliente</td>
 
                             <td>-</td>
                             <td>
@@ -70,7 +70,7 @@
                             </td>
                           </tr>
                           <tr  class="tr_permition">
-                            <td>Task</td>
+                            <td>Tarea</td>
 
                             <td>-</td>
                             <td>
@@ -87,7 +87,7 @@
                             </td>
                           </tr>
                           <tr  class="tr_permition">
-                            <td>Vendor</td>
+                            <td>Proveedor</td>
 
                             <td>-</td>
                             <td>
@@ -121,7 +121,7 @@
                             </td>
                           </tr>
                           <tr  class="tr_permition">
-                            <td>Appointment</td>
+                            <td>Citaciones</td>
 
                             <td>-</td>
                             <td>
@@ -138,9 +138,9 @@
                             </td>
                           </tr>
                              <tr  class="tr_permition">
-                            <td>Expense</td>
+                            <td>Gasto</td>
 
-                            <td>Expense Type</td>
+                            <td>Tipo de Gasto</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="20" name="permission[]" {{ ($permissions_array->contains('20')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -157,7 +157,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Expense</td>
+                            <td>Gasto</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="24" name="permission[]" {{ ($permissions_array->contains('24')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -174,9 +174,9 @@
 
 
                           <tr  class="tr_permition">
-                            <td>Income</td>
+                            <td>Ingresos</td>
 
-                            <td>Service</td>
+                            <td>Servicio</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="59" name="permission[]" {{ ($permissions_array->contains('59')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -194,7 +194,7 @@
                            <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Invoice</td>
+                            <td> Factura</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="28" name="permission[]" {{ ($permissions_array->contains('28')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -212,9 +212,9 @@
 
 
                             <tr  class="tr_permition">
-                            <td>Settings</td>
+                            <td>Configuración</td>
 
-                            <td>Case Type</td>
+                            <td>Tipo de Caso</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="32" name="permission[]" {{ ($permissions_array->contains('32')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -231,7 +231,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Court Type</td>
+                            <td>Tipo de Corte</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="36" name="permission[]" {{ ($permissions_array->contains('36')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -248,7 +248,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Court</td>
+                            <td>Corte</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="40" name="permission[]" {{ ($permissions_array->contains('40')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -265,7 +265,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Case Status</td>
+                            <td>Estado de Caso</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="44" name="permission[]" {{ ($permissions_array->contains('44')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -282,7 +282,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Judge</td>
+                            <td>Juez</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="48" name="permission[]" {{ ($permissions_array->contains('48')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>

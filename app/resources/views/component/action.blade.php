@@ -85,7 +85,7 @@
                     @endphp
                     <a class="call-model"
 
-                       onClick='nextDateAdd({{$next}});'><i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Next Date</a>
+                       onClick='nextDateAdd({{$next}});'><i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Proxima Fecha</a>
                 </li>
             @endif
 
@@ -99,8 +99,9 @@
                     @endphp
                     <a class="call-model"
 
-                       onClick='transfer_case({{$transfer_case}});'><i class="fa fa-gavel"></i>&nbsp;&nbsp; Case
-                        Transfer</a></li>
+                       onClick='transfer_case({{$transfer_case}});'><i class="fa fa-gavel"></i>&nbsp;&nbsp; Transferencia de Caso</a>
+                </li>
+                        
             @endif
 
             <li>
