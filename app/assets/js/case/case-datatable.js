@@ -44,7 +44,7 @@ var DatatableRemoteAjaxDemo = function () {
             "columns": [
                 {"data": "id", width: '3%'},
                 {"data": "name", width: '20%'},
-                {"data": "court", width: '35%'},
+                {"data": "court", width: '30%'},
                 {"data": "case", width: '20%'},
                 {"data": "next_date", width: '10%'},
                 {"data": "status", width: '9%'},
