@@ -11,11 +11,11 @@
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Registration No.</th>
-                            <th>Transfer Date</th>
-                            <th>From Court Number and Judge</th>
-                            <th>To Court Number and Judge</th>
+                            <th>Nº </th>
+                            <th>N° de registro </th>
+                            <th>Fecha de transferencia </th>
+                            <th>Del Número de Tribunal y Juez</th>
+                            <th>Al Número Juzgado y Juez</th>
 
 
                         </tr>
@@ -25,8 +25,8 @@
                         <tbody>
                         <tr>
                             <td>1</td>
-                            <td>1089/2016</td>
-                            <td>23-06-2016</td>
+                            <td>1089/2025</td>
+                            <td>23-06-2025</td>
                             <td></td>
                             <td></td>
 

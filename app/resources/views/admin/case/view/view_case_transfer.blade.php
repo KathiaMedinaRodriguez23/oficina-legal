@@ -8,18 +8,18 @@
 
                 <div class="x_content">
                     <div class="x_title">
-                        <h2> Case</h2>
+                        <h2> Caso</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li>
 
                                 <a class="card-header-color "
                                    href="{{url('admin/case-running-download/'.$case_id.'/download')}}"
-                                   title="Download case file"><i class="fa fa-download fa-2x"></i></a>
+                                   title="Descargar expediente del caso"><i class="fa fa-download fa-2x"></i></a>
                             </li>
                             <li>
                                 <a class="card-header-color "
                                    href="{{url('admin/case-running-download/'.$case_id.'/print')}}"
-                                   title="Print case file" target="_blank"><i class="fa fa-print fa-2x"></i></a>
+                                   title="Imprimir expediente del caso" target="_blank"><i class="fa fa-print fa-2x"></i></a>
                             </li>
 
                         </ul>
@@ -31,16 +31,16 @@
                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                             <li role="presentation"
                                 class="@if(Request::segment(2)=='case-running')active @ else @endif"><a
-                                    href="{{route('case-running.show',$case_id)}}">Detail</a>
+                                    href="{{route('case-running.show',$case_id)}}">Detalle</a>
                             </li>
                             <li role="presentation"
                                 class="@if(Request::segment(2)=='case-history')active @ else @endif"><a
-                                    href="{{url( 'admin/case-history/'.$case_id)}}">History</a>
+                                    href="{{url( 'admin/case-history/'.$case_id)}}">Historia</a>
 
                             </li>
                             <li role="presentation"
                                 class="@if(Request::segment(2)=='case-transfer')active @ else @endif"><a
-                                    href="{{url('admin/case-transfer/'.$case_id)}}">Transfer</a>
+                                    href="{{url('admin/case-transfer/'.$case_id)}}">Transferencia</a>
                             </li>
                         </ul>
 
@@ -49,11 +49,11 @@
                     <table id="case_transfer_list" class="table row-border">
                         <thead>
                         <tr>
-                            <th width="5%">No</th>
-                            <th width="25%">Registration No.</th>
-                            <th width="15%">Transfer Date</th>
-                            <th width="25%">From Court Number and Judge</th>
-                            <th width="30%">To Court Number and Judge</th>
+                            <th width="5%">Nº</th>
+                            <th width="25%">Nº de registro</th>
+                            <th width="15%">Fecha de transferencia</th>
+                            <th width="25%">Del número de tribunal y juez</th>
+                            <th width="30%">Al número de tribunal y juez</th>
 
                         </tr>
                         </thead>

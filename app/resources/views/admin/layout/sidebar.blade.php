@@ -11,7 +11,7 @@
             @endif
 
             @if($adminHasPermition->can(['case_list']) =="1")
-                <li><a href="{{ route('case-running.index') }}"><i class="fa fa-gavel"></i> Case</a></li>
+                <li><a href="{{ route('case-running.index') }}"><i class="fa fa-gavel"></i> Casos</a></li>
 
             @endif
             {{--@if($adminHasPermition->can(['task_list']) =="1")

@@ -88,7 +88,7 @@ var DatatableRemoteAjaxDemo = function () {
                 $('#date_to').val('');
                 t.destroy();
                 DatatableRemoteAjaxDemo.init()
-                $("#search").attr("disabled", "disabled");
+                $("#search").attr("desactivada", "desactivada");
             });
 
 
@@ -130,7 +130,7 @@ jQuery(document).ready(function () {
 });
 
 function confirmDelete() {
-    var x = confirm("Are you sure you want to delete this appointment.?");
+    var x = confirm("¿Estás seguro que deseas eliminar esta cita?");
     if (x)
         return true;
     else

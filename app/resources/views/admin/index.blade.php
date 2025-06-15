@@ -25,8 +25,8 @@
                             <div class="icon"><i class="fa fa-users"></i>
                             </div>
                             <div class="count">{{ $client ?? '' }}</div>
-                            <h3>Clients</h3>
-                            <p>Total clients.</p>
+                            <h3>Clientes</h3>
+                            <p>Total de Clientes.</p>
                         </div>
                     </div>
                 </a>
@@ -36,8 +36,8 @@
                             <div class="icon"><i class="fa fa-gavel"></i>
                             </div>
                             <div class="count">{{ $case_total ?? '' }}</div>
-                            <h3>Cases</h3>
-                            <p>Total cases.</p>
+                            <h3>Casos</h3>
+                            <p>Total de casos.</p>
                         </div>
                     </div>
                 </a>
@@ -47,8 +47,8 @@
                             <div class="icon"><i class="fa fa-star"></i>
                             </div>
                             <div class="count">{{ $important_case ?? '' }}</div>
-                            <h3>Important Cases</h3>
-                            <p>Total important cases.</p>
+                            <h3>Casos Importantes</h3>
+                            <p>Total de Casos Importantes.</p>
                         </div>
                     </div>
                 </a>
@@ -58,8 +58,8 @@
                             <div class="icon"><i class="fa fa-file-archive-o"></i>
                             </div>
                             <div class="count">{{$archived_total}}</div>
-                            <h3>Archived Cases</h3>
-                            <p>Total completed cases.</p>
+                            <h3>Casos Archivados</h3>
+                            <p>Total de Casos Completados.</p>
                         </div>
                     </div>
                 </a>
@@ -69,7 +69,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Case Board </h2>
+                            <h2>Casos de Cómite o Junta </h2>
                             &nbsp;&nbsp;
                             @if($totalCaseCount>0)
                                 <a href="javascript:void(0);" onClick="downloadCaseBorad()" title="Download case board"><i
@@ -96,12 +96,12 @@
                                         <table id="case_list" class="table row-border" style="width:100%">
                                             <thead>
                                             <tr>
-                                                <th width="3%">No</th>
-                                                <th width="20%">Case No</th>
-                                                <th width="35%">Case</th>
-                                                <th width="15%">Next Date</th>
-                                                <th width="10%">estado</th>
-                                                <th width="17%" style="text-align: center;">Action</th>
+                                                <th width="3%">Nº</th>
+                                                <th width="20%">Nº de Caso</th>
+                                                <th width="35%">Caso</th>
+                                                <th width="15%">Próxima Fecha</th>
+                                                <th width="10%">Estado</th>
+                                                <th width="17%" style="text-align: center;">Acción</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -146,12 +146,12 @@
                                                                                                    href="javascript:void(0);"
                                                                                                    onclick="nextDateAdd('{{$value->case_id}}');"><i
                                                                                 class="fa fa-calendar-plus-o"></i>
-                                                                            &nbsp;&nbsp;Next Date</a></li>
+                                                                            &nbsp;&nbsp;Próxima Fecha</a></li>
                                                                     <li style="text-align:left"><a class=""
                                                                                                    href="javascript:void(0);"
                                                                                                    onClick="transfer_case('{{$value->case_id}}');"><i
-                                                                                class="fa fa-gavel"></i> &nbsp;&nbsp;Case
-                                                                            Transfer</a></li>
+                                                                                class="fa fa-gavel"></i> &nbsp;&nbsp;Caso
+                                                                            Transferencia</a></li>
                                                                 @endif
 
 
@@ -169,7 +169,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="customers-space">
-                                            <p class="customers-tittle text-center">Today you have No Case Board.</p>
+                                            <p class="customers-tittle text-center">Hoy no tienes Casos de Cómite o Junta.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -179,13 +179,12 @@
                                     <div class="col-md-12">
                                         <div class="col-md-6">
                                             <div class="customers-space">
-                                                <h4 class="customers-heading">Manage your case</h4>
-                                                <p class="customers-tittle">Maintain complete case details like case
-                                                    history, case transfer, next hearing date etc.</p>
+                                                <h4 class="customers-heading">Gestiona tu caso</h4>
+                                                <p class="customers-tittle">Mantenga detalles completos del caso, como historial del caso, transferencia del caso, fecha de la próxima audiencia, etc.</p>
                                                 <div class="cst-btn">
                                                     <div class="top-btns" style="text-align: left;">
                                                         <a class="btn btn-info"
-                                                           href="{{url('admin/case-running/create')}}"> Add Case </a>
+                                                           href="{{url('admin/case-running/create')}}"> Añadir Caso </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,7 +208,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Appointment</h2>
+                            <h2>Citaciones</h2>
                             <div class="col-md-3 col-sm-12 col-xs-12 pull-right">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -225,10 +224,10 @@
                                 <table id="appointment_list" class="table row-border" style="width:100%">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Client Name</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
+                                        <th>Nº</th>
+                                        <th>Nombre del Cliente</th>
+                                        <th>Fecha</th>
+                                        <th>Tiempo</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -236,7 +235,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="customers-space">
-                                            <p class="customers-tittle text-center">Today you have No Appointment.</p>
+                                            <p class="customers-tittle text-center">Hoy no tienes citaciones.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -246,15 +245,14 @@
                                     <div class="col-md-12">
                                         <div class="col-md-6">
                                             <div class="customers-space">
-                                                <h4 class="customers-heading">Manage your Appointment</h4>
-                                                <p class="customers-tittle">Schedule your appointment with Advocates
-                                                    Diary and we will remind and notify as and when your appointment is
-                                                    due.</p>
+                                                <h4 class="customers-heading">Gestiona tu cita</h4>
+                                                <p class="customers-tittle">Programe su cita con los defensores donde le recordaremos y
+                                                    notificaremos cuando venza su cita.</p>
                                                 <div class="cst-btn">
                                                     <div class="top-btns" style="text-align: left;">
                                                         <a class="btn btn-info"
-                                                           href="{{url('admin/appointment/create')}}"> Add
-                                                            Appointment </a>
+                                                           href="{{url('admin/appointment/create')}}"> Añadir
+                                                            citaciones </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +281,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Calendar</h2>
+                            <h2>Calendario</h2>
                             <div class="col-md-3 col-sm-12 col-xs-12 pull-right">
                                 <div class="input-group">
 

@@ -15,10 +15,10 @@ function nextDateAdd(case_id) {
             });
 
             // show bootstrap modal
-            $('.modal-title').text('Add Next Date'); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Añadir próxima fecha'); // Set Title to Bootstrap modal title
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Error adding / update data');
+            alert('Error al agregar o actualizar los datos');
         }
     });
 }

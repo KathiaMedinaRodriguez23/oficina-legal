@@ -9,34 +9,34 @@
                 <div class="x_content">
                     @include('admin.case.view.card_header')
                     <div class="dashboard-widget-content">
-                        <h2 class="line_30 case_detail-m-f-10">Case Detail</h2>
+                        <h2 class="line_30 case_detail-m-f-10">Detalle de Caso</h2>
                         <div class="col-md-6 hidden-small">
 
 
                             <table class="countries_list">
                                 <tbody>
                                 <tr>
-                                    <td>Case Type</td>
+                                    <td>Tipo de Caso</td>
                                     <td class="fs15 fw700 text-right">{{$case->caseType}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Filling No</td>
+                                    <td>Nº de presentación</td>
                                     <td class="fs15 fw700 text-right">{{$case->filing_number}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Filling Date</td>
+                                    <td>Fecha de presentación</td>
                                     <td class="fs15 fw700 text-right">{{date($date_format_laravel,strtotime($case->filing_date))}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Registration No</td>
+                                    <td>Nº Registro</td>
                                     <td class="fs15 fw700 text-right">{{$case->registration_number}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Registration Date</td>
+                                    <td>Fecha de Registro</td>
                                     <td class="fs15 fw700 text-right">{{date($date_format_laravel,strtotime($case->registration_date))}}</td>
                                 </tr>
                                 <tr>
-                                    <td>CNR Number</td>
+                                    <td>Numero CNR </td>
                                     <td class="fs15 fw700 text-right"> {{$case->cnr_number}}</td>
                                 </tr>
                                 </tbody>
@@ -49,13 +49,13 @@
                                 <tbody>
 
                                 <tr>
-                                    <td>First Hearing Date</td>
+                                    <td>Fecha de la primera audiencia</td>
                                     <td class="fs15 fw700 text-right s">
                                         {{date($date_format_laravel,strtotime($case->first_hearing_date))}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Next Hearing Date</td>
+                                    <td>Próxima fecha de audiencia</td>
 
                                     @if($adminHasPermition->can(['case_edit']) =="1")
                                         <td class="fs15 fw700 text-right">
@@ -78,15 +78,15 @@
                                     @endif
                                 </tr>
                                 <tr>
-                                    <td>Case Status</td>
+                                    <td>Estado del caso</td>
                                     <td class="fs15 fw700 text-right">{{$case->case_status_name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Court No.</td>
+                                    <td>Nº de Tribunal</td>
                                     <td class="fs15 fw700 text-right">{{$case->court_no}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Judge</td>
+                                    <td>Juez</td>
                                     <td class="fs15 fw700 text-right">{{$case->judge_name}}</td>
                                 </tr>
                                 </tbody>
@@ -109,7 +109,7 @@
                 <div class="x_content">
                     <div class="dashboard-widget-content">
                         <div class="col-md-6 hidden-small">
-                            <h4 class="line_30">Petitioner and Advocate</h4>
+                            <h4 class="line_30">Peticionario & Defensor</h4>
 
 
                             <table class="countries_list">
@@ -127,7 +127,7 @@
                         </div>
 
                         <div class="col-md-6 hidden-small">
-                            <h4 class="line_30">Respondent and Advocate</h4>
+                            <h4 class="line_30">Demandado & Abogado</h4>
 
                             <table class="countries_list">
                                 <tbody>

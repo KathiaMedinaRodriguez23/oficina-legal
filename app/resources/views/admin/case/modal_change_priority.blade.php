@@ -12,14 +12,14 @@
             <div class="col-md-12">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text">Case Priority <span class="text-danger">*</span></label>
+                        <label class="discount_text">Prioridad de casos <span class="text-danger">*</span></label>
                         <select class="form-control" id="priority" name="priority">
-                            <option value="High" {{(!empty($case) && $case->priority=='High')?'selected':''}}>High
+                            <option value="High" {{(!empty($case) && $case->priority=='High')?'selected':''}}>Alto
                             </option>
                             <option value="Medium"{{(!empty($case) && $case->priority=='Medium')?'selected':''}}>
-                                Medium
+                                Mediano
                             </option>
-                            <option value="Low" {{(!empty($case) && $case->priority=='Low')?'selected':''}}>Low</option>
+                            <option value="Low" {{(!empty($case) && $case->priority=='Low')?'selected':''}}>Bajo</option>
                         </select>
 
                     </div>
@@ -32,10 +32,10 @@
     <div class="modal-footer">
 
         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                class="ik ik-x"></i>Close
+                class="ik ik-x"></i>Cerrar
         </button>
 
-        <button type="submit" name="case_status_btn" class="btn btn-success waves-effect waves-light">Save <i
+        <button type="submit" name="case_status_btn" class="btn btn-success waves-effect waves-light">Guardar <i
                 class="fa fa-spinner fa-spin hide" id="btn_loader"></i></button>
 
     </div>

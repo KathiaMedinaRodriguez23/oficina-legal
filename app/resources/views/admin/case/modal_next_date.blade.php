@@ -14,7 +14,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="notiseting">Declare as a No Board case.
+                        <label class="notiseting">Declarar como Nº de casos comité/junta
                             <input type="checkbox" value="Yes" name="is_nb" id="is_nb" onchange="nbCheck();">
                             <span class="checkmark"></span>
                         </label>
@@ -27,9 +27,9 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> Case status <span class="text-danger">*</span></label>
+                        <label class="discount_text"> Estado del caso <span class="text-danger">*</span></label>
                         <select class="form-control select2" id="case_status" name="case_status" style="width:100%;">
-                            <option value="">Select case status</option>
+                            <option value="">Seleccione estado de caso</option>
                             @foreach($caseStatuses as $caseStatus)
                                 @php if($case->is_active=='No' && ($caseStatus->case_status_name=='Disposed' || $caseStatus->case_status_name=='Closed' )){ continue;} @endphp
                                 <option value="{{$caseStatus->id}}" myvalue="{{$caseStatus->case_status_name}}" {{(!empty($case) && $case->case_status==$caseStatus->id && $case->is_active=='Yes')?'selected':''}}>{{$caseStatus->case_status_name}}</option>
@@ -43,7 +43,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label  class="discount_text"> Next Date <span class="text-danger">*</span></label>
+                        <label  class="discount_text"> Fecha siguiente <span class="text-danger">*</span></label>
                         <input type="text" class="form-control case_next_date" id="next_date" name="next_date" readonly="">
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="contct-info">
                         <div class="form-group">
-                            <label  class="discount_text"> Decision date <span class="text-danger">*</span></label>
+                            <label  class="discount_text"> Fecha de decisión <span class="text-danger">*</span></label>
                             <input type="text" id="decision_date" name="decision_date" class="form-control datetimepickerdecisiondate" readonly="" value="">
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="contct-info">
                         <div class="form-group">
-                            <label  class="discount_text">Nature of Disposal <span class="text-danger">*</span></label>
+                            <label  class="discount_text">Naturaleza de la disposición <span class="text-danger">*</span></label>
                             <input type="text" id="nature_disposal" name="nature_disposal" class="form-control"  value="">
                         </div>
                     </div>
@@ -76,7 +76,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label  class="discount_text"> Remarks </label>
+                        <label  class="discount_text"> Observaciones </label>
                         <textarea  class="form-control" id="remarks" name="remarks"></textarea>
                     </div>
                 </div>
@@ -85,8 +85,8 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                    class="ik ik-x"></i>Close</button>
-        <button type="submit" name="case_next_date_btn" class="btn btn-success waves-effect waves-light">Save <i class="fa fa-spinner fa-spin hide" id="btn_loader"></i></button>
+                    class="ik ik-x"></i>Cerrar</button>
+        <button type="submit" name="case_next_date_btn" class="btn btn-success waves-effect waves-light">Guardar <i class="fa fa-spinner fa-spin hide" id="btn_loader"></i></button>
 
     </div>
 </form>
@@ -156,12 +156,12 @@
 
             },
             messages: {
-                case_status:"Please select case status.",
+                case_status:"Por favor, seleccione el estado del caso.",
                 next_date: {
-                    required:"Please select next date."
+                    required:"Por favor, seleccione la próxima fecha."
                 },
-                decision_date: "Please select decision date.",
-                nature_disposal: "Please enter nature of disposal.",
+                decision_date: "Por favor, Seleccione la fecha de decisión.",
+                nature_disposal: "Por favor, indique la naturaleza de la disposición.",
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
@@ -209,16 +209,16 @@
                             if(decision != ''){
                                 message.fire({
                                     type: 'success',
-                                    title: 'Success' ,
-                                    text:"Case disposed / closed successfully.",
+                                    title: 'Éxito' ,
+                                    text:"Caso resuelto/cerrado exitosamente.",
                                 });
                                 // alert("Case disposed / closed successfully.");
                                 // success_massage('Case disposed / closed successfully.');
                             }else{
                                 message.fire({
                                     type: 'success',
-                                    title: 'Success' ,
-                                    text:"Case next date added successfully.",
+                                    title: 'Éxito' ,
+                                    text:"La próxima fecha del caso se agregó correctamente.",
                                 });
 
                                 // alert("Case next date added successfully.");

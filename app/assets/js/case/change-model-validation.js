@@ -12,9 +12,9 @@ var FormControlsClient = {
                 transfer_date: "required"
             },
             messages: {
-                court_number: "Please enter court number.",
-                judge_type: "Please select judge type.",
-                transfer_date: "Please select transfer date."
+                court_number: "Por favor, ingrese el número del tribunal.",
+                judge_type: "Por favor, seleccione el tipo de juez.",
+                transfer_date: "Por favor, seleccione la fecha de transferencia."
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
@@ -54,8 +54,8 @@ var FormControlsClient = {
 
                             message.fire({
                                 type: 'success',
-                                title: 'Success',
-                                text: "Case transfer between court successfully.",
+                                title: 'Éxito',
+                                text: "Transferencia realizada con éxito entre juzgados",
                             });
 
                             t.ajax.reload();

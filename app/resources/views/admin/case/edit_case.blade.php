@@ -6,12 +6,12 @@
 
     <div class="page-title">
         <div class="title_left">
-            <h3>Edit Case</h3>
+            <h3>Editar Caso</h3>
         </div>
 
         <div class="title_right">
             <div class="form-group pull-right top_search">
-                <a href="{{route('case-running.index')}}" class="btn btn-primary">Back</a>
+                <a href="{{route('case-running.index')}}" class="btn btn-primary">Cerrar</a>
 
             </div>
         </div>
@@ -28,14 +28,14 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Client Detail</h2>
+                        <h2>Detalle del Cliente</h2>
 
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <strong>Ups!</strong> Hubo algunos problemas con tu entrada.<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -46,9 +46,9 @@
 
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Client <span class="text-danger">*</span></label>
+                                <label for="fullname">Cliente <span class="text-danger">*</span></label>
                                 <select class="form-control" name="client_name" id="client_name">
-                                    <option value="">Select client</option>
+                                    <option value="">Seleccionar cliente</option>
                                     @foreach($client_list as $list)
                                         <option
                                             value="{{ $list->id}}" {{($list->id == $case->advo_client_id)?'selected':''}}>{{  $list->name}}</option>
@@ -59,10 +59,10 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                 <br><br>
                                 <input type="radio" id="test1" name="position"
-                                       value="Petitioner" {{(!empty($case) && $case->client_position=='Petitioner')?'checked':''}}>&nbsp;&nbsp;Petitioner
+                                       value="Petitioner" {{(!empty($case) && $case->client_position=='Petitioner')?'checked':''}}>&nbsp;&nbsp;Peticionario
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" id="test2" name="position"
-                                       value="Respondent" {{(!empty($case) && $case->client_position=='Respondent')?'checked':''}}>&nbsp;&nbsp;Respondent
+                                       value="Respondent" {{(!empty($case) && $case->client_position=='Respondent')?'checked':''}}>&nbsp;&nbsp;Demandado
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@
                             </div>
                             <button data-repeater-create type="button" value="Add New"
                                     class="btn btn-success waves-effect waves-light btn btn-success-edit" type="button">
-                                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add More
+                                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Agregar más
                             </button>
                         </div>
 
@@ -128,7 +128,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Case Detail</h2>
+                        <h2>Detalle Caso</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -137,16 +137,16 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Case No <span class="text-danger">*</span></label>
+                                <label for="fullname">Nº Caso <span class="text-danger">*</span></label>
                                 <input type="text" value="{{$case->case_number ?? ''}}" id="case_no" name="case_no"
                                        class="form-control">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Case Type <span class="text-danger">*</span></label>
+                                <label for="fullname">Tipo de Caso <span class="text-danger">*</span></label>
                                 <select class="form-control" id="case_type" name="case_type"
                                         onchange="getCaseSubType(this.value);">
-                                    <option value="">Select case type</option>
+                                    <option value="">Seleccionar tipo de caso </option>
                                     @foreach($caseTypes as $caseType)
                                         <option
                                             value="{{$caseType->id}}" {{(!empty($case) && $case->case_types==$caseType->id)?'selected':''}}>{{$caseType->case_type_name}}</option>
@@ -155,7 +155,7 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Case Sub Type <span class="text-danger"></span></label>
+                                <label for="fullname">Tipo de Sub Caso <span class="text-danger"></span></label>
                                 <select class="form-control" id="case_sub_type" name="case_sub_type">
                                     @foreach($caseSubTypes as $caseSubType)
                                         <option
@@ -168,9 +168,9 @@
 
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Stage of Case <span class="text-danger">*</span></label>
+                                <label for="fullname">Etapa del caso <span class="text-danger">*</span></label>
                                 <select class="form-control" id="case_status" name="case_status">
-                                    <option value="">Select case status</option>
+                                    <option value="">Seleccionar estado del caso</option>
                                     @foreach($caseStatuses as $caseStatus)
                                         <option value="{{$caseStatus->id}}"
                                                 myvalue="{{$caseStatus->case_status_name}}" {{(!empty($case) && $case->case_status==$caseStatus->id)?'selected':''}}>{{$caseStatus->case_status_name}}</option>
@@ -180,29 +180,29 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                 <br><br>
                                 <input type="radio" id="test3" name="priority"
-                                       value="High" {{(!empty($case) && $case->priority=='High')?'checked':''}}>&nbsp;&nbsp;High
+                                       value="High" {{(!empty($case) && $case->priority=='High')?'checked':''}}>&nbsp;&nbsp;Alto
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" id="test4" name="priority"
-                                       value="Medium" {{(!empty($case) && $case->priority=='Medium')?'checked':''}}>&nbsp;&nbsp;Medium
+                                       value="Medium" {{(!empty($case) && $case->priority=='Medium')?'checked':''}}>&nbsp;&nbsp;Mediano
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" id="test5" name="priority"
-                                       value="Low" {{(!empty($case) && $case->priority=='Low')?'checked':''}}>&nbsp;&nbsp;Low
+                                       value="Low" {{(!empty($case) && $case->priority=='Low')?'checked':''}}>&nbsp;&nbsp;Bajo
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Act <span class="text-danger">*</span></label>
+                                <label for="fullname">Acta <span class="text-danger">*</span></label>
                                 <input type="text" id="act" name="act" class="form-control"
                                        value="{{$case->act ?? ''}}">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Filing Number <span class="text-danger">*</span></label>
+                                <label for="fullname">Número de presentación <span class="text-danger">*</span></label>
                                 <input type="text" id="filing_number" name="filing_number" class="form-control"
                                        value="{{$case->filing_number}}">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Filing date <span class="text-danger">*</span></label>
+                                <label for="fullname">Fecha de presentación <span class="text-danger">*</span></label>
                                 <input type="text" id="filing_date" name="filing_date"
                                        class="form-control datetimepickerfilingdate" readonly=""
                                        value="{{date($date_format_laravel,strtotime($case->filing_date))}}">
@@ -211,18 +211,18 @@
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Registration Number <span class="text-danger">*</span></label>
+                                <label for="fullname">Numero de registro <span class="text-danger">*</span></label>
                                 <input type="text" id="registration_number" name="registration_number"
                                        class="form-control" value="{{$case->registration_number}}">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Registration date <span class="text-danger">*</span></label>
+                                <label for="fullname">Fecha de registro <span class="text-danger">*</span></label>
                                 <input type="text" id="filiregistration_dateng_date" name="registration_date"
                                        class="form-control datetimepickerregdate" readonly=""
                                        value="{{ date($date_format_laravel,strtotime($case->registration_date))}}">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">First Hearing Date <span class="text-danger">*</span></label>
+                                <label for="fullname">Fecha de la primera audiencia <span class="text-danger">*</span></label>
                                 <input type="text" id="next_date" name="next_date"
                                        class="form-control datetimepickernextdate" readonly=""
                                        value="{{ date($date_format_laravel,strtotime($case->next_date))}}">
@@ -230,12 +230,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">CNR Number <span class="text-danger"></span></label>
+                                <label for="fullname">Numero CNR <span class="text-danger"></span></label>
                                 <input type="text" value="{{$case->cnr_number}}" id="cnr_number" name="cnr_number"
                                        class="form-control">
                             </div>
                             <div class="col-md-9 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Description <span class="text-danger"></span></label>
+                                <label for="fullname">Descripción <span class="text-danger"></span></label>
                                 <textarea id="description" name="description"
                                           class="form-control">{{$case->description ?? ''}}</textarea>
                             </div>
@@ -253,7 +253,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>FIR Details</h2>
+                        <h2>Detalles FIR </h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -262,7 +262,7 @@
                         <div class="row">
 
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Police Station <span class="text-danger"></span></label>
+                                <label for="fullname">Estación de Policía <span class="text-danger"></span></label>
                                 <input type="text" id="police_station" name="police_station" class="form-control"
                                        value="{{$case->police_station ?? ''}}">
                             </div>
@@ -272,14 +272,14 @@
                         <div class="row">
 
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">FIR Number <span class="text-danger"></span></label>
+                                <label for="fullname">Número FIR <span class="text-danger"></span></label>
                                 <input type="text" value="{{$case->fir_number ?? ''}}" id="fir_number" name="fir_number"
                                        class="form-control">
                             </div>
 
 
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">FIR Date <span class="text-danger"></span></label>
+                                <label for="fullname">Fecha FIR <span class="text-danger"></span></label>
                                 <input type="text" id="fir_date" name="fir_date"
                                        class="form-control datetimepickerregdate" readonly=""
                                        value="@php if($case->fir_date!=null){@endphp {{date($date_format_laravel,strtotime($case->fir_date))}} @php } @endphp">
@@ -298,7 +298,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Court Detail</h2>
+                        <h2>Detalle de la Corte</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -306,16 +306,16 @@
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Court no <span class="text-danger">*</span></label>
+                                <label for="fullname">Nº Corte<span class="text-danger">*</span></label>
                                 <input type="text" value="{{$case->court_no ?? ''}}" id="court_no" name="court_no"
                                        class="form-control">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Court Type<span class="text-danger">*</span></label>
+                                <label for="fullname">Tipo de tribunal<span class="text-danger">*</span></label>
                                 <select class="form-control" id="court_type" name="court_type"
                                         onchange="getCourt(this.value);">
-                                    <option value="">Select court type</option>
+                                    <option value="">Seleccione tipo de tribunal</option>
                                     @foreach($courtTypes as $courtType)
                                         <option
                                             value="{{$courtType->id}}" {{(!empty($case) && $case->court_type==$courtType->id)?'selected':''}}>{{$courtType->court_type_name}}</option>
@@ -323,7 +323,7 @@
                                 </select>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Court <span class="text-danger">*</span></label>
+                                <label for="fullname">Corte <span class="text-danger">*</span></label>
                                 <select class="form-control" id="court_name"
                                         name="court_name"> @foreach($courts as $court)
                                         <option
@@ -334,9 +334,9 @@
 
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Judge Type <span class="text-danger">*</span></label>
+                                <label for="fullname">Tipo de Juez <span class="text-danger">*</span></label>
                                 <select class="form-control select2" id="judge_type" name="judge_type">
-                                    <option value="">Select judge type</option>
+                                    <option value="">Seleccionar tipo de juez</option>
                                     @foreach($judges as $judge)
                                         <option
                                             value="{{$judge->id}}" {{(!empty($case) && $case->judge_type==$judge->id)?'selected':''}}>{{$judge->judge_name}}</option>
@@ -344,12 +344,12 @@
                                 </select>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Judge Name <span class="text-danger"></span></label>
+                                <label for="fullname">Nombre de Juez <span class="text-danger"></span></label>
                                 <input type="text" id="judge_name" name="judge_name" value="{{$case->judge_name ?? ''}}"
                                        class="form-control">
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Remarks <span class="text-danger"></span></label>
+                                <label for="fullname">Observaciones <span class="text-danger"></span></label>
                                 <textarea id="remarks" name="remarks"
                                           class="form-control">{{$case->remark ?? ''}}</textarea>
 
@@ -366,7 +366,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Task Assign</h2>
+                        <h2>Tarea Asignada</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -376,7 +376,7 @@
 
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Users</label>
+                                <label for="fullname">Usuarios</label>
                                 <select multiple class="form-control" id="assigned_to" name="assigned_to[]">
                                     @foreach($users as $key=>$val)
                                         <option value="{{$val->id}}"
@@ -401,8 +401,8 @@
                 <div class="col-md-12 col-sm-6 col-xs-12">
 
 
-                    <a class="btn btn-danger" href="{{route('case-running.index')}}">Cancel</a>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-save" id="show_loader"></i>&nbsp;Save
+                    <a class="btn btn-danger" href="{{route('case-running.index')}}">Cancelar</a>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-save" id="show_loader"></i>&nbsp;Guardar
                     </button>
                 </div>
 

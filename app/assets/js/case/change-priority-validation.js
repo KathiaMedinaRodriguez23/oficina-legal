@@ -8,7 +8,7 @@ var FormControlsClient = {
                 priority: "required"
             },
             messages: {
-                priority: "Please select priority."
+                priority: "Por favor, seleccione una prioridad."
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
@@ -48,8 +48,8 @@ var FormControlsClient = {
 
                             message.fire({
                                 type: 'success',
-                                title: 'Success',
-                                text: "Case proirity changed successfully.",
+                                title: 'Éxito',
+                                text: "Prioridad del caso actualizada exitosamente.",
                             });
 
                             // window.location.reload();

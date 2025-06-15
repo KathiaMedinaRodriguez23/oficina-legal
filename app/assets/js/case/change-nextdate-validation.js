@@ -14,12 +14,12 @@ var FormControlsClient = {
 
             },
             messages: {
-                case_status: "Please select case status.",
+                case_status: "Por favor, seleccione el estado del caso.",
                 next_date: {
-                    required: "Please select next date."
+                    required: "Por favor, seleccione la próxima fecha."
                 },
-                decision_date: "Please select decision date.",
-                nature_disposal: "Please enter nature of disposal.",
+                decision_date: "Por favor, seleccione la fecha de resolución.",
+                nature_disposal: "Por favor, indique la naturaleza de la disposición.",
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
@@ -64,16 +64,16 @@ var FormControlsClient = {
                             if (decision != '') {
                                 message.fire({
                                     type: 'success',
-                                    title: 'Success',
-                                    text: "Case disposed / closed successfully.",
+                                    title: 'Éxito',
+                                    text: "El caso ha sido resuelto o cerrado exitosamente..",
                                 });
                                 // alert("Case disposed / closed successfully.");
                                 // success_massage('Case disposed / closed successfully.');
                             } else {
                                 message.fire({
                                     type: 'success',
-                                    title: 'Success',
-                                    text: "Case next date added successfully.",
+                                    title: 'Éxito',
+                                    text: "Próxima fecha del caso añadida correctamente",
                                 });
 
 

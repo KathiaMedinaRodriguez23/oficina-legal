@@ -81,5 +81,5 @@ function showRemark(bussinessOnDate, remarks) {
 
     $('#remarkModal').modal('show'); // show bootstrap modal
 
-    $('.modal-title').text('Remark of Business on Date : ' + bussinessOnDate); // Set Title to Bootstrap modal title
+    $('.modal-title').text('Observación de la actividad en la fecha:' + bussinessOnDate); // Set Title to Bootstrap modal title
 }

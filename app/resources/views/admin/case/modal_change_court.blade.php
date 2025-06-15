@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Modal Header</h4>
+    <h4 class="modal-title">Encabezado modal</h4>
 </div>
 <form id="case_transfer" name="case_transfer" role="form" method="POST" action="{{ url('admin/transferCaseCourt')}}">
     {{ csrf_field() }}
@@ -12,7 +12,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> Court Number <span class="text-danger">*</span></label>
+                        <label class="discount_text"> Numero de la Corte <span class="text-danger">*</span></label>
                         <input type="text" id="court_number" name="court_number" class="form-control">
                     </div>
                 </div>
@@ -22,9 +22,9 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> judge type<span class="text-danger">*</span></label>
+                        <label class="discount_text"> Tipo de juez <span class="text-danger">*</span></label>
                         <select class="form-control select2 selct2-width-100" id="judge_type" name="judge_type">
-                            <option value="">Select judge type</option>
+                            <option value="">Seleccione tipo de juez</option>
                             @foreach($judges as $judge)
                                 <option
                                         value="{{$judge->id}}" {{(!empty($case) && $case->judge_type==$judge->id)?'selected':''}}>{{$judge->judge_name}}</option>
@@ -38,7 +38,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> Judge Name</label>
+                        <label class="discount_text"> Nombre del Juez </label>
                         <input type="text" id="judge_name" name="judge_name" class="form-control">
                     </div>
                 </div>
@@ -48,7 +48,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> Transfer Date <span class="text-danger">*</span></label>
+                        <label class="discount_text"> Fecha de transferencia <span class="text-danger">*</span></label>
                         <input type="text" id="transfer_date" name="transfer_date" class="form-control transfer_date"
                                readonly value="{{date($date_format_laravel)}}">
                     </div>
@@ -58,9 +58,9 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                    class="ik ik-x"></i>Close
+                    class="ik ik-x"></i>Cerrar
         </button>
-        <button type="submit" name="case_transfer_btn" class="btn btn-success waves-effect waves-light">Save <i
+        <button type="submit" name="case_transfer_btn" class="btn btn-success waves-effect waves-light">Guardar <i
                     class="fa fa-spinner fa-spin hide" id="btn_loader"></i></button>
 
     </div>

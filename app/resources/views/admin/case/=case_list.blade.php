@@ -4,11 +4,11 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h4>Case List : MILIND RASHMIBHAI DAVE </h4>
+                <h4>Lista de Casos : MILIND RASHMIBHAI DAVE </h4>
             </div>
 
             <div class="pull-right">
-                <h4>Total Case : 1 </h4>
+                <h4>Total de Caso : 1 </h4>
             </div>
         </div>
 
@@ -23,13 +23,13 @@
                         <table id="datatable" class="table">
                             <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Client & Case Detail</th>
-                                <th>Court Detail</th>
-                                <th>Petitioner vs Respondent</th>
-                                <th>Next Date</th>
-                                <th>estado</th>
-                                <th>Action</th>
+                                <th>Nº</th>
+                                <th>Detalle del cliente y del caso</th>
+                                <th>Detalles de la corte</th>
+                                <th>Detalles del demandante vs. demandado</th>
+                                <th>Próxima fecha</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
                             </tr>
                             </thead>
 
@@ -39,10 +39,10 @@
                                 <td>1</td>
                                 <td><i class="fa fa-star-half-o"></i> <a href="{{ url('admin/case/view/detail') }}"
                                                                         >1089/2016</a><br>
-                                    Case: CRMA S – Criminal Misc. Application – Sessions
+                                    Caso: CRMA S – Criminal Misc. Application – Sessions
                                 </td>
-                                <td>Court : District & Sessions Court<br>
-                                    No : 5<br>
+                                <td>Corte : District & Sessions Court<br>
+                                    Nº : 5<br>
                                     Magistrate : 5th ADDL District Judge
                                 </td>
                                 <td>MILIND RASHMIBHAI DAVE<br>
@@ -53,7 +53,7 @@
                                     Darshan Tank
                                 </td>
 
-                                <td>Hearing</td>
+                                <td>Audiencia</td>
                                 <td>
                                     <ul class="nav navbar-right panel_toolbox">
 
@@ -64,18 +64,18 @@
                                                                      ></i></a>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li><a href="{{ url('admin/case/view/detail') }}"><i
-                                                            class="fa fa-eye"></i>&nbsp;&nbsp;View</a>
+                                                            class="fa fa-eye"></i>&nbsp;&nbsp;Mostrar</a>
                                                 </li>
-                                                <li><a href="#"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                                <li><a href="#"><i class="fa fa-edit"></i>&nbsp;&nbsp;Editar</a>
                                                 </li>
                                                 <li><a class="call-model" data-url="{{ url('admin/detail/modal') }}"
                                                        data-target-modal="#Detailmodal"><i
-                                                            class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp;Next Date</a>
+                                                            class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp;Fecha siguiente</a>
                                                 </li>
                                                 <li><a class="call-model"
                                                        data-url="{{ url('admin/casetransfer/modal') }}"
                                                        data-target-modal="#Casetransfermodal"><i
-                                                            class="fa fa-gavel"></i>&nbsp;&nbsp;Case Transfer</a>
+                                                            class="fa fa-gavel"></i>&nbsp;&nbsp;Transferencia de Caso</a>
                                                 </li>
                                             </ul>
                                         </li>

@@ -6,7 +6,7 @@
             <h4>Client Name : {{$name}} </h4>
         </div>
         <div class="pull-right">
-            <h4> Total Case : {{$totalCourtCase ?? ''}} </h4>
+            <h4> Total de Caso : {{$totalCourtCase ?? ''}} </h4>
         </div>
 
     </div>
@@ -21,13 +21,13 @@
                            data-url="{{ route('client.case_view.list') }}">
                         <thead>
                         <tr>
-                            <th>No</th>
-                            <th data-orderable="false">Case Detail</th>
-                            <th data-orderable="false">Court Detail</th>
-                            <th data-orderable="false">Petitioner vs Respondent</th>
-                            <th data-orderable="false">Next Date</th>
-                            <th data-orderable="false">estado</th>
-                            <th data-orderable="false">Action</th>
+                            <th>Nº</th>
+                            <th data-orderable="false">Detalle del Caso</th>
+                            <th data-orderable="false">Detalle de la Corte</th>
+                            <th data-orderable="false">Peticionario vs. Demandado</th>
+                            <th data-orderable="false">Próxima fecha</th>
+                            <th data-orderable="false">Estado</th>
+                            <th data-orderable="false">Acción</th>
                         </tr>
                         </thead>
 

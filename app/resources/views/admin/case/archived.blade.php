@@ -5,13 +5,13 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Cases</h3>
+                <h3>Casos</h3>
             </div>
 
             <div class="title_right">
                 <div class="form-group pull-right top_search">
                     @if($adminHasPermition->can(['case_add']))
-                        <a href="{{ route('case-running.create') }}" class="btn btn-primary">Add Case</a>
+                        <a href="{{ route('case-running.create') }}" class="btn btn-primary">Agregar Caso</a>
                     @endif
 
                 </div>
@@ -30,20 +30,20 @@
 
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">From Next Date: <span class="text-danger"></span></label>
+                                <label for="fullname">A partir de la próxima fecha: <span class="text-danger"></span></label>
                                 <input type="text" class="form-control dateFrom" id="date_from" readonly="">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">To Next Date: <span class="text-danger"></span></label>
+                                <label for="fullname">Hasta la próxima fecha: <span class="text-danger"></span></label>
                                 <input type="text" class="form-control dateTo" id="date_to" readonly="">
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
 
 
                                 <div class="case-margin-top-23"></div>
-                                <a href="#" class="btn btn-danger" id="clear">Clear</a>
+                                <a href="#" class="btn btn-danger" id="clear">Limpiar</a>
                                 <button type="submit" id="search" disabled="disabled" class="btn btn-success"><i
-                                        class="fa fa-search"></i> Search
+                                        class="fa fa-search"></i> Buscar
                                 </button>
                             </div>
 
@@ -65,18 +65,18 @@
                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
 
                                 <li role="presentation" class="{{(Request::is('admin/case-running'))?'active':''}} ">
-                                    <a href="{{url('admin/case-running')}}">Running Cases</a>
+                                    <a href="{{url('admin/case-running')}}">Casos en ejecución </a>
                                 </li>
 
                                 <li role="presentation" class="{{(Request::is('admin/case-important'))?'active':''}} ">
-                                    <a href="{{url('admin/case-important')}}">Important Cases</a>
+                                    <a href="{{url('admin/case-important')}}">Casos Importantes</a>
                                 </li>
 
                                 <li role="presentation" class="{{(Request::is('admin/case-nb'))?'active':''}} ">
-                                    <a href="{{url('admin/case-nb')}}">No Board Cases</a>
+                                    <a href="{{url('admin/case-nb')}}">Casos de Comité o Junta</a>
                                 </li>
                                 <li role="presentation" class="{{(Request::is('admin/case-archived'))?'active':''}} ">
-                                    <a href="{{url('admin/case-archived')}}">Archived Cases</a>
+                                    <a href="{{url('admin/case-archived')}}">Casos Archivados</a>
                                 </li>
 
                             </ul>
@@ -86,13 +86,13 @@
                         <table id="case_list" class="table row-border">
                             <thead>
                             <tr>
-                                <th width="3%">No</th>
-                                <th width="20%">Client & Case Detail</th>
-                                <th width="35%">Court Detail</th>
-                                <th width="20%">Petitioner vs Respondent</th>
-                                <th width="10%">Next Date</th>
-                                <th width="9%">estado</th>
-                                <th width="3%">Action</th>
+                                <th width="3%">Nº</th>
+                                <th width="20%">Detalle del cliente y del caso</th>
+                                <th width="35%">Detalles de la corte</th>
+                                <th width="15%">Peticionario vs. Demandado</th>
+                                <th width="10%">Próxima fecha</th>
+                                <th width="9%">Estado</th>
+                                <th width="3%">Acción</th>
                             </tr>
                             </thead>
 

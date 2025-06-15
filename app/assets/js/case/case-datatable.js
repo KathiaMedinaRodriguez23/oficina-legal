@@ -20,7 +20,15 @@ var DatatableRemoteAjaxDemo = function () {
             "serverSide": true,
             // "responsive":true,
             "order": [[0, "desc"]],
-            "oLanguage": {sProcessing: "<div class='loader-container'><div id='loader'></div></div>"},
+            "oLanguage": {
+                sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
+                sSearch:     "Buscar:",
+                sEmptyTable: "No hay datos disponibles en la tabla",
+                sZeroRecords:"No se encontraron registros que coincidan",
+                sLengthMenu: "Mostrar _MENU_ registros",
+                sInfo:       "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                sInfoEmpty:  "Mostrando 0 a 0 de 0 registros"
+            },
             "ajax": {
                 "url": case_url,
                 "dataType": "json",
@@ -136,10 +144,10 @@ function nextDateAdd(case_id) {
         success: function (data) {
             $('#show_modal_next_date').html(data);
             $('#modal-next-date').modal('show'); // show bootstrap modal
-            $('.modal-title').text('Add Next Date'); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Añadir próxima fecha'); // Set Title to Bootstrap modal title
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Error adding / update data');
+            alert('Error al agregar / actualizar los datos');
         }
     });
 }
@@ -151,10 +159,10 @@ function change_case_important(case_id) {
         success: function (data) {
             $('#show_modal').html(data);
             $('#modal-case-priority').modal('show'); // show bootstrap modal
-            $('.modal-title').text('Change Case Important'); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Cambiar caso Importante'); // Set Title to Bootstrap modal title
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Error adding / update data');
+            alert('Error al agregar / actualizar los datos');
         }
     });
 }
@@ -167,10 +175,10 @@ function transfer_case(case_id) {
         success: function (data) {
             $('#show_modal_transfer').html(data);
             $('#modal-change-court').modal('show'); // show bootstrap modal
-            $('.modal-title').text('Case Transfer'); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Transferencia de caso'); // Set Title to Bootstrap modal title
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            alert('Error adding / update data');
+            alert('Error al agregar / actualizar los datos');
         }
     });
 }

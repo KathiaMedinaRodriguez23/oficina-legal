@@ -89,54 +89,54 @@ jQuery(document).ready(function () {
 
     $('input[type=radio][name=position]').on('change', function () {
         if (this.value == 'Respondent') {
-            $('.position_name').html('Petitioner Name');
-            $('.position_advo').html('Petitioner Advocate');
+            $('.position_name').html('Nombre del peticionario');
+            $('.position_advo').html('Defensor del peticionario');
         } else if (this.value == 'Petitioner') {
-            $('.position_name').html('Respondent Name');
-            $('.position_advo').html('Respondent Advocate');
+            $('.position_name').html('Nombre del demandado');
+            $('.position_advo').html('Abogado del demandado');
         }
     });
 
 
     $("#assigned_to").select2({
         allowClear: true,
-        placeholder: 'Select Users',
+        placeholder: 'Seleccionar usuarios',
         multiple: true
     });
 
     $("#case_type").select2({
         allowClear: true,
-        placeholder: 'Select Case Type'
+        placeholder: 'Seleccione el tipo de caso'
     });
 
     $("#case_sub_type").select2({
         allowClear: true,
-        placeholder: 'Select Case Sub Type'
+        placeholder: 'Seleccionar subtipo de caso'
     });
 
     $("#case_status").select2({
         allowClear: true,
-        placeholder: 'Select Stage of Case'
+        placeholder: 'Seleccionar la etapa del caso'
     });
     $("#court_type").select2({
         allowClear: true,
-        placeholder: 'Select Court Type'
+        placeholder: 'Seleccione el tipo de corte'
     });
     $("#court_name").select2({
         allowClear: true,
-        placeholder: 'Select Court'
+        placeholder: 'Seleccione corte'
     });
     $("#judge_type").select2({
         allowClear: true,
-        placeholder: 'Select Judge Type'
+        placeholder: 'Seleccione el tipo de juez'
     });
     $("#client_name").select2({
         allowClear: true,
-        placeholder: 'Select Client Name'
+        placeholder: 'Seleccionar nombre del cliente'
     });
 
-    $('.position_name').html('Respondent Name');
-    $('.position_advo').html('Respondent Advocate');
+    $('.position_name').html('Nombre del demandado');
+    $('.position_advo').html('Abogado del demandado');
     $('.repeater').repeater({
         // (Optional)
         // start with an empty list of repeaters. Set your first (and only)
@@ -161,12 +161,12 @@ jQuery(document).ready(function () {
 
             if (test == 'Respondent') {
 
-                $('.position_name').html('Petitioner Name');
-                $('.position_advo').html('Petitioner Advocate');
+                $('.position_name').html('Nombre del demandante');
+                $('.position_advo').html('Abogado del demandante');
             } else if (test == 'Petitioner') {
 
-                $('.position_name').html('Respondent Name');
-                $('.position_advo').html('Respondent Advocate');
+                $('.position_name').html('Nombre del demandado');
+                $('.position_advo').html('Abogado del demandado');
             }
         },
         // (Optional)
@@ -177,7 +177,7 @@ jQuery(document).ready(function () {
         // to the server, etc.  If a hide callback is not given the item
         // will be deleted.
         hide: function (deleteElement) {
-            if (confirm('Are you sure you want to delete this element?')) {
+            if (confirm('¿Estás seguro que deseas eliminar este elemento?')) {
                 $(this).slideUp(deleteElement);
             }
         },
@@ -203,7 +203,7 @@ function getCaseSubType(id) {
         $('#case_sub_type').html('');
     } else {
         $('#case_sub_type').html('');
-        $('#case_sub_type').prepend($('<option></option>').html('Loading...'));
+        $('#case_sub_type').prepend($('<option></option>').html('cargando...'));
     }
     if (id != '') {
         $.ajaxSetup({
@@ -232,7 +232,7 @@ function getCourt(id) {
         $('#court_name').html('');
     } else {
         $('#court_name').html('');
-        $('#court_name').prepend($('<option></option>').html('Loading...'));
+        $('#court_name').prepend($('<option></option>').html('Cargando...'));
     }
 
 
