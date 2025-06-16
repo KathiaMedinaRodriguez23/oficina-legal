@@ -5,9 +5,9 @@
 
         @component('component.modal_heading',
              [
-             'page_title' => 'Judge',
+             'page_title' => 'Juez',
              'action'=>route("judge.create"),
-             'model_title'=>'Create Judge',
+             'model_title'=>'Crear Juez',
              'modal_id'=>'#addtag',
              'permission' => $adminHasPermition->can(['judge_add'])
              ] )
@@ -26,10 +26,10 @@
                         <table id="tagDataTable" class="table" data-url="{{ route('judge.list') }}">
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Judge</th>
-                                <th width="5%" data-orderable="false">estado</th>
-                                <th width="2%" data-orderable="false" class="text-center">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Juez</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>
                         </table>

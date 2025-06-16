@@ -63,7 +63,7 @@ class RoleController extends Controller
         $role->save();
         return response()->json([
             'success' => true,
-            'message' => 'Role created successfully.'
+            'message' => 'Rol creado exitosamente.'
         ], 200);
     }
 
@@ -169,7 +169,7 @@ class RoleController extends Controller
         //
         $userType = \Auth::guard('admin')->user()->user_type;
         if ($userType != "Admin") {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
         $this->data['role'] = Role::findOrFail($id);
         return response()->json([
@@ -195,7 +195,7 @@ class RoleController extends Controller
         $role->save();
         return response()->json([
             'success' => true,
-            'message' => 'Role updated successfully.'
+            'message' => 'Rol actualizado exitosamente.'
         ], 200);
     }
 
@@ -214,7 +214,7 @@ class RoleController extends Controller
 
             return response()->json([
                 'error' => true,
-                'message' => 'Permission has already assign to this role.to delete this role you need to free this role from permission than after you able to delete this role.'
+                'message' => 'Este rol ya tiene permisos asignados. Para eliminarlo, primero debes quitarle todos los permisos.'
             ], 400);
         }
         $role->delete();
@@ -222,7 +222,7 @@ class RoleController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Role deleted successfully.'
+            'message' => 'Rol eliminado exitosamente.'
         ], 200);
 
 

@@ -37,7 +37,7 @@ var FormControlsClient = {
                 case_type: "Por favor, seleccione el tipo de caso.",
                 case_status: "Por favor, seleccione la etapa del caso.",
                 act: "Por favor, ingrese la ley aplicable.",
-                court_type: "Por favor, seleccione el tipo de corte.",
+                court_type: "Por favor, seleccione el tipo de Tribunal.",
                 next_date: "Por favor, seleccione la fecha de la primera audiencia.",
                 court_no: "Por favor, ingrese el número de sala.",
                 court_name: "Por favor, ingrese el nombre del juzgado.",
@@ -120,11 +120,11 @@ jQuery(document).ready(function () {
     });
     $("#court_type").select2({
         allowClear: true,
-        placeholder: 'Seleccione el tipo de corte'
+        placeholder: 'Seleccione el tipo de Tribunal'
     });
     $("#court_name").select2({
         allowClear: true,
-        placeholder: 'Seleccione corte'
+        placeholder: 'Seleccione Tribunal'
     });
     $("#judge_type").select2({
         allowClear: true,

@@ -104,7 +104,7 @@
                             </td>
                           </tr>
                             <tr  class="tr_permition">
-                            <td>Case</td>
+                            <td>Caso</td>
 
                             <td>-</td>
                             <td>
@@ -231,7 +231,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Tipo de Corte</td>
+                            <td>Tipo de Tribunal</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="36" name="permission[]" {{ ($permissions_array->contains('36')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -248,7 +248,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Corte</td>
+                            <td>Tribunal</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="40" name="permission[]" {{ ($permissions_array->contains('40')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -299,7 +299,7 @@
                             <tr  class="tr_permition">
                             <td></td>
 
-                            <td>Tax</td>
+                            <td>Impuesto</td>
                             <td>
                            <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="52" name="permission[]" {{ ($permissions_array->contains('52')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                            </td>
@@ -319,7 +319,7 @@
                             <tr>
                             <td></td>
 
-                            <td>General Setting</td>
+                            <td>Configuración general</td>
                             <td>
                               -
                            </td>
@@ -350,9 +350,9 @@
                 </div>
                    <div class="form-group pull-right">
                         <div class="col-md-12 col-sm-6 col-xs-12">
-                          <a href="{{ route('role.index')  }}" class="btn btn-danger">Cancel</a>
+                          <a href="{{ route('role.index')  }}" class="btn btn-danger">Cancelar</a>
 
-                          <button type="submit" class="btn btn-success"><i class="fa fa-save" id="show_loader"></i>&nbsp;Save</button>
+                          <button type="submit" class="btn btn-success"><i class="fa fa-save" id="show_loader"></i>&nbsp;Guardar</button>
                         </div>
                   </div>
                 </form>

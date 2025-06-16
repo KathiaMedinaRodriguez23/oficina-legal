@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h4>Client Name : {{$name}} </h4>
+            <h4>Nombre del Cliente : {{$name}} </h4>
         </div>
         <div class="pull-right">
             <h4> Total de Caso : {{$totalCourtCase ?? ''}} </h4>
@@ -23,7 +23,7 @@
                         <tr>
                             <th>Nº</th>
                             <th data-orderable="false">Detalle del Caso</th>
-                            <th data-orderable="false">Detalle de la Corte</th>
+                            <th data-orderable="false">Detalle del Tribunal</th>
                             <th data-orderable="false">Peticionario vs. Demandado</th>
                             <th data-orderable="false">Próxima fecha</th>
                             <th data-orderable="false">Estado</th>

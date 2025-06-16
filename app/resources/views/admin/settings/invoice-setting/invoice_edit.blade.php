@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h3>Invoice Setting</h3>
+            <h3>Configuración de factura</h3>
         </div>
 
         <div class="title_right">
@@ -24,7 +24,7 @@
                         <div class="row">
 
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_prefex">Invoice Prefex </label>
+                                <label for="invoice_prefex">Prefijo de factura </label>
                                 <input type="text" placeholder="" class="form-control" id="invoice_prefex"
                                        name="invoice_prefex" value="{{!empty($setting->prefix)?$setting->prefix:''}}">
                             </div>

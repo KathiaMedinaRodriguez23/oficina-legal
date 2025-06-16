@@ -67,7 +67,7 @@
                         @endif
                     </div>
                     <div class="profile_info">
-                        <span>Welcome</span>
+                        <span>Bienvenido</span>
                         <h2> {{Auth::guard('admin')->user()->first_name.' '.Auth::guard('admin')->user()->last_name}}</h2>
                     </div>
                 </div>

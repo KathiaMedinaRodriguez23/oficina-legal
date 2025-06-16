@@ -170,7 +170,7 @@ class VendorController extends Controller
         //dd($request->all());
          $AdvocateClient = new Vendor;
         $AdvocateClient->first_name = $request->f_name;
-        //$AdvocateClient->middle_name = $request->m_name;
+        $AdvocateClient->middle_name = $request->m_name ?? null;
         $AdvocateClient->last_name = $request->l_name;
         $AdvocateClient->company_name = $request->company_name;
         $AdvocateClient->email = $request->email;
@@ -203,7 +203,7 @@ class VendorController extends Controller
       //  $data['city'] =$this->getCityName($data['client']->city_id);
 
       $clientName = Vendor::findorfail($id);
-      $data['name'] = $data['client']->first_name.' '.$data['client']->middle_name.' '.$data['client']->last_name;
+      $data['name'] = trim($clientName->first_name . ' ' . ($clientName->middle_name ?? '') . ' ' . $clientName->last_name);
 
           return view('admin.vendor.vendor_view',$data);
     }

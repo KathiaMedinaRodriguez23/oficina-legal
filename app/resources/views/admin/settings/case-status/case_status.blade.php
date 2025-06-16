@@ -5,9 +5,9 @@
 
         @component('component.modal_heading',
              [
-             'page_title' => 'Case Status',
+             'page_title' => 'Estado de Caso',
              'action'=>route("case-status.create"),
-             'model_title'=>'Create Case Status',
+             'model_title'=>'Crear Estado de Caso',
              'modal_id'=>'#addtag',
              'permission' => $adminHasPermition->can(['case_status_add'])
              ] )
@@ -27,10 +27,10 @@
                               >
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Case Status</th>
-                                <th width="5%" data-orderable="false">estado</th>
-                                <th width="2%" data-orderable="false" class="text-center">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Estado de Caso</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>
                         </table>

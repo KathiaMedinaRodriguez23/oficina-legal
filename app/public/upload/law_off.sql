@@ -102,7 +102,7 @@ CREATE TABLE `advocate_clients` (
   `id` int(11) NOT NULL,
   `advocate_id` int(11) NOT NULL,
   `first_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `middle_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `middle_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` enum('Male','Female') COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,

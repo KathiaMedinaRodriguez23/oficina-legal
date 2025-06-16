@@ -12,7 +12,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel2">Edit Case Status</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Editar Estado de Caso</h4>
                 </div>
 
 
@@ -22,7 +22,7 @@
 
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                            <label for="case_subtype">Case Status <span class="text-danger">*</span></label>
+                            <label for="case_subtype">Estado de Caso <span class="text-danger">*</span></label>
                             <input type="text" value="{{ $CaseStatus->case_status_name ?? '' }}" placeholder=""
                                    class="form-control" id="case_status" name="case_status">
                         </div>
@@ -33,11 +33,11 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                            class="ik ik-x"></i>Close
+                            class="ik ik-x"></i>Cerrar
                     </button>
                     <button type="submit" class="btn btn-success shadow"><i class="fa fa-save   ik ik-check-circle"
                                                                             id="cl">
-                        </i> Save
+                        </i> Guardar
                     </button>
                 </div>
 

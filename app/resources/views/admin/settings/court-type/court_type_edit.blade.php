@@ -12,7 +12,7 @@
                   <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
               </button>
-              <h4 class="modal-title" id="myModalLabel2">Edit Court Type</h4>
+              <h4 class="modal-title" id="myModalLabel2">Editar Tipo de Tribunal</h4>
             </div>
 
 
@@ -23,7 +23,7 @@
 
 
           <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-              <label for="case_subtype">Court Type <span class="text-danger">*</span></label>
+              <label for="case_subtype">Tipo de Tribunal <span class="text-danger">*</span></label>
               <input type="text" placeholder="" class="form-control" value="{{ $court->court_type_name ?? '' }}" id="court_name" name="court_name">
           </div>
         </div>
@@ -34,9 +34,9 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                            class="ik ik-x"></i>Close</button>
+                            class="ik ik-x"></i>Cerrar</button>
                     <button type="submit" class="btn btn-success shadow"><i class=" fa fa-save ik ik-check-circle" id="cl">
-                        </i> Save</button>
+                        </i> Guardar</button>
                 </div>
 
             </div>

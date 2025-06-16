@@ -5,9 +5,9 @@
 
         @component('component.modal_heading',
              [
-             'page_title' => 'Court Type',
+             'page_title' => 'Tipo Tribunal',
              'action'=>route("court-type.create"),
-             'model_title'=>'Create Court Type',
+             'model_title'=>'Crear Tipo de Tribunal',
              'modal_id'=>'#addtag',
               'permission' => $adminHasPermition->can(['court_type_add'])
              ] )
@@ -27,10 +27,10 @@
                                >
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Court Type</th>
-                                <th width="5%" data-orderable="false">estado</th>
-                                <th width="2%" data-orderable="false" class="text-center">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Tipo de Tribunal</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>
                         </table>

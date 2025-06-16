@@ -12,7 +12,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel2">Edit Case Type</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Editar Tipo de Caso</h4>
                 </div>
 
 
@@ -20,9 +20,9 @@
                     <div id="form-errors"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                            <label for="case_type">Case Type </label>
+                            <label for="case_type">Tipo de Caso  </label>
                             <select class="form-control case_type" id="case_type" name="case_type">
-                                <option value="">Select Case Type</option>
+                                <option value="">Seleccione Tipo de Caso</option>
                                 @foreach($caseTypes as $type)
                                     <option value="{{$type->id}}"
                                         {{(isset($caseType) && $caseType->parent_id==$type->id)?'selected=""':''}}>
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                            <label for="case_subtype">Case Sub Type <span class="text-danger">*</span></label>
+                            <label for="case_subtype">Subtipo de Caso <span class="text-danger">*</span></label>
                             <input type="text" placeholder="" value="{{ $caseType->case_type_name ?? '' }}"
                                    class="form-control" id="case_type_name" name="case_type_name">
                         </div>
@@ -44,11 +44,11 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                            class="ik ik-x"></i>Close
+                            class="ik ik-x"></i>Cerrar
                     </button>
                     <button type="submit" class="btn btn-success shadow"><i class=" fa fa-save ik ik-check-circle"
                                                                             id="cl">
-                        </i> Save
+                        </i> Guardar
                     </button>
                 </div>
 

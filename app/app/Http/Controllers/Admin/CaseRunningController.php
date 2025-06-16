@@ -292,7 +292,7 @@ class CaseRunningController extends Controller
                 }
 
 
-                $nestedData['court'] = '<p class="currenttittle">Corte :<b> ' . $case->court_name . '</b></p>
+                $nestedData['court'] = '<p class="currenttittle">Tribunal :<b> ' . $case->court_name . '</b></p>
                                         <p class="currenttittle">Nº:<b> ' . $case->court_no . '</b></p>
                                         <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
 
@@ -523,7 +523,7 @@ class CaseRunningController extends Controller
                                         <p class="clinttittle"><b>Asignar a</b></p>
                                         ' . $members;
 
-            $row['court'] = '<p class="currenttittle">Corte :<b> ' . $case->court_name . '</b></p>
+            $row['court'] = '<p class="currenttittle">Tribunal :<b> ' . $case->court_name . '</b></p>
                                         <p class="currenttittle">Nº :<b> ' . $case->court_no . '</b></p>
                                         <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
 

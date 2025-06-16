@@ -185,13 +185,13 @@
                                                        class="form-control">
                                             </div>
 
-                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                           <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="middlename">Segundo nombre <span class="text-danger">*</span></label>
                                                 <input type="text" id="middlename" name="middlename"
                                                        data-rule-required="true"
                                                        data-msg-required="Por favor, ingrese el segundo nombre."
                                                        class="form-control">
-                                            </div>
+                                            </div> -->
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="lastname">Apellido <span class="text-danger">*</span></label>
@@ -246,12 +246,12 @@
                                                        class="form-control">
                                             </div>
 
-                                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                           <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="middlename">Segundo nombre <span class="text-danger">*</span></label>
                                                 <input type="text" id="middlename" name="middlename"
                                                        data-rule-required="true"
                                                        data-msg-required="Por favor, ingrese el segundo nombre."
-                                                       class="form-control">
+                                                       class="form-control"> -->
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">

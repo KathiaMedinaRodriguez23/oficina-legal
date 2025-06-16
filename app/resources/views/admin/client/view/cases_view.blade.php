@@ -37,9 +37,9 @@
                            data-url="{{ route('client.case_view.list') }}">
                         <thead>
                         <tr>
-                            <th>No</th>
+                            <th>Nº</th>
                             <th>Detalle del Caso</th>
-                            <th>Detalle de la Corte</th>
+                            <th>Detalle del Tribunal</th>
                             <th>Peticionario vs Demandado</th>
                             <th>Fecha próxima</th>
                             <th>Estado</th>

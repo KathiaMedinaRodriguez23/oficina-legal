@@ -35,9 +35,9 @@ class clientUserController extends Controller
      */
     public function index()
     {
-         $user = \Auth::guard('admin')->user();  
+         $user = \Auth::guard('admin')->user();
         if($user->user_type=="User"){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
          return view('admin.team-members.team_member');
     }
@@ -49,9 +49,9 @@ class clientUserController extends Controller
      */
     public function create()
     {
-         $user = \Auth::guard('admin')->user();  
+         $user = \Auth::guard('admin')->user();
         if($user->user_type=="User"){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
 
         $data['country']   = DB::table('countries')->where('id',101)->first();
@@ -66,12 +66,12 @@ class clientUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-	 
+
     public function store(Request $request)
     {
             // dd($request->all());
        // $advocate_id = $this->getLoginUserId();
-        
+
         $validator = Validator::make($request->all(), [
             'role' => 'required',
             'f_name' => 'required',
@@ -81,8 +81,8 @@ class clientUserController extends Controller
             'state' => 'required',
             'city_id' => 'required',
             'email' => 'required|unique:admins',
-            'mobile' => 'required', 
-            'zip_code' => 'required', 
+            'mobile' => 'required',
+            'zip_code' => 'required',
             'password' => 'required',
             'cnm_password' => 'required|same:password',
             'input_img' => 'sometimes|image',
@@ -136,7 +136,7 @@ class clientUserController extends Controller
 			$client->country_id     = $request->country;
 			$client->state_id       = $request->state;
 			$client->city_id        = $request->city_id;
-   
+
 
 			$client->save();
 
@@ -144,17 +144,17 @@ class clientUserController extends Controller
        if( $client->save()){
             $client->roles()->sync($request->role);
         }
-			
-	
-			
+
+
+
 			//Session::flash('success',"Team member created successfully.");
-			return redirect()->route('client_user.index')->with('success',"Team member created successfully.");
+			return redirect()->route('client_user.index')->with('success',"Miembro del equipo creado exitosamente.");
 		}
 		return back()->with('errors',$validator->errors());
     }
     public function completeSetupWizard(Request $request)
     {
-		
+
 		$this->validate($request, [
             'firstname' => 'required',
             'lastname' => 'required',
@@ -163,10 +163,10 @@ class clientUserController extends Controller
             'state_id' => 'required',
             'city_id' => 'required',
             'email' => 'required',
-            'mobile_no' => 'required', 
-            'registration_no' => 'required', 
-            'associated_name' => 'required', 
-            'zipcode' => 'required', 
+            'mobile_no' => 'required',
+            'registration_no' => 'required',
+            'associated_name' => 'required',
+            'zipcode' => 'required',
            // 'image' => 'sometimes|image',
         ]);
 
@@ -214,12 +214,12 @@ class clientUserController extends Controller
         $client->state_id       = $request->state_id;
         $client->city_id        = $request->city_id;
         $client->save();
-        
+
 		$redirect_url = '#';
 		$activity = '';
 		LogActivity::addToLog('Account setup. ',$activity,$redirect_url);
-		
-        Session::flash('success',"Account setup successfully.");
+
+        Session::flash('success',"Configuración de cuenta completada exitosamente.");
         return redirect()->route('dashboard.index');
     }
     /**
@@ -289,16 +289,16 @@ class clientUserController extends Controller
             4 => 'role_id',
             5 => 'is_active',
         );
-        
+
         //$advocate_id = $this->getLoginUserId();
-        
+
         $totalData = DB::table('admins AS a')
            ->leftJoin('admin_role AS ar', 'ar.admin_id', '=', 'a.id')
            ->leftJoin('roles AS r', 'r.id', '=', 'ar.role_id')
           ->select('a.id AS id', 'a.first_name AS first_name','a.last_name AS last_name', 'a.email AS email', 'a.is_active AS is_active', 'a.mobile AS mobile','r.slug as role')
           ->where('user_type','=','User')
           ->count();
-       
+
 
         $totalFiltered = $totalData;
 		$totalRec = $totalData;
@@ -372,7 +372,7 @@ class clientUserController extends Controller
 
                 // $action_delete = '"'.route('sale-Admin.destroy', $cat->id).'"';
                  $action_delete = route('client_user.destroy', $cat->id);
-    
+
                    $delete = "<form action='{$action_delete}' method='post' onsubmit ='return  confirmDelete()'>
                 {$token}
                             <input name='_method' type='hidden' value='DELETE'>
@@ -383,9 +383,9 @@ class clientUserController extends Controller
                 /**
                  * -/End
                  */
-                 
+
                     $nestedData['status'] =$this->status($cat->is_active,$cat->id ,route('client_user.status'));
-             
+
 
                 if (empty($request->input('search.value'))) {
 					$final = $totalRec-$start;
@@ -408,7 +408,7 @@ class clientUserController extends Controller
 //         <a class='dropdown-item text-center' href='javascript:void(0);'>$delete</a>
 //     </div>
 // </div>";
-                
+
                 $nestedData['options']=$this->action([
                 'edit' => route('client_user.edit', $cat->id),
                 'delete_permission' => '1',
@@ -417,7 +417,7 @@ class clientUserController extends Controller
                     'id' => $cat->id,
                     'action' => route('client_user.destroy', $cat->id),
                     ]),
-                                 
+
                 ]);
                 $data[] = $nestedData;
             }
@@ -443,13 +443,13 @@ class clientUserController extends Controller
      */
     public function edit($id)
     {
-         $user = \Auth::guard('admin')->user();  
+         $user = \Auth::guard('admin')->user();
         if($user->user_type=="User"){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
 
         $data['roles']=Role::where('id','!=','1')->get();
-        
+
         // $data['country']   = DB::table('countries')->where('id',101)->first();
         $data['users'] =Admin::with('country','state','city')->find($id);
         // $data['states'] = DB::table('states')->where('country_id',$data['users']->country_id)->get();
@@ -481,18 +481,18 @@ class clientUserController extends Controller
                     'is_user_type'  => 'STAFF',
             ]);
             $my_id = $insert_row->id;
-            
+
             //generate a random string using Laravel's str_random helper
             $insert_arr = $insert_row->toArray();
             $insert_arr['link'] = str_random(30);
             if($insert_row)
             {
-				//Get email template content and replcae with value 
+				//Get email template content and replcae with value
 				$verifyLink = url('admin/user/invitation', $insert_arr['link']);
 				$replace = array('{{link}}'=>$verifyLink,'{{email}}'=>$insert_arr['email'],'{{name}}'=>$insert_arr['name']);
 				$email_template = DB::table('emails')->where('id',4)->first();
 				$insert_arr['templateContent'] = $this->strReplaceAssoc($replace,$email_template->message_boddy);
-				
+
                 DB::table('invites')->insert(['admin_id'=>$my_id,'advocate_id'=>$request->advocate_id,'token'=>$insert_arr['link']]);
                 Mail::send('emails.invitation', $insert_arr, function($message) use ($insert_arr){
                     $message->to($insert_arr['email']);
@@ -517,12 +517,12 @@ class clientUserController extends Controller
                                 </div>
                         </div>
                 </div>';
-            }  
+            }
         }
     }
     public function update(Request $request, $id)
     {
-        
+
          //dd($request->All());
 		$validator = Validator::make($request->all(), [
             'role' => 'required',
@@ -533,7 +533,7 @@ class clientUserController extends Controller
             'state' => 'required',
             'city_id' => 'required',
             'email' => 'required',
-            'mobile' => 'required', 
+            'mobile' => 'required',
             'zip_code' => 'required',
             'input_img' => 'sometimes|image',
         ]);
@@ -598,13 +598,13 @@ class clientUserController extends Controller
 		   $client->profile_img=$name;*/
 		  }
 		  // $clientName = $request->f_name.' '.$request->l_name;
-		  
+
 			//login user id
 			$client->first_name = $request->f_name;
 			$client->name       = $request->username;
 			$client->last_name  = $request->l_name;
       if($request->chk_pass=='yes'){
-       
+
         $client->password       = Hash::make($request->password);
       }
       //$client->password   = 'no';
@@ -617,8 +617,8 @@ class clientUserController extends Controller
 			$client->city_id    = $request->city_id;
 			$client->save();
 
-       // Remove old user roles  
-           $client->roles()->detach();            
+       // Remove old user roles
+           $client->roles()->detach();
         // Add role to user admin_role
 
         if ($client->save() ) {
@@ -626,7 +626,7 @@ class clientUserController extends Controller
         }
 
 
-			return redirect()->route('client_user.index')->with('success',"Team member updated successfully.");
+			return redirect()->route('client_user.index')->with('success',"Miembro del equipo actualizado exitosamente.");
 		}
 		return back()->with('errors',$validator->errors());
     }
@@ -639,7 +639,7 @@ class clientUserController extends Controller
      */
     public function destroy($id)
     {
-  
+
 		$CourtCase = CourtCase::where('updated_by',$id)->count();
     $CaseLog   = CaseLog::where('updated_by',$id)->count();
     $task   = TaskMember::where('employee_id',$id)->count();
@@ -649,12 +649,12 @@ class clientUserController extends Controller
 			//Session::flash('error',"You can't delete this team member because its used in other modules.");
        return response()->json([
             'error' => true ,
-            'message' => 'You cant delete this team member because its used in other modules',
+            'message' => 'No puedes eliminar este miembro del equipo porque está en uso en otros módulos',
         ],400);
 		}else{
 			$client=Admin::find($id);
 			$clientName = $client->first_name.' '.$client->last_name;
-			
+
 			 if ($client->profile_img != '') {
 
 				 $imageUnlink = public_path() . config('constants.CLIENT_FOLDER_PATH') . '/' . $client->profile_img;
@@ -663,27 +663,27 @@ class clientUserController extends Controller
 					}
 					   }
 			$client->delete();
-			
+
 			//activity log
 			// $redirect_url = '';
 			// $activity = $clientName;
 			// LogActivity::addToLog('Team member deleted ',$activity,$redirect_url);
-			
+
 			// Session::flash('success',"Client deleted successfully.");
 		}
 		 return response()->json([
             'success' => true ,
-            'message' => 'Team member deleted successfully.',
+            'message' => 'Miembro del equipo eliminado exitosamente.',
         ],200);
 
     }
 
       public function changeStatus(Request $request) {
-       
+
        $statuscode = 400;
        $client = Admin::findOrFail($request->id);
         $client->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
-        
+
         if($client->save()) {
             $statuscode = 200 ;
         }

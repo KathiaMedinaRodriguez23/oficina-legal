@@ -167,7 +167,7 @@ class ClientController extends Controller
 
         $AdvocateClient = new AdvocateClient;
         $AdvocateClient->first_name = $request->f_name;
-        $AdvocateClient->middle_name = $request->m_name;
+        $AdvocateClient->middle_name = $request->m_name ?? null;
         $AdvocateClient->last_name = $request->l_name;
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
@@ -191,7 +191,7 @@ class ClientController extends Controller
                         $ClientPartiesInvoive = new ClientPartiesInvoive();
                         $ClientPartiesInvoive->client_id = $clientId;
                         $ClientPartiesInvoive->party_firstname = $value['firstname'];
-                        $ClientPartiesInvoive->party_middlename = $value['middlename'];
+                       // $ClientPartiesInvoive->party_middlename = $value['middlename'];
                         $ClientPartiesInvoive->party_lastname = $value['lastname'];
                         $ClientPartiesInvoive->party_mobile = $value['mobile_client'];
                         $ClientPartiesInvoive->party_address = $value['address_client'];
@@ -206,7 +206,7 @@ class ClientController extends Controller
                         $ClientPartiesInvoive = new ClientPartiesInvoive();
                         $ClientPartiesInvoive->client_id = $clientId;
                         $ClientPartiesInvoive->party_firstname = $value['firstname'];
-                        $ClientPartiesInvoive->party_middlename = $value['middlename'];
+                       // $ClientPartiesInvoive->party_middlename = $value['middlename'];
                         $ClientPartiesInvoive->party_lastname = $value['lastname'];
                         $ClientPartiesInvoive->party_mobile = $value['mobile_client'];
                         $ClientPartiesInvoive->party_address = $value['address_client'];
@@ -236,7 +236,7 @@ class ClientController extends Controller
         $data['client'] = AdvocateClient::find($id);
         $data['single'] = ClientPartiesInvoive::where('client_id', $id)->get();
         $clientName = AdvocateClient::findorfail($id);
-        $data['name'] = $clientName->first_name . ' ' . $clientName->middle_name . ' ' . $clientName->last_name;
+        $data['name'] = trim($clientName->first_name . ' ' . ($clientName->middle_name ?? '') . ' ' . $clientName->last_name);
         return view('admin.client.view.client_detail', $data);
     }
 
@@ -274,7 +274,7 @@ class ClientController extends Controller
         DB::table('client_parties_invoives')->where('client_id', $id)->delete();
         $AdvocateClient = AdvocateClient::find($id);
         $AdvocateClient->first_name = $request->f_name;
-        $AdvocateClient->middle_name = $request->m_name;
+        $AdvocateClient->middle_name = $request->m_name ?? null;
         $AdvocateClient->last_name = $request->l_name;
         $AdvocateClient->gender = $request->gender;
         $AdvocateClient->email = $request->email;
@@ -298,7 +298,7 @@ class ClientController extends Controller
                         $ClientPartiesInvoive = new ClientPartiesInvoive();
                         $ClientPartiesInvoive->client_id = $clientId;
                         $ClientPartiesInvoive->party_firstname = $value['firstname'];
-                        $ClientPartiesInvoive->party_middlename = $value['middlename'];
+                      //  $ClientPartiesInvoive->party_middlename = $value['middlename'];
                         $ClientPartiesInvoive->party_lastname = $value['lastname'];
                         $ClientPartiesInvoive->party_mobile = $value['mobile_client'];
                         $ClientPartiesInvoive->party_address = $value['address_client'];
@@ -313,7 +313,7 @@ class ClientController extends Controller
                         $ClientPartiesInvoive = new ClientPartiesInvoive();
                         $ClientPartiesInvoive->client_id = $clientId;
                         $ClientPartiesInvoive->party_firstname = $value['firstname'];
-                        $ClientPartiesInvoive->party_middlename = $value['middlename'];
+                      //  $ClientPartiesInvoive->party_middlename = $value['middlename'];
                         $ClientPartiesInvoive->party_lastname = $value['lastname'];
                         $ClientPartiesInvoive->party_mobile = $value['mobile_client'];
                         $ClientPartiesInvoive->party_address = $value['address_client'];

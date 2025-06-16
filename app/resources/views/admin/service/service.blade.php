@@ -6,9 +6,9 @@
 
         @component('component.modal_heading',
              [
-             'page_title' => 'Service',
+             'page_title' => 'Servicio',
              'action'=>route("service.create"),
-             'model_title'=>'Create Service',
+             'model_title'=>'Crear Servicio',
              'modal_id'=>'#addtag',
              'permission' => $adminHasPermition->can(['service_add'])
              ] )
@@ -28,11 +28,11 @@
                         >
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Name</th>
-                                <th>Amount</th>
-                                <th width="5%" data-orderable="false">estado</th>
-                                <th width="2%" data-orderable="false">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="2%" data-orderable="false">Acción</th>
                             </tr>
                             </thead>
                         </table>

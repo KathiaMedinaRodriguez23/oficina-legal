@@ -27,7 +27,7 @@ class StoreClient extends FormRequest
 
            'f_name' => 'required',
             'l_name' => 'required',
-            'm_name' => 'required',
+            //'m_name' => 'required',
             'address' => 'required',
             'country' => 'required',
             'state' => 'required',
@@ -45,8 +45,8 @@ class StoreClient extends FormRequest
         return [
 
             'f_name.required' => 'Por favor, ingrese el nombre.',
-            'l_name.required' => 'Por favor, ingrese el segundo nombre.',
-            'm_name.required' => 'Por favor, ingrese el apellido.',
+            'l_name.required' => 'Por favor, ingrese el apellido',
+            //'m_name.required' => 'Por favor, ingrese el segundo nombre.',
             'address.required' => 'Por favor, ingrese la dirección.',
             'country.required' => 'Por favor, seleccione el país.',
             'state.required' => 'Por favor, seleccione el estado.',

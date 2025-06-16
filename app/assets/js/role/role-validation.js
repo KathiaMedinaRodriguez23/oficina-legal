@@ -44,8 +44,8 @@ var FormControlsClient = {
             },
             messages: {
                 slug:{
-                    required:"Role name is required",
-                    remote: "Role name already exits."
+                    required:"El nombre del rol es obligatorio",
+                    remote: "El nombre del rol ya existe."
                 }
             },
             errorPlacement: function (error, element) {
@@ -68,7 +68,7 @@ var FormControlsClient = {
                         $("#roleDataTable").dataTable().api().ajax.reload();
                         message.fire({
                             type: 'success',
-                            title: 'Success' ,
+                            title: 'Éxito' ,
                             text: data.message,
                         });
                     },
@@ -90,7 +90,7 @@ var FormControlsClient = {
                         message.fire({
                             type: 'error',
                             title: 'Error' ,
-                            text: 'something went wrong please try again !',
+                            text: 'Algo salió mal, por favor inténtalo de nuevo!',
                         })
                     },
                 });

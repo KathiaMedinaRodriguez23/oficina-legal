@@ -7,7 +7,7 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2 style="float: none;">Thank you for purchase</h2>
+                        <h2 style="float: none;">Gracias</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -15,11 +15,11 @@
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
                             {{ csrf_field() }}
 
-                            <h2> Welcome to setup wizard </h2>
-                            <p class="text-left">Thanks you for purchasing LawOffice,LawOffice System Is A Web Based Application For Advocates And Law Firm To Maintain Their Office. This Software Is Very Easy To Operate And Light On System Tool To Maintain Information About Clients, Cases, Hearings Etc.</p>
+                            <h2> Bienvenido al asistente de configuración </h2>
+                            <p class="text-left">Ofice Legal System es una aplicación web para abogados y bufetes de abogados que permite el mantenimiento de sus oficinas. Este software es muy fácil de usar y una herramienta de sistema sencilla para gestionar información sobre clientes, casos, audiencias, etc.</p>
                             <div>
                                 <a href="{{route('check.requirements')}}" class="btn btn-default pull-right">
-                                    Next
+                                    siguiente
                                 </a>
                             </div>
 
@@ -32,7 +32,7 @@
 
                                 <div>
 
-                                    <p>©2019 All Rights Reserved. LawOffice</p>
+                                    <p>©2025 All Rights Reserved. Ofice Legal </p>
                                 </div>
                             </div>
                         </form>

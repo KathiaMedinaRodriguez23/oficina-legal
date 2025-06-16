@@ -25,7 +25,7 @@
                             <tr>
                                 <th>Nº</th>
                                 <th>Detalle del cliente y del caso</th>
-                                <th>Detalles de la corte</th>
+                                <th>Detalles del Tribunal</th>
                                 <th>Detalles del demandante vs. demandado</th>
                                 <th>Próxima fecha</th>
                                 <th>Estado</th>
@@ -41,7 +41,7 @@
                                                                         >1089/2016</a><br>
                                     Caso: CRMA S – Criminal Misc. Application – Sessions
                                 </td>
-                                <td>Corte : District & Sessions Court<br>
+                                <td>Tribunal : District & Sessions Court<br>
                                     Nº : 5<br>
                                     Magistrado : 5th ADDL District Judge
                                 </td>

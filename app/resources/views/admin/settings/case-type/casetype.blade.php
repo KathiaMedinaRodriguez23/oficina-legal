@@ -4,9 +4,9 @@
     <div class="">
         @component('component.modal_heading',
              [
-             'page_title' => 'Case Type',
+             'page_title' => 'Tipo de Caso',
              'action'=>route("case-type.create"),
-             'model_title'=>'Create Case Type',
+             'model_title'=>'Crear Tipo de Caso',
              'modal_id'=>'#addtag',
              'permission' => $adminHasPermition->can(['case_type_add'])
              ] )
@@ -26,11 +26,11 @@
                                >
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th>Case Type</th>
-                                <th>Case Sub Type</th>
-                                <th width="5%" data-orderable="false">estado</th>
-                                <th width="2%" data-orderable="false" class="text-center">Action</th>
+                                <th width="5%">Nº</th>
+                                <th>Tipo de Caso</th>
+                                <th>Tipo de Sub Caso</th>
+                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>
                         </table>

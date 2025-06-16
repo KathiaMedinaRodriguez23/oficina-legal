@@ -298,7 +298,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Detalle de la Corte</h2>
+                        <h2>Detalle del Tribunal</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -306,7 +306,7 @@
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Nº Corte<span class="text-danger">*</span></label>
+                                <label for="fullname">Nº Tribunal<span class="text-danger">*</span></label>
                                 <input type="text" value="{{$case->court_no ?? ''}}" id="court_no" name="court_no"
                                        class="form-control">
                             </div>
@@ -323,7 +323,7 @@
                                 </select>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Corte <span class="text-danger">*</span></label>
+                                <label for="fullname">Tribunal <span class="text-danger">*</span></label>
                                 <select class="form-control" id="court_name"
                                         name="court_name"> @foreach($courts as $court)
                                         <option

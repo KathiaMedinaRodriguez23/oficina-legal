@@ -9,7 +9,7 @@ var FormControlsClient = {
             debug: false,
             rules: {
                 f_name: "required",
-                m_name: "required",
+               // m_name: "required",
                 l_name: "required",
                 address: "required",
                 country: "required",
@@ -39,7 +39,7 @@ var FormControlsClient = {
             },
             messages: {
                 f_name: "Por favor, ingrese el nombre.",
-                m_name: "Por favor, ingrese el segundo nombre.",
+               // m_name: "Por favor, ingrese el segundo nombre.",
                 l_name: "Por favor, ingrese el apellido.",
                 address: "Por favor, ingrese la dirección.",
                 country: "Por favor, seleccione el país.",

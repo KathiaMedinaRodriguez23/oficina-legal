@@ -4,11 +4,11 @@
         <li>
 
             <a class="card-header-color"  href="{{url('admin/case-running-download/'.$case->case_id.'/download')}}"
-               title="Download case file"><i class="fa fa-download fa-2x "></i></a>
+               title="Descargar caso de cómite o junta"><i class="fa fa-download fa-2x "></i></a>
         </li>
         <li>
             <a class="card-header-color"  href="{{url('admin/case-running-download/'.$case->case_id.'/print')}}"
-               title="Print case file" target="_blank"><i class="fa fa-print fa-2x"></i></a>
+               title="Imprimir caso de cómite o junta" target="_blank"><i class="fa fa-print fa-2x"></i></a>
         </li>
 
     </ul>

@@ -4,9 +4,9 @@
 
     <div class="">
         @component('component.heading' , [
-       'page_title' => 'Task',
+       'page_title' => 'Tarea',
        'action' => route('tasks.create') ,
-       'text' => 'Add Task',
+       'text' => 'Añadir Tarea',
        'permission' => $adminHasPermition->can(['task_add'])
         ])
         @endcomponent
@@ -23,15 +23,15 @@
                               >
                             <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Task Name</th>
-                                <th>Related To</th>
-                                <th>Start Date</th>
-                                <th>Deadline</th>
-                                <th>Members</th>
-                                <th>estado</th>
-                                <th>Priority</th>
-                                <th data-orderable="false" class="text-center">Action</th>
+                                <th>Nº</th>
+                                <th>Nombre de Tarea</th>
+                                <th>Relacionada con</th>
+                                <th>Fecha de inicio</th>
+                                <th>Fecha límite</th>
+                                <th>Miembros</th>
+                                <th>Estado</th>
+                                <th>Prioridad</th>
+                                <th data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>
                         </table>

@@ -72,10 +72,10 @@
                             <h2>Casos de Cómite o Junta </h2>
                             &nbsp;&nbsp;
                             @if($totalCaseCount>0)
-                                <a href="javascript:void(0);" onClick="downloadCaseBorad()" title="Download case board"><i
+                                <a href="javascript:void(0);" onClick="downloadCaseBorad()" title="Descargar caso de cómite o junta"><i
                                         class="fa fa-download fa-2x"></i></a>
                                 &nbsp;
-                                <a href="javascript:void(0);" onClick="printCaseBorad()" title="Print case board"
+                                <a href="javascript:void(0);" onClick="printCaseBorad()" title="Imprimir caso de cómite o junta"
                                    target="_blank"><i class="fa fa-print fa-2x"></i></a>@endif
 
                             <div class="col-md-3 col-sm-12 col-xs-12 pull-right">

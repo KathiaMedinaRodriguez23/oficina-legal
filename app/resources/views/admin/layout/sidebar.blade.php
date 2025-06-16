@@ -2,9 +2,9 @@
     <div class="menu_section">
 
         <ul class="nav side-menu">
-            {{--@if($adminHasPermition->can(['dashboard_list'])=="1")
+            @if($adminHasPermition->can(['dashboard_list'])=="1")
                 <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-            @endif--}}
+            @endif
 
             @if($adminHasPermition->can(['client_list']) =="1")
                 <li><a href="{{ route('clients.index') }}"><i class="fa fa-user-plus"></i> Cliente</a></li>
@@ -14,9 +14,9 @@
                 <li><a href="{{ route('case-running.index') }}"><i class="fa fa-gavel"></i> Casos</a></li>
 
             @endif
-            {{--@if($adminHasPermition->can(['task_list']) =="1")
+            @if($adminHasPermition->can(['task_list']) =="1")
                 <li><a href="{{ route('tasks.index') }}"><i class="fa fa-tasks"></i> Task</a></li>
-            @endif--}}
+            @endif
 
 
             @if($adminHasPermition->can(['appointment_list']) =="1")
@@ -82,15 +82,15 @@
                     <ul class="nav child_menu">
 
                         @if($adminHasPermition->can(['case_type_list']) == "1")
-                            <li><a href="{{ url('admin/case-type') }}">Tipos de Casos</a></li>
+                            <li><a href="{{ url('admin/case-type') }}">Tipos de Caso</a></li>
                         @endif
 
                         @if($adminHasPermition->can(['court_type_list']) == "1")
-                            <li><a href="{{ url('admin/court-type') }}">Tipo de Cortes</a></li>
+                            <li><a href="{{ url('admin/court-type') }}">Tipo de Tribunal</a></li>
                         @endif
 
                         @if($adminHasPermition->can(['court_list']) == "1")
-                            <li><a href="{{ url('admin/court') }}">Cortes</a></li>
+                            <li><a href="{{ url('admin/court') }}">Tribunal</a></li>
                         @endif
 
                         @if($adminHasPermition->can(['case_status_list']) == "1")
@@ -98,17 +98,18 @@
                         @endif
 
                         @if($adminHasPermition->can(['judge_list']) == "1")
-                            <li><a href="{{ url('admin/judge') }}">Jueves</a></li>
+                            <li><a href="{{ url('admin/judge') }}">Juez</a></li>
                         @endif
 
                         @if($adminHasPermition->can(['tax_list']) == "1")
                             <li><a href="{{ url('admin/tax') }}">Impuestos</a></li>
                         @endif
 
-                        {{--
+
                         @if($adminHasPermition->can(['general_setting_edit']) == "1")
                             <li><a href="{{ url('admin/general-setting') }}">Configuración</a></li>
                         @endif
+                        {{--
                         @if(\Auth::guard('admin')->user()->user_type=="Admin")
                             <li><a href="{{ url('admin/database-backup') }}">Database Backup</a></li>
                         @endif

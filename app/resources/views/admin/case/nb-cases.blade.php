@@ -92,8 +92,8 @@
                             <thead>
                             <tr>
                                 <th width="3%">Nº</th>
-                                <th width="20%">Cliente & Detalle del Caso</th>
-                                <th width="35%">Detalle de la Corte</th>
+                                <th width="20%">Detalle del Caso</th>
+                                <th width="35%">Detalle del Tribunal</th>
                                 <th width="20%">Peticionario vs Demandado</th>
                                 <th width="10%">Próxima fecha</th>
                                 <th width="9%">Estado</th>

@@ -78,7 +78,7 @@
                             <tr>
                                 <th>Nº</th>
                                 <th>Detalle del cliente y del caso</th>
-                                <th>Detalles de la corte</th>
+                                <th>Detalles del Tribunal</th>
                                 <th>Detalles del demandante vs. demandado</th>
                                 <th>Próxima fecha</th>
                                 <th>Estado</th>

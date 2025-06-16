@@ -279,7 +279,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Detalle de Corte</h2>
+                        <h2>Detalle del Tribunal</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -287,22 +287,22 @@
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Nº Corte <span class="text-danger">*</span></label>
+                                <label for="fullname">Nº Tribunal <span class="text-danger">*</span></label>
                                 <input type="text" id="court_no" name="court_no" class="form-control">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Tipo de Corte<span class="text-danger">*</span></label>
+                                <label for="fullname">Tipo de Tribunal<span class="text-danger">*</span></label>
                                 <select class="form-control" id="court_type" name="court_type"
                                         onchange="getCourt(this.value);">
-                                    <option value="">Seleccione el tipo de corte</option>
+                                    <option value="">Seleccione el tipo de Tribunal</option>
                                     @foreach($courtTypes as $courtType)
                                         <option value="{{$courtType->id}}">{{$courtType->court_type_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Corte <span class="text-danger">*</span></label>
+                                <label for="fullname">Tribunal <span class="text-danger">*</span></label>
                                 <select class="form-control" id="court_name" name="court_name"></select>
                             </div>
                         </div>

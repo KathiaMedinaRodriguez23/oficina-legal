@@ -45,8 +45,8 @@
                             <th width="5%">Nº</th>
                             <th width="25%">Nº Registro</th>
                             <th width="15%">Fecha de Transferencia</th>
-                            <th width="25%">Del Número de corte y Juez</th>
-                            <th width="30%">Al Número de corte y Juez</th>
+                            <th width="25%">Del Número de Tribunal y Juez</th>
+                            <th width="30%">Al Número de Tribunal y Juez</th>
 
                         </tr>
                         </thead>

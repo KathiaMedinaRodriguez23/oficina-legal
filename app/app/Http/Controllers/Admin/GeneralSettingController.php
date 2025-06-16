@@ -20,26 +20,26 @@ class GeneralSettingController extends Controller
     {
 
 
-       $user = \Auth::guard('admin')->user();  
+       $user = \Auth::guard('admin')->user();
         if(! $user->can('general_setting_edit')){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
 
         //'Asia/Kolkata'
         $this->data['timezone'] = DB::table('zone')->get();
-        $GeneralSettings  = GeneralSettings::findOrfail(1); 
+        $GeneralSettings  = GeneralSettings::findOrfail(1);
         $this->data['title'] = 'Mail Setup';
-        $this->data['GeneralSettings'] = $GeneralSettings;   
+        $this->data['GeneralSettings'] = $GeneralSettings;
         $this->data['countrys'] = DB::table('countries')->get();
-        $this->data['states']   = DB::table('states')->where('country_id',$GeneralSettings->country)->get();   
-        $this->data['citys']   = DB::table('cities')->where('state_id',$GeneralSettings->state)->get();  
+        $this->data['states']   = DB::table('states')->where('country_id',$GeneralSettings->country)->get();
+        $this->data['citys']   = DB::table('cities')->where('state_id',$GeneralSettings->state)->get();
     	return view('admin.settings.general_setting', $this->data);
     }
 
     public function databaseBackup()
-    {  
+    {
         $backup = \Artisan::call('db:backup');
-        Session::flash('success',"Database backup save Successfully");
+        Session::flash('success',"La copia de seguridad de la base de datos se guardó correctamente.");
         return redirect()->back();
 
     }
@@ -105,7 +105,7 @@ class GeneralSettingController extends Controller
         $GeneralSettings->save();
 
 
-        Session::flash('success',"Save Successfully");
+        Session::flash('success',"Guardado correctamente.");
         return redirect()->back();
 
     }

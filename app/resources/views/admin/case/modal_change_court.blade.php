@@ -12,7 +12,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="contct-info">
                     <div class="form-group">
-                        <label class="discount_text"> Numero de la Corte <span class="text-danger">*</span></label>
+                        <label class="discount_text"> Nº del Tribunal <span class="text-danger">*</span></label>
                         <input type="text" id="court_number" name="court_number" class="form-control">
                     </div>
                 </div>

@@ -13,7 +13,7 @@
 
             @if(isset($permission))
                 <li><a href="{{ $permission ?? 'javascrip:void(0)' }}"><i
-                            class="fa fa-key"></i>&nbsp;&nbsp;Permission</a></li>
+                            class="fa fa-key"></i>&nbsp;&nbsp;Permiso</a></li>
             @endif
 
             @if(isset($view))
@@ -53,7 +53,7 @@
                        data-id={{ $payment_recevie_modal->get('id') }}
                            href="{{ $payment_recevie_modal->get('action' , 'javaqscrip:void(0)') }}"
                        data-target-modal="{{ $payment_recevie_modal->get('target') }}"><i class="fa fa-money"></i>&nbsp;&nbsp;
-                        Payment Receive</a></li>
+                        Recibir pago</a></li>
             @endif
 
             @if (isset($payment_histroy_modal))
@@ -62,7 +62,7 @@
                        data-id={{ $payment_histroy_modal->get('id') }}
                            href="{{ $payment_histroy_modal->get('action' , 'javaqscrip:void(0)') }}"
                        data-target-modal="{{ $payment_histroy_modal->get('target') }}"><i class="fa fa-history"></i>&nbsp;&nbsp;
-                        Payment History</a></li>
+                        Historial de pagos</a></li>
             @endif
 
             @if (isset($next_date))
@@ -72,7 +72,7 @@
                        data-id={{ $next_date->get('id') }}
                            href="{{ $next_date->get('action' , 'javaqscrip:void(0)') }}"
                        data-target-modal="{{ $next_date->get('target') }}"><i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp;
-                        Next Date</a></li>
+                        Próxima Fecha</a></li>
             @endif
 
 
@@ -131,7 +131,7 @@
                            data-id={{ $payment_made->get('id') }}
                                href="{{ $payment_made->get('action' , 'javaqscrip:void(0)') }}"
                            data-target-modal="{{ $payment_made->get('target') }}"><i class="fa fa-money"></i>&nbsp;&nbsp;
-                            Payment Made</a></li>
+                            Pago realizado</a></li>
                 @endif
                 @if (isset($payment_made_history))
                     <li>
@@ -140,7 +140,7 @@
                            data-id={{ $payment_made_history->get('id') }}
                                href="{{ $payment_made_history->get('action' , 'javaqscrip:void(0)') }}"
                            data-target-modal="{{ $payment_made_history->get('target') }}"><i class="fa fa-history"></i>&nbsp;&nbsp;
-                            Payment Made History</a></li>
+                            Pago relizado historial</a></li>
                 @endif
 
 
