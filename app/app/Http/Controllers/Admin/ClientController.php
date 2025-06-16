@@ -217,7 +217,7 @@ class ClientController extends Controller
 
             }
         }
-        return redirect()->route('clients.index')->with('success', "Client added successfully.");
+        return redirect()->route('clients.index')->with('success', "Cliente agregado con éxito!.");
 
 
     }
@@ -325,7 +325,7 @@ class ClientController extends Controller
             }
 
         }
-        return redirect()->route('clients.index')->with('success', "Client Update successfully.");
+        return redirect()->route('clients.index')->with('success', "Cliente actualizado con éxito!.");
     }
 
     /**
@@ -347,7 +347,7 @@ class ClientController extends Controller
         ClientPartiesInvoive::where('client_id', $id)->delete();
         return response()->json([
             'success' => true,
-            'message' => 'Client deleted successfully.'
+            'message' => 'Cliente eliminado con éxito.',
         ], 200);
     }
 
@@ -361,7 +361,7 @@ class ClientController extends Controller
             $statuscode = 200;
         }
         $status = $request->status == 'true' ? 'active' : 'deactivate';
-        $message = 'Client status ' . $status . ' successfully.';
+        $message = 'Estado ' . $status . ' con exito.';
 
         return response()->json([
             'success' => true,

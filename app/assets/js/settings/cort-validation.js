@@ -73,7 +73,7 @@ var FormControlsClient = {
                         $("#tagDataTable").dataTable().api().ajax.reload();
                         message.fire({
                             type: 'success',
-                            title: 'Success',
+                            title: 'Compeltado!',
                             text: data.message,
                         });
                     },

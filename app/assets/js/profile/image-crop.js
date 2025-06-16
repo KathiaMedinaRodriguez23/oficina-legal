@@ -35,7 +35,7 @@ $('#upload').on('change', function () {
         message.fire({
             type: 'error',
             title: 'Error',
-            text: 'File size should not be more than 5MB',
+            text: 'Tamaño máximo de archivo 5MB',
         });
         return false;
     }
@@ -107,8 +107,8 @@ $('.upload-result').on('click', function (ev) {
 
                 message.fire({
                     type: 'success',
-                    title: 'Success',
-                    text: 'image updated successfully.',
+                    title: 'Completado!',
+                    text: 'Imagen actualizada correctamente',
                 });
 
             }
