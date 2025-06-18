@@ -109,7 +109,7 @@
                 <div class="x_content">
                     <div class="dashboard-widget-content">
                         <div class="col-md-6 hidden-small">
-                            <h4 class="line_30">Peticionario & Defensor</h4>
+                            <h4 class="line_30">Demandante & Defensor</h4>
 
 
                             <table class="countries_list">

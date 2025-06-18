@@ -38,9 +38,9 @@
                         <thead>
                         <tr>
                             <th>Nº</th>
-                            <th>Detalle del Caso</th>
+                            <th>Detalle del cliente y del caso</th>
                             <th>Detalle del Tribunal</th>
-                            <th>Peticionario vs Demandado</th>
+                            <th>Demandante vs Demandado</th>
                             <th>Fecha próxima</th>
                             <th>Estado</th>
                             <th>Acciones</th>

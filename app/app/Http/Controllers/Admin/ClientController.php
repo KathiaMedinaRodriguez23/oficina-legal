@@ -217,7 +217,7 @@ class ClientController extends Controller
 
             }
         }
-        return redirect()->route('clients.index')->with('Éxito', "Cliente añadido exitosamente.");
+        return redirect()->route('clients.index')->with('Exito', "Cliente añadido exitosamente.");
     }
 
     /**
@@ -358,7 +358,7 @@ class ClientController extends Controller
         if ($client->save()) {
             $statuscode = 200;
         }
-        $status = $request->status == 'true' ? 'active' : 'deactivate';
+        $status = $request->status == 'true' ? 'activado' : 'desactivado';
         $message = 'Estado ' . $status . ' con exito.';
 
         return response()->json([
@@ -393,7 +393,7 @@ class ClientController extends Controller
     {
         $user = \Auth::guard('admin')->user();
         if (!$user->can('case_list')) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
         $totalCourtCase = CourtCase::where('advo_client_id', $id)->count();
         $clientName = AdvocateClient::findorfail($id);
@@ -410,7 +410,7 @@ class ClientController extends Controller
 //        dd(1);
         $user = \Auth::guard('admin')->user();
         if (!$user->can('invoice_list')) {
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
         $clientName = AdvocateClient::findorfail($id);
         $name = $clientName->first_name . ' ' . $clientName->middle_name . ' ' . $clientName->last_name;

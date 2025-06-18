@@ -22,9 +22,9 @@
                         <thead>
                         <tr>
                             <th>Nº</th>
-                            <th data-orderable="false">Detalle del Caso</th>
+                            <th data-orderable="false">Detalle del cliente y del caso</th>
                             <th data-orderable="false">Detalle del Tribunal</th>
-                            <th data-orderable="false">Peticionario vs. Demandado</th>
+                            <th data-orderable="false">Demandante vs. Demandado</th>
                             <th data-orderable="false">Próxima fecha</th>
                             <th data-orderable="false">Estado</th>
                             <th data-orderable="false">Acción</th>

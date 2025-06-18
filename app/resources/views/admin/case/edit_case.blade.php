@@ -59,7 +59,7 @@
                             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                 <br><br>
                                 <input type="radio" id="test1" name="position"
-                                       value="Petitioner" {{(!empty($case) && $case->client_position=='Petitioner')?'checked':''}}>&nbsp;&nbsp;Peticionario
+                                       value="Petitioner" {{(!empty($case) && $case->client_position=='Petitioner')?'checked':''}}>&nbsp;&nbsp;Demandante
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" id="test2" name="position"
                                        value="Respondent" {{(!empty($case) && $case->client_position=='Respondent')?'checked':''}}>&nbsp;&nbsp;Demandado

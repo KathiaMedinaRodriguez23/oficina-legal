@@ -89,7 +89,7 @@
                                 <th width="3%">Nº</th>
                                 <th width="20%">Detalle del cliente y del caso</th>
                                 <th width="35%">Detalles del Tribunal</th>
-                                <th width="15%">Peticionario vs. Demandado</th>
+                                <th width="15%">Demandante vs. Demandado</th>
                                 <th width="10%">Próxima fecha</th>
                                 <th width="9%">Estado</th>
                                 <th width="3%">Acción</th>
