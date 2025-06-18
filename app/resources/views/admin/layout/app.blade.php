@@ -138,7 +138,7 @@
     @if(Session::has('success'))
     message.fire({
         type: 'success',
-        title: 'Success',
+        title: 'Completado!',
         text: "{!!  session('success')  !!}"
     });
     @php session()->forget('scueess') @endphp
