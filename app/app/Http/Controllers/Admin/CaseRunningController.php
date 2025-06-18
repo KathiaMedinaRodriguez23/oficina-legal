@@ -722,7 +722,7 @@ class CaseRunningController extends Controller
                 $caseLog->save();
             }
 
-            return redirect()->route('case-running.index')->with('success', "Case added successfully.");
+            return redirect()->route('case-running.index')->with('Exito', "Caso añadido exitosamente.");
         }
         return back()->with('errors', $validatedData->errors());
     }
@@ -1031,7 +1031,7 @@ class CaseRunningController extends Controller
             }
 
 
-            return redirect()->route('case-running.index')->with('success', "Case updated successfully.");
+            return redirect()->route('case-running.index')->with('Exito', "Caso actualizado exitosamente.");
         }
         return back()->with('errors', $validatedData->errors());
     }

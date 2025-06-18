@@ -166,7 +166,7 @@ class CaseStatusController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Case Status added successfully',
+            'message' => 'Estado del caso añadido correctamente',
 
         ],200);
 
@@ -229,7 +229,7 @@ class CaseStatusController extends Controller
 
            return response()->json([
             'success' => true,
-            'message' => 'Case Status updated successfully',
+            'message' => 'Estado del caso actualizado exitosamente',
 
         ],200);
        
@@ -281,7 +281,7 @@ class CaseStatusController extends Controller
 
                   return response()->json([
                        'error' => true ,
-                       'errormessage' => 'You cant delete Case Status because it is use in other module.'
+                       'errormessage' => 'Estado del caso actualizado exitosamente'
                        ],400);
         }
     
