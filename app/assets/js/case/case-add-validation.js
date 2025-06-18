@@ -89,11 +89,11 @@ jQuery(document).ready(function () {
 
     $('input[type=radio][name=position]').on('change', function () {
         if (this.value == 'Respondent') {
-            $('.position_name').html('Nombre del demandado');
-            $('.position_advo').html('Defensor del demandado');
-        } else if (this.value == 'Petitioner') {
             $('.position_name').html('Nombre del demandante');
-            $('.position_advo').html('Abogado del demandante');
+            $('.position_advo').html('Defensor del demandante');
+        } else if (this.value == 'Petitioner') {
+            $('.position_name').html('Nombre del demandado');
+            $('.position_advo').html('Abogado del demandado');
         }
     });
 

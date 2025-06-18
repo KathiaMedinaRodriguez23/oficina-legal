@@ -14,7 +14,7 @@
                 <div class="form-group pull-right top_search">
                     @if($adminHasPermition->can(['case_add']))
                         <a href="{{ route('case-running.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
-                            Añadir Caso</a>
+                            Agregar Caso</a>
                     @endif
 
                 </div>

@@ -43,7 +43,7 @@
                                 </td>
                                 <td>Tribunal : District & Sessions Court<br>
                                     Nº : 5<br>
-                                    Magistrado : 5th ADDL District Judge
+                                    Juez : 5th ADDL District Judge
                                 </td>
                                 <td>MILIND RASHMIBHAI DAVE<br>
                                     VS<br>

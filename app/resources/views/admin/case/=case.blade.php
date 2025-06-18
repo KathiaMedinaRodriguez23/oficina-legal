@@ -99,7 +99,7 @@
                                 <td>Tribunal: Tribunal de Distrito y de Sesiones
                                     <br>
                                     Nº : 5<br>
-                                    Magistrado: Juez de Distrito del 5.º ADDL
+                                    Juez : Juez de Distrito del 5.º ADDL
                                 </td>
                                 <td>MILIND RASHMIBHAI DAVE<br>
                                     VS<br>

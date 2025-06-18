@@ -293,8 +293,8 @@ class CaseRunningController extends Controller
 
 
                 $nestedData['court'] = '<p class="currenttittle">Tribunal :<b> ' . $case->court_name . '</b></p>
-                                        <p class="currenttittle">Nº:<b> ' . $case->court_no . '</b></p>
-                                        <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
+                                        <p class="currenttittle">Nº :<b> ' . $case->court_no . '</b></p>
+                                        <p class="currenttittle">Juez :<b> ' . $case->judge_name . '</b></p>';
 
                 $nestedData['case'] = '<p class="currenttittle">' . $first . ' <br/><b>VS</b> <br/> ' . $second . '<p>';
 
@@ -525,7 +525,7 @@ class CaseRunningController extends Controller
 
             $row['court'] = '<p class="currenttittle">Tribunal :<b> ' . $case->court_name . '</b></p>
                                         <p class="currenttittle">Nº :<b> ' . $case->court_no . '</b></p>
-                                        <p class="currenttittle">Magistrado :<b> ' . $case->judge_name . '</b></p>';
+                                        <p class="currenttittle">Juez :<b> ' . $case->judge_name . '</b></p>';
 
             $row['case'] = '<p class="currenttittle">' . $first . ' <br/><b>VS</b> <br/>' . $second . '<p>';
             $row['next_date'] = '<p class="currenttittle">' . date(LogActivity::commonDateFromatType(), strtotime($case->next_date)) . '</p><small class="currenttittle">' . $this->getLoginUserNameById($case->updated_by) . '</small>';

@@ -184,7 +184,7 @@
                                                 <div class="cst-btn">
                                                     <div class="top-btns" style="text-align: left;">
                                                         <a class="btn btn-info"
-                                                           href="{{url('admin/case-running/create')}}"> Añadir Caso </a>
+                                                           href="{{url('admin/case-running/create')}}">Agregar Caso </a>
                                                     </div>
                                                 </div>
                                             </div>
