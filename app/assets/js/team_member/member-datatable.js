@@ -13,6 +13,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#user_table').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],

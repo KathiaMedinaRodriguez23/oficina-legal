@@ -45,8 +45,8 @@ var FormControlsClient = {
             messages: {
 
                 case_type_name: {
-                    required: "Sub Case type is required",
-                    remote: "Case type already exists."
+                    required: "Se requiere el tipo de subcaso",
+                    remote: "El tipo de caso ya existe."
                 }
             },
             errorPlacement: function (error, element) {

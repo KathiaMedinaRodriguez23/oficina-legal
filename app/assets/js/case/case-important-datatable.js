@@ -16,6 +16,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#case_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             // "responsive":true,

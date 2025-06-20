@@ -15,7 +15,8 @@
 
             @endif
             @if($adminHasPermition->can(['task_list']) =="1")
-                <li><a href="{{ route('tasks.index') }}"><i class="fa fa-tasks"></i> Task</a></li>
+                <li><a href="{{ route('tasks.index') }}"><i class="fa fa-tasks"></i> Tareas
+                </a></li>
             @endif
 
 

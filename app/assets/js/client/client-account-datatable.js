@@ -14,6 +14,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#clientAccountlistDatatable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,

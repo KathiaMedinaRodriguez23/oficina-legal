@@ -12,6 +12,7 @@ var DatatableRemoteAjaxDemo = function () {
         });
 
         t = $('#tagDataTable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,

@@ -12,6 +12,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         table = $('#VendorAccountDatatable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],

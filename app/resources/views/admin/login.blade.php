@@ -54,8 +54,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-gavel"></i> &nbsp;&nbsp;LawOffice</h1>
-                  <p>©2019 All Rights Reserved. Advocate Dairy</p>
+                  <h1><i class="fa fa-gavel"></i> &nbsp;&nbsp;Oficina Legal</h1>
+                  <p>©2025 Todos los derechos reservados. </p>
                 </div>
               </div>
             </form>
@@ -83,15 +83,15 @@
 
               <div class="separator">
                 <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
+                  <a href="#signin" class="to_register"> Ingresar </a>
                 </p>
 
                 <div class="clearfix"></div>
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-gavel"></i>&nbsp;&nbsp; LawOffice</h1>
-                  <p>©2019 All Rights Reserved. Advocate Dairy</p>
+                  <h1><i class="fa fa-gavel"></i>&nbsp;&nbsp; Oficina Legaly</h1>
+                  <p>©2025 Todos los derechos reservados. Oficina Legaly</p>
                 </div>
               </div>
             </form>

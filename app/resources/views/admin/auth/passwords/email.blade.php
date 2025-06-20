@@ -51,7 +51,7 @@
                 @else
                 <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 20px;">
                 @endif
-              <h2> Reset Your Account </h2>
+              <h2> Recuperar Contraseñaa </h2>
                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                   <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
 
@@ -64,7 +64,7 @@
          
               <div>
                      <button type="submit" class="btn btn-default">
-                                   Send Password Reset Link
+                                   Enviar Enlace Para Recuperar Contraseña
                                 </button>
                
               </div>
@@ -78,7 +78,7 @@
 
                 <div>
  
-                  <p>©2019 All Rights Reserved. LawOffice</p>
+                  <p>©2025 Todos los derechos reservados. Oficina Legal</p>
                 </div>
               </div>
             </form>

@@ -282,7 +282,7 @@ class LogActivity
 			$html .='<li>
 						<a href="'.url('admin/case-running/').'">
 							<div class="text-center link-block">
-								<strong>View All Task </strong> &nbsp; <i class="fa fa-angle-right"></i>
+								<strong>Ver todas las tareas </strong> &nbsp; <i class="fa fa-angle-right"></i>
 							</div>
 						</a>
 
@@ -291,7 +291,7 @@ class LogActivity
 			$html .='<li>
 				<a href="javascript:void(0);">
 					<div class="mesge">
-						<i class="fa fa-info fa-fw"></i> You dont`t have pending case(s)
+						<i class="fa fa-info fa-fw"></i> No tienes casos pendientes
 					</div>
 				</a>
 			</li>';
@@ -313,11 +313,11 @@ class LogActivity
 			$diff = $expires_at->diffInDays($now);
 			
 			$btn = '<a href="'.url('admin/packages').'" class="btn btn-info" style="border-radius: 0;margin-left: 38px;background: #308bd2;border-color: #308bd2;">
-					Upgrade
+					Actualizado
 					</a>';
 			if($row->current_package=='trial')
 			{
-				return '<p class="with_background">You have <span class="big">'.$diff.'</span> days left in your trial '.$btn.'</p>';
+				return '<p class="with_background">You have <span class="big">'.$diff.'</span> días restantes de tu prueba '.$btn.'</p>';
 				
 			}else
 			{
@@ -361,22 +361,22 @@ class LogActivity
 	    public static function getTaskStatusList()
     {
         $taskArr = array(
-            'not_started' => 'Not Started',
-            'in_progress' => 'In Progress',
-            'completed' => 'Completed',
-            'deferred' => 'Deferred',
-            // 'waiting_for_someone' => 'Waiting For Someone',
-        );
+		'not_started' => 'No iniciado',
+		'in_progress' => 'En progreso',
+		'completed' => 'Completado',
+		'deferred' => 'Aplazado',
+		// 'waiting_for_someone' => 'Esperando a alguien',
+		);
         return $taskArr;
     }
 
     public static function getTaskPriorityList()
     {
         $taskPriorityArr = array(
-            'low' => 'Low',
-            'medium' => 'Medium',
-            'high' => 'High',
-            'urgent' => 'Urgent',
+            'low' => 'Bajo',
+			'medium' => 'Medio',
+			'high' => 'Alto',
+			'urgent' => 'Urgente',
         );
         return $taskPriorityArr;
     }
@@ -384,10 +384,10 @@ class LogActivity
     public static function getTicketPriority()
     {
         return [
-            'low' => 'Low',
-            'medium' => 'Medium',
-            'high' => 'High',
-            'urgent' => 'Urgent',
+            'low' => 'Bajo',
+			'medium' => 'Medio',
+			'high' => 'Alto',
+			'urgent' => 'Urgente',
         ];
     }
 

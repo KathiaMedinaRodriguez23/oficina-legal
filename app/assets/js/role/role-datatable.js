@@ -12,6 +12,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#roleDataTable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,

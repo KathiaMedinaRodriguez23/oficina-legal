@@ -17,15 +17,15 @@ $('#add_appointment').validate({
                 },
         messages: {
            mobile: {
-                        required: "Please enter mobile.",
-                        minlength: "mobile must be 10 digit.",
-                        maxlength: "mobile must be 10 digit.",
-                        number: "please enter digit 0-9.",
+                    required: "Por favor, introduzca el móvil.",
+                    minlength: "El móvil debe tener 10 dígitos.",
+                    maxlength: "El móvil debe tener 10 dígitos.",
+                    number: "Por favor, introduzca los dígitos del 0 al 9.",
                     },
-                     date: "Please select date.",
-                     time: "Please enter time.",
-                     new_client: "Please enter client name.",
-                     exists_client: "Please select client name."
+                    date: "Seleccione la fecha.",
+                    time: "Por favor, introduzca la hora.",
+                    new_client: "Por favor, introduzca el nombre del cliente.",
+                    existe_client: "Por favor, seleccione el nombre del cliente."         
         },
         errorPlacement: function (error, element) {            
             error.appendTo(element.parent()).addClass('text-danger');

@@ -367,7 +367,7 @@ if (function_exists('apache_get_modules')) {
 
                         <div>
 
-                            <p>©2019 All Rights Reserved. LawOffice</p>
+                            <p>©2025 Todos los derechos reservados. Oficina Legal</p>
                         </div>
                     </div>
                 </div>

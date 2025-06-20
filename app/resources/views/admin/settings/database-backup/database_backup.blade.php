@@ -47,6 +47,7 @@
 <script>
     "use strict";
         var table = $('#tagDataTable').DataTable({
+        "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,

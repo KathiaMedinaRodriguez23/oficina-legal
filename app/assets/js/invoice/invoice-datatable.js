@@ -13,6 +13,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#client_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],

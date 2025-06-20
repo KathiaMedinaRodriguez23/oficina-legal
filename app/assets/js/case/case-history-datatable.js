@@ -7,6 +7,14 @@ var allCaseHistoryList = $('#allCaseHistoryList').val();
 var DatatableRemoteAjaxDemo = function () {
 
     var lsitDataInTable = function () {
+        var $tbl = $('#case_history_list');
+
+        // Si ya existe, lo destruyo y limpio el <tbody>
+        if ( $.fn.DataTable.isDataTable($tbl) ) {
+            $tbl.DataTable().destroy();
+            $tbl.find('tbody').empty();
+        }
+
         var t;
 
         $.ajaxSetup({
@@ -15,6 +23,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#case_history_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "oLanguage": {

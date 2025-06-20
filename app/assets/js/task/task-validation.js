@@ -20,13 +20,13 @@ var FormControlsClient = {
 
             },
             messages: {
-                task_subject: "Please enter subject.",
-                start_date: "Please enter start date.",
-                end_date: "Please enter deadline.",
-                project_status_id: "Please select status.",
-                priority: "Please select priority.",
+                task_subject: "Por favor, introduzca el asunto.",
+                start_date: "Por favor, introduzca la fecha de inicio.",
+                end_date: "Por favor, introduzca la fecha límite.",
+                project_status_id: "Por favor, seleccione el estado.",
+                priority: "Por favor, seleccione la prioridad.",
                 'assigned_to[]': {
-                    required: "Please select employee name.",
+                required: "Por favor, seleccione el nombre del empleado.",
                 }
 
             },
@@ -76,53 +76,51 @@ jQuery(document).ready(function () {
             //cache: true,
             delay: 50
         },
-        placeholder: 'Search customer',
+        placeholder: 'Buscar cliente',
         // minimumInputLength: 1,
         templateResult: getfName,
     });
 
     $("#project_status_id").select2({
-        allowClear: true,
-        placeholder: 'Select status'
+    allowClear: true,
+    placeholder: 'Seleccionar estado'
     });
 
     $("#priority").select2({
-        allowClear: true,
-        placeholder: 'Select priority'
+    allowClear: true,
+    placeholder: 'Seleccionar prioridad'
     });
 
     $("#assigned_to").select2({
-        allowClear: true,
-        placeholder: 'Select Users',
-        multiple: true
+    allowClear: true,
+    placeholder: 'Seleccionar usuarios',
+    multiple: true
     });
 
     $("#related").select2({
-        allowClear: true,
-        placeholder: 'Nothing selected',
+    allowClear: true,
+    placeholder: 'Nada seleccionado',
     });
 
     $("#project_status_id").select2({
-        allowClear: true,
-        placeholder: 'Select status'
+    allowClear: true,
+    placeholder: 'Seleccionar estado'
     });
 
     $("#priority").select2({
-        allowClear: true,
-        placeholder: 'Select priority'
+    allowClear: true,
+    placeholder: 'Seleccionar prioridad'
     });
 
     $("#assigned_to").select2({
-        allowClear: true,
-        placeholder: 'Select Users',
-        multiple: true
+    allowClear: true,
+    placeholder: 'Seleccionar usuarios',
+    multiple: true
     });
 
     $("#related").select2({
-        allowClear: true,
-        placeholder: 'Nothing selected',
-    });
-
+    allowClear: true,
+    placeholder: 'No se ha seleccionado nada',});
 
     $(".dateFrom").datepicker({
         format: date_format_datepiker,

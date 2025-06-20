@@ -3,7 +3,7 @@
 @section('content')
     @component('component.heading' , [
 
-    'page_title' => 'Add Task',
+    'page_title' => 'Agregar tarea',
     'action' => route('tasks.index') ,
     'text' => 'Atras'
      ])
@@ -20,19 +20,19 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Subject <span class="text-danger">*</span></label>
+                                <label for="fullname">Asunto <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="task_subject"
                                        name="task_subject">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Start Date <span class="text-danger">*</span></label>
+                                <label for="fullname">Fecha de inicio <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control dateFrom" id="start_date"
                                        name="start_date" readonly="">
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Deadline<span class="text-danger">*</span></label>
+                                <label for="fullname">Fecha límite <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control dateTo" id="end_date"
                                        name="end_date" readonly="">
                             </div>
@@ -41,9 +41,9 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Select Status: <span class="text-danger">*</span></label>
+                                <label for="fullname">Seleccionar estado: <span class="text-danger">*</span></label>
                                 <select class="form-control" id="project_status_id" name="project_status_id">
-                                    <option value="">Select status</option>
+                                    <option value="">Seleccionar estado</option>
                                     @foreach(LogActivity::getTaskStatusList()  as $key=>$val)
                                         <option value="{{$key}}">{{$val}}</option>
                                     @endforeach
@@ -51,9 +51,9 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Priority <span class="text-danger">*</span></label>
+                                <label for="fullname">Prioridad <span class="text-danger">*</span></label>
                                 <select class="form-control" id="priority" name="priority">
-                                    <option value="">Select priority</option>
+                                    <option value="">Seleccionar prioridad</option>
                                     @foreach(LogActivity::getTaskPriorityList() as $key=>$val)
                                         <option value="{{$key}}"
                                         >{{$val}}</option>
@@ -62,10 +62,10 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Assign To<span class="text-danger">*</span></label>
+                                <label for="fullname">Asignar a<span class="text-danger">*</span></label>
 
                                 <select multiple class="form-control" id="assigned_to" name="assigned_to[]">
-                                    <option value="">Select user</option>
+                                    <option value="">Seleccionar usuario</option>
                                     @foreach($users as $key=>$val)
                                         <option value="{{$val->id}}">{{$val->first_name.' '.$val->last_name}}</option>
                                     @endforeach
@@ -76,19 +76,19 @@
 
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Related To</label>
+                                <label for="fullname">Relacionado con</label>
                                 <select class="form-control selct2-width-100" id="related" name="related">
-                                    <option value="">Noting Selected</option>
-                                    <option value="case">Case</option>
-                                    <option value="other">Other</option>
+                                    <option value="">Seleccionar nota</option>
+                                    <option value="case">Caso</option>
+                                    <option value="other">Otro</option>
                                 </select>
                             </div>
 
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group task_selection hide">
-                                <label for="fullname">Case</label>
+                                <label for="fullname">Caso</label>
                                 <select class="form-control selct2-width-100" id="related_id" name="related_id">
-                                    <option value="">Select user</option>
+                                    <option value="">Seleccionar usuarior</option>
 
                                 </select>
 
@@ -98,7 +98,7 @@
 
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Description:</label>
+                                <label for="fullname">Descripción:</label>
                                 <textarea class="form-control" id="task_description"
                                           name="task_description"></textarea>
                             </div>
@@ -106,9 +106,9 @@
 
                         <div class="form-group pull-right">
                             <div class="col-md-12 col-sm-6 col-xs-12">
-                                <a class="btn btn-danger" href="{{ route('tasks.index') }}">Cancel</a>
+                                <a class="btn btn-danger" href="{{ route('tasks.index') }}">Cancelar</a>
                                 <button type="submit" class="btn btn-success"><i class="fa fa-save"
-                                                                                 id="show_loader"></i>&nbsp;Save
+                                                                                 id="show_loader"></i>&nbsp;Guardar
                                 </button>
                             </div>
                         </div>

@@ -15,6 +15,7 @@ var DatatableRemoteAjaxDemo = function () {
         });
 
         t = $('#ExpenseDatatable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],

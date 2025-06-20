@@ -5,13 +5,13 @@
 
         <div class="page-title">
             <div class="title_left">
-                <h3>Member List</h3>
+                <h3>Lista de miembros</h3>
             </div>
 
             <div class="title_right">
                 <div class="form-group pull-right top_search">
                     <a href="{{ url('admin/client_user/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
-                        Add Member</a>
+                        Agregar Miembro</a>
                 </div>
             </div>
         </div>
@@ -27,13 +27,13 @@
                         <table id="user_table" class="table">
                             <thead>
                             <tr>
-                                <th width="5%">No</th>
-                                <th width="30%">Name</th>
+                                <th width="5%">N</th>
+                                <th width="30%">Nombre</th>
                                 <th width="30%">Email</th>
-                                <th>Contact No</th>
-                                <th>Role</th>
-                                <th>estado</th>
-                                <th width="5%">Action</th>
+                                <th>N de contacto</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                                <th width="5%">Acción</th>
                             </tr>
                             </thead>
 

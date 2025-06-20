@@ -15,6 +15,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#case_transfer_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "oLanguage": {

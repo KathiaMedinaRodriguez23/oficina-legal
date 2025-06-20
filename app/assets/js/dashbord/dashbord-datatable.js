@@ -24,6 +24,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#appointment_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],

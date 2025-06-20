@@ -6,18 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a2e3fd3-09ee-4f03-a83e-afb2242acc02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppointmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/case/case-add-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-add-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/archived.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/archived.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/client_case_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/client_case_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/edit_case.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/edit_case.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/important_cases.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/important_cases.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/nb-cases.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/nb-cases.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/running.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/running.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/case/view/view_case_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/case/view/view_case_details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/view/cases_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/view/cases_view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +81,9 @@
       <workItem from="1749422427008" duration="26371000" />
       <workItem from="1749927283775" duration="3542000" />
       <workItem from="1750195210298" duration="5000" />
-      <workItem from="1750263845137" duration="5021000" />
+      <workItem from="1750263845137" duration="7058000" />
+      <workItem from="1750330480992" duration="109000" />
+      <workItem from="1750377171151" duration="24000" />
     </task>
     <servers />
   </component>

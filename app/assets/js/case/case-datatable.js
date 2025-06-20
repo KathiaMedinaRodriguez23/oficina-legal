@@ -9,6 +9,13 @@ var t;
 var DatatableRemoteAjaxDemo = function () {
 
     var lsitDataInTable = function () {
+        var $tbl = $('#case_list');
+        
+        // Si ya existe, lo destruyo y limpio el <tbody>
+        if ( $.fn.DataTable.isDataTable($tbl) ) {
+            $tbl.DataTable().destroy();
+            $tbl.find('tbody').empty();
+        }
 
         $.ajaxSetup({
             headers: {
@@ -16,6 +23,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#case_list').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             // "responsive":true,
@@ -132,8 +140,12 @@ var DatatableRemoteAjaxDemo = function () {
         }
     };
 }();
-jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+
+// Arranca la tabla cuando el DOM esté listo
+jQuery(document).ready(function() {
+    if ( ! $.fn.DataTable.isDataTable('#case_list') ) {
+        DatatableRemoteAjaxDemo.init();
+    }
 });
 
 

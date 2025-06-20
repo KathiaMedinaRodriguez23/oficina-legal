@@ -14,7 +14,7 @@
                    data-target-modal="{{$modal_id}}"
                    class="btn btn-primary call-model {{ isset($permission) &&  $permission=="1" ? '':'hidden' }}"><i
                         class="fa fa-plus"></i>
-                    {{ "Add ".$page_title }}
+                    {{ "Agregar ".$page_title }}
                 </a>
             @endif
 

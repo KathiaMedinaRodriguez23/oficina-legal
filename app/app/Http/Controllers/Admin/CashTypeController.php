@@ -202,7 +202,7 @@ class CashTypeController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Case Type added successfully',
+            'message' => 'Tipo de caso añadido correctamente',
 
         ],200);
 
@@ -265,7 +265,7 @@ class CashTypeController extends Controller
 
            return response()->json([
             'success' => true,
-            'message' => 'Case Type added successfully',
+            'message' => 'Tipo de caso añadido correctamente',
 
         ],200);
        

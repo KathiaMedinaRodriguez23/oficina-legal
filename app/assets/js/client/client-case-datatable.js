@@ -11,6 +11,13 @@ var DatatableRemoteAjaxDemo = function () {
 
 
     var lsitDataInTable = function () {
+        var $tbl = $('#clientCaselistDatatable1');
+
+        // Si ya existe, lo destruyo y limpio el <tbody>
+        if ( $.fn.DataTable.isDataTable($tbl) ) {
+            $tbl.DataTable().destroy();
+            $tbl.find('tbody').empty();
+        }
 
         $.ajaxSetup({
             headers: {
@@ -19,6 +26,7 @@ var DatatableRemoteAjaxDemo = function () {
         });
 
         t = $('#clientCaselistDatatable1').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "order": [[0, "desc"]],
@@ -91,8 +99,12 @@ var DatatableRemoteAjaxDemo = function () {
         }
     };
 }();
-jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+
+// Arranca la tabla cuando el DOM esté listo
+jQuery(document).ready(function() {
+    if ( ! $.fn.DataTable.isDataTable('#clientCaselistDatatable1') ) {
+        DatatableRemoteAjaxDemo.init();
+    }
 });
 
 

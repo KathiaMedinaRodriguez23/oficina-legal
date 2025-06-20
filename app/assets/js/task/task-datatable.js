@@ -4,6 +4,14 @@ var token = $('#token-value').val();
 var DatatableRemoteAjaxDemo = function () {
 
     var lsitDataInTable = function () {
+        var $tbl = $('#clientDataTable');
+
+        // Si ya existe, lo destruyo y limpio el <tbody>
+        if ( $.fn.DataTable.isDataTable($tbl) ) {
+            $tbl.DataTable().destroy();
+            $tbl.find('tbody').empty();
+        }
+
         var t;
 
         $.ajaxSetup({
@@ -12,6 +20,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#clientDataTable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,
@@ -87,6 +96,10 @@ var DatatableRemoteAjaxDemo = function () {
         }
     };
 }();
-jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+
+// Arranca la tabla cuando el DOM esté listo
+jQuery(document).ready(function() {
+    if ( ! $.fn.DataTable.isDataTable('#clientDataTables') ) {
+        DatatableRemoteAjaxDemo.init();
+    }
 });

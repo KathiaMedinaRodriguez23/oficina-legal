@@ -16,6 +16,7 @@ var DatatableRemoteAjaxDemo = function () {
             }
         });
         t = $('#Appointmentdatatable').DataTable({
+            "destroy": true,
             "processing": true,
             "serverSide": true,
             "stateSave": true,
