@@ -7,7 +7,7 @@
 
     <div class="page-title">
         <div class="title_left">
-            <h3>General Setting</h3>
+            <h3>Configuración general</h3>
         </div>
 
 
@@ -42,7 +42,7 @@
 
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_prefex">Company Name <span class="text-danger">*</span></label>
+                                <label for="invoice_prefex">Nombre de la Empresa<span class="text-danger">*</span></label>
                                 <input type="text" required data-msg-required="Please enter company name" placeholder=""
                                        class="form-control" id="cmp_name" name="cmp_name"
                                        value="{{ $GeneralSettings->company_name }}">
@@ -54,7 +54,7 @@
                         <div class="row">
 
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_number">Address <span class="text-danger">*</span></label>
+                                <label for="invoice_number">Dirección <span class="text-danger">*</span></label>
                                 <input type="text" data-msg-required="Please enter address" placeholder=""
                                        class="form-control" id="address" name="address" required
                                        value="{{ $GeneralSettings->address }}">
@@ -66,14 +66,14 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_number">Country <span class="text-danger">*</span></label>
+                                <label for="invoice_number">País <span class="text-danger">*</span></label>
                                 <select data-msg-required="Please select country" required=""
                                         class="form-control select-change country-select2 selct2-width-100"
                                         name="country" id="country"
                                         data-url="{{ route('get.country') }}"
                                         data-clear="#city_id,#state"
                                 >
-                                    <option value=""> Select Country</option>
+                                    <option value=""> Seleccionar País</option>
                                     @foreach ($countrys as $country)
                                         <option
                                             value="{{ $country->id }}" {{$GeneralSettings->country== $country->id ? 'selected' : '' }}
@@ -85,14 +85,14 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_number">State <span class="text-danger">*</span></label>
+                                <label for="invoice_number">Departamento <span class="text-danger">*</span></label>
                                 <select data-msg-required="Please select state" required="" id="state" name="state"
 
                                         data-url="{{ route('get.state') }}"
                                         data-target="#country"
                                         data-clear="#city_id"
                                         class="form-control state-select2 select-change">
-                                    <option value=""> Select State</option>
+                                    <option value=""> Seleccionar Departamento</option>
                                     @foreach ($states as $state)
                                         <option
                                             value="{{ $state->id }}" {{$GeneralSettings->state== $state->id ? 'selected' : '' }}
@@ -105,13 +105,13 @@
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_number">City <span class="text-danger">*</span></label>
+                                <label for="invoice_number">Ciudad <span class="text-danger">*</span></label>
                                 <select data-msg-required="Please select city" required="" id="city_id" name="city_id"
                                         data-url="{{ route('get.city') }}"
                                         data-target="#state"
 
                                         class="form-control city-select2">
-                                    <option value=""> Select City</option>
+                                    <option value=""> Seleccionar Ciudad</option>
                                     @foreach ($citys as $city)
                                         <option
                                             value="{{ $city->id }}" {{$GeneralSettings->city== $city->id ? 'selected' : '' }}
@@ -128,7 +128,7 @@
                         <div class="row">
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="invoice_number">Pincode <span class="text-danger">*</span></label>
+                                <label for="invoice_number">Código Postal <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" data-msg-required="Please enter pincode"
                                        class="form-control" id="pincode" name="pincode" required
                                        value="{{ $GeneralSettings->pincode }}">
@@ -140,7 +140,7 @@
                                     <input type="file" name="favicon" id="favicon" class="form-control"
                                            data-min-width="16" data-min-height="16" data-max-width="16"
                                            data-max-height="16">
-                                    <span class="text-danger">(Note :Image size must be 16 width and 16 height)</span>
+                                    <span class="text-danger">(Nota: El tamaño de la imagen debe ser de 16 de ancho y 16 de alto)</span>
                                     @if($image_logo->favicon_img!='')
                                         <br>
                                         <br>
@@ -159,7 +159,7 @@
                                     <input type="file" placeholder="" class="form-control" id="logo" name="logo"
                                            data-min-width="230" data-min-height="46" data-max-width="230"
                                            data-max-height="46">
-                                    <span class="text-danger"> (Note :Image size must be 230 width and 46 height)</span>
+                                    <span class="text-danger"> (Nota: El tamaño de la imagen debe ser de 230 de ancho y 46 de alto)</span>
                                     @if($GeneralSettings->logo_img!='')
                                         <br>
                                         <br>
@@ -174,7 +174,7 @@
                                 <div class="col-md-12 col-sm-6 col-xs-12">
                                     <button type="submit" class="btn btn-success" name="btn_add_smtp"><i
                                             class="fa fa-save"
-                                            id="show_loader"></i>&nbsp;Save
+                                            id="show_loader"></i>&nbsp;Guardar
                                     </button>
                                 </div>
                             </div>

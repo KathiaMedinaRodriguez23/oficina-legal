@@ -27,10 +27,10 @@
                         <table id="user_table" class="table">
                             <thead>
                             <tr>
-                                <th width="5%">N</th>
+                                <th width="5%">Nº</th>
                                 <th width="30%">Nombre</th>
                                 <th width="30%">Email</th>
-                                <th>N de contacto</th>
+                                <th>Nº de contacto</th>
                                 <th>Rol</th>
                                 <th>Estado</th>
                                 <th width="5%">Acción</th>

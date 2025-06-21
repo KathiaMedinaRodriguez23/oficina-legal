@@ -8,12 +8,12 @@
 
     <div class="page-title">
         <div class="title_left">
-            <h3>Edit Member</h3>
+            <h3>Editar Miembro</h3>
         </div>
 
         <div class="title_right">
             <div class="form-group pull-right top_search">
-                <a href="{{ url('admin/client_user') }}" class="btn btn-primary">Back</a>
+                <a href="{{ url('admin/client_user') }}" class="btn btn-primary">Atras</a>
             </div>
         </div>
     </div>

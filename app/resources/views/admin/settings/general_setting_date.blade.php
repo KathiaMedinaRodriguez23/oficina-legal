@@ -7,7 +7,7 @@
 
     <div class="page-title">
         <div class="title_left">
-            <h3>General Setting</h3>
+            <h3>Configuración general</h3>
         </div>
 
 
@@ -47,7 +47,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Date Formet </label><br>
+                                <label for="fullname">Formato de fecha </label><br>
 
                                 <input type="radio" id="test3" name="forment"
                                        value="1" {{(!empty($GeneralSettings) && $GeneralSettings->date_formet=='1')?'checked':''}} {{empty($GeneralSettings)?'checked':''}}>
@@ -65,7 +65,7 @@
                         <div class="row">
                             <br>
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="timezone">Timezone<span class="text-danger">*</span></label>
+                                <label for="timezone">Zona horaria<span class="text-danger">*</span></label>
                                 <select name="timezone" id="timezone" class="form-control">
 
                                     @foreach($timezone as $t)
@@ -80,7 +80,7 @@
                             <div class="col-md-12 col-sm-6 col-xs-12">
 
                                 <button type="submit" class="btn btn-success" name="btn_add_smtp"><i class="fa fa-save"
-                                                                                                     id="show_loader"></i>&nbsp;Save
+                                                                                                     id="show_loader"></i>&nbsp;Guardar
                                 </button>
                             </div>
                         </div>
