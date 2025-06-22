@@ -84,7 +84,7 @@
 
                         <div>
 
-                            <p>©2025 Todos los derechos reservados. Oficina Legal</p>
+                            <p>©2025 Todos los derechos reservados. Horizonte Legal</p>
                         </div>
                     </div>
                 </form>

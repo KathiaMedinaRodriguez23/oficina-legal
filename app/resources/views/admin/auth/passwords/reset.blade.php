@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $image_logo->company_name ?? '' }} | Password Reset </title>
+    <title>{{ $image_logo->company_name ?? '' }} | Restablecer Contraseña </title>
      @if($image_logo->favicon_img!='')
     <link rel="shortcut icon" href="{{asset(config('constants.FAVICON_FOLDER_PATH') .'/'. $image_logo->favicon_img)}}" >
     @endif
@@ -43,12 +43,8 @@
                         {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ $token }}">
-                @if($image_logo->logo_img!='')
-                <img src="{{asset(config('constants.LOGO_FOLDER_PATH') .'/'. $image_logo->logo_img)}}" style="width: 308px;">
-                @else
-                <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 20px;">
-                @endif
-              <h2> Reset Your Account </h2>
+                <img src="{{ asset('public/upload/logo.png') }}" style="margin-bottom: 10px; width: 60%">
+              <h2> Ingrese una nueva Contraseña </h2>
               <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                       <input id="email" type="email" class="form-control" name="email" value="{{ $email ?? old('email') }}" autofocus placeholder="Email">
 
@@ -59,7 +55,7 @@
                                 @endif
               </div>
              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" autocomplete="off">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block text-left">
@@ -68,7 +64,7 @@
                                 @endif
               </div>
               <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" autocomplete="off">
+                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirme contraseña" autocomplete="off">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block text-left">
@@ -79,9 +75,9 @@
 
               <div>
                      <button type="submit" class="btn btn-default">
-                                 Reset Password
+                                 Restablecer Contraseña
                                 </button>
-               
+
               </div>
 
               <div class="clearfix"></div>
@@ -91,8 +87,8 @@
                 <br />
 
                 <div>
-      
-                  <p>©2025 Todos los derechos reservados. Oficina Legal</p>
+
+                  <p>©2025 Todos los derechos reservados. Horizonte Legal</p>
                 </div>
               </div>
             </form>

@@ -64,17 +64,17 @@ class ProfileController extends Controller
                 $flag = FALSE;
             }
             if ($flag) {
-                Session::flash('success', 'Password changed successfully.');
+                Session::flash('success', 'Contraseña actualizada correctamente.');
 
                 return redirect('/admin/admin-profile');
             } else {
-                Session::flash('error', 'Unable to process request this time. Try again later.');
+                Session::flash('error', 'No se pudo actualizar la contraseña. Por favor, inténtelo de nuevo más tarde.');
 
                 return redirect('/admin/admin-profile');
 
             }
         } else {
-            Session::flash('error', 'Your current password do not match our record.');
+            Session::flash('error', 'Tu contraseña actual no coincide con la contraseña que proporcionaste. Por favor, inténtalo de nuevo.');
 
             return redirect('/admin/admin-profile');
         }
@@ -191,7 +191,7 @@ class ProfileController extends Controller
         $GeneralSettings->company_name = $request->associated_name;
         $GeneralSettings->save();
 
-        return back()->with('success', "Profile updated successfully.");
+        return back()->with('success', "Perfil actualizado correctamente.");
     }
 
     public function imageCropPost(Request $request)
