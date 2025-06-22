@@ -217,7 +217,7 @@ class ClientController extends Controller
 
             }
         }
-        return redirect()->route('clients.index')->with('Exito', "Cliente añadido exitosamente.");
+        return redirect()->route('clients.index')->with('success', "Cliente añadido exitosamente.");
     }
 
     /**

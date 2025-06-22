@@ -4,10 +4,8 @@
             <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
-
             <ul class="nav navbar-nav navbar-right">
-
-                {{--<li class="">
+                <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                        aria-expanded="false">
                         @if(Auth::guard('admin')->user())
@@ -24,13 +22,13 @@
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                         <li><a href="{{ url('admin/admin-profile') }}"> <i
-                                    class="fa fa-user"></i>&nbsp;&nbsp;Profile</a></li>
+                                    class="fa fa-user"></i>&nbsp;&nbsp;Perfil</a></li>
 
 
                         <li><a href="{{ url('/admin/logout') }}"
                                onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i
-                                    class="fa fa-sign-out"></i> Log Out</a>
+                                    class="fa fa-sign-out"></i> Cerrar Sesión</a>
                             <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST"
                                   style="display: none;">
                                 {{ csrf_field() }}
@@ -43,7 +41,6 @@
                     {!! App\Helpers\LogActivity::generateTasks() !!}
                     {!! App\Helpers\LogActivity::getNotifications() !!}
                 @endif
-                --}}
             </ul>
         </nav>
     </div>

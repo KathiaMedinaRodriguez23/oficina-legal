@@ -97,7 +97,7 @@ class AppointmentController extends Controller
         $appoint->save();
 
 
-        return redirect()->route('appointment.index')->with('Exito', "Cita agregada exitosamente.");
+        return redirect()->route('appointment.index')->with('success', "Cita agregada exitosamente.");
     }
 
     /**
@@ -345,7 +345,7 @@ class AppointmentController extends Controller
         $appoint->save();
 
 
-        return redirect()->route('appointment.index')->with('Exito', "Cita actualizada exitosamente.");
+        return redirect()->route('appointment.index')->with('success', "Cita actualizada exitosamente.");
 
     }
 

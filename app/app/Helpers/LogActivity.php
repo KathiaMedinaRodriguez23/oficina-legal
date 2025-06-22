@@ -195,12 +195,12 @@ class LogActivity
 		}
 		//if ($court_cases > 0){$caseCount = $court_cases;}else{$court_cases = '';}
 		//if (count($notify) > 0){$notifyCount = count($notify)+$caseCount;}else{$notifyCount = '';}
-        $html = '<li class="dropdown dropdown-alerts">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-bell-o"></i>
-						<span class="label label-warning">'.$notifyCount.'</span>
-					</a>';
+        // $html = '<li class="dropdown dropdown-alerts">
+		// 			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-bell-o"></i>
+		// 				<span class="label label-warning">'.$notifyCount.'</span>
+		// 			</a>';
 		
-		$html .='<ul id="login-dp" class="dropdown-menu flt-mesege">';
+		$html ='<ul id="login-dp" class="dropdown-menu flt-mesege">';
 		if($court_cases>0){
 			$html .='<li>
 						<a href="'.url('admin/dashboard').'">
@@ -258,12 +258,12 @@ class LogActivity
          
 		 if (count($court_cases) > 0){$caseCount = count($court_cases);}else{$caseCount = '';}
         
-		 $html = '<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-tasks"></i>
-				<span class="label label-primary">'.$caseCount.'</span>
-			</a>';
+		//  $html = '<li class="dropdown">
+		// 	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-tasks"></i>
+		// 		<span class="label label-primary">'.$caseCount.'</span>
+		// 	</a>';
 		
-		$html .='<ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">';
+		$html ='<ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">';
 		if (count($court_cases) > 0)
         {
 			foreach($court_cases as $court_case)

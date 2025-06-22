@@ -6,11 +6,6 @@
 @endpush
 @section('content')
     <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>My Account</h3>
-            </div>
-        </div>
 
         <div class="clearfix"></div>
         <div class="row">
@@ -18,7 +13,7 @@
 
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Profile Detail</h2>
+                        <h2>Perfil</h2>
                         <div class="clearfix"></div>
                     </div>
 
@@ -26,7 +21,7 @@
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <strong>Ups!</strong> Por favor corrige los siguientes errores:<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -42,12 +37,12 @@
                                     <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                         <li role="presentation"
                                             class="@if(request()->segment(2)=='admin-profile') active @else @endif"><a
-                                                href="{{ url('admin/admin-profile') }}">Profile</a>
+                                                href="{{ url('admin/admin-profile') }}">Detalle</a>
                                         </li>
 
                                         <li role="presentation"
                                             class="@if(request()->segment(3)=='password') active @else @endif"><a
-                                                href="{{ url('admin/change/password') }}">Change Password</a>
+                                                href="{{ url('admin/change/password') }}">Modificar Contraseña</a>
 
                                         </li>
                                     </ul>
@@ -76,8 +71,7 @@
                                                                         <label id="remove_crop">
                                                                             <input type="checkbox" value="Yes"
                                                                                    name="is_remove_image"
-                                                                                   id="is_remove_image">&nbsp;Remove
-                                                                            profile picture.
+                                                                                   id="is_remove_image">&nbsp;Eliminar Imagen
                                                                         </label>
                                                                     </div>
                                                                 @else
@@ -106,7 +100,7 @@
                                                                         <br>
                                                                         <label class="btn btn-link btn-file">
                                       <span class="fa fa-upload text-center font-15 set-profile-picture" ><span
-                                           > &nbsp;Set profile picture</span>
+                                           > &nbsp;Colocar Imagen de Perfil</span>
                                       </span>
                                                                             <!-- The file is stored here. -->
                                                                             <input type="file" id="upload" name="image"
@@ -126,14 +120,14 @@
                                                     <div class="col-md-8 col-sm-12 col-xs-12">
                                                         <div class="row form-group">
                                                             <div class="col-md-6">
-                                                                <label for="f_name">First Name <span
+                                                                <label for="f_name">Primer Nombre <span
                                                                         class="text-danger">*</span></label>
                                                                 <input type="text" id="f_name" name="f_name"
                                                                        placeholder="" class="form-control"
                                                                        value="{{ $users->first_name}}">
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="last_name">Last Name <span
+                                                                <label for="last_name">Apellidos <span
                                                                         class="text-danger">*</span></label>
                                                                 <input type="text" id="l_name" name="l_name"
                                                                        class="form-control"
@@ -150,7 +144,7 @@
                                                                        class="form-control" value="{{ $users->email}}">
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <label for="mobile">Mobile No <span class="text-danger">*</span></label>
+                                                                <label for="mobile">Celular <span class="text-danger">*</span></label>
                                                                 <input type="text" id="mobile" name="mobile"
                                                                        class="form-control" maxlength="10"
                                                                        value="{{ $users->mobile}}">
@@ -161,7 +155,7 @@
                                                         @if(Auth::guard('admin')->user()->user_type=="Admin")
                                                             <div class="row form-group">
                                                                 <div class="col-md-6">
-                                                                    <label for="email">Registration No <span
+                                                                    <label for="email">Número de Registro<span
                                                                             class="text-danger">*</span></label>
                                                                     <input type="text" id="registration_no"
                                                                            name="registration_no"
@@ -169,7 +163,7 @@
                                                                            class="form-control" autocomplete="off">
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label for="mobile">Associated Name <span
+                                                                    <label for="mobile">Nombre de Asociado <span
                                                                             class="text-danger">*</span></label>
                                                                     <input type="text" id="associated_name"
                                                                            name="associated_name" class="form-control"
@@ -181,14 +175,14 @@
 
                                                         <div class="row form-group">
                                                             <div class="col-md-9">
-                                                                <label for="address">Address <span
+                                                                <label for="address">Dirección <span
                                                                         class="text-danger">*</span></label>
                                                                 <input type="text" id="address" name="address"
                                                                        class="form-control"
                                                                        value="{{ $users->address}}">
                                                             </div>
                                                             <div class="col-md-3">
-                                                                <label for="zipcode">Zip Code <span class="text-danger">*</span></label>
+                                                                <label for="zipcode">Codigo Postal<span class="text-danger">*</span></label>
                                                                 <input type="text" id="zip_code" name="zip_code"
                                                                        class="form-control" maxlength=""
                                                                        value="{{ $users->zipcode}}">
@@ -198,7 +192,7 @@
 
                                                         <div class="row form-group">
                                                             <div class="col-md-4">
-                                                                <label for="country">Country <span
+                                                                <label for="country">País <span
                                                                         class="text-danger">*</span></label>
                                                                 <select
                                                                     class="form-control select-change country-select2 select2-profile-country"
@@ -206,7 +200,7 @@
                                                                     data-url="{{ route('get.country') }}"
                                                                     data-clear="#city_id,#state"
                                                                 >
-                                                                    <option value=""> Select Country</option>
+                                                                    <option value=""> Selecciona País</option>
                                                                     @if ($users->country)
                                                                         <option value="{{ $users->country->id }}"
                                                                                 selected>{{ $users->country->name }}</option>
@@ -215,7 +209,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="state">State <span
+                                                                <label for="state">Departamento <span
                                                                         class="text-danger">*</span></label>
                                                                 <select id="state" name="state"
 
@@ -223,7 +217,7 @@
                                                                         data-target="#country"
                                                                         data-clear="#city_id"
                                                                         class="form-control state-select2 select-change select2-profile-state">
-                                                                    <option value=""> Select State</option>
+                                                                    <option value=""> Elije Departamento</option>
                                                                     @if ($users->state)
                                                                         <option value="{{ $users->state->id }}"
                                                                                 selected>{{ $users->state->name }}</option>
@@ -233,14 +227,14 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label for="city">City <span
+                                                                <label for="city">Provincia <span
                                                                         class="text-danger">*</span></label>
                                                                 <select id="city_id" name="city_id"
                                                                         data-url="{{ route('get.city') }}"
                                                                         data-target="#state"
 
                                                                         class="form-control city-select2">
-                                                                    <option value=""> Select City</option>
+                                                                    <option value=""> Elije Provincia</option>
                                                                     @if($users->city)
                                                                         <option value="{{ $users->city->id }}"
                                                                                 selected>{{ $users->city->name }}</option>
@@ -264,7 +258,7 @@
 
                                                             <button type="submit" class="btn btn-success"
                                                                     id="upload-result"><i class="fa fa-save"
-                                                                                          id="show_loader"></i>&nbsp;Update
+                                                                                          id="show_loader"></i>&nbsp;Actualizar
                                                             </button>
                                                         </div>
                                                     </div>
