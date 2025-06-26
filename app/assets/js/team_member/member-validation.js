@@ -37,10 +37,10 @@ var FormControlsClient = {
                     number: true
                 },
                 address: "required",
-                zip_code: {
+                document_number: {
                     required: true,
-                    minlength: 6,
-                    maxlength: 6,
+                    minlength: 8,
+                    maxlength: 8,
                     number: true
                 },
                 password: {
@@ -57,7 +57,7 @@ var FormControlsClient = {
                 state: "required",
                 city_id: "required",
             },
-            
+
             messages: {
                 username: {
                     required: "Por favor, ingrese el nombre de usuario.",
@@ -77,10 +77,10 @@ var FormControlsClient = {
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 address: "Por favor, ingrese la dirección.",
-                zip_code: {
-                    required: "Por favor, ingrese el código postal.",
-                    minlength: "El código postal debe tener 6 dígitos.",
-                    maxlength: "El código postal debe tener 6 dígitos.",
+                document_number: {
+                    required: "Por favor, ingrese DNI.",
+                    minlength: "El DNI debe tener 8 dígitos.",
+                    maxlength: "El DNI debe tener 8 dígitos.",
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 password: {

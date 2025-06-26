@@ -90,10 +90,10 @@
                                         <input type="text" id="address" name="address" class="form-control">
                                     </div>
                                    <div class="col-md-3">
-                                        <label for="zipcode">Código postal <span class="text-danger">*</span></label>
-                                        <input type="text" id="zip_code" name="zip_code" class="form-control"
+                                        <label for="document_number">DNI <span class="text-danger">*</span></label>
+                                        <input type="text" id="document_number" name="document_number" class="form-control"
                                                maxlength="">
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-md-6">
@@ -195,4 +195,17 @@
     <script src="{{asset('assets/admin/js/selectjs.js')}}"></script>
     <script src="{{ asset('assets/admin/jcropper/js/cropper.min.js') }}"></script>
     <script src="{{asset('assets/js/team_member/member-validation.js')}}"></script>
+    <script src="{{asset('assets/js/client/validate-phone.js')}}"></script>
+    <script>
+        const dniInput = document.getElementById('document_number');
+        dniInput.addEventListener('input', formatDni);
+
+        function formatDni(){
+            // Eliminar cualquier carácter que no sea un dígito o el símbolo '+'
+            const value = dniInput.value.replace(/[^\d+]/g, '');
+
+            // Asegurar que el número no tenga más de 8 caracteres
+            dniInput.value = value.substring(0, 8);
+        }
+    </script>
 @endpush

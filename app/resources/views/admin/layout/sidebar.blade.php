@@ -91,7 +91,7 @@
                         @endif
 
                         @if($adminHasPermition->can(['court_list']) == "1")
-                            <li><a href="{{ url('admin/court') }}">Tribunal</a></li>
+                            <li><a href="{{ url('admin/court') }}">Sub Tipo de Tribunal</a></li>
                         @endif
 
                         @if($adminHasPermition->can(['case_status_list']) == "1")

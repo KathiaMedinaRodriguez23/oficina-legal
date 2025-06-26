@@ -2,12 +2,16 @@ $(document).ready(function () {
    countrySelect2 = $('.country-select2')
          stateSelect2 = $('.state-select2')
          citySelect2 = $('.city-select2')
- 
-   
-    
+
+
+
     countrySelect2.select2({
         allowClear :true,
-        language: 'es',
+        language: {
+            noResults: function() {
+                return 'No hay resultados';
+            }
+        },
         ajax: {
             url: countrySelect2.data('url'),
             data: function (params) {
@@ -37,7 +41,11 @@ $(document).ready(function () {
 
     stateSelect2.select2({
         allowClear :true,
-        language: 'es',
+        language: {
+            noResults: function() {
+                return 'No hay resultados';
+            }
+        },
         ajax: {
             url: stateSelect2.data('url'),
             data: function (params) {
@@ -72,7 +80,11 @@ $(document).ready(function () {
 
      citySelect2.select2({
         allowClear :true,
-        language: 'es',
+        language: {
+            noResults: function() {
+                return 'No hay resultados';
+            }
+        },
         ajax: {
             url: citySelect2.data('url'),
             data: function (params) {
@@ -103,12 +115,12 @@ $(document).ready(function () {
         },
         placeholder: 'Selecciona Ciudad'
         // minimumInputLength: 1,
-    }); 
-    
+    });
+
 
     $('.country-select2 , .state-select2 ').on('select2:select' ,function(e){
         var el = $(this);
         var clearInput = el.data('clear').toString();
-        $(clearInput).val(null).trigger('change');        
-    }) 
+        $(clearInput).val(null).trigger('change');
+    })
 });

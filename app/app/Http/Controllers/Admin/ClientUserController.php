@@ -96,14 +96,6 @@ class clientUserController extends Controller
 			  File::makeDirectory($pathCheck, $mode = 0777, true, true);
 			}
 
-		   //profile image upload
-			/*if ($request->hasFile('image')) {
-			 $image = $request->file('image');
-			 $name = time().'_'.rand(1,4).$image->getClientOriginalName();
-			 $destinationPath = public_path() . config('constants.CLIENT_FOLDER_PATH');
-			 $image->move($destinationPath, $name);
-			 $client->profile_img=$name;
-			}*/
 			if($request->hasFile('image')){
 				$data = $request->imagebase64;
 
@@ -131,7 +123,7 @@ class clientUserController extends Controller
 			$client->last_name      = $request->l_name;
 			$client->email          = $request->email;
 			$client->mobile         = $request->mobile;
-			$client->zipcode        = $request->zip_code;
+			$client->zipcode        = $request->document_number;
 			$client->address        = $request->address;
 			$client->country_id     = $request->country;
 			$client->state_id       = $request->state;
