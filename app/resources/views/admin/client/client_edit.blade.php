@@ -62,34 +62,19 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <label for="fullname">Celular <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
-                                       value="{{ $client->mobile ?? ''}}" maxlength="10">
+                                       value="{{ $client->mobile ?? ''}}" maxlength="9">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <div class="row">
-                                    <label for="document_number" id="dni_ruc_label">
-                                        <span class="text-danger">*</span>
-                                    </label>
-
-                                    <input
-                                        type="radio"
-                                        name="document_type"
-                                        id="dni"
-                                        value="dni"
-                                        {{ $docType === 'dni' ? 'checked' : '' }}
-                                        required
-                                    /> DNI
-
-                                    &nbsp;&nbsp;
-
-                                    <input
-                                        type="radio"
-                                        name="document_type"
-                                        id="ruc"
-                                        value="ruc"
-                                        {{ $docType === 'ruc' ? 'checked' : '' }}
-                                    /> RUC
+                                <label>Documento de Identidad <span class="text-danger">*</span></label><br>
+                                    <!--<label for="document_number" id="dni_ruc_label"></label>-->
+                                    <input type="radio" name="document_type" id="dni" 
+                                        value="dni" {{ $docType === 'dni' ? 'checked' : '' }}required />
+                                    &nbsp;&nbsp;DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="document_type" id="ruc" 
+                                        value="ruc"  {{ $docType === 'ruc' ? 'checked' : '' }} /> &nbsp;&nbsp;RUC
                                 </div>
 
                                 <input
@@ -233,15 +218,15 @@
                                                                     class="text-danger">*</span></label>
                                                         <input type="text" id="mobile_client" name="mobile_client"
                                                                data-rule-required="true"
-                                                               data-msg-required="Please enter mobile number."
+                                                               data-msg-required="Por favor introduce el número de móvil."
                                                                data-rule-number="true"
                                                                data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                               data-rule-minlength="10"
+                                                               data-rule-minlength="9"
                                                                data-msg-minlength="El número debe tener 9 dígitos."
-                                                               data-rule-maxlength="10"
+                                                               data-rule-maxlength="9"
                                                                data-msg-maxlength="El número debe tener 9 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
-                                                               maxlength="10">
+                                                               maxlength="9">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                         <label for="fullname">Dirrecion <span class="text-danger">*</span></label>
@@ -294,11 +279,11 @@
                                                            data-msg-required="Por favor, ingrese el número de celular."
                                                            data-rule-number="true"
                                                            data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                           data-rule-minlength="10"
+                                                           data-rule-minlength="9"
                                                            data-msg-minlength="El número debe tener 9 dígitos."
-                                                           data-rule-maxlength="10"
+                                                           data-rule-maxlength="9"
                                                            data-msg-maxlength="El número debe tener 9 dígitos."
-                                                           class="form-control" maxlength="10">
+                                                           class="form-control" maxlength="9">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                     <label for="fullname">Dirrecion <span
@@ -363,12 +348,12 @@
                                                                data-msg-required="Por favor, ingrese el número de celular."
                                                                data-rule-number="true"
                                                                data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                               data-rule-minlength="10"
+                                                               data-rule-minlength="9"
                                                                data-msg-minlength="El número debe tener 9 dígitos."
-                                                               data-rule-maxlength="10"
+                                                               data-rule-maxlength="9"
                                                                data-msg-maxlength="El número debe tener 9 dígitos."
                                                                class="form-control" value="{{ $value->party_mobile }}"
-                                                               maxlength="10">
+                                                               maxlength="9">
                                                     </div>
                                                     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                         <label for="fullname">Direccion <span class="text-danger">*</span></label>
@@ -429,11 +414,11 @@
                                                            data-msg-required="Por favor, ingrese el número de celular."
                                                            data-rule-number="true"
                                                            data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
-                                                           data-rule-minlength="10"
+                                                           data-rule-minlength="9"
                                                            data-msg-minlength="El número debe tener 9 dígitos."
-                                                           data-rule-maxlength="10"
-                                                           data-msg-maxlength="El número debe tener 9 dígitos.."
-                                                           class="form-control" maxlength="10">
+                                                           data-rule-maxlength="9"
+                                                           data-msg-maxlength="El número debe tener 9 dígitos."
+                                                           class="form-control" maxlength="9">
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                     <label for="fullname">Dirreccion <span

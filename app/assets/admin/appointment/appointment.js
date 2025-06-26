@@ -6,8 +6,8 @@ $('#add_appointment').validate({
             rules: {
                     mobile: {
                         required: true,
-                        minlength: 10,
-                        maxlength: 10,
+                        minlength: 9,
+                        maxlength: 9,
                         number: true
                     },
                      date:"required",
@@ -18,8 +18,8 @@ $('#add_appointment').validate({
         messages: {
            mobile: {
                     required: "Por favor, introduzca el móvil.",
-                    minlength: "El móvil debe tener 10 dígitos.",
-                    maxlength: "El móvil debe tener 10 dígitos.",
+                    minlength: "El móvil debe tener 9 dígitos.",
+                    maxlength: "El móvil debe tener 9 dígitos.",
                     number: "Por favor, introduzca los dígitos del 0 al 9.",
                     },
                     date: "Seleccione la fecha.",

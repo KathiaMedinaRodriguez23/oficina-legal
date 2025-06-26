@@ -29,7 +29,7 @@ class CashTypeController extends Controller
 
         $user = \Auth::guard('admin')->user();  
         if(! $user->can('case_type_list')){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
         
 
@@ -283,13 +283,13 @@ class CashTypeController extends Controller
        
        $statuscode = 400;
        $data = CaseType::findOrFail($request->id);
-       $data->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
+       $data->is_active  = $request->status == 'true' ? 'Si' : 'No' ;
         
         if($data->save()) {
             $statuscode = 200 ;
         }
-        $status = $request->status == 'Yes' ? 'Yes' : 'No' ;
-        $message = 'Case Type status changed successfully.' ;
+        $status = $request->status == 'Yes' ? 'Si' : 'No' ;
+        $message = 'El estado del tipo de caso se cambió correctamente..' ;
 
         return response()->json([
             'success' => true ,
@@ -309,14 +309,14 @@ class CashTypeController extends Controller
 
           return response()->json([
                        'success' => true ,
-                       'message' => 'Case Type deleted successfully.'
+                       'message' => 'Tipo de caso eliminado exitosamente.'
                        ],200);
 
         }else{
 
                   return response()->json([
                        'error' => true ,
-                       'errormessage' => 'You cant delete Case Type because it is use in other module.'
+                       'errormessage' => 'No puedes eliminar el tipo de caso porque se usa en otro módulo.'
                        ],400);
         }
     }

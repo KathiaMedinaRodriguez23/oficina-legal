@@ -43,8 +43,8 @@ var FormControlsClient = {
             },
             messages: {
                 court_name: {
-                    required: "Court Type is required",
-                    remote: "Court type already exits."
+                    required: "Se requiere el tipo de tribunal.",
+                    remote: "El tipo de corte ya existe."
                 },
 
             },
@@ -90,7 +90,7 @@ var FormControlsClient = {
                         message.fire({
                             type: 'error',
                             title: 'Error',
-                            text: 'something went wrong please try again !',
+                            text: 'Algo salió mal, por favor inténtalo de nuevo!',
                         })
                     },
                 });

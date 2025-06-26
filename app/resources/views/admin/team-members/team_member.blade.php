@@ -30,7 +30,7 @@
                                 <th width="5%">Nº</th>
                                 <th width="30%">Nombre</th>
                                 <th width="30%">Email</th>
-                                <th>Nº de contacto</th>
+                                <th>Celular</th>
                                 <th>Rol</th>
                                 <th>Estado</th>
                                 <th width="5%">Acción</th>

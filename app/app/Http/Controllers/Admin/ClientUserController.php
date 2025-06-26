@@ -687,8 +687,8 @@ class clientUserController extends Controller
         if($client->save()) {
             $statuscode = 200 ;
         }
-        $status = $request->status == 'true' ? 'active' : 'deactivate' ;
-        $message = 'Status '.$status.' successfully.' ;
+        $status = $request->status == 'true' ? 'activado' : 'desactivado' ;
+        $message = 'Estado '.$status;
 
         return response()->json([
             'success' => true ,

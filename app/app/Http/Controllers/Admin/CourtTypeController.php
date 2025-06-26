@@ -168,7 +168,7 @@ class CourtTypeController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Court added successfully',
+            'message' => 'Tribunal añadido con éxito',
 
         ],200);
 
@@ -227,7 +227,7 @@ class CourtTypeController extends Controller
 
           return response()->json([
             'success' => true,
-            'message' => 'Court updated successfully',
+            'message' => 'Tribunal actualizado con éxito',
 
         ],200);
 
@@ -246,13 +246,13 @@ class CourtTypeController extends Controller
        
        $statuscode = 400;
        $data = CourtType::findOrFail($request->id);
-       $data->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
+       $data->is_active  = $request->status == 'true' ? 'Si' : 'No' ;
         
         if($data->save()) {
             $statuscode = 200 ;
         }
-        $status = $request->status == 'Yes' ? 'Yes' : 'No' ;
-        $message = 'Court Type status changed successfully.' ;
+        $status = $request->status == 'Yes' ? 'Si' : 'No' ;
+        $message = 'El estado del tipo de tribunal cambió.' ;
 
         return response()->json([
             'success' => true ,
@@ -272,14 +272,14 @@ class CourtTypeController extends Controller
 
           return response()->json([
                        'success' => true ,
-                       'message' => 'Court Type deleted successfully.'
+                       'message' => 'Tipo de tribunal eliminado correctamente.'
                        ],200);
 
         }else{
 
                   return response()->json([
                        'error' => true ,
-                       'errormessage' => 'You cant delete Court Type because it is use in other module.'
+                       'errormessage' => 'No puedes eliminar el tipo de tribunal porque se utiliza en otro módulo.'
                        ],400);
         }
     }

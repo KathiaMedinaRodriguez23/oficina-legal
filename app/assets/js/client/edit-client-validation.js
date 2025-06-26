@@ -81,8 +81,8 @@ var FormControlsClient = {
                     number:    true,
                 },
                 reference_mobile: {
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number:    true
                 }
             },

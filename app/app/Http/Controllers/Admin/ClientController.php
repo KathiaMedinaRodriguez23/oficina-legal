@@ -184,6 +184,7 @@ class ClientController extends Controller
         $AdvocateClient->save();
         $clientId = $AdvocateClient->id;
 
+
         if ($request->type == "single") {
             if (isset($request['group-a']) && count($request['group-a']) > 0) {
                 foreach ($request['group-a'] as $key => $value) {

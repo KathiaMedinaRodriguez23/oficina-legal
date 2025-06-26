@@ -32,7 +32,7 @@
                     <div class="x_content">
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>ERROR! </strong> Resuelva los siguientes puntos: <br><br>
+                                <strong>ERROR! </strong> Porfavor modifique los siguientes punto: <br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -81,25 +81,21 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <div class="row">
-                                    <label for="document_number" id="dni_ruc_label">
-                                        <br />
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="radio" name="document_type" id="dni" value="dni" checked required/>
-                                    DNI
-                                    &nbsp;&nbsp;
-                                    <input type="radio" name="document_type" id="ruc" value="ruc" />
-                                    RUC
+                                    <label>Documento de Identidad <span class="text-danger">*</span></label><br>
+                                        <!--<label for="document_number" id="dni_ruc_label"><br /></label>-->
+                                        <input type="radio" name="document_type" id="dni" value="dni" checked required/>
+                                        &nbsp;&nbsp;DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="document_type" id="ruc" value="ruc" />&nbsp;&nbsp;RUC
                                 </div>
 
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="document_number"
-                                    name="document_number"
-                                    placeholder="Ej: 01234567"
-                                />
-                                <div class="error-message" id="error_message" style="display: none;"></div>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="document_number"
+                                        name="document_number"
+                                        placeholder="Ej: 01234567"
+                                    />
+                                    <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
 
                             <div class="col-md-8 col-sm-12 col-xs-12 form-group">
@@ -185,13 +181,7 @@
                                                        class="form-control">
                                             </div>
 
-                                           <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="middlename">Segundo nombre <span class="text-danger">*</span></label>
-                                                <input type="text" id="middlename" name="middlename"
-                                                       data-rule-required="true"
-                                                       data-msg-required="Por favor, ingrese el segundo nombre."
-                                                       class="form-control">
-                                            </div> -->
+                                        
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="lastname">Apellido <span class="text-danger">*</span></label>
@@ -210,7 +200,7 @@
                                                        data-msg-number="Por favor, ingrese solo dígitos del 0 al 9."
                                                        data-rule-minlength="9"
                                                        data-msg-minlength="El número debe tener 9 dígitos."
-                                                       data-rule-maxlength="10"
+                                                       data-rule-maxlength="9"
                                                        data-msg-maxlength="El número debe tener 9 dígitos."
                                                        class="form-control" maxlength="9">
                                             </div>
@@ -246,13 +236,7 @@
                                                        class="form-control">
                                             </div>
 
-                                           <!-- <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                <label for="middlename">Segundo nombre <span class="text-danger">*</span></label>
-                                                <input type="text" id="middlename" name="middlename"
-                                                       data-rule-required="true"
-                                                       data-msg-required="Por favor, ingrese el segundo nombre."
-                                                       class="form-control"> -->
-                                            </div>
+                                          
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="lastname">Apellidos <span class="text-danger">*</span></label>

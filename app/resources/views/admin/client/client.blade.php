@@ -36,7 +36,7 @@
                             <th width="1%">No</th>
                             <th width="10%">Cliente</th>
                             <th width="5%">DNI/RUC</th>
-                            <th width="5%">Celulares</th>
+                            <th width="5%">Celular</th>
                             <th width="5%" data-orderable="false">Caso</th>
                             <th width="5%" data-orderable="false">Estado</th>
                             <th width="5%" data-orderable="false" class="text-center">Accion</th>

@@ -35,8 +35,8 @@ var FormControlsClient = {
                 },
                 mobile: {
                     required: true,
-                    minlength: 10,
-                    maxlength: 10,
+                    minlength: 9,
+                    maxlength: 9,
                     number: true
                 },
                 address: "required",
@@ -75,8 +75,8 @@ var FormControlsClient = {
                 },
                 mobile: {
                     required: "Por favor, ingrese el número de celular.",
-                    minlength: "El número de celular debe tener 10 dígitos.",
-                    maxlength: "El número de celular debe tener 10 dígitos.",
+                    minlength: "El número de celular debe tener 9 dígitos.",
+                    maxlength: "El número de celular debe tener 9 dígitos.",
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 address: "Por favor, ingrese la dirección.",

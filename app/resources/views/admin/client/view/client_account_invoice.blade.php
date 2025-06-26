@@ -42,16 +42,16 @@
 
                                                     <br> <strong>Address: </strong>Rajkot ,Rajkot
 
-                                                    <br> <strong>Mobile: </strong> 0789456132
+                                                    <br> <strong>Mobile: </strong> 999999997
                                                 </div>
                                             </div>
                                         </address>
                                     </div>
                                     <div class="col-xs-6 text-right">
                                         <address>
-                                            <strong>Invoice Date:</strong> 01-01-2019<br>
+                                            <strong>Invoice Date:</strong> 01-01-2025<br>
 
-                                            <strong>Invoice Due Date:</strong> 30-01-2019<br>
+                                            <strong>Invoice Due Date:</strong> 30-01-2025<br>
                                             <strong> Tax Type:</strong> Out Of Tax<br>
 
                                         </address>

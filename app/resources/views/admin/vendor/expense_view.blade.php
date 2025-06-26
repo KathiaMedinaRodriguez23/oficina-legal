@@ -17,22 +17,22 @@
         <div class="row invoice-info">
           <div class="col-sm-6">
             <address><br>
-              <strong>Billed From:</strong>
+              <strong>Facturado desde:</strong>
               <span>PGVCL</span>
-              <br><strong>Address:</strong>
-              <span>804,Rivera wave ,Abrama</span>
-              <br><strong>Mobile:</strong>
+              <br><strong>Dirección:</strong>
+              <span>804,Av españa</span>
+              <br><strong>Celular:</strong>
               <span>1235649870</span>
             </address>
           </div>
           
           <div class="col-sm-6" align="right">
-            <h1><small>Bill No: 000001</small></h1>
-            <strong>Bill Date:</strong>
-            <span>01-01-2019</span>
-            <br><strong>Bill Due Date:</strong>
-            <span>07-01-2019</span>
-            <br><strong>Tax Type:</strong>
+            <h1><small>Número de factura: 000001</small></h1>
+            <strong>Fecha de factura:</strong>
+            <span>01-01-2025</span>
+            <br><strong>Fecha de vencimiento de la factura:</strong>
+            <span>07-01-2025</span>
+            <br><strong>Tipo de impuesto:</strong>
             <span>GST</span>
           </div>
          

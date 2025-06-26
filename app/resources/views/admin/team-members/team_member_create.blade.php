@@ -78,7 +78,7 @@
                                         <input type="text" id="email" name="email" class="form-control">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="mobile">N de celular <span class="text-danger">*</span></label>
+                                        <label for="mobile">Nº de celular <span class="text-danger">*</span></label>
                                         <input type="text" id="mobile" name="mobile" class="form-control"
                                                maxlength="10">
                                     </div>
@@ -89,11 +89,11 @@
                                         <label for="address">Dirección <span class="text-danger">*</span></label>
                                         <input type="text" id="address" name="address" class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                   <div class="col-md-3">
                                         <label for="zipcode">Código postal <span class="text-danger">*</span></label>
                                         <input type="text" id="zip_code" name="zip_code" class="form-control"
                                                maxlength="">
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-md-6">

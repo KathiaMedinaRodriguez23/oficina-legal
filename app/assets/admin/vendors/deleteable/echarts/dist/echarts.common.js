@@ -8,7 +8,7 @@
 	else
 		root["echarts"] = factory();
 })(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+return /*****/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 

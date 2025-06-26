@@ -227,7 +227,7 @@
                                         <th>Nº</th>
                                         <th>Nombre del Cliente</th>
                                         <th>Fecha</th>
-                                        <th>Tiempo</th>
+                                        <th>Hora</th>
                                     </tr>
                                     </thead>
                                 </table>

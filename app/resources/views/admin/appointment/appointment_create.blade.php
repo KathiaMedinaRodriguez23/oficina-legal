@@ -81,7 +81,7 @@
                                     <div class="col-md-6 form-group">
                                         <label for="mobile">Celular <span class="text-danger">*</span></label>
                                         <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
-                                               autocomplete="off" maxlength="10">
+                                               autocomplete="off" maxlength="9">
                                     </div>
 
                                     <div class="col-md-3 form-group">

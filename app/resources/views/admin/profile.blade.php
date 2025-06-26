@@ -146,7 +146,7 @@
                                                             <div class="col-md-6">
                                                                 <label for="mobile">Celular <span class="text-danger">*</span></label>
                                                                 <input type="text" id="mobile" name="mobile"
-                                                                       class="form-control" maxlength="10"
+                                                                       class="form-control" maxlength="9"
                                                                        value="{{ $users->mobile}}">
                                                             </div>
                                                         </div>
