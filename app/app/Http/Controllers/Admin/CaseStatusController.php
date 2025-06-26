@@ -30,7 +30,7 @@ class CaseStatusController extends Controller
 
           $user = \Auth::guard('admin')->user();  
         if(! $user->can('case_status_list')){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
         
         return view('admin.settings.case-status.case_status');
@@ -247,13 +247,13 @@ class CaseStatusController extends Controller
        
        $statuscode = 400;
        $data = CaseStatus::findOrFail($request->id);
-       $data->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
+       $data->is_active  = $request->status == 'true' ? 'SI' : 'No' ;
         
         if($data->save()) {
             $statuscode = 200 ;
         }
-        $status = $request->status == 'Yes' ? 'Yes' : 'No' ;
-        $message = 'Case status changed successfully.' ;
+        $status = $request->status == 'Yes' ? 'Si' : 'No' ;
+        $message = 'El estado del caso se cambió exitosamente.' ;
 
         return response()->json([
             'success' => true ,
@@ -274,14 +274,14 @@ class CaseStatusController extends Controller
 
           return response()->json([
                        'success' => true ,
-                       'message' => 'Case Status deleted successfully.'
+                       'message' => 'Estado del caso eliminado exitosamente.'
                        ],200);
 
         }else{
 
                   return response()->json([
                        'error' => true ,
-                       'errormessage' => 'Estado del caso actualizado exitosamente'
+                       'errormessage' => 'No puedes eliminar el estado del caso porque se usa en otro módulo.'
                        ],400);
         }
     
