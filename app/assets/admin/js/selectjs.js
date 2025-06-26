@@ -1,17 +1,24 @@
 $(document).ready(function () {
-   countrySelect2 = $('.country-select2')
-         stateSelect2 = $('.state-select2')
-         citySelect2 = $('.city-select2')
+   countrySelect2 = $('.country-select2');
+   stateSelect2 = $('.state-select2');
+   citySelect2 = $('.city-select2');
+   roleSelect2 = $('.role-select2');
 
-
+    var myLang = {
+        errorLoading: function() {
+            return 'No se pudieron cargar los resultados.';
+        },
+        noResults: function() {
+            return 'No hay resultados';
+        },
+        searching: function() {
+            return 'Buscando…';
+        }
+    };
 
     countrySelect2.select2({
         allowClear :true,
-        language: {
-            noResults: function() {
-                return 'No hay resultados';
-            }
-        },
+        language: myLang,
         ajax: {
             url: countrySelect2.data('url'),
             data: function (params) {
@@ -41,11 +48,7 @@ $(document).ready(function () {
 
     stateSelect2.select2({
         allowClear :true,
-        language: {
-            noResults: function() {
-                return 'No hay resultados';
-            }
-        },
+        language: myLang,
         ajax: {
             url: stateSelect2.data('url'),
             data: function (params) {
@@ -80,11 +83,7 @@ $(document).ready(function () {
 
      citySelect2.select2({
         allowClear :true,
-        language: {
-            noResults: function() {
-                return 'No hay resultados';
-            }
-        },
+        language: myLang,
         ajax: {
             url: citySelect2.data('url'),
             data: function (params) {
@@ -117,10 +116,18 @@ $(document).ready(function () {
         // minimumInputLength: 1,
     });
 
+    roleSelect2.select2({
+        allowClear: true,
+        language: myLang,
+        placeholder: "Selecciona Rol",
+    });
 
-    $('.country-select2 , .state-select2 ').on('select2:select' ,function(e){
-        var el = $(this);
-        var clearInput = el.data('clear').toString();
-        $(clearInput).val(null).trigger('change');
-    })
+    $('.country-select2, .state-select2, .city-select2, .role-select2')
+        .on('select2:select', function(e){
+            var el = $(this);
+            var clearInput = el.data('clear');       // asegúrate de tener data-clear="…"
+            if (clearInput) {
+                $(clearInput).val(null).trigger('change');
+            }
+        });
 });

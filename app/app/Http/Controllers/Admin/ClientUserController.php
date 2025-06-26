@@ -82,7 +82,7 @@ class clientUserController extends Controller
             'city_id' => 'required',
             'email' => 'required|unique:admins',
             'mobile' => 'required',
-            'zip_code' => 'required',
+            'document_number' => 'required',
             'password' => 'required',
             'cnm_password' => 'required|same:password',
             'input_img' => 'sometimes|image',

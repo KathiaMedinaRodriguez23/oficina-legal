@@ -152,7 +152,7 @@
                                 <div class="row form-group">
                                     <div class="col-md-4">
                                         <label for="Role">Rol <span class="text-danger">*</span></label>
-                                        <select id="role" name="role" required class="form-control select2">
+                                        <select id="role" name="role" required class="form-control role-select2" data-placeholder="Selecciona Rol">
                                             <option value=""> Seleccionar Rol</option>
                                             @foreach($roles as $roal)
                                                 <option value="{{ $roal->id}}">{{$roal->slug}}</option>
@@ -207,5 +207,23 @@
             // Asegurar que el número no tenga más de 8 caracteres
             dniInput.value = value.substring(0, 8);
         }
+    </script>
+    <script>
+        $(function(){
+            var myLang = {
+                errorLoading: () => 'No se pudieron cargar los resultados.',
+                noResults:    () => 'No hay resultados',
+                searching:    () => 'Buscando…'
+            };
+
+            // Forzar idioma por defecto
+            $.fn.select2.defaults.set('language', myLang);
+
+            // Inicializar sólo el rol para testear
+            $('#role').select2({
+                allowClear: true,
+                placeholder: 'Selecciona Rol'
+            });
+        });
     </script>
 @endpush
