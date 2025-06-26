@@ -512,10 +512,9 @@ class clientUserController extends Controller
             }
         }
     }
+
     public function update(Request $request, $id)
     {
-
-         //dd($request->All());
 		$validator = Validator::make($request->all(), [
             'role' => 'required',
             'f_name' => 'required',
@@ -524,9 +523,9 @@ class clientUserController extends Controller
             'country' => 'required',
             'state' => 'required',
             'city_id' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:admins,email,'.$id,
             'mobile' => 'required',
-            'zip_code' => 'required',
+            'document_number' => 'required',
             'input_img' => 'sometimes|image',
         ]);
 
@@ -557,7 +556,6 @@ class clientUserController extends Controller
 		 //profile image upload
 		  if ($request->hasFile('image')) {
 
-
 				if ($client->profile_img != '') {
 
 					$imageUnlink = public_path() . config('constants.CLIENT_FOLDER_PATH') . '/' . $client->profile_img;
@@ -567,13 +565,10 @@ class clientUserController extends Controller
 					$client->profile_img = '';
 				}
 
-
 				$data = $request->imagebase64;
 
 				list($type, $data) = explode(';', $data);
 				list(, $data)      = explode(',', $data);
-
-
 
 				$data = base64_decode($data);
 				$image_name= time().'.png';
@@ -582,16 +577,8 @@ class clientUserController extends Controller
 				file_put_contents($path, $data);
 
 				$client->profile_img=$image_name;
-
-		  /* $image = $request->file('image');
-		   $name = time().'_'.rand(1,4).$image->getClientOriginalName();
-		   $destinationPath = public_path() . config('constants.CLIENT_FOLDER_PATH');
-		   $image->move($destinationPath, $name);
-		   $client->profile_img=$name;*/
 		  }
-		  // $clientName = $request->f_name.' '.$request->l_name;
 
-			//login user id
 			$client->first_name = $request->f_name;
 			$client->name       = $request->username;
 			$client->last_name  = $request->l_name;
@@ -602,7 +589,7 @@ class clientUserController extends Controller
       //$client->password   = 'no';
 			//$client->email      = $request->email;
 			//$client->mobile     = $request->mobile;
-			$client->zipcode    = $request->zip_code;
+			$client->zipcode    = $request->document_number;
 			$client->address    = $request->address;
 			$client->country_id = $request->country;
 			$client->state_id   = $request->state;

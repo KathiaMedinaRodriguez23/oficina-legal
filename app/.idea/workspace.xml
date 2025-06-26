@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e04a70-806d-4c27-8424-e44dd731ff98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/js/selectjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/js/selectjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/vendors/select2/docs/_includes/options/core/options.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/vendors/select2/docs/_includes/options/core/options.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

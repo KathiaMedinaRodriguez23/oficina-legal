@@ -1,5 +1,3 @@
-// "use strict";
-
 var check_user_email_exits = $('#check_user_email_exits').val();
 var token = $('#token-value').val();
 var FormControlsClient = {
@@ -15,23 +13,7 @@ var FormControlsClient = {
                 l_name: "required",
                 email: {
                     required: true,
-                    email: true,
-                    remote: {
-                        // async: false,
-                        url: check_user_email_exits,
-                        type: "post",
-                        data: {
-                            _token: function () {
-                                return token;
-                            },
-                            email: function () {
-                                return $("#email").val();
-                            },
-                            id: function () {
-                                return $("#id").val();
-                            }
-                        }
-                    }
+                    email: true
                 },
                 mobile: {
                     required: true,
@@ -40,10 +22,10 @@ var FormControlsClient = {
                     number: true
                 },
                 address: "required",
-                zip_code: {
+                document_number: {
                     required: true,
-                    minlength: 6,
-                    maxlength: 6,
+                    minlength: 8,
+                    maxlength: 8,
                     number: true
                 },
                 password: {
@@ -60,7 +42,7 @@ var FormControlsClient = {
                 state: "required",
                 city_id: "required",
             },
-            
+
             messages: {
                 username: {
                     required: "Por favor, ingrese el nombre de usuario.",
@@ -80,10 +62,10 @@ var FormControlsClient = {
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 address: "Por favor, ingrese la dirección.",
-                zip_code: {
-                    required: "Por favor, ingrese el código postal.",
-                    minlength: "El código postal debe tener 6 dígitos.",
-                    maxlength: "El código postal debe tener 6 dígitos.",
+                document_number: {
+                    required: "Por favor, ingrese DNI.",
+                    minlength: "El DNI debe tener 8 dígitos.",
+                    maxlength: "El DNI debe tener 8 dígitos.",
                     number: "Por favor, ingrese solo dígitos del 0 al 9."
                 },
                 password: {
@@ -122,7 +104,7 @@ jQuery(document).ready(function () {
 
     $("#role").select2({
         allowClear: true,
-        placeholder: 'Select Role',
+        placeholder: 'Seleccionar Rol',
         // multiple:true
     });
 
@@ -151,7 +133,7 @@ jQuery(document).ready(function () {
             message.fire({
                 type: 'error',
                 title: 'Error',
-                text: 'File size should not be more than 5MB',
+                text: 'El archivo es demasiado grande. El tamaño máximo permitido es 5 MB.',
             });
             return false;
         }
@@ -179,11 +161,11 @@ jQuery(document).ready(function () {
                 message.fire({
                     type: 'error',
                     title: 'Error',
-                    text: 'Accept only .jpg .png image',
+                    text: 'Se aceptan solo .jpg .png imagenes',
                 });
 
             }
-        }
+        };
         reader.readAsDataURL(this.files[0]);
     });
 
@@ -212,10 +194,8 @@ jQuery(document).ready(function () {
 $(document).ready(function () {
     $("#role").select2({
         allowClear: true,
-        placeholder: 'Select Role',
-
+        placeholder: 'Seleccionar Rol',
     });
-
 });
 
 

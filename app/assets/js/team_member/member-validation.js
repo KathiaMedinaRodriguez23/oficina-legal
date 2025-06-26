@@ -1,5 +1,3 @@
-// "use strict";
-
 var check_user_email_exits = $('#check_user_email_exits').val();
 var token = $('#token-value').val();
 var FormControlsClient = {
@@ -199,12 +197,12 @@ jQuery(document).ready(function () {
     $('#imageupload-disable').on('click', function () {
         $imageupload.imageupload('disable');
         $(this).blur();
-    })
+    });
 
     $('#imageupload-enable').on('click', function () {
         $imageupload.imageupload('enable');
         $(this).blur();
-    })
+    });
 
     $('#imageupload-reset').on('click', function () {
         $imageupload.imageupload('reset');
@@ -231,7 +229,7 @@ jQuery(document).ready(function () {
 $(document).ready(function () {
     $("#role").select2({
         allowClear: true,
-        placeholder: 'Select Role',
+        placeholder: 'Seleccionar Rol',
         // multiple:true
     });
 

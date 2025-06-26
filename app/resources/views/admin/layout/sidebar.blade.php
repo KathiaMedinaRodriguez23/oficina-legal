@@ -102,10 +102,11 @@
                             <li><a href="{{ url('admin/judge') }}">Juez</a></li>
                         @endif
 
+                        {{--
                         @if($adminHasPermition->can(['tax_list']) == "1")
                             <li><a href="{{ url('admin/tax') }}">Impuestos</a></li>
                         @endif
-
+                        --}}
 
                         @if($adminHasPermition->can(['general_setting_edit']) == "1")
                             <li><a href="{{ url('admin/general-setting') }}">Configuración</a></li>

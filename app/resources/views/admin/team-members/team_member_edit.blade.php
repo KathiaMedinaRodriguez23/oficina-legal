@@ -26,7 +26,7 @@
                     <form id="add_user" name="add_user" role="form" method="POST" enctype="multipart/form-data"
                           action="{{route('client_user.update',$users->id)}}">
                         @csrf
-                        <input name="_method" type="hidden" value="PATCH">
+                        <input name="_method" type="hidden" value="PUT">
                         <input type="hidden" id="id" name="id" value="{{ $users->id}}">
                         <input type="hidden" id="imagebase64" name="imagebase64">
                         <div class="row">
@@ -108,8 +108,8 @@
                                                value="{{ $users->address}}">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="zipcode">Código postal <span class="text-danger">*</span></label>
-                                        <input type="text" id="zip_code" name="zip_code" class="form-control"
+                                        <label for="document_number">DNI <span class="text-danger">*</span></label>
+                                        <input type="text" id="document_number" name="document_number" class="form-control"
                                                maxlength="" value="{{ $users->zipcode}}">
                                     </div>
                                 </div>
@@ -219,17 +219,43 @@
             </div>
         </div>
     </div>
-    <input type="hidden" name="token-value"
-           id="token-value"
-           value="{{csrf_token()}}">
-    <input type="hidden" name="check_user_email_exits"
-           id="check_user_email_exits"
-           value="{{ url('admin/check_user_email_exits') }}">
 @endsection
 
 @push('js')
     <script src="{{asset('assets/admin/js/selectjs.js')}}"></script>
     <script src="{{ asset('assets/admin/jcropper/js/cropper.min.js') }}"></script>
     <script src="{{asset('assets/js/team_member/member-validation_edit.js')}}"></script>
+    <script src="{{asset('assets/js/team_member/member-validation.js')}}"></script>
+    <script src="{{asset('assets/js/client/validate-phone.js')}}"></script>
+    <script>
+        const dniInput = document.getElementById('document_number');
+        dniInput.addEventListener('input', formatDni);
+
+        function formatDni(){
+            // Eliminar cualquier carácter que no sea un dígito o el símbolo '+'
+            const value = dniInput.value.replace(/[^\d+]/g, '');
+
+            // Asegurar que el número no tenga más de 8 caracteres
+            dniInput.value = value.substring(0, 8);
+        }
+    </script>
+    <script>
+        $(function(){
+            var myLang = {
+                errorLoading: () => 'No se pudieron cargar los resultados.',
+                noResults:    () => 'No hay resultados',
+                searching:    () => 'Buscando…'
+            };
+
+            // Forzar idioma por defecto
+            $.fn.select2.defaults.set('language', myLang);
+
+            // Inicializar sólo el rol para testear
+            $('#role').select2({
+                allowClear: true,
+                placeholder: 'Selecciona Rol'
+            });
+        });
+    </script>
 
 @endpush
