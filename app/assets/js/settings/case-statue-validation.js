@@ -43,8 +43,8 @@ var FormControlsClient = {
             },
             messages: {
                 case_status: {
-                    required: "Case Status is required",
-                    remote: "Case status already exits."
+                    required: "Se requiere el estado del caso",
+                    remote: "El estado del caso ya existe."
                 }
             },
             errorPlacement: function (error, element) {
@@ -89,7 +89,7 @@ var FormControlsClient = {
                         message.fire({
                             type: 'error',
                             title: 'Error',
-                            text: 'something went wrong please try again !',
+                            text: 'Algo salió mal, por favor inténtalo de nuevo!',
                         })
                     },
                 });
@@ -102,6 +102,6 @@ jQuery(document).ready(function () {
     FormControlsClient.init();
     $(".case_type").select2({
         allowClear: true,
-        placeholder: 'Select Court'
+        placeholder: 'Seleccione Tipo de Tribunal'
     });
 });

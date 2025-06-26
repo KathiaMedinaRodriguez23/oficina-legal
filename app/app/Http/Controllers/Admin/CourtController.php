@@ -190,7 +190,7 @@ class CourtController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Court added successfully',
+            'message' => 'Tribunal añadido con éxito',
 
         ],200);
 
@@ -252,7 +252,7 @@ class CourtController extends Controller
 
            return response()->json([
             'success' => true,
-            'message' => 'Court updated successfully',
+            'message' => 'Tribunal actualizado con éxito',
 
         ],200);
        
@@ -270,13 +270,13 @@ class CourtController extends Controller
        
        $statuscode = 400;
        $data = Court::findOrFail($request->id);
-       $data->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
+       $data->is_active  = $request->status == 'true' ? 'Si' : 'No' ;
         
         if($data->save()) {
             $statuscode = 200 ;
         }
-        $status = $request->status == 'Yes' ? 'Yes' : 'No' ;
-        $message = 'Court status changed successfully.' ;
+        $status = $request->status == 'Yes' ? 'Si' : 'No' ;
+        $message = 'El estado del tribunal se modificó con éxito.' ;
 
         return response()->json([
             'success' => true ,
@@ -295,14 +295,14 @@ class CourtController extends Controller
 
           return response()->json([
                        'success' => true ,
-                       'message' => 'Court deleted successfully.'
+                       'message' => 'Tribunal eliminado exitosamente'
                        ],200);
 
         }else{
 
                   return response()->json([
                        'error' => true ,
-                       'errormessage' => 'You cant delete Court  because it is use in other module.'
+                       'errormessage' => 'No puedes eliminar el tribunal porque se usa en otro módulo.'
                        ],400);
         }
     }

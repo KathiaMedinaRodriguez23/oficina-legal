@@ -10,7 +10,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel2">Add Judge</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Agregar Juez</h4>
                 </div>
 
 
@@ -20,7 +20,7 @@
 
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                            <label for="case_subtype">Judge <span class="text-danger">*</span></label>
+                            <label for="case_subtype">Juez <span class="text-danger">*</span></label>
                             <input type="text" placeholder="" class="form-control" id="judge_name" name="judge_name">
                         </div>
                     </div>
@@ -30,11 +30,11 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                            class="ik ik-x"></i>Close
+                            class="ik ik-x"></i>Cerrar
                     </button>
                     <button type="submit" class="btn btn-success shadow"><i class="fa fa-save   ik ik-check-circle"
                                                                             id="cl">
-                        </i> Save
+                        </i> Guardar
                     </button>
                 </div>
 

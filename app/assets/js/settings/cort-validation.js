@@ -46,11 +46,11 @@ var FormControlsClient = {
             },
             messages: {
                 court_type: {
-                    required: "Court Type is required",
+                    required: "Se requiere el tipo de tribunal",
                 },
                 court_name: {
-                    required: "Court is required",
-                    remote: "Court name already exits."
+                    required: "Se requiere tribunal",
+                    remote: "El nombre del tribunal ya existe"
                 }
             },
             errorPlacement: function (error, element) {
@@ -73,7 +73,7 @@ var FormControlsClient = {
                         $("#tagDataTable").dataTable().api().ajax.reload();
                         message.fire({
                             type: 'success',
-                            title: 'Compeltado!',
+                            title: 'Completado!',
                             text: data.message,
                         });
                     },
@@ -95,7 +95,7 @@ var FormControlsClient = {
                         message.fire({
                             type: 'error',
                             title: 'Error',
-                            text: 'something went wrong please try again !',
+                            text: 'Algo salió mal, por favor inténtalo de nuevo!',
                         })
                     },
                 });
@@ -108,6 +108,6 @@ jQuery(document).ready(function () {
     FormControlsClient.init();
     $(".case_type").select2({
         allowClear: true,
-        placeholder: 'Select Court'
+        placeholder: 'Seleccionar Tipo de Tribunal'
     });
 });
