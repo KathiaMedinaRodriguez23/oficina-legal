@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAppointment;
 use App\Http\Controllers\Controller;
@@ -70,23 +71,20 @@ class AppointmentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreAppointment $request)
     {
-        // dd($request->all());
-
-
+        dd($request->all());
         $appoint = new Appointment();
         if ($request->type == "new") {
             $appoint->name = $request->new_client;
 
         } else {
             $appoint->client_id = $request->exists_client;
-
         }
         // $advocate_id = $this->getLoginUserId();
-        $appoint->mobile = $request->mobile;
+        $appoint->mobile = $request->email;
         $appoint->date = date('Y-m-d H:i:s', strtotime(LogActivity::commonDateFromat($request->date)));
 
         $appoint->time = date('H:i:s', strtotime($request->time));
@@ -96,6 +94,28 @@ class AppointmentController extends Controller
 
         $appoint->save();
 
+        try {
+            $client = new Client();
+            $response = $client->post(env('MS_CITATION').'/send-citation-email', [
+                'json' => [
+                    'email' => $request->email,
+                    'fecha' => date('Y-m-d', strtotime(LogActivity::commonDateFromat($request->date))),
+                    'hora' => date('H:i', strtotime($request->time)),
+                    'idCaso' => $request->related_id
+                ],
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                ],
+            ]);
+
+            $body = json_decode($response->getBody()->getContents(), true);
+            if($response->getStatusCode() != 200) {
+                return redirect()->back()
+                    ->with('error', 'Error al enviar el enlace de restablecimiento de contraseña: ' . $body['message']);
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error al agregar la cita: ' . $e->getMessage());
+        }
 
         return redirect()->route('appointment.index')->with('success', "Cita agregada exitosamente.");
     }

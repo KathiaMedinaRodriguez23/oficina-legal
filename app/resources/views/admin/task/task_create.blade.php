@@ -80,7 +80,6 @@
                                 <select class="form-control selct2-width-100" id="related" name="related">
                                     <option value="">Seleccionar nota</option>
                                     <option value="case">Caso</option>
-                                    <option value="other">Otro</option>
                                 </select>
                             </div>
 
@@ -88,11 +87,8 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group task_selection hide">
                                 <label for="fullname">Caso</label>
                                 <select class="form-control selct2-width-100" id="related_id" name="related_id">
-                                    <option value="">Seleccionar usuarior</option>
-
+                                    <option value="">Seleccionar usuario</option>
                                 </select>
-
-
                             </div>
                         </div>
 

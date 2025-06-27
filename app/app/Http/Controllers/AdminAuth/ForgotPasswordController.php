@@ -78,7 +78,7 @@ class ForgotPasswordController extends Controller
                     'Content-Type' => 'application/json',
                 ],
             ]);
-            info([$response]);
+
             $body = json_decode($response->getBody()->getContents(), true);
             if($response->getStatusCode() != 200) {
                 return redirect()->back()

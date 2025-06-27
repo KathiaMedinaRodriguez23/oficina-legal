@@ -1,5 +1,18 @@
 @extends('admin.layout.app')
 @section('title','Agregar Citacion')
+@push('style')
+    <style>
+        .error-message {
+            color: #a94442;
+            font-size: 12px;
+        }
+        .alert.alert-info.alert-dismissible.fade.in {
+            background-color: #a94442;
+            border-color: #a94442;
+            color: white;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="page-title">
         <div class="title_left">
@@ -78,10 +91,28 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                        <label for="fullname">Relacionado con</label>
+                                        <select class="form-control selct2-width-100" id="related" name="related">
+                                            <option value="">Seleccionar nota</option>
+                                            <option value="case">Caso</option>
+                                            <option value="other">Otro</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-6 col-sm-12 col-xs-12 form-group task_selection hide">
+                                        <label for="fullname">Caso</label>
+                                        <select class="form-control selct2-width-100" id="related_id" name="related_id">
+                                            <option value="">Seleccionar usuario</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-6 form-group">
-                                        <label for="mobile">Celular <span class="text-danger">*</span></label>
-                                        <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
-                                               autocomplete="off" maxlength="9">
+                                        <label for="email">Correo Electrónico <span class="text-danger">*</span></label>
+                                        <input type="email" placeholder="ejemplo@correo.com" class="form-control" id="email" name="email"
+                                               autocomplete="off">
                                     </div>
 
                                     <div class="col-md-3 form-group">
@@ -135,6 +166,9 @@
 @endsection
 
 @push('js')
+    <input type="hidden" name="select2Case"
+           id="select2Case"
+           value="{{route('select2Case') }}">
     <script src="{{asset('assets/admin/appointment/appointment.js') }}"></script>
     <script src="{{asset('assets/js/appointment/appointment-validation.js')}}"></script>
 @endpush

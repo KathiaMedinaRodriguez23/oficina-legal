@@ -26,7 +26,7 @@ class StoreAppointment extends FormRequest
         return [
               //'exists_client' => 'required',
               //'new_client' => 'required',
-              'mobile' => 'required',
+              'email' => 'required|email',
               'date' => 'required',
               'time' => 'required',
         ];
@@ -34,13 +34,10 @@ class StoreAppointment extends FormRequest
       public function messages()
     {
         return [
-              //'exists_client.required' => 'Please select client.',
-              //'new_client.required' => 'Please enter client name',
-         
-              'mobile.required' => 'Please enter mobile.',
-              'date.required' => 'Please select date.',
-              'time.required' => 'Please select time',
-            
+              'email.required' => 'Ingrese un correo electronico.',
+              'date.required' => 'Porfavor ingrese una fecha.',
+              'time.required' => 'Porfavor ingrese una hora.',
+
 
         ];
     }

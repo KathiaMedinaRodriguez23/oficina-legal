@@ -68,7 +68,7 @@
                             <tr>
                                 <th>No</th>
                                 <th width="15%">Cliente</th>
-                                <th width="10%">Celular</th>
+                                <th width="10%">Email</th>
                                 <th width="10%;">Fecha</th>
                                 <th>Hora</th>
                                 <th data-orderable="false">Estado</th>
