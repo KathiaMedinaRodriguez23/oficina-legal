@@ -6,9 +6,9 @@
             color: #a94442;
             font-size: 12px;
         }
-        /* style red for alert alert-info alert-dismissible fade in*/
         .alert.alert-info.alert-dismissible.fade.in {
             background-color: #a94442;
+            border-color: #a94442;
             color: white;
         }
     </style>
