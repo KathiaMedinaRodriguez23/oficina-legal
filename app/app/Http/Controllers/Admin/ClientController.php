@@ -357,14 +357,17 @@ class ClientController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
         $appointments = DB::table('appointments')->where('client_id', $id)->count();
         $cases = DB::table('court_cases')->where('advo_client_id', $id)->count();
         if ($appointments > 0 || $cases > 0) {
-            Session::flash('error', "Client was used in other module so you can't delete.");
+            return response()->json([
+                'success' => false,
+                'message' => 'No se puede eliminar el cliente porque tiene citas o casos asociados.',
+            ], 400);
         }
         $AdvocateClient = AdvocateClient::find($id);
         $AdvocateClient->delete();

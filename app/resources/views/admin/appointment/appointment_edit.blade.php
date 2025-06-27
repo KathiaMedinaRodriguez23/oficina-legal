@@ -1,16 +1,28 @@
 @extends('admin.layout.app')
 @section('title','Editar Citacion')
-
+@push('style')
+    <style>
+        .error-message {
+            color: #a94442;
+            font-size: 12px;
+        }
+        .alert.alert-info.alert-dismissible.fade.in {
+            background-color: #a94442;
+            border-color: #a94442;
+            color: white;
+        }
+    </style>
+@endpush
 @section('content')
 
     <div class="page-title">
         <div class="title_left">
-            <h3>Edit Appointment</h3>
+            <h3>Editar Citación</h3>
         </div>
 
         <div class="title_right">
             <div class="form-group pull-right top_search">
-                <a href="{{ route('appointment.index') }}" class="btn btn-primary">Back</a>
+                <a href="{{ route('appointment.index') }}" class="btn btn-primary">Cerrar</a>
             </div>
         </div>
     </div>
@@ -29,7 +41,7 @@
 
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
-                                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                        <strong>Ups!</strong> Revise las siguientes indicaciones:.<br><br>
                                         <ul>
                                             @foreach ($errors->all() as $error)
                                                 <li>{{ $error }}</li>
@@ -45,7 +57,7 @@
                                         <input type="radio" id="test5" value="new" name="type"
                                                @if($appointment->type=="new") checked @endif>
 
-                                        <b> New Client
+                                        <b> Nuevo Cliente
                                         </b>
 
 
@@ -56,7 +68,7 @@
                                         <input type="radio" id="test4" value="exists" name="type"
                                                @if($appointment->type=="exists") checked @endif>
 
-                                        <b> Existing Client
+                                        <b> Cliente Existente
                                         </b>
 
 
@@ -69,7 +81,8 @@
                                         <div class="form-group">
                                             @if(count($client_list)>0)
                                                 <label class="discount_text">Seleccionar Cliente
-                                                    <er class="rest">*</er>
+                                                    <span
+                                                        class="text-danger">*</span>
                                                 </label>
                                                 <select class="form-control selct2-width-100" name="exists_client"
                                                         id="exists_client"
@@ -92,7 +105,7 @@
 
                                 <div class="row new">
                                     <div class="col-md-12 form-group">
-                                        <label for="newclint_name">New Client Name <span
+                                        <label for="newclint_name">Nuevo Cliente <span
                                                     class="text-danger">*</span></label>
                                         <input type="text" placeholder="" class="form-control" id="new_client"
                                                name="new_client" autocomplete="off"
@@ -100,14 +113,56 @@
                                     </div>
                                 </div>
                                 <div class="row">
+
+                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                            <label for="fullname">Relacionar con</label>
+                                            <select  class="form-control selct2-width-100" id="related" name="related">
+                                                <option value="">Seleccionar</option>
+                                                <option value="case"
+                                                        @if(isset($appointment) && $appointment->related=='case') selected="" @endif
+                                                >Caso
+                                                </option>
+
+                                                <option value="other"
+                                                        @if(isset($appointment) && $appointment->related=='other') selected="" @endif>Otro
+                                                </option>
+                                            </select>
+                                        </div>
+
+
+                                        @php
+                                            $style = ($appointment->related=="case")? '' : 'hide';
+
+                                        @endphp
+
+
+                                        <div class="col-md-6 col-sm-12 col-xs-12 form-group task_selection {{ $style }}">
+                                            <label for="fullname">Caso</label>
+                                            <select  class="form-control selct2-width-100" id="related_id" name="related_id">
+                                                <option value="">Seleccionar usuario</option>
+                                                @foreach($cases as $key=>$val)
+
+                                                    <option value="{{$val->id}}"
+                                                            @if(isset($appointment) && $appointment->case_id == $val->id) selected="" @endif
+                                                    >
+                                                        <strong>{{  $val->first_name.' '.$val->middle_name.' '.$val->last_name }}</strong><br>
+                                                        <div>{{ 'No- '.$val->case_number }}</div>
+                                                    </option>
+                                                @endforeach
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                <div class="row">
                                     <div class="col-md-6 form-group">
-                                        <label for="mobile">Mobile No <span class="text-danger">*</span></label>
-                                        <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
-                                               autocomplete="off" maxlength="9" value="{{ $appointment->mobile}}">
+                                        <label for="email">Email <span class="text-danger">*</span></label>
+                                        <input type="text" placeholder="" class="form-control" id="email" name="email"
+                                               autocomplete="off" value="{{ $appointment->mobile}}">
                                     </div>
 
                                     <div class="col-md-3 form-group">
-                                        <label for="date">Date <span class="text-danger">*</span></label>
+                                        <label for="date">Fecha <span class="text-danger">*</span></label>
 
                                         <input type="text" class="form-control" id="date" name="date"
                                                value="{{ date($date_format_laravel, strtotime($appointment->date)) }}">
@@ -116,7 +171,7 @@
                                     </div>
 
                                     <div class="col-md-3 form-group">
-                                        <label for="time">Time <span class="text-danger">*</span></label>
+                                        <label for="time">Hora <span class="text-danger">*</span></label>
 
                                         <input type="text" class="form-control" id="time" name="time"
                                                value="{{ $appointment->time }}">
@@ -125,7 +180,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 form-group">
-                                        <label for="note">Note</label>
+                                        <label for="note">Nota</label>
                                         <textarea type="text" placeholder="" class="form-control" id="note"
                                                   name="note">{{ $appointment->note ?? ''}}</textarea>
                                     </div>
@@ -162,6 +217,10 @@
     <input type="hidden" name="type_chk"
            id="type_chk"
            value="{{$appointment->type}}">
+
+    <input type="hidden" name="select2Case"
+           id="select2Case"
+           value="{{route('select2Case') }}">
 
 @endsection
 

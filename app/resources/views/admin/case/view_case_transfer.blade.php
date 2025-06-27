@@ -9,13 +9,6 @@
                 <div class="x_content">
                     <div class="x_title">
                         <h2> Caso</h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a href=""><i class="fa fa-download case-transfer-font-size"></i></a>
-                            </li>
-
-                            <li><a href=""><i class="fa fa-file-pdf-o case-transfer-font-size"></i></a>
-                            </li>
-                        </ul>
                         <div class="clearfix"></div>
                     </div>
 

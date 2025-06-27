@@ -89,6 +89,8 @@ class AppointmentController extends Controller
         $appoint->time = date('H:i:s', strtotime($request->time));
         $appoint->note = $request->note;
         $appoint->type = $request->type;
+        $appoint->related = $request->related;
+        $appoint->case_id = $request->related_id;
         $appoint->advocate_id = 1;
 
         $appoint->save();
@@ -330,7 +332,32 @@ class AppointmentController extends Controller
         // $advocate_id = $this->getLoginUserId();
         $data['client_list'] = AdvocateClient::where('is_active', 'Yes')->get();
         $data['appointment'] = Appointment::find($id);
-        // dd($data);
+        $data['cases'] = DB::table('court_cases AS case')
+            ->leftJoin('advocate_clients AS ac', 'ac.id', '=', 'case.advo_client_id')
+            ->leftJoin('case_types AS ct', 'ct.id', '=', 'case.case_types')
+            ->leftJoin('case_types AS cst', 'cst.id', '=', 'case.case_sub_type')
+            ->leftJoin('case_statuses AS s', 's.id', '=', 'case.case_status')
+            ->leftJoin('court_types AS t', 't.id', '=', 'case.court_type')
+            ->leftJoin('courts AS c', 'c.id', '=', 'case.court')
+            ->leftJoin('judges AS j', 'j.id', '=', 'case.judge_type')
+            ->select(
+                'case.id AS id',
+                'case.registration_number AS case_number',
+                'case.act',
+                'case.priority',
+                'case.court_no',
+                's.case_status_name',
+                'ac.first_name',
+                'ac.middle_name',
+                'ac.last_name',
+                'case.updated_by',
+                'ac.id AS advo_client_id',
+                'case.is_nb',
+                'case.is_active'
+            )
+            ->where('case.is_active','Yes')
+            ->where('case.id', $data['appointment']->case_id)
+            ->get();
         return view('admin.appointment.appointment_edit', $data);
     }
 
@@ -343,9 +370,6 @@ class AppointmentController extends Controller
      */
     public function update(StoreAppointment $request, $id)
     {
-        //dd($id);
-
-
         $appoint = Appointment::find($id);
 
         if ($request->type == "new") {
@@ -360,6 +384,8 @@ class AppointmentController extends Controller
         $appoint->time = date('H:i:s', strtotime($request->time));
         $appoint->note = $request->note;
         $appoint->type = $request->type;
+        $appoint->related = $request->related;
+        $appoint->case_id = $request->related_id;
 
         $appoint->save();
 

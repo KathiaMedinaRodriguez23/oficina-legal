@@ -1,17 +1,5 @@
 <div class="x_title">
     <h2> Caso</h2>
-    <ul class="nav navbar-right panel_toolbox">
-        <li>
-
-            <a class="card-header-color"  href="{{url('admin/case-running-download/'.$case->case_id.'/download')}}"
-               title="Descargar caso de cómite o junta"><i class="fa fa-download fa-2x "></i></a>
-        </li>
-        <li>
-            <a class="card-header-color"  href="{{url('admin/case-running-download/'.$case->case_id.'/print')}}"
-               title="Imprimir caso de cómite o junta" target="_blank"><i class="fa fa-print fa-2x"></i></a>
-        </li>
-
-    </ul>
     <div class="clearfix"></div>
 </div>
 

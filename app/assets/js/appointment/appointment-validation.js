@@ -30,7 +30,7 @@ jQuery(document).ready(function () {
     });
 
     $('#exists_client').select2({
-        placeholder: 'Select client'
+        placeholder: 'Elija un Cliente'
     });
 
     $("#related").select2({
@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
             $('.new').addClass("hidden");
 
             $("#exists_client").val('').select2({
-                placeholder: 'Select client'
+                placeholder: 'Elija un cliente'
             });
 
         } else if (this.value == 'new') {
@@ -82,6 +82,9 @@ jQuery(document).ready(function () {
                 //data.page = data.page || 1;
                 return {
                     results: data.items.map(function (item) {
+                        item.first_name = item.first_name || '';
+                        item.middle_name = item.middle_name || '';
+                        item.last_name = item.last_name || '';
                         return {
                             id: item.id,
                             text: `${item.first_name}  ${item.middle_name} ${item.last_name}`,

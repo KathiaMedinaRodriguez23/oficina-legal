@@ -16,7 +16,7 @@
 @section('content')
     <div class="page-title">
         <div class="title_left">
-            <h3>Agregar Citacion</h3>
+            <h3>Agregar Citación</h3>
         </div>
 
         <div class="title_right">
@@ -63,7 +63,8 @@
                                         <div class="form-group">
                                             @if(!empty($client_list) && count($client_list)>0)
                                                 <label class="discount_text">Seleccione Cliente
-                                                    <er class="rest">*</er>
+                                                    <span
+                                                        class="text-danger">*</span>
                                                 </label>
                                                 <select class="form-control selct2-width-100" name="exists_client"
                                                         id="exists_client"
@@ -94,7 +95,7 @@
                                     <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                         <label for="fullname">Relacionado con</label>
                                         <select class="form-control selct2-width-100" id="related" name="related">
-                                            <option value="">Seleccionar nota</option>
+                                            <option value="">Seleccionar</option>
                                             <option value="case">Caso</option>
                                             <option value="other">Otro</option>
                                         </select>

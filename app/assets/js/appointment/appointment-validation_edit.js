@@ -1,5 +1,6 @@
 "use strict";
 var checkExistRoute = $('#common_check_exist').val();
+var select2Case = $('#select2Case').val();
 var token = $('#token-value').val();
 var date_format_datepiker = $('#date_format_datepiker').val();
 var getMobilenos = $('#getMobileno').val();
@@ -54,7 +55,52 @@ jQuery(document).ready(function () {
         }
     });
 
+    $('#related').on('change', function () {
+        var optionSelected = $(this).find("option:selected");
+        var label_name = optionSelected.val();
 
+        if (label_name == "case") {
+            $('.task_selection').removeClass('hide');
+        } else {
+            $('.task_selection').addClass('hide');
+        }
+    });
+
+    $('#related_id').select2({
+        ajax: {
+            url: select2Case,
+            data: function (params) {
+                return {
+                    search: params.term,
+                    //page: params.page || 1
+                };
+            },
+            dataType: 'json',
+            processResults: function (data) {
+                //data.page = data.page || 1;
+                return {
+                    results: data.items.map(function (item) {
+                        item.first_name = item.first_name || '';
+                        item.middle_name = item.middle_name || '';
+                        item.last_name = item.last_name || '';
+                        return {
+                            id: item.id,
+                            text: `${item.first_name}  ${item.middle_name} ${item.last_name}`,
+                            otherfield: item,
+                        };
+                    }),
+                    pagination: {
+                        more: data.pagination
+                    }
+                };
+            },
+            //cache: true,
+            delay: 50
+        },
+        placeholder: 'Buscar cliente',
+        // minimumInputLength: 1,
+        templateResult: getfName,
+    });
 });
 
 
@@ -81,7 +127,7 @@ function getMobileno(id) {
             data: {id: id},
             success: function (data) {
 
-                $('#mobile').val(data.mobile).prop('readonly', true);
+                $('#mobile').val(data.email).prop('readonly', true);
 
 
             }
@@ -89,3 +135,11 @@ function getMobileno(id) {
     }
 }
 
+function getfName(data) {
+    if (!data.id) {
+        return data.text;
+    }
+    data = data.otherfield;
+    var $html = $("<p style='margin-bottom: 0;'><b>" + data.first_name + ' ' + data.middle_name + ' ' + data.last_name + "</b> <br> " + data.act + "</p>");
+    return $html;
+}

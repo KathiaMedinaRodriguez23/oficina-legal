@@ -24,8 +24,6 @@ class StoreAppointment extends FormRequest
     public function rules()
     {
         return [
-              //'exists_client' => 'required',
-              //'new_client' => 'required',
               'email' => 'required|email',
               'date' => 'required',
               'time' => 'required',
@@ -37,8 +35,6 @@ class StoreAppointment extends FormRequest
               'email.required' => 'Ingrese un correo electronico.',
               'date.required' => 'Porfavor ingrese una fecha.',
               'time.required' => 'Porfavor ingrese una hora.',
-
-
         ];
     }
 }
