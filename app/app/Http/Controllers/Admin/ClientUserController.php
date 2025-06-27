@@ -331,7 +331,7 @@ class clientUserController extends Controller
                     ->orWhere('mobile', 'LIKE', "%{$search}%");
                     })->offset($start)
                     ->limit($limit)
-                    ->orderBy($order, $dir)
+                    // ->orderBy($order, $dir)
                     ->get();
 
             $totalFiltered = DB::table('admins AS a')

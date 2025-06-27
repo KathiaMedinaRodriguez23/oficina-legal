@@ -37,8 +37,7 @@ var DatatableRemoteAjaxDemo = (function () {
             ajax: {
                 url:  listUrl,
                 type: "POST",
-                // opcional: si tu controlador devuelve JSON correcto, no necesitas forzar dataType
-                // dataType: "json",
+                dataType: "json",
                 error: function(xhr, status, errorThrown) {
                     console.error("DataTables Ajax error:", xhr.status, errorThrown);
                     console.log("Response text:", xhr.responseText);

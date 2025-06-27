@@ -86,23 +86,6 @@
                               <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="9" name="permission[]" {{ ($permissions_array->contains('9')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                             </td>
                           </tr>
-                          <tr  class="tr_permition">
-                            <td>Proveedor</td>
-
-                            <td>-</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="10" name="permission[]" {{ ($permissions_array->contains('10')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="11" name="permission[]" {{ ($permissions_array->contains('11')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="12" name="permission[]" {{ ($permissions_array->contains('12')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="13" name="permission[]" {{ ($permissions_array->contains('13')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
                             <tr  class="tr_permition">
                             <td>Caso</td>
 
@@ -137,79 +120,6 @@
                                 -
                             </td>
                           </tr>
-                             <tr  class="tr_permition">
-                            <td>Gasto</td>
-
-                            <td>Tipo de Gasto</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="20" name="permission[]" {{ ($permissions_array->contains('20')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="21" name="permission[]" {{ ($permissions_array->contains('21')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="22" name="permission[]" {{ ($permissions_array->contains('22')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="23" name="permission[]" {{ ($permissions_array->contains('23')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
-                            <tr  class="tr_permition">
-                            <td></td>
-
-                            <td>Gasto</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="24" name="permission[]" {{ ($permissions_array->contains('24')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="25" name="permission[]" {{ ($permissions_array->contains('25')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="26" name="permission[]" {{ ($permissions_array->contains('26')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="27" name="permission[]" {{ ($permissions_array->contains('27')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
-
-
-                          <tr  class="tr_permition">
-                            <td>Ingresos</td>
-
-                            <td>Servicio</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="59" name="permission[]" {{ ($permissions_array->contains('59')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="60" name="permission[]" {{ ($permissions_array->contains('60')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="61" name="permission[]" {{ ($permissions_array->contains('61')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="62" name="permission[]" {{ ($permissions_array->contains('62')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
-
-                           <tr  class="tr_permition">
-                            <td></td>
-
-                            <td> Factura</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="28" name="permission[]" {{ ($permissions_array->contains('28')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="29" name="permission[]" {{ ($permissions_array->contains('29')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="30" name="permission[]" {{ ($permissions_array->contains('30')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="31" name="permission[]" {{ ($permissions_array->contains('31')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
-
-
 
                             <tr  class="tr_permition">
                             <td>Configuración</td>
@@ -296,50 +206,6 @@
                               <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="51" name="permission[]" {{ ($permissions_array->contains('51')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
                             </td>
                           </tr>
-                            <tr  class="tr_permition">
-                            <td></td>
-
-                            <td>Impuesto</td>
-                            <td>
-                           <label class="m-checkbox m-checkbox--brand"><input class="permition_view" type="checkbox" value="52" name="permission[]" {{ ($permissions_array->contains('52')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                           </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_add" type="checkbox" value="53" name="permission[]" {{ ($permissions_array->contains('53')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input  class="permition_edit" type="checkbox" value="54" name="permission[]" {{ ($permissions_array->contains('54')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_delete" type="checkbox" value="55" name="permission[]" {{ ($permissions_array->contains('55')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                          </tr>
-
-
-
-                            <tr>
-                            <td></td>
-
-                            <td>Configuración general</td>
-                            <td>
-                              -
-                           </td>
-                            <td>
-                              -
-                            </td>
-                            <td>
-                              <label class="m-checkbox m-checkbox--brand"><input class="permition_edit" type="checkbox" value="58" name="permission[]" {{ ($permissions_array->contains('58')) ? 'checked' : '' }}><div class="m-form__heading-title"></div><span></span></label>
-                            </td>
-                            <td>
-                             -
-                            </td>
-                          </tr>
-
-
-
-
-
-
-
                         </tbody>
                       </table>
 

@@ -14,12 +14,12 @@
                 <li><a href="{{ route('case-running.index') }}"><i class="fa fa-gavel"></i> Casos</a></li>
 
             @endif
-            @if($adminHasPermition->can(['task_list']) =="1")
+                {{--
+                @if($adminHasPermition->can(['task_list']) =="1")
                 <li><a href="{{ route('tasks.index') }}"><i class="fa fa-tasks"></i> Tareas
                 </a></li>
             @endif
-
-
+                --}}
             @if($adminHasPermition->can(['appointment_list']) =="1")
                 <li><a href="{{ route('appointment.index') }}"><i class="fa fa-calendar-plus-o"></i> Citaciones</a>
                 </li>
