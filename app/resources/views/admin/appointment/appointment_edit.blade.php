@@ -68,13 +68,13 @@
 
                                         <div class="form-group">
                                             @if(count($client_list)>0)
-                                                <label class="discount_text">Select Client
+                                                <label class="discount_text">Seleccionar Cliente
                                                     <er class="rest">*</er>
                                                 </label>
                                                 <select class="form-control selct2-width-100" name="exists_client"
                                                         id="exists_client"
                                                         onchange="getMobileno(this.value);">
-                                                    <option value="">Select client</option>
+                                                    <option value="">Seleccionar Cliente</option>
                                                     @foreach($client_list as $list)
                                                         <option value="{{ $list->id}}"
                                                                 @if(!empty($appointment->client_id) && $appointment->client_id==$list->id)

@@ -23,11 +23,11 @@ class SmtpController extends Controller
         
        $user = \Auth::guard('admin')->user();  
         if(! $user->can('general_setting_edit')){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
 
         $mailsetup  = Mailsetup::findOrfail(1); 
-        $this->data['title'] = 'Mail Setup';
+        $this->data['title'] = 'Configuración de correo';
         $this->data['mailsetup'] = $mailsetup;     
     	return view('admin.settings.mail_setup', $this->data);
     }
@@ -46,7 +46,7 @@ class SmtpController extends Controller
         $mailsetup->mail_encryption  = $request->mail_encryption;
         $mailsetup->save();
 
-        Session::flash('success',"Save Successfully");
+        Session::flash('success',"Guardado exitosamente");
        return redirect()->back();
 
     }

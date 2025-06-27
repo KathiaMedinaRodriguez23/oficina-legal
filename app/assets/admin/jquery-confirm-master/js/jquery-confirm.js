@@ -1273,7 +1273,7 @@
          */
         alignMiddle: true,
         smoothContent: true,
-        content: 'Data save successfully.',
+        content: 'Los datos se guardaron correctamente.',
         buttons: {},
         defaultButtons: {
             ok: {
