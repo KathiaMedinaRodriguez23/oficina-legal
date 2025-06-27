@@ -296,7 +296,7 @@ class clientUserController extends Controller
 		$totalRec = $totalData;
         $limit = $request->input('length');
         $start = $request->input('start');
-        $order = $columns[$request->input('order.0.column')];
+//        $order = $columns[$request->input('order.0.column')];
         $dir = $request->input('order.0.dir');
 
         if (empty($request->input('search.value'))) {
@@ -307,7 +307,7 @@ class clientUserController extends Controller
             ->where('user_type','=','User')
            ->offset($start)
                     ->limit($limit)
-                    ->orderBy($order, $dir)
+//                    ->orderBy($order, $dir)
                     ->get();
         } else {
             /*

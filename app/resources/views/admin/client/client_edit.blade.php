@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title','Client Edit')
+@section('title','Editar Cliente')
 @section('content')
     @component('component.heading' , [
 
@@ -21,77 +21,93 @@
                     {{ csrf_field() }}
                     <input name="_method" type="hidden" value="PATCH">
                     <div class="x_content">
-
-                        <div class="row">
-
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="f_name">Primer nombre <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="f_name" name="f_name"
-                                       value="{{ $client->first_name ?? ''}}">
-                            </div>
-
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="m_name">Segundo nombre <span class="text-danger"></span></label>
-                                <input type="text" placeholder="" class="form-control" id="m_name" name="m_name"
-                                       value="{{ $client->middle_name ?? ''}}">
-                            </div>
-
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Apellidos <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" class="form-control" id="l_name" name="l_name"
-                                       value="{{ $client->last_name ?? ''}}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Genero <span class="text-danger">*</span></label><br>
-
-                                <input type="radio" name="gender" id="genderM"
-                                       value="Male" {{ (!empty($client->gender) && $client->gender =='Male') ? "checked" : "" }} />
-                                &nbsp;&nbsp;Masculino:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="gender" id="genderF"
-                                       value="Female" {{ (!empty($client->gender) && $client->gender =='Female') ? "checked" : "" }}/>&nbsp;&nbsp;Femenino
-                            </div>
-
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Email</label>
-                                <input type="text" value="{{ $client->email ?? ''}}" placeholder="" class="form-control"
-                                       id="email" name="email">
-                            </div>
-
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Celular <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" class="form-control" id="mobile" name="mobile"
-                                       value="{{ $client->mobile ?? ''}}" maxlength="9">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <div class="row">
-                                <label>Documento de Identidad <span class="text-danger">*</span></label><br>
-                                    <!--<label for="document_number" id="dni_ruc_label"></label>-->
-                                    <input type="radio" name="document_type" id="dni" 
-                                        value="dni" {{ $docType === 'dni' ? 'checked' : '' }}required />
-                                    &nbsp;&nbsp;DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="document_type" id="ruc" 
-                                        value="ruc"  {{ $docType === 'ruc' ? 'checked' : '' }} /> &nbsp;&nbsp;RUC
+                        {{-- BLOQUE DNI --}}
+                        <div id="block-dni" style="display: {{ $docType==='dni' ? 'block':'none' }};">
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="f_name">Primer nombre <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="f_name" name="f_name"
+                                           value="{{ old('f_name', $client->first_name) }}">
+                                    <div class="error-message">{{ $errors->first('f_name') }}</div>
                                 </div>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="document_number"
-                                    name="document_number"
-                                    placeholder="{{ $docType === 'dni' ? 'Ej: 01234567' : 'Ej: 20123456789' }}"
-                                    maxlength="{{ $docType === 'dni' ? 8 : 11 }}"
-                                    value="{{ $client->dni_ruc ?? '' }}"
-                                />
-                                <div class="error-message" id="error_message" style="display: none;"></div>
+                                <div class="col-md-4 form-group">
+                                    <label for="m_name">Segundo nombre</label>
+                                    <input type="text" class="form-control" id="m_name" name="m_name"
+                                           value="{{ old('m_name', $client->middle_name) }}">
+                                    <div class="error-message">{{ $errors->first('m_name') }}</div>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label for="l_name">Apellidos <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="l_name" name="l_name"
+                                           value="{{ old('l_name', $client->last_name) }}">
+                                    <div class="error-message">{{ $errors->first('l_name') }}</div>
+                                </div>
                             </div>
-                            <div class="col-md-8 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Direccion <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" value="{{ $client->address ?? ''}}"
-                                       class="form-control" id="address" name="address">
+                        </div>
+                        {{-- BLOQUE RUC --}}
+                        <div id="block-ruc" style="display: {{ $docType==='ruc' ? 'block':'none' }};">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="razon_social">Razón Social <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="razon_social" name="razon_social"
+                                           value="{{ old('razon_social', $client->first_name) }}">
+                                    <div class="error-message">{{ $errors->first('razon_social') }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- FILA GÉNERO / EMAIL / CELULAR --}}
+                        <div class="row">
+                            <div id="block-gender" class="col-md-4 form-group">
+                                <label>Género <span class="text-danger">*</span></label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="genderM" value="Male"
+                                        {{ old('gender', $client->gender)=='Male'?'checked':'' }}> Masculino
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="genderF" value="Female"
+                                        {{ old('gender', $client->gender)=='Female'?'checked':'' }}> Femenino
+                                </label>
+                                <div class="error-message">{{ $errors->first('gender') }}</div>
+                            </div>
+
+                            <div id="block-email" class="col-md-4 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="{{ old('email', $client->email) }}">
+                                <div class="error-message">{{ $errors->first('email') }}</div>
+                            </div>
+
+                            <div id="block-phone" class="col-md-4 form-group">
+                                <label for="mobile">Celular <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="mobile" name="mobile" maxlength="9"
+                                       value="{{ old('mobile', $client->mobile) }}">
+                                <div class="error-message">{{ $errors->first('mobile') }}</div>
+                            </div>
+                        </div>
+                        {{-- DOCUMENTO + DIRECCIÓN --}}
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                <label>Documento de Identidad <span class="text-danger">*</span></label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="document_type" id="dni" value="dni"
+                                        {{ $docType==='dni'?'checked':'' }}> DNI
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="document_type" id="ruc" value="ruc"
+                                        {{ $docType==='ruc'?'checked':'' }}> RUC
+                                </label>
+
+                                <input type="text" class="form-control" id="document_number" name="document_number"
+                                       placeholder="{{ $docType==='dni'?'Ej: 01234567':'Ej: 20123456789' }}"
+                                       maxlength="{{ $docType==='dni'?8:11 }}"
+                                       value="{{ old('document_number', $client->dni_ruc) }}">
+                                <div class="error-message" id="error_message" style="display:none"></div>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <label for="address">Dirección <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="address" name="address"
+                                       value="{{ old('address', $client->address) }}">
+                                <div class="error-message">{{ $errors->first('address') }}</div>
                             </div>
                         </div>
                         <div class="row">
@@ -500,5 +516,4 @@
             $('#change_court_chk').prop('checked', true);
         </script>
     @endif
-
 @endpush

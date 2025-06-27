@@ -82,7 +82,7 @@ class ExpenseController extends Controller
 
         $limit = $request->input('length');
         $start = $request->input('start');
-        $order = $columns[$request->input('order.0.column')];
+        // $order = $columns[$request->input('order.0.column')];
         $dir = $request->input('order.0.dir');
 
         if (empty($request->input('search.value'))) {
@@ -97,7 +97,7 @@ class ExpenseController extends Controller
                 ->groupBy('e.invoice_no')
                 ->offset($start)
                 ->limit($limit)
-                ->orderBy($order, $dir)
+                // ->orderBy($order, $dir)
                 ->get();
         } else {
 
@@ -126,7 +126,7 @@ class ExpenseController extends Controller
                 ->groupBy('e.invoice_no')
                 ->offset($start)
                 ->limit($limit)
-                ->orderBy($order, $dir)
+                // ->orderBy($order, $dir)
                 ->get();
 
 
@@ -629,7 +629,7 @@ class ExpenseController extends Controller
 
         $limit = $request->input('length');
         $start = $request->input('start');
-        $order = $columns[$request->input('order.0.column')];
+        // $order = $columns[$request->input('order.0.column')];
         $dir = $request->input('order.0.dir');
 
         if (empty($request->input('search.value'))) {
@@ -643,7 +643,7 @@ class ExpenseController extends Controller
                 ->groupBy('e.invoice_no')
                 ->offset($start)
                 ->limit($limit)
-                ->orderBy($order, $dir)
+                // ->orderBy($order, $dir)
                 ->get();
         } else {
 
@@ -673,7 +673,7 @@ class ExpenseController extends Controller
                 ->groupBy('e.invoice_no')
                 ->offset($start)
                 ->limit($limit)
-                ->orderBy($order, $dir)
+                // ->orderBy($order, $dir)
                 ->get();
 
 

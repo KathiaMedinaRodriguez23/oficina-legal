@@ -1,6 +1,3 @@
-"use strict";
-
-// Rutas y tokens inyectados en tu Blade
 var checkExistRoute       = $('#route-exist-check').val();
 var token                 = $('#token-value').val();
 
@@ -21,33 +18,41 @@ var FormControlsClient = {
         });
 
         function handleDocTypeChange() {
-            var $input = $("#document_number"),
-                $label = $("#dni_ruc_label");
+            const isDni       = $('#dni').is(':checked');
+            const $dniBlk     = $('#block-dni');
+            const $rucBlk     = $('#block-ruc');
+            const $emailBlk   = $('#block-email');
+            const $phoneBlk   = $('#block-phone');
+            const $doc        = $('#document_number');
+            const $genderBlk= $('#block-gender');
 
-            $("#error_message").hide();
+            // placeholder / maxlength
+            $doc.attr({
+                maxlength: isDni ? 8 : 11,
+                placeholder: isDni ? 'Ej: 01234567' : 'Ej: 20123456789'
+            });
 
-            if ($("#dni").is(":checked")) {
-                $label.html('<span class="text-danger">*</span>');
-                $input
-                    .attr("maxlength", 8)
-                    .attr("placeholder", "Ej: 01234567");
+            // show/hide + disable
+            $dniBlk.toggle(isDni).find('input,select,textarea').prop('disabled', !isDni);
+            $rucBlk.toggle(!isDni).find('input,select,textarea').prop('disabled', isDni);
+            $genderBlk.toggle(isDni).find('input').prop('disabled', !isDni);
+
+            // clear validation classes…
+            $dniBlk.add($rucBlk).find('.is-valid,.is-invalid').removeClass('is-valid is-invalid');
+
+            // resize email/phone
+            if (isDni) {
+                $emailBlk.removeClass('col-md-6').addClass('col-md-4');
+                $phoneBlk.removeClass('col-md-6').addClass('col-md-4');
             } else {
-                $label.html('<span class="text-danger">*</span>');
-                $input
-                    .attr("maxlength", 11)
-                    .attr("placeholder", "Ej: 20123456789");
+                $emailBlk.removeClass('col-md-4').addClass('col-md-6');
+                $phoneBlk.removeClass('col-md-4').addClass('col-md-6');
             }
         }
 
         handleDocTypeChange();
 
-        $("input[name='document_type']").on('change', function () {
-            $("#document_number")
-                .val('')
-                .removeClass('is-invalid is-valid');
-            handleDocTypeChange();
-            $("#document_number").valid();
-        });
+        $('input[name="document_type"]').on('change', handleDocTypeChange);
 
         $("#document_number").on('keypress', function (e) {
             if (!$("#ruc").is(":checked")) return;
@@ -63,8 +68,6 @@ var FormControlsClient = {
         $("#edit_client_form").validate({
             debug: false,
             rules: {
-                f_name:           "required",
-                l_name:           "required",
                 address:          "required",
                 country:          "required",
                 state:            "required",
@@ -87,8 +90,6 @@ var FormControlsClient = {
                 }
             },
             messages: {
-                f_name:  "Ingrese el nombre.",
-                l_name:  "Ingrese el apellido.",
                 address: "Ingrese la dirección.",
                 country: "Seleccione el país.",
                 state:   "Seleccione el estado.",
@@ -120,9 +121,12 @@ var FormControlsClient = {
             unhighlight: function (el) {
                 $(el).addClass('is-valid').removeClass('is-invalid');
             },
-            errorPlacement: function (error, element) {
-                if (element.attr("name") === "document_number") {
+            errorPlacement: function(error, element) {
+                // doc-number y gender ya casos especiales…
+                if (element.attr("name")==='gender') {
                     $("#error_message").empty().show().append(error.addClass('text-danger'));
+                } else if (element.attr("name")==='document_number') {
+                    $("#error_message").empty().show().append(error);
                 } else {
                     error.appendTo(element.parent()).addClass('text-danger');
                 }

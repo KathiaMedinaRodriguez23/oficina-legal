@@ -67,7 +67,7 @@ class DatabaseBackupController extends Controller
 
         $limit = $request->input('length');
         $start = $request->input('start');
-        $order = $columns[$request->input('order.0.column')];
+        // $order = $columns[$request->input('order.0.column')];
         $dir = $request->input('order.0.dir');
         $search = $request->input('search.value');
 
@@ -81,7 +81,7 @@ class DatabaseBackupController extends Controller
 
         $totalFiltered = $customcollections->count();
 
-        $customcollections = $customcollections->offset($start)->limit($limit)->orderBy($order, $dir)->get();
+        $customcollections = $customcollections->offset($start)->limit($limit)->/*orderBy($order, $dir)->*/get();
 
         $data = [];
 

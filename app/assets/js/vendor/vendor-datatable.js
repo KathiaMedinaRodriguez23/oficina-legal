@@ -18,6 +18,7 @@ var DatatableRemoteAjaxDemo = function () {
             "stateSave": true,
             "lengthMenu": [10, 25, 50],
             "responsive": true,
+            "ordering": false,
             "width": 200,
             "oLanguage": {
                 sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
@@ -38,9 +39,9 @@ var DatatableRemoteAjaxDemo = function () {
                     return $.extend({}, d, {});
                 }
             },
-            "order": [
-                [0, "desc"]
-            ],
+            // "order": [
+            //     [0, "desc"]
+            // ],
             "columns": [{
                 "data": "id"
             },

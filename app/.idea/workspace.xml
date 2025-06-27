@@ -6,15 +6,57 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e04a70-806d-4c27-8424-e44dd731ff98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CaseRunningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CaseRunningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CaseStatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CaseStatusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashTypeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/js/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourtController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourtController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourtTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourtTypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashBordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashBordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DatabaseBackupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DatabaseBackupController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExpenseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExpenseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExpenseTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExpenseTypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JudgeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JudgeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/appointment/appointment-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/appointment/appointment-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-archive-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-archive-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-client-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-client-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-history-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-history-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-important-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-important-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-nb-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-nb-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/case/case-transfer-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/case/case-transfer-datatable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/client-account-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/client-account-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/client-case-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/client-case-datatable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/client/validate-phone.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/validate-phone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/edit-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/edit-client-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dashbord/dashbord-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dashbord/dashbord-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/expense/expense-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/expense/expense-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/expense/expense-type-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/expense/expense-type-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/invoice/invoice-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/invoice/invoice-datatable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/role/role-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/role/role-datatable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/service/service-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/service/service-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/case-statue-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/case-statue-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/case-type-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/case-type-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/cort-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/cort-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/cort-type-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/cort-type-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/judge-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/judge-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/settings/tax-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/settings/tax-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/task/task-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/task/task-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor/vendor-account-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/vendor-account-datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor/vendor-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/vendor-datatable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

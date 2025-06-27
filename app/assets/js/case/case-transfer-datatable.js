@@ -18,6 +18,7 @@ var DatatableRemoteAjaxDemo = function () {
             "destroy": true,
             "processing": true,
             "serverSide": true,
+            "ordering": false,
             "oLanguage": {
                 sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
                 sSearch:     "Buscar:",
@@ -27,7 +28,7 @@ var DatatableRemoteAjaxDemo = function () {
                 sInfo:       "Mostrando _START_ a _END_ de _TOTAL_ registros",
                 sInfoEmpty:  "Mostrando 0 a 0 de 0 registros"
             },
-            "order": [[0, "desc"]],
+            // "order": [[0, "desc"]],
             "ajax": {
                 "url": allCaseTransferLists,
                 "dataType": "json",

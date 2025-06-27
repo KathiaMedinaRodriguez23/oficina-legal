@@ -20,7 +20,8 @@ var DatatableRemoteAjaxDemo = function () {
             "processing": true,
             "serverSide": true,
             // "responsive":true,
-            "order": [[0, "desc"]],
+            "ordering": false,
+            // "order": [[0, "desc"]],
             "oLanguage": {
                 sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
                 sSearch:     "Buscar:",

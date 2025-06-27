@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                            <div class="col-md-4 form-group">
                                 <div class="row">
                                     <label>Documento de Identidad <span class="text-danger">*</span></label><br>
                                         <input type="radio" name="document_type" id="dni" value="dni" checked required/>
@@ -107,7 +107,7 @@
                                     <div class="error-message" id="error_message" style="display: none;"></div>
                             </div>
 
-                            <div class="col-md-8 col-sm-12 col-xs-12 form-group">
+                            <div class="col-md-8 form-group">
                                 <label for="address">Dirección <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="address" name="address">
                             </div>

@@ -22,6 +22,7 @@ var DatatableRemoteAjaxDemo = function () {
             "stateSave": true,
             "lengthMenu": [10, 25, 50],
             "responsive": true,
+            "ordering": false,
             "oLanguage": {
                 sProcessing: "<div class='loader-container'><div id='loader'></div></div>",
                 sSearch:     "Buscar:",
@@ -43,9 +44,9 @@ var DatatableRemoteAjaxDemo = function () {
                     appoint_date_to: $('#date_to').val(),
                 }
             },
-            "order": [
-                [0, "desc"]
-            ],
+            // "order": [
+            //     [0, "desc"]
+            // ],
             "columns": [
                 {"data": "id"},
                 {"data": "name"},

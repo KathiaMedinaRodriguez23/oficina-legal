@@ -26,9 +26,9 @@
 
             @endif
             @if(\Auth::guard('admin')->user()->user_type=="Admin")
-                <li><a><i class="fa fa-users"></i> Personal<span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-users"></i> Miembros<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{ url('admin/client_user') }}"> Personal</a></li>
+                        <li><a href="{{ url('admin/client_user') }}"> Miembros</a></li>
                         <li><a href="{{ route('role.index') }}">Roles</a></li>
 
                     </ul>
@@ -108,9 +108,11 @@
                         @endif
                         --}}
 
+                        {{--
                         @if($adminHasPermition->can(['general_setting_edit']) == "1")
                             <li><a href="{{ url('admin/general-setting') }}">Configuración</a></li>
                         @endif
+                        --}}
                         {{--
                         @if(\Auth::guard('admin')->user()->user_type=="Admin")
                             <li><a href="{{ url('admin/database-backup') }}">Database Backup</a></li>

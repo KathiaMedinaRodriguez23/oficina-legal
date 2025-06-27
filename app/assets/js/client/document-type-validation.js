@@ -83,9 +83,7 @@ $(function(){
         $razonSocial.prop('required', !isDni);
 
         // ➤ Limpiar valores y estados de validación de los ocultos
-        if (isDni) {
-            $razonSocial.val('').removeClass('is-valid is-invalid');
-        } else {
+        if (!isDni) {
             $firstName.add($middleName).add($lastName)
                 .val('').removeClass('is-valid is-invalid');
             $blockGender.find('input').prop('checked', false);

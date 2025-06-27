@@ -505,7 +505,7 @@ class DashBordController extends Controller
 
           $limit = $request->input('length');
           $start = $request->input('start');
-          $order = $columns[$request->input('order.0.column')];
+          // $order = $columns[$request->input('order.0.column')];
           $dir = $request->input('order.0.dir');
 
            $search = $request->input('search.value');
@@ -525,7 +525,7 @@ class DashBordController extends Controller
             })
             ->offset($start)
             ->limit($limit)
-            ->orderBy($order, $dir)
+            // ->orderBy($order, $dir)
             ->get();
 
 

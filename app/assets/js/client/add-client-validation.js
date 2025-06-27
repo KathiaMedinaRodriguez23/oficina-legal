@@ -19,43 +19,47 @@ var FormControlsClient = {
 
         // 2) Ajusta label, placeholder y maxlength según tipo
         function handleDocTypeChange() {
-            var $input = $("#document_number"),
-                $label = $("#dni_ruc_label");
             var isDni = $('#dni').is(':checked');
+            var $input     = $("#document_number");
+            var $label     = $("#dni_ruc_label");
+            var $nameGroup = $('#f_name, #m_name, #l_name');
+            var $gender    = $('#genderM, #genderF');
+            var $rucGroup  = $('#razon_social');
 
-            $input.val('').removeClass('is-invalid is-valid');
+            // Reset UI
+            $input.val('').removeClass('is-valid is-invalid');
             $("#error_message").hide();
+            $label.find('span.text-danger').remove(); // evitar duplicados
+            $label.append('<span class="text-danger">*</span>');
 
-            if ($("#dni").is(":checked")) {
-                $label.append('<span class="text-danger">*</span>');
-                $input
-                    .attr("maxlength", 8)
-                    .attr("placeholder", "Ej: 01234567");
+            // Ajustes de placeholder/maxlength
+            if (isDni) {
+                $input.attr({ maxlength: 8, placeholder: "Ej: 01234567" });
             } else {
-                $label.append('<span class="text-danger">*</span>');
-                $input
-                    .attr("maxlength", 11)
-                    .attr("placeholder", "Ej: 20123456789");
+                $input.attr({ maxlength: 11, placeholder: "Ej: 20123456789" });
             }
 
+            // Mostrar/ocultar bloques
             $('.block-dni').toggle(isDni);
             $('#block-gender').toggle(isDni);
             $('#block-ruc').toggle(!isDni);
 
-            // ★ habilitar/deshabilitar inputs ★
-            $('#f_name, #m_name, #l_name, #genderM, #genderF')
+            // ——— Aquí viene la clave ———
+            // 1) Deshabilitar o habilitar inputs según tipo:
+            $nameGroup
                 .prop('disabled', !isDni)
-                // además quita la marca de validación si estaba ahí
-                .removeClass('is-valid is-invalid');
-            $('#razon_social')
+                .toggleClass('disabled', !isDni);
+            $gender
+                .prop('disabled', !isDni)
+                .toggleClass('disabled', !isDni);
+            $rucGroup
                 .prop('disabled',  isDni)
-                .removeClass('is-valid is-invalid');
+                .toggleClass('disabled', isDni);
 
-            // ★ si usas clases inline de Bootstrap, ajusta los required HTML5 ★
-            $('#f_name, #l_name, #genderM, #genderF')
-                .prop('required', isDni);
-            $('#razon_social')
-                .prop('required', !isDni);
+            // 2) Ajustar required sólo en los visibles:
+            $nameGroup.prop('required', isDni);
+            $gender   .prop('required', isDni);
+            $rucGroup .prop('required', !isDni);
         }
 
         // 3) Ejecuta al inicio y cuando cambie el tipo

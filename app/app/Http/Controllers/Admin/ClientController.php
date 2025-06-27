@@ -165,10 +165,14 @@ class ClientController extends Controller
         }
 
         $AdvocateClient = new AdvocateClient;
-        $AdvocateClient->first_name = $request->f_name;
+        if($request->razon_social){
+            $AdvocateClient->first_name = $request->razon_social;
+        } else {
+            $AdvocateClient->first_name = $request->f_name;
+        }
         $AdvocateClient->middle_name = $request->m_name ?? null;
-        $AdvocateClient->last_name = $request->l_name;
-        $AdvocateClient->gender = $request->gender;
+        $AdvocateClient->last_name = $request->l_name ?? null;
+        $AdvocateClient->gender = $request->gender ?? null;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
         $AdvocateClient->document_type = $request->document_type;
@@ -269,12 +273,35 @@ class ClientController extends Controller
      */
     public function update(StoreClient $request, $id)
     {
+        $validate = Validator::make($request->all(), [
+            'email' => 'required|email|unique:advocate_clients,email,' . $id,
+            'mobile' => 'required|unique:advocate_clients,mobile,' . $id,
+            'document_number' => 'required|unique:advocate_clients,dni_ruc,' . $id,
+            'document_type' => 'required',
+        ], [
+            'email.required' => 'Ingrese el correo electrónico.',
+            'email.email' => 'Ingrese un correo electrónico válido.',
+            'email.unique' => 'El correo electrónico ya ha sido registrado.',
+            'mobile.required' => 'Ingrese el número de teléfono móvil.',
+            'mobile.unique' => 'El número de teléfono móvil ya ha sido registrado.',
+            'document_number.required' => 'Ingrese el número de documento.',
+            'document_number.unique' => 'El número de documento ya ha sido registrado.',
+        ]);
+
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
+
         DB::table('client_parties_invoives')->where('client_id', $id)->delete();
         $AdvocateClient = AdvocateClient::find($id);
-        $AdvocateClient->first_name = $request->f_name;
+        if($request->razon_social){
+            $AdvocateClient->first_name = $request->razon_social;
+        } else {
+            $AdvocateClient->first_name = $request->f_name;
+        }
         $AdvocateClient->middle_name = $request->m_name ?? null;
-        $AdvocateClient->last_name = $request->l_name;
-        $AdvocateClient->gender = $request->gender;
+        $AdvocateClient->last_name = $request->l_name ?? null;
+        $AdvocateClient->gender = $request->gender ?? null;
         $AdvocateClient->email = $request->email;
         $AdvocateClient->mobile = $request->mobile;
         $AdvocateClient->dni_ruc = $request->document_number;
