@@ -19,8 +19,6 @@ class RoleController extends Controller
      */
     public function index()
     {
-
-
         $user = \Auth::guard('admin')->user();
         if ($user->user_type == "User") {
             abort(403, 'Unauthorized action.');
@@ -36,7 +34,6 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
         $userType = \Auth::guard('admin')->user()->user_type;
         if ($userType != "Admin") {
             abort(403, 'Unauthorized action.');
@@ -50,13 +47,10 @@ class RoleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-        //
-        //dd($request->all());
-
         $role = new Role();
         $role->slug = $request->slug;
         $role->description = $request->description;

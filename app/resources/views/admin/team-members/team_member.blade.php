@@ -28,8 +28,8 @@
                             <thead>
                             <tr>
                                 <th width="5%">Nº</th>
-                                <th width="30%">Nombre</th>
-                                <th width="30%">Email</th>
+                                <th width="20%">Nombre</th>
+                                <th width="20%">Email</th>
                                 <th>Celular</th>
                                 <th>Rol</th>
                                 <th>Estado</th>

@@ -377,7 +377,15 @@
     @endif
 @endsection
 @push('js')
-    <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js'></script>
-    <script src="{{ asset('assets/admin/vendors/fullcalendar/dist/fullcalendar.min.js') }}"></script>
-    <script src="{{asset('assets/js/dashbord/dashbord-datatable.js')}}"></script>
+    <!-- Moment con locales -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.js"></script>
+
+    <!-- FullCalendar y su locale -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/locale/es.js"></script>
+
+    <!-- Tu JS personalizado -->
+    <script src="{{ asset('assets/js/dashbord/dashbord-datatable.js') }}"></script>
 @endpush
+

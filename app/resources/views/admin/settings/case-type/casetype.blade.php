@@ -27,9 +27,9 @@
                             <thead>
                             <tr>
                                 <th width="5%">Nº</th>
-                                <th>Tipo de Caso</th>
-                                <th>Tipo de Sub Caso</th>
-                                <th width="5%" data-orderable="false">Estado</th>
+                                <th width="10%">Tipo de Caso</th>
+                                <th width="10%">Tipo de Sub Caso</th>
+                                <th width="10%" data-orderable="false">Estado</th>
                                 <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
                             </thead>

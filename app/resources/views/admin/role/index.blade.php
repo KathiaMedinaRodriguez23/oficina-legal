@@ -27,7 +27,7 @@
                             <thead>
                             <tr>
                                 <th width="5%">Nº</th>
-                                <th>Rol</th>
+                                <th width="5%">Rol</th>
                                 <th width="2%" data-orderable="false">Acción</th>
                             </tr>
                             </thead>

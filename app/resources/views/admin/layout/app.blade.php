@@ -38,6 +38,11 @@
     <link href="{{asset('assets/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/vendors/bootstrap-datepicker/css/bootstrap-datepicker.css') }}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css') }}" rel="stylesheet">
+    <style>
+        .fc-left h2 {
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body class="nav-md ">

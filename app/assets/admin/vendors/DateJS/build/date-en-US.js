@@ -51,7 +51,7 @@ Date.CultureStrings["en-US"] = {
         "March": "March",
         "April": "April",
         "May": "May",
-        "June": "June",
+        "June": "Junio",
         "July": "July",
         "August": "August",
         "September": "September",

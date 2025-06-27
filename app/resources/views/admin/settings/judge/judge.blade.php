@@ -27,7 +27,7 @@
                             <thead>
                             <tr>
                                 <th width="5%">Nº</th>
-                                <th>Juez</th>
+                                <th width="5%">Juez</th>
                                 <th width="5%" data-orderable="false">Estado</th>
                                 <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>

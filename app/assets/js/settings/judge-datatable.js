@@ -48,9 +48,7 @@ var DatatableRemoteAjaxDemo = function () {
                 {"data": "action"}
             ]
         });
-
-
-    }
+    };
 
     //== Public Functions
     return {
@@ -63,7 +61,7 @@ var DatatableRemoteAjaxDemo = function () {
     };
 }();
 jQuery(document).ready(function () {
-    DatatableRemoteAjaxDemo.init()
+    DatatableRemoteAjaxDemo.init();
 });
 
 
@@ -74,7 +72,7 @@ function nextDateAdd(case_id) {
         success: function (data) {
             $('#show_modal_next_date').html(data);
             $('#modal-next-date').modal('show'); // show bootstrap modal
-            $('.modal-title').text('Add Next Date'); // Set Title to Bootstrap modal title
+            $('.modal-title').text('Agregar Fecha'); // Set Title to Bootstrap modal title
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('Error adding / update data');

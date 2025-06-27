@@ -94,13 +94,13 @@ var DatatableRemoteAjaxDemo = function () {
             });
 
             $('#calendar_dashbors_case').fullCalendar({
+                locale: 'es',
                 eventLimit: true,
                 views: {
                     timeGrid: {
-                        eventLimit: 6 // adjust to 6 only for timeGridWeek/timeGridDay
+                        eventLimit: 6
                     }
                 },
-                // put your options and callbacks here
                 timezone: 'local',
                 left: 'Calendar',
                 center: '',

@@ -26,9 +26,9 @@
                         <table id="tagDataTable" class="table" data-url="{{ route('court.list') }}" >
                             <thead>
                             <tr>
-                                <th width="5%">Nº</th>
-                                <th>Tribunal</th>
-                                <th>Tipo de Tribunal</th>
+                                <th width="2%">Nº</th>
+                                <th width="5%">Tribunal</th>
+                                <th width="5%">Tipo de Tribunal</th>
                                 <th width="5%" data-orderable="false">Estado</th>
                                 <th width="2%" data-orderable="false" class="text-center">Acción</th>
                             </tr>
