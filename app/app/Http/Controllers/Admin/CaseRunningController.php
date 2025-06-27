@@ -128,7 +128,7 @@ class CaseRunningController extends Controller
 
         $totalCourtCase = CourtCase::where('advo_client_id', $id)->count();
         $clientName = AdvocateClient::findorfail($id);
-        $name = $clientName->first_name . ' ' . $clientName->middle_name . ' ' . $clientName->last_name;
+        $name = $clientName->first_name ?? '' . ' ' . $clientName->middle_name . ' ' . $clientName->last_name;
         return view('admin.case.client_case_list', ['advo_client_id' => $id, 'name' => $name, 'totalCourtCase' => $totalCourtCase]);
     }
 
@@ -812,7 +812,7 @@ class CaseRunningController extends Controller
 
         //for petitioner and respondent
         $client_single_name = AdvocateClient::select('first_name', 'middle_name', 'last_name')->find($client_id);
-        $client_single = $client_single_name->first_name . ' ' . $client_single_name->middle_name . ' ' . $client_single_name->last_name;
+        $client_single = $client_single_name->first_name ?? '' . ' ' . $client_single_name->middle_name . ' ' . $client_single_name->last_name;
         $admin = Admin::find(1);
 
 
