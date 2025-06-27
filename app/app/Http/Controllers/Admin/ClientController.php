@@ -365,8 +365,8 @@ class ClientController extends Controller
         $cases = DB::table('court_cases')->where('advo_client_id', $id)->count();
         if ($appointments > 0 || $cases > 0) {
             return response()->json([
-                'success' => false,
-                'message' => 'No se puede eliminar el cliente porque tiene citas o casos asociados.',
+                'error' => false,
+                'errormessage' => 'No se puede eliminar el cliente porque tiene citas o casos asociados.',
             ], 400);
         }
         $AdvocateClient = AdvocateClient::find($id);

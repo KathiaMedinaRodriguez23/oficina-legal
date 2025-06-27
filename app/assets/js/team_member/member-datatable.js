@@ -5,8 +5,6 @@ var DatatableRemoteAjaxDemo = (function () {
         var $table  = $('#user_table');
         var listUrl = $('#list').val();
 
-        console.log('DataTables list URL →', listUrl);
-
         // Si ya había una instancia, la destruimos
         if ($.fn.DataTable.isDataTable($table)) {
             $table.DataTable().clear().destroy();

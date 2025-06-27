@@ -197,7 +197,7 @@ class RoleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
@@ -208,7 +208,7 @@ class RoleController extends Controller
 
             return response()->json([
                 'error' => true,
-                'message' => 'Este rol ya tiene permisos asignados. Para eliminarlo, primero debes quitarle todos los permisos.'
+                'errormessage' => 'Este rol ya tiene permisos asignados. Para eliminarlo, primero debes quitarle todos los permisos.'
             ], 400);
         }
         $role->delete();

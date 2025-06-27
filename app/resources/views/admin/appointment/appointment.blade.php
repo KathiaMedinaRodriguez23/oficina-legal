@@ -10,7 +10,7 @@
 
         @component('component.heading' , [
 
-       'page_title' => 'Citaciones',
+       'page_title' => 'Citas',
        'action' => route('appointment.create') ,
        'text' => 'Agregar Cita',
        'permission' => $adminHasPermition->can(['appointment_add'])

@@ -194,7 +194,7 @@
                                     <a href="{{ route('appointment.index') }}" class="btn btn-danger">Cancel</a>
 
                                     <button type="submit" class="btn btn-success"><i class="fa fa-save"
-                                                                                     id="show_loader"></i>&nbsp;Save
+                                                                                     id="show_loader"></i>&nbsp;Guardar
                                     </button>
                                 </div>
                             </div>
