@@ -4,7 +4,6 @@ var date_format_datepiker = $('#date_format_datepiker').val();
 var getCaseSubTypes = $('#getCaseSubType').val();
 var getCourts = $('#getCourt').val();
 
-
 var FormControlsClient = {
 
     init: function () {
@@ -46,19 +45,17 @@ var FormControlsClient = {
                 filing_date: "Por favor, seleccione la fecha de presentación.",
                 registration_number: "Por favor, ingrese el número de registro.",
                 registration_date: "Por favor, seleccione la fecha de registro.",
-
             },
             errorPlacement: function (error, element) {
                 error.appendTo(element.parent()).addClass('text-danger');
             },
-
             submitHandler: function () {
                 $('#show_loader').removeClass('fa-save');
                 $('#show_loader').addClass('fa-spin fa-spinner');
                 $("button[name='btn_add_case']").attr("disabled", "disabled").button('refresh');
                 return true;
             }
-        })
+        });
     }
 
 };
@@ -98,10 +95,18 @@ jQuery(document).ready(function () {
     });
 
 
-    $("#assigned_to").select2({
+    $('#assigned_to').select2({
+        multiple: true,
+        placeholder: 'Seleccione Abogado',
         allowClear: true,
-        placeholder: 'Seleccionar usuarios',
-        multiple: true
+        language: {
+            noResults: function() {
+                return "No se encontraron resultados";
+            }
+        },
+        escapeMarkup: function(markup) {
+            return markup;
+        }
     });
 
     $("#case_type").select2({
@@ -192,7 +197,7 @@ jQuery(document).ready(function () {
         // Removes the delete button from the first list item,
         // defaults to false.
         isFirstItemUndeletable: true
-    })
+    });
 
 
 });

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\Role;
 use App\Notifications\AdminResetPassword;
 use App\Traits\HasPermissionsTrait;
 use Illuminate\Notifications\Notifiable;
@@ -75,7 +76,7 @@ class Admin extends Authenticatable
 protected function scopeGetAdmin()
     {
         return $this->gard('admin')->user();
-    }   
+    }
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPassword($token));
@@ -97,5 +98,10 @@ protected function scopeGetAdmin()
     public function city()
     {
         return $this->belongsTo(Model\City::class, 'city_id');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'admin_role', 'admin_id', 'role_id');
     }
 }

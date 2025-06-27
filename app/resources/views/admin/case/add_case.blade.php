@@ -337,18 +337,15 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Tarea Asignada </h2>
-
+                        <h2>Asignar Abogado</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-
                         <div class="row">
-
-
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Usuarios</label>
+                                <label for="fullname">Persona asiganada<span class="text-danger"></span></label>
                                 <select multiple class="form-control" id="assigned_to" name="assigned_to[]">
+                                    <option value="">Seleccione Abogado</option>
                                     @foreach($users as $key=>$val)
                                         <option value="{{$val->id}}">{{$val->first_name.' '.$val->last_name}}</option>
                                     @endforeach
