@@ -20,13 +20,13 @@ class GeneralSettingDateController extends Controller
 
        $user = \Auth::guard('admin')->user();  
         if(! $user->can('general_setting_edit')){
-            abort(403, 'Unauthorized action.');
+            abort(403, 'Acción no autorizada.');
         }
 
         //'Asia/Kolkata'
         $this->data['timezone'] = DB::table('zone')->get();
         $GeneralSettings  = GeneralSettings::findOrfail(1); 
-        $this->data['title'] = 'Mail Setup';
+        $this->data['title'] = 'Configuración de correo';
         $this->data['GeneralSettings'] = $GeneralSettings;   
         $this->data['countrys'] = DB::table('countries')->get();
         $this->data['states']   = DB::table('states')->where('country_id',$GeneralSettings->country)->get();   
@@ -46,7 +46,7 @@ class GeneralSettingDateController extends Controller
       
         $GeneralSettings->save();
 
-        Session::flash('success',"Save Successfully");
+        Session::flash('success',"Guardado exitosamente");
        return redirect()->back();
 
     }

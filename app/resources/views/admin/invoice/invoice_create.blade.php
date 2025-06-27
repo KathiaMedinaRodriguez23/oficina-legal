@@ -55,7 +55,7 @@
                                     <label for="vendor">Client <span class="text-danger">*</span></label>
                                     <select class="form-control client_id " name="client_id" id="client_id"
                                             onchange="getClientDetail(this.value);">
-                                        <option value="">Select client</option>
+                                        <option value="">Seleccionar cliente</option>
                                         @foreach($client_list as $list)
                                             <option value="{{ $list->id}}">{{  $list->name}}</option>
                                         @endforeach

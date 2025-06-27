@@ -164,7 +164,7 @@ class JudgeController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Judge added successfully',
+            'message' => 'Juez añadido con éxito',
 
         ],200);
 
