@@ -366,7 +366,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Tarea Asignada</h2>
+                        <h2>Abogado Asignado</h2>
 
                         <div class="clearfix"></div>
                     </div>
@@ -376,7 +376,7 @@
 
 
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="fullname">Usuarios</label>
+                                <label for="fullname">Abogado/a</label>
                                 <select multiple class="form-control" id="assigned_to" name="assigned_to[]">
                                     @foreach($users as $key=>$val)
                                         <option value="{{$val->id}}"
