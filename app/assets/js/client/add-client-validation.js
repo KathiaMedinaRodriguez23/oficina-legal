@@ -21,6 +21,7 @@ var FormControlsClient = {
         function handleDocTypeChange() {
             var $input = $("#document_number"),
                 $label = $("#dni_ruc_label");
+            var isDni = $('#dni').is(':checked');
 
             $input.val('').removeClass('is-invalid is-valid');
             $("#error_message").hide();
@@ -36,21 +37,38 @@ var FormControlsClient = {
                     .attr("maxlength", 11)
                     .attr("placeholder", "Ej: 20123456789");
             }
+
+            $('.block-dni').toggle(isDni);
+            $('#block-gender').toggle(isDni);
+            $('#block-ruc').toggle(!isDni);
+
+            // ★ habilitar/deshabilitar inputs ★
+            $('#f_name, #m_name, #l_name, #genderM, #genderF')
+                .prop('disabled', !isDni)
+                // además quita la marca de validación si estaba ahí
+                .removeClass('is-valid is-invalid');
+            $('#razon_social')
+                .prop('disabled',  isDni)
+                .removeClass('is-valid is-invalid');
+
+            // ★ si usas clases inline de Bootstrap, ajusta los required HTML5 ★
+            $('#f_name, #l_name, #genderM, #genderF')
+                .prop('required', isDni);
+            $('#razon_social')
+                .prop('required', !isDni);
         }
 
         // 3) Ejecuta al inicio y cuando cambie el tipo
         handleDocTypeChange();
-        $("input[name='document_type']").on('change', function () {
+        $('input[name="document_type"]').on('change', function(){
             handleDocTypeChange();
-            $("#document_number").valid(); // revalida
+            $('#document_number').valid();
         });
 
         // 4) Inicializa el validateur de jQuery
         $("#add_client").validate({
             debug: false,
             rules: {
-                f_name: "required",
-                l_name: "required",
                 address: "required",
                 country: "required",
                 state: "required",
@@ -61,8 +79,6 @@ var FormControlsClient = {
                 reference_mobile: { minlength: 9, maxlength: 9, number: true }
             },
             messages: {
-                f_name: "Por favor, ingrese el nombre.",
-                l_name: "Por favor, ingrese el apellido.",
                 address: "Por favor, ingrese la dirección.",
                 country: "Por favor, seleccione el país.",
                 state: "Por favor, seleccione el estado.",

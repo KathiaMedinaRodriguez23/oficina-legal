@@ -47,7 +47,7 @@ var DatatableRemoteAjaxDemo = function () {
             ]
         });
 
-    }
+    };
 
     //== Public Functions
     return {

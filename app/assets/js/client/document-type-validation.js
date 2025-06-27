@@ -5,6 +5,21 @@ $(function(){
         $docInput  = $('#document_number'),
         $error     = $('#error_message');
 
+    // Bloques de campos
+    var $blockDni    = $('#block-dni'),
+        $blockRuc    = $('#block-ruc'),
+        $blockGender = $('#block-gender'),
+        $blockEmail  = $('#block-email'),
+        $blockPhone  = $('#block-phone');
+
+    // Campos individuales
+    var $firstName   = $('#f_name'),
+        $middleName  = $('#m_name'),
+        $lastName    = $('#l_name'),
+        $razonSocial = $('#razon_social');
+
+    var $nameFields = $('#f_name, #m_name, #l_name').closest('.form-group');
+
     // 1) Si usas InputMask u otro plugin que borre el valor, quítalo:
     if ($.fn.inputmask) {
         $docInput.inputmask('remove');
@@ -53,12 +68,55 @@ $(function(){
         }
     }
 
+    function toggleNameVsRazon(){
+        var isDni = $dniRadio.is(':checked');
+
+        // ➤ Mostrar/ocultar bloques completos
+        $nameFields.toggle(isDni);
+        $blockRuc.toggle(!isDni);
+        $blockGender.toggle(isDni);
+
+        // ➤ Ajustar required sólo en los campos visibles
+        $firstName  .prop('required', isDni);
+        $lastName   .prop('required', isDni);
+        $('#genderM, #genderF').prop('required', isDni);
+        $razonSocial.prop('required', !isDni);
+
+        // ➤ Limpiar valores y estados de validación de los ocultos
+        if (isDni) {
+            $razonSocial.val('').removeClass('is-valid is-invalid');
+        } else {
+            $firstName.add($middleName).add($lastName)
+                .val('').removeClass('is-valid is-invalid');
+            $blockGender.find('input').prop('checked', false);
+        }
+
+        // ➤ Ajustar ancho de email y teléfono
+        if (!isDni) {
+            $blockEmail
+                .removeClass('col-md-4').addClass('col-md-6');
+            $blockPhone
+                .removeClass('col-md-4').addClass('col-md-6');
+        } else {
+            $blockEmail
+                .removeClass('col-md-6').addClass('col-md-4');
+            $blockPhone
+                .removeClass('col-md-6').addClass('col-md-4');
+        }
+
+        // ➤ Re-validar si ya usas jQuery Validate
+        if ($firstName.valid) {
+            $firstName.add($lastName).add($razonSocial).add($('#genderM, #genderF')).valid();
+        }
+    }
+
     // Detectar cambio de DNI/RUC
     $dniRadio.add($rucRadio).on('change', function() {
         if (!isInitialLoad) {
             $docInput.val('');
         }
         handleTypeChange();
+        toggleNameVsRazon();
         isInitialLoad = false;
     });
 

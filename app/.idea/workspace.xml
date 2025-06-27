@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e04a70-806d-4c27-8424-e44dd731ff98" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/js/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/js/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/add-client-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/document-type-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/client/validate-phone.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/client/validate-phone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/role/role-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/role/role-datatable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/team_member/member-validation_edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/client/client_create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/team-members/team_member_edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

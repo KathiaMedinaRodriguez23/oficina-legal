@@ -26,7 +26,7 @@
                     <form id="add_user" name="add_user" role="form" method="POST" enctype="multipart/form-data"
                           action="{{route('client_user.update',$users->id)}}">
                         @csrf
-                        <input name="_method" type="hidden" value="PUT">
+                        <input name="_method" type="hidden" value="PATCH">
                         <input type="hidden" id="id" name="id" value="{{ $users->id}}">
                         <input type="hidden" id="imagebase64" name="imagebase64">
                         <div class="row">
@@ -219,13 +219,18 @@
             </div>
         </div>
     </div>
+    <input type="hidden" name="token-value"
+           id="token-value"
+           value="{{csrf_token()}}">
+    <input type="hidden" name="check_user_email_exits"
+           id="check_user_email_exits"
+           value="{{ url('admin/check_user_email_exits') }}">
 @endsection
 
 @push('js')
     <script src="{{asset('assets/admin/js/selectjs.js')}}"></script>
     <script src="{{ asset('assets/admin/jcropper/js/cropper.min.js') }}"></script>
     <script src="{{asset('assets/js/team_member/member-validation_edit.js')}}"></script>
-    <script src="{{asset('assets/js/team_member/member-validation.js')}}"></script>
     <script src="{{asset('assets/js/client/validate-phone.js')}}"></script>
     <script>
         const dniInput = document.getElementById('document_number');

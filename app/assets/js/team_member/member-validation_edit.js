@@ -13,7 +13,22 @@ var FormControlsClient = {
                 l_name: "required",
                 email: {
                     required: true,
-                    email: true
+                    email: true,
+                    remote: {
+                        url: check_user_email_exits,
+                        type: "post",
+                        data: {
+                            _token: function () {
+                                return token;
+                            },
+                            email: function () {
+                                return $("#email").val();
+                            },
+                            id: function () {
+                                return $("#id").val();
+                            }
+                        }
+                    }
                 },
                 mobile: {
                     required: true,

@@ -41,37 +41,47 @@
                             </div>
                         @endif
 
-                        <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="f_name">Primer nombre <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" class="form-control" id="f_name" name="f_name">
-                            </div>
+                        <div class="block-dni">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="f_name">Primer nombre <span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="" class="form-control" id="f_name" name="f_name">
+                                </div>
 
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="m_name">Segundo nombre <span class="text-danger"></span></label>
-                                <input type="text" placeholder="" class="form-control" id="m_name" name="m_name">
-                            </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="m_name">Segundo nombre <span class="text-danger"></span></label>
+                                    <input type="text" placeholder="" class="form-control" id="m_name" name="m_name">
+                                </div>
 
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                <label for="l_name">Apellidos <span class="text-danger">*</span></label>
-                                <input type="text" placeholder="" class="form-control" id="l_name" name="l_name">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="l_name">Apellidos <span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="" class="form-control" id="l_name" name="l_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="block-ruc" style="display:none">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="razon_social">Razón Social <span class="text-danger">*</span></label>
+                                    <input type="text" id="razon_social" name="razon_social" class="form-control">
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                            <div id="block-gender" class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <label>Genero <span class="text-danger">*</span></label><br>
                                 <input type="radio" name="gender" id="genderM" value="Male" checked required/>
                                 &nbsp;&nbsp;Masculino&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" name="gender" id="genderF" value="Female"/>&nbsp;&nbsp;Femenino
                             </div>
 
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                            <div id="block-email" class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <label for="email">Email <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="email" name="email">
                             </div>
 
-                            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                            <div id="block-phone" class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <label for="mobile">Celular <span class="text-danger">*</span></label>
                                 <input type="text" placeholder="" class="form-control" id="mobile" maxlength="9"
                                        name="mobile">
@@ -82,7 +92,6 @@
                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                 <div class="row">
                                     <label>Documento de Identidad <span class="text-danger">*</span></label><br>
-                                        <!--<label for="document_number" id="dni_ruc_label"><br /></label>-->
                                         <input type="radio" name="document_type" id="dni" value="dni" checked required/>
                                         &nbsp;&nbsp;DNI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input type="radio" name="document_type" id="ruc" value="ruc" />&nbsp;&nbsp;RUC
@@ -181,7 +190,7 @@
                                                        class="form-control">
                                             </div>
 
-                                        
+
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="lastname">Apellido <span class="text-danger">*</span></label>
@@ -236,7 +245,7 @@
                                                        class="form-control">
                                             </div>
 
-                                          
+
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                                 <label for="lastname">Apellidos <span class="text-danger">*</span></label>

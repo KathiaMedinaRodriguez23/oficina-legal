@@ -145,7 +145,6 @@ class ClientController extends Controller
      */
     public function store(StoreClient $request)
     {
-
         $validate = Validator::make($request->all(), [
             'email' => 'required|email|unique:advocate_clients,email',
             'mobile' => 'required|unique:advocate_clients,mobile',
