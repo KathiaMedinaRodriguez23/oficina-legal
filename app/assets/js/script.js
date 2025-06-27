@@ -93,12 +93,12 @@ $(document).on('click' ,'.delete-confrim', function (e) {
                 });
 
             }).fail(function(respons){
-
+                console.log(respons.responseJSON);
                 var res = respons.responseJSON;
                 var msg = '¡Algo salió mal, por favor inténtalo de nuevo!';
 
-                if (res.errormessage) {
-                    msg = res.errormessage; // asume que ya viene en español
+                if (!res.success && res.status === 400) {
+                    msg = res.message;
                 }
 
                 message.fire({

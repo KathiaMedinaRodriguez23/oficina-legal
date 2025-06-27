@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAppointment;
@@ -75,6 +76,15 @@ class AppointmentController extends Controller
      */
     public function store(StoreAppointment $request)
     {
+        $appointmentDate = date('Y-m-d', strtotime(LogActivity::commonDateFromat($request->date)));
+        if (Appointment::where('mobile', $request->email)
+            ->whereDate('date', $appointmentDate)
+            ->exists()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['email' => 'Ya existe una cita programada para esta fecha.']);
+        }
+
         $appoint = new Appointment();
         if ($request->type == "new") {
             $appoint->name = $request->new_client;
@@ -82,7 +92,6 @@ class AppointmentController extends Controller
         } else {
             $appoint->client_id = $request->exists_client;
         }
-        // $advocate_id = $this->getLoginUserId();
         $appoint->mobile = $request->email;
         $appoint->date = date('Y-m-d H:i:s', strtotime(LogActivity::commonDateFromat($request->date)));
 
@@ -366,10 +375,19 @@ class AppointmentController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(StoreAppointment $request, $id)
     {
+        $appointmentDate = date('Y-m-d', strtotime(LogActivity::commonDateFromat($request->date)));
+        if (Appointment::where('mobile', $request->email)
+            ->whereDate('date', $appointmentDate)
+            ->exists()) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['email' => 'Ya existe una cita programada para esta fecha.']);
+        }
+
         $appoint = Appointment::find($id);
 
         if ($request->type == "new") {
@@ -379,7 +397,33 @@ class AppointmentController extends Controller
             $appoint->client_id = $request->exists_client;
 
         }
-        $appoint->mobile = $request->mobile;
+        $appoint->mobile = $request->email;
+        $currentDate = Carbon::parse($appoint->date);
+        $newDate = Carbon::createFromFormat('Y-m-d H:i', date('Y-m-d H:i', strtotime(LogActivity::commonDateFromat($request->date))));
+        if ($newDate->greaterThan($currentDate)) {
+            try {
+                $client = new Client();
+                $response = $client->post(env('MS_CITATION').'/send-reprogramacion-de-cita-email', [
+                    'json' => [
+                        'email' => $request->email,
+                        'fecha' => date('Y-m-d', strtotime(LogActivity::commonDateFromat($request->date))),
+                        'hora' => date('H:i', strtotime($request->time)),
+                        'idCaso' => $request->related_id
+                    ],
+                    'headers' => [
+                        'Content-Type' => 'application/json',
+                    ],
+                ]);
+
+                $body = json_decode($response->getBody()->getContents(), true);
+                if($response->getStatusCode() != 200) {
+                    return redirect()->back()
+                        ->with('error', 'Error al enviar el enlace de restablecimiento de contraseña: ' . $body['message']);
+                }
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Error al agregar la cita: ' . $e->getMessage());
+            }
+        }
         $appoint->date = date('Y-m-d H:i', strtotime(LogActivity::commonDateFromat($request->date)));
         $appoint->time = date('H:i:s', strtotime($request->time));
         $appoint->note = $request->note;
