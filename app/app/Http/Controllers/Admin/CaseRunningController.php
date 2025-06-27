@@ -135,7 +135,6 @@ class CaseRunningController extends Controller
     public function client_case_list(Request $request)
     {
 
-
         $user = \Auth::guard('admin')->user();
         $isEdit = $user->can('case_edit');
         $isDelete = $user->can('case_delete');
@@ -750,7 +749,7 @@ class CaseRunningController extends Controller
         return Validator::make($data, [
             'client_name' => 'required',
             'position' => 'required',
-            'case_no' => 'required|max:190',
+            'case_no' => ['required', 'max:190', 'unique:court_cases,case_number'],
             'case_type' => 'required',
 
             'case_status' => 'required',
@@ -767,6 +766,8 @@ class CaseRunningController extends Controller
             'registration_number' => 'required',
             'registration_date' => 'required',
 
+        ], [
+            'case_no.unique' => 'El número de caso ya existe.',
         ]);
     }
 
