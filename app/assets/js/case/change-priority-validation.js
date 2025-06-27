@@ -23,7 +23,7 @@ var FormControlsClient = {
                     }
                 });
                 $.ajax({
-                    url: "{{ url('admin/changeCasePriority')}}",
+                    url: window.routes.changeCasePriority,
                     method: "POST",
                     data: {
                         priority: $('#priority').val(),

@@ -10,7 +10,6 @@ var DatatableRemoteAjaxDemo = function () {
 
     var lsitDataInTable = function () {
         var $tbl = $('#case_list');
-        
         // Si ya existe, lo destruyo y limpio el <tbody>
         if ( $.fn.DataTable.isDataTable($tbl) ) {
             $tbl.DataTable().destroy();

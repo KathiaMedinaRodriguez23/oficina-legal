@@ -161,6 +161,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::get('/case-archived', 'CaseRunningController@caseArchived');
     Route::post('allCaseHistoryList', 'CaseRunningController@allCaseHistoryList');
     Route::get('addNextDate/{case_id}', 'CaseRunningController@addNextDate');
+    Route::get('archive-case/{case_id}', 'CaseRunningController@archiveCase');
     Route::get('restoreCase/{case_id}', 'CaseRunningController@restoreCase');
     Route::post('case-next-date', 'CaseRunningController@caseNextDate');
     Route::get('/getNextDateModal/{case_id}', 'CaseRunningController@getNextDateModal')->name('getnextmodal');

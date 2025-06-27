@@ -40,4 +40,9 @@
 
     </div>
 </form>
+<script>
+  window.routes = {
+    changeCasePriority: "{{ url('admin/changeCasePriority') }}"
+  };
+</script>
 <script src="{{asset('assets/js/case/change-priority-validation.js')}}"></script>

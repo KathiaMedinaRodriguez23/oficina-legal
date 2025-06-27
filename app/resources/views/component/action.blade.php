@@ -27,6 +27,10 @@
                         href="{{ $edit ?? 'javascrip:void(0)' }}"><i class="fa fa-edit"></i>&nbsp;&nbsp;Editar</a></li>
             @endif
 
+            @if(isset($archived_case))
+                <li><a href="{{ $archived_case ?? 'javascrip:void(0)' }}"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;Archivar</a></li>
+            @endif
+
             @if(isset($download))
                 <li class=""><a href="{{ $download ?? 'javascrip:void(0)' }}"><i class="fa fa-download"></i>&nbsp;&nbsp;Descargar</a>
                 </li>

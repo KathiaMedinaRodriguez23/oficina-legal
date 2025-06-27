@@ -534,23 +534,28 @@ class CaseRunningController extends Controller
 
 
             if ($isEdit == "1" || $isDelete == "1") {
-                $row['options'] = $this->action([
-                    'view' => route('case-running.show', $case->case_id),
-                    'edit' => route('case-running.edit', $case->case_id),
-                    'next_date_case' => collect([
-                        'id' => $case->case_id,
+                $options = [
+                    'view'             => route('case-running.show',   $case->case_id),
+                    'edit'             => route('case-running.edit',   $case->case_id),
+                    'next_date_case'   => collect([
+                        'id'     => $case->case_id,
                         'action' => url('admin/addNextDate/' . $case->case_id),
                         'target' => '#addtag'
                     ]),
-                    'case_transfer' => collect([
-                        'id' => $case->case_id,
+                    'case_transfer'    => collect([
+                        'id'     => $case->case_id,
                         'action' => url('admin/addNextDate/' . $case->case_id),
                         'target' => '#addtag'
                     ]),
-                    'delete_permission' => $isDelete,
-                    'edit_permission' => $isEdit,
-                ]);
+                    'delete_permission'=> $isDelete,
+                    'edit_permission'  => $isEdit,
+                ];
 
+                if($case->is_active == 'Yes') {
+                    $options['archived_case'] = url('admin/archive-case/' . $case->case_id);
+                }
+
+                $row['options'] = $this->action($options);
             } else {
                 $row['options'] = $this->action([
                     'view' => route('case-running.show', $case->case_id),
@@ -1513,5 +1518,19 @@ class CaseRunningController extends Controller
         return back()->with('errors', $validatedData->errors());
     }
 
+    public function archiveCase($id)
+    {
+        // 1) Encuentra el caso
+        $case = CourtCase::findOrFail($id);
 
+        // 2) Marca el estado y la actividad
+        $case->case_status = 'Archived';
+        $case->is_active   = 'No';
+        $case->save();
+
+        // 4) Redirige con mensaje
+        return redirect()
+            ->route('case-running.index')
+            ->with('success', 'Caso archivado exitosamente.');
+    }
 }
