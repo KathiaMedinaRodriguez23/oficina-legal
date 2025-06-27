@@ -80,7 +80,8 @@ class ClientController extends Controller
 
 
         $customcollections = AdvocateClient::when($search, function ($query, $search) {
-            return $query->where('first_name', 'LIKE', "%{$search}%");
+            return $query->where('first_name', 'LIKE', "%{$search}%")
+                ->orWhere('dni_ruc', 'LIKE', "%{$search}%");
         });
 
         $totalFiltered = $customcollections->count();

@@ -101,7 +101,7 @@ class PermissionController extends Controller
         // Session::flash('success', 'Permissions update successfully.');
         // return redirect()->route('role.index');
              // return back()->with('success',"Permissions update successfully.");
-         Session::flash('success',"Permissions update successfully.");
+         Session::flash('success',"Permisos actualizados correctamente.");
         return redirect()->route('role.index');
 
         // return back();
