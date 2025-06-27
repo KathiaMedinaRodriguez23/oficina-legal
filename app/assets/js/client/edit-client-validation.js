@@ -122,14 +122,7 @@ var FormControlsClient = {
                 $(el).addClass('is-valid').removeClass('is-invalid');
             },
             errorPlacement: function(error, element) {
-                // doc-number y gender ya casos especiales…
-                if (element.attr("name")==='gender') {
-                    $("#error_message").empty().show().append(error.addClass('text-danger'));
-                } else if (element.attr("name")==='document_number') {
-                    $("#error_message").empty().show().append(error);
-                } else {
-                    error.appendTo(element.parent()).addClass('text-danger');
-                }
+                error.appendTo(element.parent()).addClass('text-danger');
             },
             submitHandler: function () {
                 $('#show_loader').removeClass('fa-save').addClass('fa-spin fa-spinner');

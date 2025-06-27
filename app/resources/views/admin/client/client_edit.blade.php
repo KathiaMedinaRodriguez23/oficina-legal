@@ -1,5 +1,18 @@
 @extends('admin.layout.app')
 @section('title','Editar Cliente')
+@push('style')
+    <style>
+        .error-message {
+            color: #a94442;
+            font-size: 12px;
+        }
+        /* style red for alert alert-info alert-dismissible fade in*/
+        .alert.alert-info.alert-dismissible.fade.in {
+            background-color: #a94442;
+            color: white;
+        }
+    </style>
+@endpush
 @section('content')
     @component('component.heading' , [
 
