@@ -75,7 +75,6 @@ class AppointmentController extends Controller
      */
     public function store(StoreAppointment $request)
     {
-        dd($request->all());
         $appoint = new Appointment();
         if ($request->type == "new") {
             $appoint->name = $request->new_client;
