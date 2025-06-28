@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ $image_logo->company_name ?? '' }} | Iniciar Sesión </title>
     @if($image_logo->favicon_img!='')
         <link rel="shortcut icon" href="{{URL::asset(config('constants.FAVICON_FOLDER_PATH') .'/'. $image_logo->favicon_img)}}" >
