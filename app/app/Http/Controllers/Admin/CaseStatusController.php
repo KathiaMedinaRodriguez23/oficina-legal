@@ -247,7 +247,7 @@ class CaseStatusController extends Controller
        
        $statuscode = 400;
        $data = CaseStatus::findOrFail($request->id);
-       $data->is_active  = $request->status == 'true' ? 'SI' : 'No' ;
+       $data->is_active  = $request->status == 'true' ? 'Yes' : 'No' ;
         
         if($data->save()) {
             $statuscode = 200 ;
