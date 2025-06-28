@@ -226,4 +226,12 @@
             });
         });
     </script>
+    <script>
+        const passwordInput = document.getElementById("password");
+        passwordInput.addEventListener('input', formatPassword);
+
+        function formatPassword() {
+            passwordInput.value = passwordInput.value.replace(/ /g, '');
+        }
+    </script>
 @endpush
